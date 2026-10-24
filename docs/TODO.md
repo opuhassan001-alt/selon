@@ -1,0 +1,36 @@
+# Project Backlog & Task Management
+
+## In Progress
+
+## Done
+- `#1` Complete 11-section Bangladesh Salon Directory & Advance Booking Platform (2026-10-24)
+- `#2` Implement Seative Digital Pinned Headline & 3D Layered Cascade Motion Section (2026-10-24)
+- `#3` Create complete documentation suite (Prd.md, Architecture.md, Rules.md, Phases.md, Design.md, Memory.md) (2026-10-24)
+- `#4` Complete Zero-Dot Anti-AI-Slop audit (removed all traffic light dots, pulse dots, status dots, circular pins, and middle bullets) (2026-10-24)
+- `#5` Integrate authentic high-resolution salon photography in Hero and Flagship Studio showcases (2026-10-24)
+- `#8` Synchronize UI with luxury dark Barbarian reference (full-bleed hero, dual action cards, gold highlighted bento, 3x2 service photo grid, master barbers, asymmetric testimonial, lead capture) (2026-10-24)
+- `#9` Integrate handcrafted artisan Salon BD logo into Navbar, Footer, and Favicon (2026-10-24)
+- `#10` Complete removal of 100% Bengali writing; transitioned entire platform to international English (2026-10-24)
+- `#11` Complete eradication of AI-slop: eliminated duplicate badges, green console banners, code identifiers (SALON_01, GEO_MATRIX_V2), and 22:30 PM time glitch. Transformed salon directory cards into authentic Barbarian photo-backed luxury showcases (2026-10-24)
+- `#12` Andrej Karpathy Guidelines Code Purge: surgically eliminated all speculative bloat, simulated GPS radar canvas, fake Haversine math, and internal prompt leaks (2026-10-24)
+- `#13` Implemented cinematic high-contrast Hero section synchronized with NEXA reference: crimson card silhouette, bold typography "THE NEXT CUT IS YOURS", dual action pills, and floating explore card (2026-10-24)
+- `#14` Integrated exact composite hero artwork (Batman master barber with hanging lights & embossed border) as centerpiece of #hero with interactive clickable hotspots and unified 64-district search bar (2026-10-24)
+- `#15` Completed in-depth platform research and architecture analysis of Fresha.com (business model, 2-sided marketplace, booking flow, pricing mechanics, and strategic lessons for SalonBD) (2026-10-24)
+- `#16` Reordered and synchronized full SalonBD page sequence strictly following Fresha standard: 1. Hero & 3-Input Search (with user Batman art) -> 2. Popular Selfcare Categories -> 3. Recommended Salons & Studios -> 4. Trending Locations & Hubs -> 5. Most Rated Professionals -> 6. 5-Step Advance Booking Engine -> 7. Verified Client Reviews -> 8. Fresha for Business & Scale Metrics -> 9. Exclusive Offers & Priority Slots -> 10. Luxury Directory Footer (2026-10-24)
+- `#17` 100% Fresha Design & Color System synchronization: pure white canvas, official Fresha purple accents (#6950F3), light gray pill cards, elimination of old dark styling from dynamic salon directory and 5-step booking engine, removal of all duplicate status badges, authentic Fresha vector logo, and B2B calendar showcase (2026-10-24)
+- `#18` Dead code & obsolete data purge: deleted backup files (index.dark.bak.html, index.html.bak, styles.dark.bak.css), purged temporary playwright artifacts, removed dead CSS rules and unused variables in styles.css, eliminated orphaned properties (coords, hubName, featured, pillClass) in app.js, and replaced residual placeholder names in index.html (2026-10-24)
+- `#19` Created full-screen animated Community Hero Section ("The Trim Realm • Cyber-Goth Syndicate"): 3 glowing concentric orbit rings (96vmin, 74vmin, 50vmin), 9 real barber/haircut avatars with 1:1 circular clipping, opposing rotation directions (68s CW / 55s CCW) with counter-rotation keeping faces & messages upright, expand-contract notification bubble (7s cycle), twinkling background particles, dark glass fixed navbar integration, "Join the Syndicate" CTA with Discord/Telegram/Instagram modal, and standalone paste-ready React component CommunityHero.jsx (2026-10-25)
+- `#20` Repositioned CTA buttons (`Join the Syndicate` & `Book a Haircut`) from the center orbit circle area to a floating top-right corner glass bar, leaving the central orbit typography completely unobstructed and open (2026-10-25)
+- `#21` Integrated cinematic Batman artwork (`hero-batman-bg.jpg`) as background layer directly behind rotating orbit circles with non-interfering GPU composition (`pointer-events-none`, `z-index: 0`), preserving 100% smooth concentric orbit rotations and avatar upright counter-rotations (2026-10-25)
+- `#22` Reduced the central hero typography scale ("JOIN OUR Community" + subtitle) to a compact, refined footprint (`text-2xl sm:text-3xl md:text-4xl`), giving generous breathing room to the background Batman artwork and orbiting profile avatars (2026-10-25)
+- `#23` Enhanced background Batman artwork visibility (opacity boosted to 0.92, brightness tuned to 0.95, and softened radial vignette overlay) so details, bats, Edison lamps, and metallic frame pop vividly behind the rotating orbits (2026-10-25)
+- `#24` Maximized "THE NEXT REALM IS YOURS" visibility by removing dark overlay masking on the left flank, and unified the entire hero typography with Bebas Neue & Orbitron cyber-goth display calligraphy and cyan-magenta neon laser glow (2026-10-25)
+- `#25` Surgically inpainted and eliminated bottom-left buttons ("Explore The Arena ▷", "Watch Official Trailer") and bottom-right badge ("EXPLORE / ELYSARA", "The moon is waking.", and moon icon) from the background hero artwork with seamless texture blending, giving a completely clean, focused gaming backdrop (2026-10-25)
+- `#26` Deleted duplicate Batman barber photo showcase from the Fresha search section (#hero lines 448-461) as requested, preserving it exclusively as the background of the animated Community Hero (2026-10-25)
+- `#27` Surgically purged all game text ("THE NEXT REALM IS YOURS.", NEXA paragraph, "SEASON 01 IS LIVE") from the background artwork via adaptive inpainting, and eliminated the floating corner action buttons that collided with the avatar orbit path (2026-10-25)
+- `#28` Eliminated residual NEXA description paragraph from the Batman background artwork with adaptive morphological texture blending, bumped cache buster to `?v=clean3_nonexa` across `index.html` and `CommunityHero.jsx`, and validated clean left flank in Playwright (2026-10-25)
+- `#29` Initialize git repository, configure .gitignore, commit all project files, and push to GitHub remote repository (2026-10-25)
+
+## Backlog
+- `#6` Connect real SMS / OTP gateway via local provider (e.g. SSL Wireless or Greenweb) for customer booking tokens
+

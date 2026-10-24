@@ -1,0 +1,415 @@
+/* ==========================================================================
+   FRESHA EXACT PIXEL-PERFECT DESIGN SYSTEM (LIGHT MODE & PURPLE ACCENTS)
+   ========================================================================== */
+
+:root {
+  --fresha-bg: #FFFFFF;
+  --fresha-dark: #0D0D0D;
+  --fresha-purple: #6950F3;
+  --fresha-purple-hover: #583EE2;
+  --fresha-text-main: #0D0D0D;
+  --fresha-border: #E8E8E8;
+}
+
+body {
+  background-color: var(--fresha-bg);
+  color: var(--fresha-text-main);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Fresha Clean Card with Subtle Border & Hover Lift */
+.fresha-card {
+  background: #FFFFFF;
+  border: 1px solid var(--fresha-border);
+  border-radius: 20px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fresha-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08);
+  border-color: #D6D6D6;
+}
+
+/* Fresha Pill Button */
+.fresha-btn-primary {
+  background-color: var(--fresha-dark);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+}
+.fresha-btn-primary:hover {
+  background-color: #262626;
+  transform: scale(1.01);
+}
+
+.fresha-btn-purple {
+  background-color: var(--fresha-purple);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+}
+.fresha-btn-purple:hover {
+  background-color: var(--fresha-purple-hover);
+}
+
+.fresha-btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--fresha-dark);
+  border: 1px solid var(--fresha-border);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+}
+.fresha-btn-secondary:hover {
+  background-color: #F8F9FA;
+  border-color: #D6D6D6;
+}
+
+/* Badge Tags */
+.badge-best-in-class {
+  background-color: #F2EFFF;
+  color: #6950F3;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-highly-recommended {
+  background-color: #FFF9E6;
+  color: #B45309;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Print Stylesheet */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #booking-confirmation-slip, #booking-confirmation-slip * {
+    visibility: visible;
+  }
+  #booking-confirmation-slip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 20px;
+    border: 2px solid #000000 !important;
+  }
+}
+
+/* ==========================================================================
+   COMMUNITY ORBIT HERO — "NEON UNDERWORLD" (CYBER-GOTH / DARK GAMING VIBE)
+   ========================================================================== */
+
+:root {
+  --neon-void: #050508;
+  --neon-panel: #12121A;
+  --neon-magenta: #FF1E56;
+  --neon-cyan: #00F0FF;
+  --neon-text-head: #FFFFFF;
+  --neon-text-sub: #8F90A6;
+}
+
+.community-hero-section {
+  background-color: var(--neon-void);
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cinematic Artwork Backdrop behind rotating circles */
+.hero-art-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-art-backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  filter: brightness(1.08) contrast(1.18);
+  transform: scale(1.01);
+}
+
+.hero-art-overlay {
+  position: absolute;
+  inset: 0;
+  /* Crystal-clear left side so "THE NEXT REALM IS YOURS" is 100% visible, sharp, and vibrant */
+  background: 
+    linear-gradient(to bottom, rgba(5, 5, 8, 0.45) 0%, transparent 12%, transparent 88%, #050508 100%),
+    radial-gradient(circle at 50% 50%, rgba(5, 5, 8, 0.25) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   CYBER-GOTH & DARK GAMING CALLIGRAPHY TYPOGRAPHY
+   ========================================================================== */
+
+.realm-calligraphy-title {
+  font-family: 'Bebas Neue', 'Cinzel Decorative', Impact, sans-serif;
+  letter-spacing: 0.04em;
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 15px rgba(255, 30, 86, 0.85),
+    0 0 35px rgba(255, 30, 86, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.95);
+  filter: drop-shadow(0 0 25px rgba(255, 30, 86, 0.65));
+}
+
+.realm-calligraphy-sub {
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #00F0FF;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.85);
+}
+
+.community-gothic-heading {
+  font-family: 'Cinzel Decorative', 'Bebas Neue', serif;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FFFFFF 0%, #00F0FF 45%, #FF1E56 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.75)) drop-shadow(0 0 40px rgba(255, 30, 86, 0.5));
+}
+
+/* Ambient Center Backlight */
+.ambient-cyan-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vmin;
+  height: 80vmin;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.14) 0%, rgba(255, 30, 86, 0.08) 45%, transparent 75%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+  animation: ambient-pulse 9s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-pulse {
+  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.55; }
+  100% { transform: translate(-50%, -50%) scale(1.18); opacity: 0.9; }
+}
+
+/* Orbit Rings */
+.orbit-ring-outer {
+  width: 96vmin;
+  height: 96vmin;
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.12), inset 0 0 35px rgba(0, 240, 255, 0.05);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit-cw 68s linear infinite;
+  z-index: 3;
+}
+
+.orbit-ring-middle {
+  width: 74vmin;
+  height: 74vmin;
+  border: 1px solid rgba(255, 30, 86, 0.25);
+  box-shadow: 0 0 25px rgba(255, 30, 86, 0.1), inset 0 0 25px rgba(255, 30, 86, 0.04);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit-ccw 55s linear infinite;
+  z-index: 4;
+}
+
+.orbit-ring-inner {
+  width: 50vmin;
+  height: 50vmin;
+  border: 1px solid rgba(0, 240, 255, 0.16);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.06);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Avatar Safeguards */
+.orbit-ring-outer img,
+.orbit-ring-middle img {
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+}
+
+/* Orbit Rotations */
+@keyframes orbit-cw {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit-ccw {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* Counter-rotations to keep faces and bubbles upright */
+.counter-cw {
+  animation: counter-cw 68s linear infinite;
+}
+
+.counter-ccw {
+  animation: counter-ccw 55s linear infinite;
+}
+
+@keyframes counter-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes counter-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Repeating notification cycle on select message bubble (~7s cycle, ~1.7s delay) */
+@keyframes bubble-expand-contract {
+  0%, 15% {
+    opacity: 0;
+    transform: scale(0.65) translateY(6px);
+    pointer-events: none;
+  }
+  25%, 80% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+  }
+  90%, 100% {
+    opacity: 0;
+    transform: scale(0.65) translateY(-6px);
+    pointer-events: none;
+  }
+}
+
+.bubble-pulse-cycle {
+  animation: bubble-expand-contract 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: 1.7s;
+}
+
+/* Luminous Background Twinkling Particles */
+.luminous-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-twinkle ease-in-out infinite alternate;
+}
+
+@keyframes particle-twinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.35);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.85);
+  }
+}
+
+/* Ring Satellite Spark Points */
+.ring-satellite-point {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #00F0FF;
+  box-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF;
+  pointer-events: none;
+}
+
+/* Syndicate Button Hover & Click Glow */
+.syndicate-cta-btn {
+  background-color: #00F0FF;
+  color: #050508;
+  font-weight: 800;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.65), 0 0 50px rgba(0, 240, 255, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.syndicate-cta-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.9), 0 0 70px rgba(0, 240, 255, 0.45);
+  background-color: #33F5FF;
+}
+
+.syndicate-cta-btn:active {
+  transform: scale(0.97);
+}
+
+/* Accessible Reduced-Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring-outer,
+  .orbit-ring-middle,
+  .counter-cw,
+  .counter-ccw,
+  .bubble-pulse-cycle,
+  .ambient-cyan-glow,
+  .luminous-particle {
+    animation: none !important;
+  }
+}

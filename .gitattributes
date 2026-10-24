@@ -1,0 +1,7 @@
+# Shared append-heavy backlog: keep both sides on merge instead of conflicting.
+# Path is case-sensitive to git — it must match the tracked spelling.
+# Tradeoff: union keeps lines, not content — two sessions/machines recording
+# the same entry (or a merge landing both a mid-write and a completed copy)
+# survives as a literal duplicate. This hook's dedupeEntries() runs every
+# SessionStart specifically to clean this back up automatically.
+docs/TODO.md merge=union

@@ -1,0 +1,14 @@
+# Tool & MCP artifacts
+.playwright-mcp/
+.taste-skill/
+.kombai/
+
+# Temporary screenshots & review captures
+community-*.png
+
+# Operating System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
