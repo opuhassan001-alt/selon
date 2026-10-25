@@ -363,7 +363,7 @@ export default function CommunityHero({ onJoinClick, onExploreClick }) {
 
       {/* Cinematic Batman Art Backdrop (Behind Rotating Circles) */}
       <div className="hero-art-backdrop">
-        <img src="assets/hero-batman-bg.jpg?v=clean3_nonexa" alt="The Next Realm Batman Barbershop" />
+        <img src="assets/hero-batman-bg.jpg?v=fullscreen_fit1" alt="The Next Realm Batman Barbershop" />
         <div className="hero-art-overlay" />
       </div>
 
@@ -557,44 +557,23 @@ export default function CommunityHero({ onJoinClick, onExploreClick }) {
 
         {/* Fixed Center Content (Pure Floating Gaming Calligraphy, No Card Container) */}
         <div className="absolute z-20 pointer-events-auto text-center flex flex-col items-center justify-center max-w-xs sm:max-w-sm px-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#12121A]/95 border border-[#FF1E56]/50 text-[#FF1E56] text-[10px] font-bold tracking-widest uppercase mb-1.5 shadow-[0_0_15px_rgba(255,30,86,0.35)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF1E56] animate-ping" />
-            <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>THE TRIM REALM • SYNDICATE</span>
-          </div>
-
-          <h2
-            style={{
-              fontFamily: "'Orbitron', monospace",
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              fontSize: "0.7rem",
-              fontWeight: 800,
-              color: "#00F0FF",
-              textShadow: "0 0 12px rgba(0, 240, 255, 0.85)",
-              marginBottom: "0.2rem",
-            }}
-          >
-            Join Our
-          </h2>
-
           <h1
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              letterSpacing: "0.06em",
-              fontSize: "2.75rem",
+              letterSpacing: "0.08em",
+              fontSize: "3.2rem",
               lineHeight: 1,
               textTransform: "uppercase",
               color: "#FFFFFF",
-              textShadow: "0 0 15px rgba(0,240,255,0.9), 0 0 30px rgba(0,240,255,0.5), 0 0 45px rgba(255,30,86,0.5), 0 2px 4px rgba(0,0,0,0.95)",
-              filter: "drop-shadow(0 0 20px rgba(0,240,255,0.6))",
-              marginBottom: "0.25rem",
+              textShadow: "0 0 20px rgba(0,240,255,0.7), 0 2px 4px rgba(0,0,0,0.95)",
+              marginBottom: "0.5rem",
             }}
           >
             COMMUNITY
           </h1>
 
-          <p className="text-[11px] sm:text-xs text-[#8F90A6] max-w-[260px] mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}>
-            The nocturnal grooming network. Master barbers, live slot alerts, and high-fashion hair artistry.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-[280px] mx-auto leading-relaxed">
+            The nocturnal grooming syndicate. Master barbers, live slot alerts, and high-fashion hair artistry.
           </p>
         </div>
       </div>

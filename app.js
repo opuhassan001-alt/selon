@@ -122,12 +122,12 @@
   ];
 
   const MASTER_SERVICES_CATALOG = [
-    { name: 'Executive Haircut & Styling', price: 350 },
-    { name: 'Hot Towel Razor Shave', price: 150 },
-    { name: 'Beard Trim & Sculpting', price: 250 },
-    { name: 'Charcoal Deep Facial', price: 500 },
-    { name: 'Hair Colouring & Spa', price: 600 },
-    { name: 'Full Grooming Package', price: 800 }
+    { name: '01 · Classic Cut (Scissor/Clipper)', price: 350 },
+    { name: '02 · Cut & Beard Sculpt', price: 550 },
+    { name: '03 · Hot Towel Straight Razor Shave', price: 400 },
+    { name: '04 · Precision Skin Fade', price: 400 },
+    { name: '05 · Shape & Clean Lineup', price: 250 },
+    { name: '06 · The Works (Cut, Beard & Facial)', price: 950 }
   ];
 
   let currentFilter = 'all';
@@ -231,8 +231,8 @@
 
     if (filtered.length === 0) {
       gridEl.innerHTML = `
-        <div class="col-span-full py-16 text-center border border-dashed border-freshaBorder rounded-2xl bg-freshaGray text-xs text-freshaMuted">
-          No verified venues found matching your criteria. Try selecting another district or service.
+        <div class="col-span-full py-16 text-center border border-dashed border-[#243050] rounded bg-[#111a2e] text-xs text-[#7e8aa8] font-mono">
+          No verified studios found matching your criteria. Try selecting another district or service.
         </div>
       `;
       return;
@@ -242,56 +242,55 @@
       const status = calculateSalonStatus(salon.openTime, salon.closeTime);
 
       return `
-        <div class="fresha-card bg-white border border-freshaBorder rounded-[20px] overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
+        <div class="kingston-card bg-[#111a2e] border border-[#243050] rounded overflow-hidden flex flex-col justify-between group hover:border-[#e8220a]/50 transition-all duration-300">
           
           <!-- Card Image & Overlay Badges -->
-          <div class="relative h-52 overflow-hidden bg-freshaGray">
+          <div class="relative h-52 overflow-hidden bg-[#0c1220]">
             <img 
               src="${salon.image || 'assets/studio-haven.jpg'}" 
               alt="${salon.name}" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.85]"
             />
             
             <!-- Category Tag (Top Left) -->
             <div class="absolute top-3.5 left-3.5">
-              <span class="badge-best-in-class text-[11px] px-3 py-1 font-bold shadow-sm">
-                Best in Class
+              <span class="font-mono text-[10px] px-2.5 py-1 uppercase tracking-wider font-bold bg-[#172138]/90 border border-[#243050] text-[#e8220a] backdrop-blur-sm">
+                Master Studio
               </span>
             </div>
 
             <!-- Rating Pill (Top Right) -->
-            <div class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-white/95 text-freshaDark text-xs font-bold flex items-center gap-1 shadow-md backdrop-blur-sm">
-              <span class="text-amber-500">★</span>
+            <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded bg-[#172138]/90 border border-[#243050] text-white text-xs font-mono font-bold flex items-center gap-1 backdrop-blur-sm">
+              <span class="text-[#e8220a]">★</span>
               <span>${salon.rating}</span>
-              <span class="text-freshaLightText font-normal text-[10px]">(${salon.reviewsCount})</span>
+              <span class="text-[#7e8aa8] font-normal">(${salon.reviewsCount})</span>
             </div>
           </div>
 
           <!-- Card Content Body -->
           <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
-              <div class="mb-2">
-                <h3 class="text-lg font-bold text-freshaDark group-hover:text-freshaPurple transition-colors leading-snug">
+              <div class="mb-3">
+                <h3 class="font-display text-lg font-bold text-white group-hover:text-[#e8220a] transition-colors leading-snug">
                   ${salon.name}
                 </h3>
-                <p class="text-xs text-freshaMuted mt-1 leading-relaxed">
+                <p class="font-sans text-xs text-[#7e8aa8] mt-1 leading-relaxed">
                   ${salon.area}, ${salon.district} • ${salon.address}
                 </p>
               </div>
 
-              <!-- Operating Hours: Single Clean Line (No Duplicate Status) -->
-              <div class="flex items-center gap-2 py-2 px-3 rounded-xl bg-freshaGray border border-freshaBorder/80 my-3 text-xs">
-                <span class="w-2 h-2 rounded-full ${status.isOpen ? 'bg-freshaGreen' : 'bg-rose-500'}"></span>
-                <span class="font-bold ${status.isOpen ? 'text-freshaDark' : 'text-rose-600'}">${status.statusText}</span>
-                <span class="text-freshaLightText">·</span>
-                <span class="text-freshaDark font-medium">${status.hoursRange}</span>
-                <span class="text-[11px] text-freshaMuted ml-auto font-medium">${status.hint}</span>
+              <!-- Operating Hours: Single Clean Line -->
+              <div class="flex items-center gap-2 py-2 px-3 rounded bg-[#172138] border border-[#243050] my-3 font-mono text-xs">
+                <span class="w-2 h-2 rounded-full ${status.isOpen ? 'bg-emerald-400' : 'bg-rose-500'}"></span>
+                <span class="font-bold ${status.isOpen ? 'text-emerald-400' : 'text-rose-400'}">${status.statusText}</span>
+                <span class="text-[#243050]">·</span>
+                <span class="text-[#7e8aa8]">${status.hoursRange}</span>
               </div>
 
               <!-- Service Tags -->
               <div class="flex flex-wrap gap-1.5 mb-4">
                 ${salon.services.slice(0, 3).map(srv => `
-                  <span class="text-[11px] px-2.5 py-1 rounded-full bg-freshaGray border border-freshaBorder text-freshaDark font-medium">
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#172138] border border-[#243050] text-[#7e8aa8]">
                     ${srv}
                   </span>
                 `).join('')}
@@ -299,19 +298,19 @@
             </div>
 
             <!-- Card Bottom Bar (Starting Price & Actions) -->
-            <div class="pt-4 border-t border-freshaBorder flex items-center justify-between mt-auto">
+            <div class="pt-4 border-t border-[#243050] flex items-center justify-between mt-auto">
               <div>
-                <span class="text-[10px] text-freshaLightText block uppercase tracking-wider font-semibold">Starting from</span>
-                <span class="text-base font-extrabold text-freshaDark">BDT ${salon.startingPrice}</span>
+                <span class="font-mono text-[9px] text-[#7e8aa8] block uppercase tracking-wider">From</span>
+                <span class="font-mono text-base font-black text-white">BDT ${salon.startingPrice}</span>
               </div>
 
               <div class="flex items-center gap-2">
                 <a 
                   href="tel:${salon.phone.replace(/[^0-9+]/g, '')}" 
-                  class="p-2.5 rounded-full border border-freshaBorder hover:bg-freshaGray text-freshaDark transition-colors flex items-center gap-1 text-xs font-semibold"
+                  class="p-2 rounded border border-[#243050] hover:border-[#e8220a] text-[#7e8aa8] hover:text-white transition-colors flex items-center gap-1 font-mono text-xs"
                   title="Direct Call: ${salon.phone}"
                 >
-                  <svg class="w-3.5 h-3.5 text-freshaDark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-3.5 h-3.5 text-[#e8220a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
                   <span class="hidden sm:inline">Call</span>
@@ -319,10 +318,9 @@
                 
                 <button 
                   onclick="window.selectSalonForBooking('${salon.name}', '${salon.area}')" 
-                  class="fresha-btn-purple px-5 py-2.5 text-xs font-bold shadow-sm flex items-center gap-1.5"
+                  class="btn-barber-primary px-4 py-2 font-mono text-xs uppercase tracking-wider font-bold"
                 >
-                  <span>Book</span>
-                  <span>→</span>
+                  Book Chair →
                 </button>
               </div>
             </div>
@@ -369,12 +367,12 @@
     container.innerHTML = MASTER_SERVICES_CATALOG.map((srv, idx) => {
       const isSelected = selectedServices.some(s => s.name === srv.name);
       return `
-        <label class="flex items-center justify-between p-3.5 rounded-2xl bg-freshaGray/60 border border-freshaBorder hover:border-freshaPurple/60 hover:bg-freshaPurpleTint/30 cursor-pointer text-xs transition-colors">
+        <label class="flex items-center justify-between p-4 rounded bg-[#172138] border ${isSelected ? 'border-[#e8220a]' : 'border-[#243050]'} hover:border-[#e8220a]/60 cursor-pointer text-xs transition-colors">
           <div class="flex items-center gap-3">
-            <input type="checkbox" value="${srv.name}" data-price="${srv.price}" ${isSelected ? 'checked' : ''} onchange="window.onServiceCheckChange()" class="w-4 h-4 rounded text-freshaPurple accent-freshaPurple">
-            <span class="text-freshaDark font-medium">${srv.name}</span>
+            <input type="checkbox" value="${srv.name}" data-price="${srv.price}" ${isSelected ? 'checked' : ''} onchange="window.onServiceCheckChange()" class="w-4 h-4 rounded text-[#e8220a] accent-[#e8220a]">
+            <span class="text-white font-medium">${srv.name}</span>
           </div>
-          <span class="text-freshaPurple font-bold">BDT ${srv.price}</span>
+          <span class="font-mono text-xs font-bold text-[#e8220a]">BDT ${srv.price}</span>
         </label>
       `;
     }).join('');
@@ -433,15 +431,15 @@
       const openFormatted = formatTimeString(activeBookingSalon.openTime);
       const closeFormatted = formatTimeString(activeBookingSalon.closeTime);
       cardEl.innerHTML = `
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 w-full">
           <div>
-            <h4 class="text-freshaDark font-bold text-sm">${activeBookingSalon.name}</h4>
-            <span class="text-freshaMuted text-xs block font-sans">${activeBookingSalon.address}</span>
-            <span class="text-freshaPurple text-xs block mt-1 font-semibold">Direct Helpline: ${activeBookingSalon.phone}</span>
+            <h4 class="font-display text-white font-bold text-base">${activeBookingSalon.name}</h4>
+            <span class="text-[#7e8aa8] text-xs block font-sans mt-0.5">${activeBookingSalon.address}</span>
+            <span class="font-mono text-[#e8220a] text-xs block mt-1 font-semibold">Direct Helpline: ${activeBookingSalon.phone}</span>
           </div>
           <div class="sm:text-right">
-            <span class="text-freshaGreen font-bold text-xs block">Verified Partner</span>
-            <span class="text-freshaMuted text-xs font-sans">${openFormatted} – ${closeFormatted}</span>
+            <span class="font-mono text-emerald-400 font-bold text-xs block">Verified Kingston Branch</span>
+            <span class="font-mono text-[#7e8aa8] text-xs">${openFormatted} – ${closeFormatted}</span>
           </div>
         </div>
       `;
@@ -450,7 +448,7 @@
     if (badgeEl) {
       badgeEl.innerHTML = `
         <span>Schedule: ${activeBookingSalon.openTime} AM – ${activeBookingSalon.closeTime} PM</span>
-        <span class="text-freshaMuted">${activeBookingSalon.totalHours}</span>
+        <span class="text-[#7e8aa8]">(${activeBookingSalon.totalHours})</span>
       `;
     }
 
@@ -464,17 +462,17 @@
     const total = selectedServices.reduce((acc, curr) => acc + curr.price, 0);
 
     box.innerHTML = `
-      <div class="flex justify-between text-freshaMuted text-xs">
-        <span>Selected Salon:</span>
-        <strong class="text-freshaDark">${activeBookingSalon.name} (${activeBookingSalon.area})</strong>
+      <div class="flex justify-between text-xs pb-2 border-b border-[#243050]">
+        <span class="text-[#7e8aa8]">Selected Studio:</span>
+        <strong class="text-white font-display">${activeBookingSalon.name}</strong>
       </div>
-      <div class="flex justify-between text-freshaMuted text-xs">
-        <span>Services (${selectedServices.length}):</span>
-        <span class="text-freshaDark font-medium">${selectedServices.map(s => s.name).join(', ')}</span>
+      <div class="flex justify-between text-xs py-1">
+        <span class="text-[#7e8aa8]">Selected Items:</span>
+        <span class="text-white font-mono text-[11px] text-right max-w-[200px]">${selectedServices.map(s => s.name).join(', ')}</span>
       </div>
-      <div class="flex justify-between text-freshaMuted text-xs pt-3 border-t border-freshaBorder items-center">
-        <span class="text-freshaDark font-bold">Estimated Total (Pay at Salon):</span>
-        <strong class="text-freshaPurple text-base font-extrabold">BDT ${total}</strong>
+      <div class="flex justify-between text-xs pt-3 border-t border-[#243050] items-center">
+        <span class="text-[#7e8aa8] uppercase font-mono text-[10px] tracking-wider">Estimated Total:</span>
+        <strong class="text-[#e8220a] font-mono text-lg font-black">BDT ${total}</strong>
       </div>
     `;
   }
@@ -498,7 +496,7 @@
     }
 
     container.innerHTML = slots.map((timeStr, idx) => `
-      <label class="time-slot-pill flex items-center justify-center py-2.5 px-3 rounded-full bg-white border border-freshaBorder hover:border-freshaPurple text-freshaDark hover:bg-freshaPurpleTint/40 cursor-pointer text-center text-xs font-medium transition-all shadow-sm">
+      <label class="time-slot-pill flex items-center justify-center py-2.5 px-3 rounded bg-[#172138] border border-[#243050] hover:border-[#e8220a] text-[#7e8aa8] hover:text-white cursor-pointer text-center font-mono text-xs transition-all shadow-sm">
         <input type="radio" name="booking-slot" value="${timeStr}" class="sr-only" ${idx === 2 ? 'checked' : ''} onchange="window.handleSlotSelection(this)">
         <span class="w-full text-center slot-label-text">
           ${timeStr}
@@ -512,20 +510,20 @@
 
   window.handleSlotSelection = function (radioEl) {
     document.querySelectorAll('.time-slot-pill').forEach(pill => {
-      pill.classList.remove('border-freshaPurple', 'bg-freshaPurple', 'text-white', 'shadow-md');
-      pill.classList.add('border-freshaBorder', 'bg-white', 'text-freshaDark');
+      pill.classList.remove('border-[#e8220a]', 'bg-[#e8220a]', 'text-white', 'shadow-md');
+      pill.classList.add('border-[#243050]', 'bg-[#172138]', 'text-[#7e8aa8]');
       const text = pill.querySelector('.slot-label-text');
       if (text) {
         text.classList.remove('text-white', 'font-bold');
-        text.classList.add('text-freshaDark');
+        text.classList.add('text-[#7e8aa8]');
       }
     });
     if (radioEl.parentElement) {
-      radioEl.parentElement.classList.remove('border-freshaBorder', 'bg-white', 'text-freshaDark');
-      radioEl.parentElement.classList.add('border-freshaPurple', 'bg-freshaPurple', 'text-white', 'shadow-md');
+      radioEl.parentElement.classList.remove('border-[#243050]', 'bg-[#172138]', 'text-[#7e8aa8]');
+      radioEl.parentElement.classList.add('border-[#e8220a]', 'bg-[#e8220a]', 'text-white', 'shadow-md');
       const text = radioEl.parentElement.querySelector('.slot-label-text');
       if (text) {
-        text.classList.remove('text-freshaDark');
+        text.classList.remove('text-[#7e8aa8]');
         text.classList.add('text-white', 'font-bold');
       }
     }
@@ -538,11 +536,11 @@
       if (panel) panel.classList.add('hidden');
       if (navBtn) {
         if (i < stepNumber) {
-          navBtn.className = "relative z-10 w-9 h-9 rounded-full bg-freshaPurpleTint text-freshaPurple border border-freshaPurple/40 text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
+          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#172138] border border-[#e8220a] text-[#e8220a] font-mono text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
         } else if (i === stepNumber) {
-          navBtn.className = "relative z-10 w-9 h-9 rounded-full bg-freshaPurple text-white text-xs font-bold flex items-center justify-center shadow-md cursor-pointer";
+          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-mono text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 cursor-pointer";
         } else {
-          navBtn.className = "relative z-10 w-9 h-9 rounded-full bg-white border-2 border-freshaBorder text-freshaMuted text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
+          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
         }
       }
     }
@@ -551,6 +549,41 @@
     if (targetPanel) targetPanel.classList.remove('hidden');
 
     updateOrderSummaryBox();
+  };
+
+  // Direct selection helpers for Kingston's sections
+  window.selectServiceDirect = function (serviceName, price) {
+    const foundService = MASTER_SERVICES_CATALOG.find(s => 
+      s.name.toLowerCase().includes(serviceName.toLowerCase()) || 
+      serviceName.toLowerCase().includes(s.name.toLowerCase())
+    );
+    if (foundService) {
+      selectedServices = [foundService];
+    } else {
+      selectedServices = [{ name: serviceName, price: price || 350 }];
+    }
+    renderBookingServicesCheckboxes();
+    updateOrderSummaryBox();
+    const engineEl = document.getElementById('booking-engine');
+    if (engineEl) engineEl.scrollIntoView({ behavior: 'smooth' });
+    window.goToBookingStep(3);
+    window.showToast(`Selected: ${serviceName}`);
+  };
+
+  window.selectBarberDirect = function (barberName) {
+    const stylistSelect = document.getElementById('booking-stylist-select');
+    if (stylistSelect) {
+      for (let i = 0; i < stylistSelect.options.length; i++) {
+        if (stylistSelect.options[i].text.toLowerCase().includes(barberName.toLowerCase())) {
+          stylistSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+    const engineEl = document.getElementById('booking-engine');
+    if (engineEl) engineEl.scrollIntoView({ behavior: 'smooth' });
+    window.goToBookingStep(3);
+    window.showToast(`Master Barber selected: ${barberName}`);
   };
 
   window.selectServiceAndBook = function (serviceName) {
@@ -782,6 +815,22 @@
 
     const openRegBtn = document.getElementById('open-register-modal-btn');
     if (openRegBtn) openRegBtn.addEventListener('click', window.openRegisterModal);
+
+    // Navbar transparency handler: fully transparent over hero, frosted dark glass when scrolled down
+    const mainHeader = document.getElementById('main-header');
+    if (mainHeader) {
+      const handleNavScroll = () => {
+        if (window.scrollY > 60) {
+          mainHeader.classList.remove('bg-transparent', 'border-transparent');
+          mainHeader.classList.add('bg-[#050508]/90', 'backdrop-blur-md', 'border-[#00F0FF]/20', 'shadow-lg');
+        } else {
+          mainHeader.classList.add('bg-transparent', 'border-transparent');
+          mainHeader.classList.remove('bg-[#050508]/90', 'backdrop-blur-md', 'border-[#00F0FF]/20', 'shadow-lg');
+        }
+      };
+      window.addEventListener('scroll', handleNavScroll, { passive: true });
+      handleNavScroll();
+    }
   });
 
 })();

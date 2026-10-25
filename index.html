@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fresha | Book Salons, Spas & Beauty Experts Near You (SalonBD)</title>
+  <title>The Midnight Trim bd | Book Top Salons, Barbershops & Grooming Studios</title>
   
   <!-- Meta SEO -->
-  <meta name="description" content="Discover top-rated salons, barbers, medspas, wellness studios and beauty experts trusted by millions worldwide. Instantly book appointments online 24/7." />
+  <meta name="description" content="The Midnight Trim bd - Discover and book top-rated salons, barbers, spas and nocturnal grooming studios across Bangladesh." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/salon-bd-logo.jpg" />
@@ -14,7 +14,7 @@
   <!-- Google Fonts: Plus Jakarta Sans, JetBrains Mono & Gaming Display Typography (Bebas Neue, Orbitron, Cinzel Decorative) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700;900&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,19 +23,20 @@
       theme: {
         extend: {
           colors: {
-            freshaDark: '#0D0D0D',
-            freshaPurple: '#6950F3',
-            freshaPurpleHover: '#583EE2',
-            freshaPurpleLight: '#F2EFFF',
-            freshaGray: '#F8F9FA',
-            freshaBorder: '#E8E8E8',
-            freshaMuted: '#5E5E5E',
-            freshaLightText: '#878787',
-            freshaGreen: '#10B981',
-            freshaGold: '#FFB800'
+            bgDark: '#0c1220',
+            surface: '#111a2e',
+            surfaceRaised: '#172138',
+            borderDark: '#243050',
+            borderSoft: '#2e3e62',
+            barberRed: '#e8220a',
+            barberRedDark: '#c11a07',
+            barberBlue: '#1a3a9c',
+            mutedFg: '#7e8aa8',
+            offWhite: '#f0f4fc'
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace']
           }
         }
@@ -44,24 +45,29 @@
   </script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=fresha10" />
+  <link rel="stylesheet" href="styles.css?v=kingston1" />
 </head>
-<body class="bg-white text-freshaDark antialiased selection:bg-freshaPurple selection:text-white">
+<body class="bg-[#0c1220] text-[#f0f4fc] antialiased selection:bg-[#e8220a] selection:text-white">
 
   <!-- =========================================================================
-       FRESHA TOP NAVIGATION BAR (UNIFIED DARK GLASS ON HERO)
+       FRESHA TOP NAVIGATION BAR (FULLY TRANSPARENT OVER HERO)
        ========================================================================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#050508]/85 backdrop-blur-md border-b border-[#00F0FF]/20 transition-all duration-200">
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Left: Logo & Category Navigation -->
       <div class="flex items-center gap-8">
-        <a href="#" class="flex items-center gap-2 group">
-          <!-- Official Fresha SVG Logo -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.8 24" class="h-6 w-auto fill-white drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]" aria-label="Fresha">
-            <path d="M51.5 2.1h3.9v8.1c1.3-1.9 4-2.5 6.2-1.6 2.2.9 2.9 2.5 3 2.7.2.5.4 1 .5 1.5.6 3.6-.6 7.2.5 10.7h-3.8c-1-2.5-.4-5.3-.4-7.9 0-.7 0-1.5-.4-2.2-.5-.9-1.5-1.6-2.5-1.6-1.1 0-2.1.6-2.6 1.5-.4.8-.4 1.8-.4 2.7v7.5h-3.9l-.1-21.4zM36 15.7c.1-4.3-2.6-7.5-6.8-7.5-2.8 0-5.2 1.4-6.5 3.8-1.4 2.6-1.3 6.3.4 8.8 2.5 3.4 7.6 4.2 12.5 1.9l-1.2-3.1c-4.1 1.8-8.5 1.3-8.8-2.4H36v-1.5zm-10.3-1.5c.3-.8.7-1.4 1.3-1.9 1.2-.9 3.3-1 4.4-.1.5.4.9 1.1 1.2 1.9h-6.9zM13.1 13.9s0-2.3-1.9-2.3H6.9v12.1H3V11.6H0V8.3h3V5.7C3 3.4 5.1 0 9.7 0s6.4 3.9 6.4 3.9l-3 2.1s-.8-2.5-3.3-2.5C8.7 3.5 7 4.4 7 6.2v2h6.1c2.7 0 3.4 2 3.4 2 1-2.4 4.6-2.1 5.3-2v3.1c-2.5-.2-4.8 1.2-4.8 4.1v8h-3.9v-9.5zM48.9 16.2c-1.2-1.2-4.3-1.6-6.3-2-1-.2-1.8-.4-1.8-1.4 0-1.2 1.2-1.5 2.4-1.5s2.4.5 3.1 1.5l3-1.6c-1.7-3-6.2-3.6-9.1-2.4-.9.4-1.6 1-2.1 1.7-1.1 1.5-1 4.1.3 5.3.7.7 1.9 1.2 3.4 1.5l2.8.5c1 .2 1.9.4 1.9 1.5 0 1.3-1.4 1.6-2.6 1.6-3.2 0-3.8-3-3.8-3L36.4 19c.2 1 1.5 5 7.4 5 3.3 0 6.2-1.3 6.3-4.8-.1-1.3-.5-2.3-1.2-3zM81.2 20.8c-.7 0-1.3-.4-1.3-1.4 0-.5-.1-2.2-.1-2.6 0-2.6.1-5.1-1.7-6.9-2-2-6.6-2.2-9-.6-.9.5-1.7 1.2-2.3 2.1l2.3 2.4c.9-1.5 2.2-2.2 3.7-2.2 1.4-.1 2.6.6 3.1 2-3.1.8-7.1 1.1-8.8 4.3-.8 1.5-.6 3.4.6 4.7.9 1 2.4 1.3 3.8 1.3 2.2 0 4.3-.5 5.6-2.5.7 1.7 2.2 2.5 4 2.5.3 0 .6-.1.8-.2v-3c-.2.1-.4.1-.7.1zm-5.3-3.1c.1 2.2-1.7 3.4-3.7 3.4-1.1 0-1.8-.5-1.8-1.6 0-1.2 1-1.6 2.1-1.9l3.4-1v1.1z"/>
-          </svg>
-          <span class="text-xs font-bold px-2 py-0.5 rounded bg-[#FF1E56]/20 border border-[#FF1E56]/40 text-[#FF1E56] tracking-wide">BD</span>
+        <a href="#" class="flex items-center gap-2.5 group">
+          <!-- Sleek Razor / Shears Crest Icon -->
+          <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00F0FF]/20 to-[#FF1E56]/20 border border-[#00F0FF]/40 flex items-center justify-center text-[#00F0FF] group-hover:scale-105 transition-transform shrink-0">
+            <svg class="w-4 h-4 text-[#00F0FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.828 2.828a4 4 0 11-5.657-5.656l2.828-2.829 8.486 8.486z" />
+            </svg>
+          </span>
+          <div class="flex items-center gap-1.5">
+            <span class="text-base sm:text-lg font-black tracking-wide text-white uppercase font-sans">The Midnight Trim</span>
+            <span class="text-[11px] font-bold px-1.5 py-0.5 rounded bg-[#FF1E56]/20 border border-[#FF1E56]/40 text-[#FF1E56] tracking-wider uppercase">bd</span>
+          </div>
         </a>
 
         <!-- Main Categories Links -->
@@ -116,12 +122,11 @@
     
     <!-- Cinematic Batman Art Backdrop (Placed directly behind rotating circles, pointer-events-none) -->
     <div class="hero-art-backdrop">
-      <img src="assets/hero-batman-bg.jpg?v=clean3_nonexa" alt="The Next Realm Batman Barbershop" />
+      <img src="assets/hero-batman-bg.jpg?v=fullscreen_fit1" alt="The Next Realm Batman Barbershop" />
       <div class="hero-art-overlay"></div>
     </div>
 
-    <!-- Ambient Cyan & Magenta Glow in Void Center -->
-    <div class="ambient-cyan-glow"></div>
+
 
     <!-- 28 Luminous Background Twinkling Particles -->
     <div class="absolute inset-0 pointer-events-none z-0">
@@ -320,27 +325,18 @@
 
       <!-- Fixed Centered Heading (Pure Floating Gaming Calligraphy, No Card Container) -->
       <div class="absolute z-20 pointer-events-auto text-center flex flex-col items-center justify-center max-w-xs sm:max-w-sm px-4">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#12121A]/95 border border-[#FF1E56]/50 text-[#FF1E56] text-[10px] font-bold tracking-widest uppercase mb-1.5 shadow-[0_0_15px_rgba(255,30,86,0.35)]">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#FF1E56] animate-ping"></span>
-          <span class="font-mono">THE TRIM REALM • SYNDICATE</span>
-        </div>
-
-        <!-- Heading with High-End Dark Gaming Calligraphy -->
-        <h2 class="realm-calligraphy-sub text-[10px] sm:text-xs mb-0.5">
-          Join Our
-        </h2>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider text-white mb-1" style="font-family: 'Bebas Neue', sans-serif; text-shadow: 0 0 15px rgba(0,240,255,0.9), 0 0 30px rgba(0,240,255,0.5), 0 0 45px rgba(255,30,86,0.5), 0 2px 4px rgba(0,0,0,0.95); filter: drop-shadow(0 0 20px rgba(0,240,255,0.6));">
+        <!-- Authoritative Single H1 Title -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider text-white mb-2" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.08em; text-shadow: 0 0 20px rgba(0,240,255,0.7), 0 2px 4px rgba(0,0,0,0.95);">
           COMMUNITY
         </h1>
-        <p class="text-[11px] sm:text-xs text-[#8F90A6] max-w-[260px] mx-auto leading-relaxed" style="text-shadow: 0 1px 3px rgba(0,0,0,0.9);">
-          The nocturnal grooming network. Master barbers, live slot alerts, and high-fashion hair artistry.
+        <p class="text-xs sm:text-sm text-slate-300 max-w-[280px] mx-auto leading-relaxed">
+          The nocturnal grooming syndicate. Master barbers, live slot alerts, and high-fashion hair artistry.
         </p>
 
         <!-- Subtle Bottom Scroll Hint -->
-        <a href="#hero" class="mt-3 text-[10px] text-[#8F90A6] hover:text-[#00F0FF] flex items-center gap-1.5 transition-colors group cursor-pointer">
-          <span class="font-mono tracking-wider">Explore Fresha Search & Studios</span>
-          <svg class="w-3 h-3 group-hover:translate-y-0.5 transition-transform text-[#00F0FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        <a href="#hero" class="mt-4 text-xs font-semibold text-[#00F0FF] hover:text-white flex items-center gap-1.5 transition-colors group cursor-pointer">
+          <span>Explore Salons & Studios</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform text-[#00F0FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </a>
       </div>
 
@@ -349,56 +345,230 @@
   </section>
 
   <!-- =========================================================================
-       FRESHA 1: HERO & 3-INPUT LIVE SEARCH BAR
+       SECTION 3: HOURS & INFO STRIP (KINGSTON'S TRADITIONAL SPECIFICATION)
        ========================================================================= -->
-  <section id="hero" class="relative pt-12 pb-16 lg:pt-16 lg:pb-20 bg-gradient-to-b from-freshaGray/60 to-white border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="w-full bg-[#111a2e] border-y border-[#243050] py-5 px-4 sm:px-8 lg:px-16 text-[#f0f4fc]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 md:gap-8">
       
-      <!-- Fresha Big Headline & Subtitle -->
-      <div class="max-w-3xl mb-8">
-        <h1 class="text-4xl sm:text-6xl font-black text-freshaDark tracking-tight leading-[1.08] mb-4">
-          Book local selfcare services
-        </h1>
-        <p class="text-base sm:text-xl text-freshaMuted font-normal leading-relaxed">
-          Discover top-rated salons, barbers, medspas, wellness studios and beauty experts trusted by millions worldwide
+      <!-- Item 1: Mon–Fri -->
+      <div class="flex flex-col gap-1">
+        <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#7e8aa8]">Mon–Fri</span>
+        <span class="font-sans-ui text-sm font-medium text-[#f0f4fc]">9:00 am – 7:00 pm</span>
+      </div>
+
+      <div class="hidden md:block w-px h-8 bg-[#243050]"></div>
+
+      <!-- Item 2: Saturday -->
+      <div class="flex flex-col gap-1">
+        <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#7e8aa8]">Saturday</span>
+        <span class="font-sans-ui text-sm font-medium text-[#f0f4fc]">8:00 am – 6:00 pm</span>
+      </div>
+
+      <div class="hidden md:block w-px h-8 bg-[#243050]"></div>
+
+      <!-- Item 3: Sunday -->
+      <div class="flex flex-col gap-1">
+        <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#7e8aa8]">Sunday</span>
+        <span class="font-sans-ui text-sm font-medium text-[#f0f4fc]">10:00 am – 4:00 pm</span>
+      </div>
+
+      <div class="hidden md:block w-px h-8 bg-[#243050]"></div>
+
+      <!-- Item 4: Address / Location -->
+      <div class="flex flex-col gap-1">
+        <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#7e8aa8]">Address</span>
+        <span class="font-sans-ui text-sm font-medium text-[#f0f4fc]">14 Northern Quarter, Manchester · Flagship Dhaka Hub</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: CRAFT SERVICES (KINGSTON'S 3x2 GRID SPECIFICATION)
+       ========================================================================= -->
+  <section id="services" class="py-24 px-4 sm:px-8 lg:px-16 bg-[#0c1220] text-[#f0f4fc]">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Header Row -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="red-accent-line"></span>
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#f0f4fc]">
+            Every service,<br>
+            <span class="italic text-[#e8220a]">done properly.</span>
+          </h2>
+        </div>
+        <p class="font-sans-ui text-sm text-[#7e8aa8] max-w-xs leading-relaxed md:text-right">
+          No rushing. No shortcuts. Every client gets the same time and attention.
         </p>
       </div>
 
-      <!-- The Signature Fresha Floating 3-Pill Search Matrix -->
-      <div class="w-full bg-white rounded-3xl sm:rounded-full p-2.5 sm:p-3 border border-freshaBorder shadow-xl shadow-black/5 mb-8">
-        <form id="hero-search-form" class="grid grid-cols-1 sm:grid-cols-12 gap-2 items-center" onsubmit="event.preventDefault(); window.handleHeroSearch();">
+      <!-- Services 3x2 Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 01 Classic Cut -->
+        <div onclick="window.selectServiceDirect('Classic Cut', 650)" class="kingston-card p-8 flex flex-col justify-between cursor-pointer group">
+          <div class="flex flex-col gap-3">
+            <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] font-semibold">01 · Classic Cut</span>
+            <h3 class="font-display text-2xl font-bold text-[#f0f4fc] group-hover:text-white transition-colors">Classic Cut</h3>
+            <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+              Scissor or clipper cut shaped to your head. Finished with hot towel, product styling, and a clean neckline.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#243050]/80 flex items-center justify-between">
+            <span class="font-mono-code text-base font-bold text-[#e8220a]">from BDT 650</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-[#7e8aa8] group-hover:text-[#f0f4fc] transition-colors flex items-center gap-1">
+              Select <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 02 Cut & Beard -->
+        <div onclick="window.selectServiceDirect('Cut & Beard Sculpt', 950)" class="kingston-card p-8 flex flex-col justify-between cursor-pointer group">
+          <div class="flex flex-col gap-3">
+            <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] font-semibold">02 · Cut & Beard</span>
+            <h3 class="font-display text-2xl font-bold text-[#f0f4fc] group-hover:text-white transition-colors">Cut & Beard</h3>
+            <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+              Full haircut paired with a precision beard sculpt. Straight-razor detailing and hot-towel finish included.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#243050]/80 flex items-center justify-between">
+            <span class="font-mono-code text-base font-bold text-[#e8220a]">from BDT 950</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-[#7e8aa8] group-hover:text-[#f0f4fc] transition-colors flex items-center gap-1">
+              Select <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 03 Hot Towel Shave -->
+        <div onclick="window.selectServiceDirect('Hot Towel Shave', 750)" class="kingston-card p-8 flex flex-col justify-between cursor-pointer group">
+          <div class="flex flex-col gap-3">
+            <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] font-semibold">03 · Hot Towel Shave</span>
+            <h3 class="font-display text-2xl font-bold text-[#f0f4fc] group-hover:text-white transition-colors">Hot Towel Shave</h3>
+            <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+              Traditional straight-razor shave. Pre-shave oil, multiple hot-towel passes, and a cooling post-shave balm.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#243050]/80 flex items-center justify-between">
+            <span class="font-mono-code text-base font-bold text-[#e8220a]">from BDT 750</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-[#7e8aa8] group-hover:text-[#f0f4fc] transition-colors flex items-center gap-1">
+              Select <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 04 Fade -->
+        <div onclick="window.selectServiceDirect('Precision Skin Fade', 700)" class="kingston-card p-8 flex flex-col justify-between cursor-pointer group">
+          <div class="flex flex-col gap-3">
+            <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] font-semibold">04 · Fade</span>
+            <h3 class="font-display text-2xl font-bold text-[#f0f4fc] group-hover:text-white transition-colors">Fade</h3>
+            <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+              Skin, low, mid, or high — blended with precision and tapered clean. Any length on top.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#243050]/80 flex items-center justify-between">
+            <span class="font-mono-code text-base font-bold text-[#e8220a]">from BDT 700</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-[#7e8aa8] group-hover:text-[#f0f4fc] transition-colors flex items-center gap-1">
+              Select <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 05 Shape & Lineup -->
+        <div onclick="window.selectServiceDirect('Shape & Lineup', 450)" class="kingston-card p-8 flex flex-col justify-between cursor-pointer group">
+          <div class="flex flex-col gap-3">
+            <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] font-semibold">05 · Shape & Lineup</span>
+            <h3 class="font-display text-2xl font-bold text-[#f0f4fc] group-hover:text-white transition-colors">Shape & Lineup</h3>
+            <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+              Razor-sharp edge work on the hairline, temples, and behind the ears. Add-on or standalone.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#243050]/80 flex items-center justify-between">
+            <span class="font-mono-code text-base font-bold text-[#e8220a]">from BDT 450</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-[#7e8aa8] group-hover:text-[#f0f4fc] transition-colors flex items-center gap-1">
+              Select <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 06 The Works -->
+        <div onclick="window.selectServiceDirect('The Works Ritual', 1800)" class="kingston-card p-8 flex flex-col justify-between cursor-pointer group">
+          <div class="flex flex-col gap-3">
+            <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] font-semibold">06 · The Works</span>
+            <h3 class="font-display text-2xl font-bold text-[#f0f4fc] group-hover:text-white transition-colors">The Works</h3>
+            <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+              Cut, beard sculpt, hot towel shave, and scalp massage. Our full ritual. Allow 80 minutes.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#243050]/80 flex items-center justify-between">
+            <span class="font-mono-code text-base font-bold text-[#e8220a]">from BDT 1,800</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-[#7e8aa8] group-hover:text-[#f0f4fc] transition-colors flex items-center gap-1">
+              Select <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: ANIMATED BARBER POLE FULL-BLEED DIVIDER STRIPE
+       ========================================================================= -->
+  <div class="barber-pole-divider"></div>
+
+  <!-- =========================================================================
+       FEATURE: 64-DISTRICT SEARCH & RECOMMENDED STUDIOS DIRECTORY
+       ========================================================================= -->
+  <section id="around-you" class="py-24 px-4 sm:px-8 lg:px-16 bg-[#0c1220] border-b border-[#243050]">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Directory Header & Live 3-Input Search -->
+      <div class="bg-[#111a2e] border border-[#243050] rounded-sm p-6 sm:p-8 mb-12">
+        <div class="max-w-3xl mb-6">
+          <span class="red-accent-line"></span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#f0f4fc] mb-2">
+            Find Premier Studios & Master Barbers
+          </h2>
+          <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+            Search verified salons, grooming cabins, and luxury studios across all 64 districts with live opening hours.
+          </p>
+        </div>
+
+        <!-- 3-Input Live Search Bar -->
+        <form id="hero-search-form" class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center" onsubmit="event.preventDefault(); window.handleHeroSearch();">
           
-          <!-- Input 1: Any service or venue -->
-          <div class="sm:col-span-5 relative flex items-center px-3 py-2 border-b sm:border-b-0 sm:border-r border-freshaBorder">
-            <span class="text-freshaMuted mr-3">
-              <svg class="w-5 h-5 text-freshaPurple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <!-- Input 1: Service / Salon -->
+          <div class="sm:col-span-5 relative flex items-center px-4 py-3 bg-[#172138] border border-[#243050] rounded-sm">
+            <span class="text-[#7e8aa8] mr-3">
+              <svg class="w-4 h-4 text-[#e8220a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </span>
             <input 
               type="text" 
               id="hero-search-query" 
-              placeholder="Any service or salon name" 
-              class="w-full text-sm font-medium bg-transparent focus:outline-none placeholder-freshaLightText text-freshaDark"
+              placeholder="Search by haircut, shave or studio..." 
+              class="w-full text-xs font-medium bg-transparent focus:outline-none placeholder-[#546080] text-[#f0f4fc]"
             />
           </div>
 
-          <!-- Input 2: Current Location or District -->
-          <div class="sm:col-span-4 relative flex items-center px-3 py-2 border-b sm:border-b-0 sm:border-r border-freshaBorder">
-            <span class="text-freshaMuted mr-3">
-              <svg class="w-5 h-5 text-freshaPurple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+          <!-- Input 2: District Selection -->
+          <div class="sm:col-span-4 relative flex items-center px-4 py-3 bg-[#172138] border border-[#243050] rounded-sm">
+            <span class="text-[#7e8aa8] mr-3">
+              <svg class="w-4 h-4 text-[#e8220a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
             </span>
             <select 
               id="hero-area-select" 
-              class="w-full text-sm font-medium bg-transparent focus:outline-none text-freshaDark cursor-pointer"
+              class="w-full text-xs font-medium bg-transparent focus:outline-none text-[#f0f4fc] cursor-pointer"
             >
-              <option value="">Current location (64 Districts)</option>
-              <option value="Dhanmondi">Dhanmondi, Dhaka</option>
-              <option value="Banani">Banani, Dhaka</option>
-              <option value="Gulshan">Gulshan, Dhaka</option>
-              <option value="Mirpur">Mirpur, Dhaka</option>
-              <option value="Uttara">Uttara, Dhaka</option>
-              <option value="Chattogram">Chattogram Hub</option>
-              <option value="Sylhet">Sylhet Hub</option>
-              <option value="Outside">Outside Dhaka</option>
+              <option value="" class="bg-[#172138]">All Bangladesh (64 Districts)</option>
+              <option value="Dhanmondi" class="bg-[#172138]">Dhanmondi, Dhaka</option>
+              <option value="Banani" class="bg-[#172138]">Banani, Dhaka</option>
+              <option value="Gulshan" class="bg-[#172138]">Gulshan, Dhaka</option>
+              <option value="Mirpur" class="bg-[#172138]">Mirpur, Dhaka</option>
+              <option value="Uttara" class="bg-[#172138]">Uttara, Dhaka</option>
+              <option value="Chattogram" class="bg-[#172138]">Chattogram Hub</option>
+              <option value="Sylhet" class="bg-[#172138]">Sylhet Hub</option>
             </select>
           </div>
 
@@ -406,355 +576,138 @@
           <div class="sm:col-span-3">
             <button 
               type="submit" 
-              class="fresha-btn-purple w-full py-3 px-6 text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-freshaPurple/25"
+              class="btn-barber-primary w-full py-3.5 text-xs font-bold"
             >
-              <span>Search</span>
+              <span>Search Studios</span>
               <span>→</span>
             </button>
           </div>
 
         </form>
+
+        <!-- District Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2 mt-5 pt-4 border-t border-[#243050]/60">
+          <span class="font-mono-code text-[11px] text-[#7e8aa8] uppercase mr-2">Quick Filter:</span>
+          <button onclick="window.filterByNavLocation('all')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">All Studios</button>
+          <button onclick="window.filterByNavLocation('Dhanmondi')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">Dhanmondi</button>
+          <button onclick="window.filterByNavLocation('Banani')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">Banani</button>
+          <button onclick="window.filterByNavLocation('Gulshan')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">Gulshan</button>
+          <button onclick="window.filterByNavLocation('Mirpur')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">Mirpur</button>
+          <button onclick="window.filterByNavLocation('Uttara')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">Uttara</button>
+          <button onclick="window.filterByNavLocation('Chattogram')" class="font-mono-code text-[11px] px-3 py-1 bg-[#172138] hover:bg-[#243050] text-[#f0f4fc] border border-[#243050] rounded-sm transition-colors">Chattogram</button>
+        </div>
+
       </div>
 
-      <!-- Fresha Live Stat Bar: Appointments booked today -->
-      <div class="flex flex-wrap items-center justify-between text-xs text-freshaMuted px-2">
-        <div class="flex items-center gap-2.5">
-          <span class="inline-block w-2.5 h-2.5 rounded-full bg-freshaGreen animate-pulse"></span>
-          <span class="font-bold text-freshaDark text-sm">293,318</span>
-          <span>appointments booked today</span>
-        </div>
-        <div class="hidden sm:flex items-center gap-3">
-          <span class="text-freshaDark font-medium">Free cancellation anytime</span>
-          <span>•</span>
-          <span class="text-freshaGreen font-medium">Verified Studios & Salons</span>
-          <span>•</span>
-          <span id="live-bst-clock" class="font-mono text-freshaDark">Dhaka Time · 12:00 PM</span>
-        </div>
+      <!-- Live Recommended Salons Grid (Dynamically Populated by app.js) -->
+      <div id="recommended-salons-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by app.js -->
       </div>
-
-
 
     </div>
   </section>
 
   <!-- =========================================================================
-       FRESHA 2: RECOMMENDED SALONS (TOP-RATED & BEST IN CLASS)
+       SECTION 6: OUR BARBERS (KINGSTON'S 4-COLUMN SPECIFICATION)
        ========================================================================= -->
-  <section id="around-you" class="py-16 bg-white border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="barbers" class="py-24 px-4 sm:px-8 lg:px-16 bg-[#0c1220] border-b border-[#243050]">
+    <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-freshaBorder">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-freshaDark tracking-tight">
-            Recommended
-          </h2>
-          <p class="text-sm text-freshaMuted mt-1">
-            Top-rated beauty salons, barbers and wellness studios near you
-          </p>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="mt-4 md:mt-0 flex flex-wrap gap-2 text-xs">
-          <button class="filter-tab-btn active px-4 py-2 rounded-full border border-freshaDark bg-freshaDark text-white font-semibold" data-filter="all">All</button>
-          <button class="filter-tab-btn px-4 py-2 rounded-full border border-freshaBorder bg-white hover:border-freshaDark text-freshaDark font-medium" data-filter="Dhanmondi">Dhanmondi</button>
-          <button class="filter-tab-btn px-4 py-2 rounded-full border border-freshaBorder bg-white hover:border-freshaDark text-freshaDark font-medium" data-filter="Banani">Banani</button>
-          <button class="filter-tab-btn px-4 py-2 rounded-full border border-freshaBorder bg-white hover:border-freshaDark text-freshaDark font-medium" data-filter="Gulshan">Gulshan</button>
-          <button class="filter-tab-btn px-4 py-2 rounded-full border border-freshaBorder bg-white hover:border-freshaDark text-freshaDark font-medium" data-filter="Mirpur">Mirpur</button>
-          <button class="filter-tab-btn px-4 py-2 rounded-full border border-freshaBorder bg-white hover:border-freshaDark text-freshaDark font-medium" data-filter="Uttara">Uttara</button>
-          <button class="filter-tab-btn px-4 py-2 rounded-full border border-freshaBorder bg-white hover:border-freshaDark text-freshaDark font-medium" data-filter="Outside">Other Districts</button>
-        </div>
-      </div>
-
-      <!-- 3x2 Interactive Salon Window Grid -->
-      <div id="salon-directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <!-- Rendered dynamically via JavaScript in pure English -->
-      </div>
-
-      <!-- Bottom Reference Actions -->
-      <div class="text-center pt-4">
-        <button onclick="window.filterByNavLocation('all')" class="fresha-btn-secondary px-8 py-3 text-xs uppercase tracking-wider font-bold">
-          View more recommended venues
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       FRESHA 3: POPULAR SELFCARE CATEGORIES
-       ========================================================================= -->
-  <section id="services" class="py-16 bg-freshaGray border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="mb-10 text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-freshaDark tracking-tight">
-          Explore treatments and services
+      <div class="max-w-2xl mb-16">
+        <span class="red-accent-line"></span>
+        <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] block mb-2 font-semibold">Our Barbers</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-[#f0f4fc] leading-tight mb-4">
+          The people <span class="italic text-[#e8220a]">behind the chair.</span>
         </h2>
-        <p class="text-sm text-freshaMuted mt-1.5">
-          Everything from haircuts and skin fades to therapeutic deep massages
+        <p class="font-sans-ui text-sm text-[#7e8aa8] leading-relaxed">
+          Every barber at Kingston's has trained for a minimum of five years. You're in experienced hands.
         </p>
       </div>
 
-      <!-- 6 Service Category Cards (Matching Fresha Industry Grid) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        
-        <!-- Category 1: Hair Salon -->
-        <div onclick="window.selectServiceAndBook('Executive Haircut & Styling')" class="fresha-card p-4 text-center cursor-pointer group bg-white">
-          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden mb-3 border border-freshaBorder group-hover:border-freshaPurple transition-colors">
-            <img src="assets/service-hair.jpg" alt="Hair Salons" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <h3 class="text-xs font-bold text-freshaDark group-hover:text-freshaPurple transition-colors">Hair Salons</h3>
-          <span class="text-[11px] text-freshaMuted mt-0.5 block">From BDT 300</span>
-        </div>
-
-        <!-- Category 2: Barbershops -->
-        <div onclick="window.selectServiceAndBook('Hot Towel Razor Shave')" class="fresha-card p-4 text-center cursor-pointer group bg-white">
-          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden mb-3 border border-freshaBorder group-hover:border-freshaPurple transition-colors">
-            <img src="assets/service-shave.jpg" alt="Barbershops" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <h3 class="text-xs font-bold text-freshaDark group-hover:text-freshaPurple transition-colors">Barbershops</h3>
-          <span class="text-[11px] text-freshaMuted mt-0.5 block">From BDT 150</span>
-        </div>
-
-        <!-- Category 3: Beard Art -->
-        <div onclick="window.selectServiceAndBook('Beard Trim & Sculpting')" class="fresha-card p-4 text-center cursor-pointer group bg-white">
-          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden mb-3 border border-freshaBorder group-hover:border-freshaPurple transition-colors">
-            <img src="assets/service-trim.jpg" alt="Beard Art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <h3 class="text-xs font-bold text-freshaDark group-hover:text-freshaPurple transition-colors">Beard & Shave</h3>
-          <span class="text-[11px] text-freshaMuted mt-0.5 block">From BDT 250</span>
-        </div>
-
-        <!-- Category 4: Massage & Scalp Spa -->
-        <div onclick="window.selectServiceAndBook('Hair Colouring & Spa')" class="fresha-card p-4 text-center cursor-pointer group bg-white">
-          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden mb-3 border border-freshaBorder group-hover:border-freshaPurple transition-colors">
-            <img src="assets/service-color.jpg" alt="Massage & Spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <h3 class="text-xs font-bold text-freshaDark group-hover:text-freshaPurple transition-colors">Massage & Spa</h3>
-          <span class="text-[11px] text-freshaMuted mt-0.5 block">From BDT 600</span>
-        </div>
-
-        <!-- Category 5: Skin Care & Facial -->
-        <div onclick="window.selectServiceAndBook('Charcoal Deep Facial')" class="fresha-card p-4 text-center cursor-pointer group bg-white">
-          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden mb-3 border border-freshaBorder group-hover:border-freshaPurple transition-colors">
-            <img src="assets/service-facial.jpg" alt="Skin Care & Facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <h3 class="text-xs font-bold text-freshaDark group-hover:text-freshaPurple transition-colors">Facials & Skin</h3>
-          <span class="text-[11px] text-freshaMuted mt-0.5 block">From BDT 500</span>
-        </div>
-
-        <!-- Category 6: Complete VIP Grooming -->
-        <div onclick="window.selectServiceAndBook('Full Grooming Package')" class="fresha-card p-4 text-center cursor-pointer group bg-white">
-          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden mb-3 border border-freshaBorder group-hover:border-freshaPurple transition-colors">
-            <img src="assets/service-style.jpg" alt="VIP Grooming" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <h3 class="text-xs font-bold text-freshaDark group-hover:text-freshaPurple transition-colors">VIP Packages</h3>
-          <span class="text-[11px] text-freshaMuted mt-0.5 block">From BDT 800</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       FRESHA 4: TRENDING / NEW TO FRESHA
-       ========================================================================= -->
-  <section class="py-16 bg-white border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex items-center justify-between mb-8 pb-3 border-b border-freshaBorder">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-freshaDark tracking-tight">
-            Trending & New on Fresha
-          </h2>
-          <p class="text-sm text-freshaMuted mt-1">
-            Top-rated locations with high client retention and 5-star ratings
-          </p>
-        </div>
-        <a href="#booking-engine" class="text-xs font-semibold text-freshaPurple hover:underline hidden sm:block">
-          See all trending venues →
-        </a>
-      </div>
-
-      <!-- 3 Featured Spotlight Studios -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Spotlight 1 -->
-        <div class="fresha-card overflow-hidden">
-          <div class="relative h-52">
-            <img src="assets/studio-haven.jpg" alt="The Haven Studio" class="w-full h-full object-cover">
-            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-freshaDark shadow">
-              ★ 4.92 (340)
-            </div>
-          </div>
-          <div class="p-5">
-            <span class="badge-best-in-class mb-2">🏆 Best in Class</span>
-            <h3 class="text-base font-bold text-freshaDark">The Haven Luxury Grooming Studio</h3>
-            <p class="text-xs text-freshaMuted mt-1">Road 27 (Old 16), Dhanmondi, Dhaka</p>
-            <div class="mt-4 pt-3 border-t border-freshaBorder flex items-center justify-between">
-              <span class="text-xs text-freshaGreen font-semibold">Open Now · Closes 10:30 PM</span>
-              <button onclick="window.selectSalonForBooking('The Haven Luxury Grooming Studio', 'Dhanmondi')" class="fresha-btn-primary text-xs px-4 py-2">
-                Book
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spotlight 2 -->
-        <div class="fresha-card overflow-hidden">
-          <div class="relative h-52">
-            <img src="assets/studio-barberia.jpg" alt="Barberia Craft Studio" class="w-full h-full object-cover">
-            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-freshaDark shadow">
-              ★ 4.95 (520)
-            </div>
-          </div>
-          <div class="p-5">
-            <span class="badge-best-in-class mb-2">🏆 Best in Class</span>
-            <h3 class="text-base font-bold text-freshaDark">Barberia Craft Studio</h3>
-            <p class="text-xs text-freshaMuted mt-1">Road 11, Block D, Banani, Dhaka</p>
-            <div class="mt-4 pt-3 border-t border-freshaBorder flex items-center justify-between">
-              <span class="text-xs text-freshaGreen font-semibold">Open Now · Closes 11:00 PM</span>
-              <button onclick="window.selectSalonForBooking('Barberia Craft Studio', 'Banani')" class="fresha-btn-primary text-xs px-4 py-2">
-                Book
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spotlight 3 -->
-        <div class="fresha-card overflow-hidden">
-          <div class="relative h-52">
-            <img src="assets/service-shave.jpg" alt="Kingsman Barbershop & Spa" class="w-full h-full object-cover">
-            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-freshaDark shadow">
-              ★ 4.88 (410)
-            </div>
-          </div>
-          <div class="p-5">
-            <span class="badge-highly-recommended mb-2">★ Highly Recommended</span>
-            <h3 class="text-base font-bold text-freshaDark">Kingsman Barbershop & Spa</h3>
-            <p class="text-xs text-freshaMuted mt-1">Avenue 2, Circle 2, Gulshan, Dhaka</p>
-            <div class="mt-4 pt-3 border-t border-freshaBorder flex items-center justify-between">
-              <span class="text-xs text-freshaGreen font-semibold">Open Now · Closes 11:30 PM</span>
-              <button onclick="window.selectSalonForBooking('Kingsman Barbershop & Spa', 'Gulshan')" class="fresha-btn-primary text-xs px-4 py-2">
-                Book
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       FRESHA 5: TOP STYLISTS & PROFESSIONALS (BOOK WITH THE BEST)
-       ========================================================================= -->
-  <section id="barbers" class="py-16 bg-freshaGray border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-freshaDark tracking-tight">
-          Book top beauty and wellness professionals
-        </h2>
-        <p class="text-sm text-freshaMuted mt-2">
-          Certified master barbers and senior stylists with thousands of 5-star ratings
-        </p>
-      </div>
-
-      <!-- 4 Barbers Portrait Grid -->
+      <!-- 4 Barbers Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Barber 1 -->
-        <div class="fresha-card p-5 text-center bg-white flex flex-col justify-between">
-          <div>
-            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-freshaBorder shadow-sm">
-              <img src="assets/barber-1.jpg" alt="Master Belal Hossain" class="w-full h-full object-cover">
-            </div>
-            <h3 class="text-base font-bold text-freshaDark">Master Belal Hossain</h3>
-            <span class="text-xs text-freshaPurple font-semibold block mt-0.5">Master Barber (14 Yrs)</span>
-            <div class="flex items-center justify-center gap-1 text-xs text-freshaGold my-2 font-bold">
-              <span>★ 4.9</span>
-              <span class="text-freshaMuted font-normal">(420 reviews)</span>
-            </div>
-            <p class="text-xs text-freshaMuted leading-relaxed">
-              Classic shear layering, royal razor shaves, and executive styling.
-            </p>
+        <!-- Barber 1: James Kingston -->
+        <div class="kingston-card overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[3/4] overflow-hidden bg-[#111a2e] relative">
+            <img src="assets/barber-1.jpg" alt="James Kingston" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#172138] via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="mt-5 pt-3 border-t border-freshaBorder">
-            <button onclick="window.selectStylistBooking('Master Belal Hossain', 'The Haven Luxury Grooming Studio')" class="fresha-btn-purple w-full py-2 text-xs font-bold">
-              Book Appointment
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <h3 class="font-display text-xl font-bold text-[#f0f4fc]">James Kingston</h3>
+              <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#e8220a] block mt-1">Fades & Classic Cuts</span>
+              <p class="font-sans-ui text-xs text-[#7e8aa8] leading-relaxed mt-2.5">
+                Third-generation barber. Fifteen years behind the chair and still loves every cut.
+              </p>
+            </div>
+            <button onclick="window.selectBarberDirect('James Kingston')" class="font-sans-ui text-xs text-[#e8220a] hover:text-[#f0f4fc] font-semibold flex items-center gap-1.5 mt-5 transition-colors text-left">
+              <span>Book with James</span>
+              <span>→</span>
             </button>
           </div>
         </div>
 
-        <!-- Barber 2 -->
-        <div class="fresha-card p-5 text-center bg-white flex flex-col justify-between">
-          <div>
-            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-freshaBorder shadow-sm">
-              <img src="assets/barber-2.jpg" alt="Shafikur Rahman" class="w-full h-full object-cover">
-            </div>
-            <h3 class="text-base font-bold text-freshaDark">Shafikur Rahman</h3>
-            <span class="text-xs text-freshaPurple font-semibold block mt-0.5">Lead Fade Stylist (8 Yrs)</span>
-            <div class="flex items-center justify-center gap-1 text-xs text-freshaGold my-2 font-bold">
-              <span>★ 4.8</span>
-              <span class="text-freshaMuted font-normal">(380 reviews)</span>
-            </div>
-            <p class="text-xs text-freshaMuted leading-relaxed">
-              Low tapers, skin fades, geometric beard detailing, and styling.
-            </p>
+        <!-- Barber 2: Marcus Webb -->
+        <div class="kingston-card overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[3/4] overflow-hidden bg-[#111a2e] relative">
+            <img src="assets/barber-2.jpg" alt="Marcus Webb" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#172138] via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="mt-5 pt-3 border-t border-freshaBorder">
-            <button onclick="window.selectStylistBooking('Shafikur Rahman', 'Barberia Craft Studio')" class="fresha-btn-purple w-full py-2 text-xs font-bold">
-              Book Appointment
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <h3 class="font-display text-xl font-bold text-[#f0f4fc]">Marcus Webb</h3>
+              <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#e8220a] block mt-1">Textures & Beards</span>
+              <p class="font-sans-ui text-xs text-[#7e8aa8] leading-relaxed mt-2.5">
+                Specialist in Afro-textured hair and beard sculpting. Certified in straight-razor technique.
+              </p>
+            </div>
+            <button onclick="window.selectBarberDirect('Marcus Webb')" class="font-sans-ui text-xs text-[#e8220a] hover:text-[#f0f4fc] font-semibold flex items-center gap-1.5 mt-5 transition-colors text-left">
+              <span>Book with Marcus</span>
+              <span>→</span>
             </button>
           </div>
         </div>
 
-        <!-- Barber 3 -->
-        <div class="fresha-card p-5 text-center bg-white flex flex-col justify-between">
-          <div>
-            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-freshaBorder shadow-sm">
-              <img src="assets/barber-3.jpg" alt="Farhan Tanvir" class="w-full h-full object-cover">
-            </div>
-            <h3 class="text-base font-bold text-freshaDark">Farhan Tanvir</h3>
-            <span class="text-xs text-freshaPurple font-semibold block mt-0.5">Spa & Facial Expert</span>
-            <div class="flex items-center justify-center gap-1 text-xs text-freshaGold my-2 font-bold">
-              <span>★ 4.95</span>
-              <span class="text-freshaMuted font-normal">(510 reviews)</span>
-            </div>
-            <p class="text-xs text-freshaMuted leading-relaxed">
-              Charcoal deep pore cleanse, cold herbal massage, and VIP packages.
-            </p>
+        <!-- Barber 3: Dario Ferrara -->
+        <div class="kingston-card overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[3/4] overflow-hidden bg-[#111a2e] relative">
+            <img src="assets/barber-3.jpg" alt="Dario Ferrara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#172138] via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="mt-5 pt-3 border-t border-freshaBorder">
-            <button onclick="window.selectStylistBooking('Farhan Tanvir', 'Kingsman Barbershop & Spa')" class="fresha-btn-purple w-full py-2 text-xs font-bold">
-              Book Appointment
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <h3 class="font-display text-xl font-bold text-[#f0f4fc]">Dario Ferrara</h3>
+              <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#e8220a] block mt-1">Scissor Work</span>
+              <p class="font-sans-ui text-xs text-[#7e8aa8] leading-relaxed mt-2.5">
+                Trained in Milan. Scissors only. If you want the most precise cut of your life, this is your man.
+              </p>
+            </div>
+            <button onclick="window.selectBarberDirect('Dario Ferrara')" class="font-sans-ui text-xs text-[#e8220a] hover:text-[#f0f4fc] font-semibold flex items-center gap-1.5 mt-5 transition-colors text-left">
+              <span>Book with Dario</span>
+              <span>→</span>
             </button>
           </div>
         </div>
 
-        <!-- Barber 4 -->
-        <div class="fresha-card p-5 text-center bg-white flex flex-col justify-between">
-          <div>
-            <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-freshaBorder shadow-sm">
-              <img src="assets/barber-4.jpg" alt="Tariqul Islam" class="w-full h-full object-cover">
-            </div>
-            <h3 class="text-base font-bold text-freshaDark">Tariqul Islam</h3>
-            <span class="text-xs text-freshaPurple font-semibold block mt-0.5">Classic Barber (10 Yrs)</span>
-            <div class="flex items-center justify-center gap-1 text-xs text-freshaGold my-2 font-bold">
-              <span>★ 4.7</span>
-              <span class="text-freshaMuted font-normal">(290 reviews)</span>
-            </div>
-            <p class="text-xs text-freshaMuted leading-relaxed">
-              Traditional shear layering, beard lining, and mint scalp tonic.
-            </p>
+        <!-- Barber 4: Tom Russell -->
+        <div class="kingston-card overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[3/4] overflow-hidden bg-[#111a2e] relative">
+            <img src="assets/barber-4.jpg" alt="Tom Russell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#172138] via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="mt-5 pt-3 border-t border-freshaBorder">
-            <button onclick="window.selectStylistBooking('Tariqul Islam', 'Vintage Cut Club Mirpur')" class="fresha-btn-purple w-full py-2 text-xs font-bold">
-              Book Appointment
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <h3 class="font-display text-xl font-bold text-[#f0f4fc]">Tom Russell</h3>
+              <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#e8220a] block mt-1">Traditional Shaves</span>
+              <p class="font-sans-ui text-xs text-[#7e8aa8] leading-relaxed mt-2.5">
+                Our hot-towel specialist. Thirty years of straight-razor experience. Walks you through every step.
+              </p>
+            </div>
+            <button onclick="window.selectBarberDirect('Tom Russell')" class="font-sans-ui text-xs text-[#e8220a] hover:text-[#f0f4fc] font-semibold flex items-center gap-1.5 mt-5 transition-colors text-left">
+              <span>Book with Tom</span>
+              <span>→</span>
             </button>
           </div>
         </div>
@@ -765,60 +718,196 @@
   </section>
 
   <!-- =========================================================================
-       FRESHA 6: LIVE ADVANCE BOOKING ENGINE (CALENDAR & CHECKOUT WIZARD)
+       SECTION 7: GALLERY (KINGSTON'S MASONRY SPECIFICATION)
        ========================================================================= -->
-  <section id="booking-engine" class="py-20 bg-white border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="gallery" class="py-24 px-4 sm:px-8 lg:px-16 bg-[#111a2e] border-b border-[#243050]">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Header -->
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="red-accent-line"></span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-[#f0f4fc] leading-tight">
+          The work <span class="italic text-[#e8220a]">speaks for itself.</span>
+        </h2>
+      </div>
+
+      <!-- 9 Images Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/service-hair.jpg" alt="High Fade Haircut" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">High Fade</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/service-shave.jpg" alt="Hot Towel Shave" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Hot Towel Shave</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/service-facial.jpg" alt="Beard Sculpt" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Hot Towel & Groom</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/service-trim.jpg" alt="Razor Neckline" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Razor Detail</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/service-style.jpg" alt="Classic Slick-Back" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Classic Style</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/studio-haven.jpg" alt="Barbershop Interior" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Shop Interior</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/studio-barberia.jpg" alt="Skin Fade Precision" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Taper Precision</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/service-color.jpg" alt="Client in Chair" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">The Chair Experience</div>
+        </div>
+
+        <div class="overflow-hidden border border-[#243050] rounded-sm group relative h-72">
+          <img src="assets/hero-barber.jpg" alt="Tools & Shears" class="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-90 transition-all duration-300">
+          <div class="absolute bottom-3 left-3 bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono-code text-[#f0f4fc]">Master Shears</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 8: TESTIMONIALS (KINGSTON'S SPECIFICATION)
+       ========================================================================= -->
+  <section class="py-24 px-4 sm:px-8 lg:px-16 bg-[#0c1220] border-b border-[#243050]">
+    <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="badge-best-in-class mb-2">⚡ Instant Self-Booking</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-freshaDark tracking-tight">
-          Book an appointment online 24/7
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="red-accent-line"></span>
+        <span class="font-mono-code text-xs uppercase tracking-widest text-[#e8220a] block mb-2 font-semibold">What clients say</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-[#f0f4fc] leading-tight">
+          <span class="italic text-[#e8220a]">Straight from</span> the chair.
         </h2>
-        <p class="text-sm text-freshaMuted mt-2">
-          Select venue, pick services, choose your preferred slot, and lock your confirmed booking.
+      </div>
+
+      <!-- 3 Testimonial Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Quote 1 -->
+        <div class="kingston-card p-8 flex flex-col justify-between">
+          <div>
+            <div class="text-[#e8220a] text-sm tracking-widest mb-4">★★★★★</div>
+            <p class="font-display italic text-base text-[#f0f4fc]/90 leading-relaxed mb-6">
+              "James has cut my hair for six years. I've moved to the other side of the city and I still make the trip. That should say everything."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#243050] font-sans-ui text-xs">
+            <span class="font-semibold text-[#f0f4fc]">— Daniel H.</span>
+            <span class="text-[#7e8aa8] ml-1">· regular since 2018</span>
+          </div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="kingston-card p-8 flex flex-col justify-between">
+          <div>
+            <div class="text-[#e8220a] text-sm tracking-widest mb-4">★★★★★</div>
+            <p class="font-display italic text-base text-[#f0f4fc]/90 leading-relaxed mb-6">
+              "Walked in not knowing what I wanted. Walked out looking better than I have in years. Marcus took his time and got it exactly right."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#243050] font-sans-ui text-xs">
+            <span class="font-semibold text-[#f0f4fc]">— Kwame O.</span>
+            <span class="text-[#7e8aa8] ml-1">· new client</span>
+          </div>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="kingston-card p-8 flex flex-col justify-between">
+          <div>
+            <div class="text-[#e8220a] text-sm tracking-widest mb-4">★★★★★</div>
+            <p class="font-display italic text-base text-[#f0f4fc]/90 leading-relaxed mb-6">
+              "We bring the whole family here — me, my sons, my dad. Four generations in one chair. Kingston's has become part of our routine."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#243050] font-sans-ui text-xs">
+            <span class="font-semibold text-[#f0f4fc]">— Tom B.</span>
+            <span class="text-[#7e8aa8] ml-1">· father of three</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       KINGSTON'S CLASSIC 5-STEP BOOKING ENGINE (CALENDAR & CHECKOUT WIZARD)
+       ========================================================================= -->
+  <section id="booking-engine" class="py-24 bg-[#0c1220] border-b border-[#243050] relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <span class="w-8 h-[2px] bg-[#e8220a]"></span>
+          <span class="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#e8220a]">Online Reservation</span>
+          <span class="w-8 h-[2px] bg-[#e8220a]"></span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          Reserve a chair, <span class="italic text-[#e8220a]">anytime.</span>
+        </h2>
+        <p class="font-sans text-sm text-[#7e8aa8] mt-3 max-w-lg mx-auto leading-relaxed">
+          Select your local branch, customize your service package, pick your master barber, and confirm your slot instantly with zero fees.
         </p>
       </div>
 
       <!-- 5-Step Progress Indicator -->
-      <div class="flex items-center justify-between max-w-2xl mx-auto mb-10 relative px-4">
-        <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-freshaBorder -translate-y-1/2 z-0"></div>
+      <div class="flex items-center justify-between max-w-xl mx-auto mb-12 relative px-4">
+        <div class="absolute top-1/2 left-6 right-6 h-[2px] bg-[#243050] -translate-y-1/2 z-0"></div>
         
-        <button onclick="window.goToBookingStep(1)" id="step-nav-1" class="relative z-10 w-9 h-9 rounded-full bg-freshaPurple text-white text-xs font-bold flex items-center justify-center shadow-md">
-          1
+        <button onclick="window.goToBookingStep(1)" id="step-nav-1" class="relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-mono text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 transition-all">
+          01
         </button>
-        <button onclick="window.goToBookingStep(2)" id="step-nav-2" class="relative z-10 w-9 h-9 rounded-full bg-white border-2 border-freshaBorder text-freshaMuted text-xs font-bold flex items-center justify-center transition-all">
-          2
+        <button onclick="window.goToBookingStep(2)" id="step-nav-2" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          02
         </button>
-        <button onclick="window.goToBookingStep(3)" id="step-nav-3" class="relative z-10 w-9 h-9 rounded-full bg-white border-2 border-freshaBorder text-freshaMuted text-xs font-bold flex items-center justify-center transition-all">
-          3
+        <button onclick="window.goToBookingStep(3)" id="step-nav-3" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          03
         </button>
-        <button onclick="window.goToBookingStep(4)" id="step-nav-4" class="relative z-10 w-9 h-9 rounded-full bg-white border-2 border-freshaBorder text-freshaMuted text-xs font-bold flex items-center justify-center transition-all">
-          4
+        <button onclick="window.goToBookingStep(4)" id="step-nav-4" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          04
         </button>
-        <button onclick="window.goToBookingStep(5)" id="step-nav-5" class="relative z-10 w-9 h-9 rounded-full bg-white border-2 border-freshaBorder text-freshaMuted text-xs font-bold flex items-center justify-center transition-all">
-          5
+        <button onclick="window.goToBookingStep(5)" id="step-nav-5" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          05
         </button>
       </div>
 
       <!-- Booking Card Window -->
-      <div class="max-w-4xl mx-auto fresha-card p-6 sm:p-10 shadow-lg">
+      <div class="max-w-4xl mx-auto kingston-card bg-[#111a2e] border border-[#243050] p-6 sm:p-10 shadow-2xl">
         
         <!-- STEP 1: Choose Salon & Area -->
         <div id="booking-step-1" class="booking-step-panel">
-          <div class="flex items-center justify-between mb-6 pb-3 border-b border-freshaBorder">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-freshaPurple block">Step 01 / 05</span>
-              <h3 class="text-xl font-bold text-freshaDark">Select Salon & Location</h3>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 01 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Select Location & Studio</h3>
             </div>
-            <span class="text-xs text-freshaMuted">Zero Booking Fee</span>
+            <span class="font-mono text-[11px] uppercase tracking-wider px-3 py-1 bg-[#172138] border border-[#243050] text-[#e8220a] rounded">Direct Walk-in / Booking</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div>
-              <label class="block text-xs font-semibold text-freshaDark mb-2">District / Hub Filter:</label>
-              <select id="booking-hub-filter" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple" onchange="window.filterBookingSalonsByArea(this.value)">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">District / Hub Filter:</label>
+              <select id="booking-hub-filter" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]" onchange="window.filterBookingSalonsByArea(this.value)">
                 <option value="all">All Locations (64 Districts)</option>
                 <option value="Dhanmondi" selected>Dhanmondi Hub</option>
                 <option value="Banani">Banani Hub</option>
@@ -831,28 +920,28 @@
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-freshaDark mb-2">Select Salon Studio: *</label>
-              <select id="booking-salon-select" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple" onchange="window.onBookingSalonChange(this.value)">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Select Studio Chair: *</label>
+              <select id="booking-salon-select" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]" onchange="window.onBookingSalonChange(this.value)">
                 <!-- Dynamically populated via JS -->
               </select>
             </div>
           </div>
 
           <!-- Active Selected Salon Summary Preview -->
-          <div id="booking-active-salon-card" class="p-4 rounded-xl bg-freshaGray border border-freshaBorder mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div id="booking-active-salon-card" class="p-5 rounded bg-[#172138] border border-[#243050] mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <span class="text-xs font-bold text-freshaPurple block" id="booking-salon-window-badge">Dhanmondi Hub / 4.92 ★</span>
-              <h4 class="text-base font-bold text-freshaDark mt-0.5" id="preview-salon-name">The Haven Luxury Grooming Studio</h4>
-              <p class="text-xs text-freshaMuted mt-0.5" id="preview-salon-address">Road 27 (Old 16), Dhanmondi, Dhaka-1209</p>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-[#e8220a] block mb-1" id="booking-salon-window-badge">Dhanmondi Hub • Rated 4.92</span>
+              <h4 class="font-display text-lg font-bold text-white" id="preview-salon-name">The Haven Luxury Grooming Studio</h4>
+              <p class="font-sans text-xs text-[#7e8aa8] mt-1" id="preview-salon-address">Road 27 (Old 16), Dhanmondi, Dhaka-1209</p>
             </div>
             <div class="text-left sm:text-right">
-              <span class="text-xs font-bold text-freshaGreen block" id="preview-salon-hours">Open Now · Closes in 12h 20m</span>
-              <span class="text-xs text-freshaMuted block">Direct Hotline: +880 1711-904421</span>
+              <span class="font-mono text-xs font-bold text-emerald-400 block" id="preview-salon-hours">Open Now · Closes in 12h 20m</span>
+              <span class="font-mono text-xs text-[#7e8aa8] block mt-1">Direct Hotline: +880 1711-904421</span>
             </div>
           </div>
 
           <div class="flex justify-end">
-            <button onclick="window.goToBookingStep(2)" class="fresha-btn-purple px-7 py-3 text-xs font-bold shadow-md flex items-center gap-2">
+            <button onclick="window.goToBookingStep(2)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
               <span>Next: Select Services</span>
               <span>→</span>
             </button>
@@ -861,32 +950,32 @@
 
         <!-- STEP 2: Choose Services & Pricing -->
         <div id="booking-step-2" class="booking-step-panel hidden">
-          <div class="flex items-center justify-between mb-6 pb-3 border-b border-freshaBorder">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-freshaPurple block">Step 02 / 05</span>
-              <h3 class="text-xl font-bold text-freshaDark">Select Services & Treatments</h3>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 02 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Select Services & Treatments</h3>
             </div>
-            <span class="text-xs font-semibold text-freshaMuted" id="services-step-salon-indicator">The Haven Studio</span>
+            <span class="font-mono text-xs text-[#7e8aa8]" id="services-step-salon-indicator">The Haven Studio</span>
           </div>
 
-          <p class="text-xs text-freshaMuted mb-6">
-            Choose from the menu below. Durations and prices update in real-time.
+          <p class="font-sans text-xs text-[#7e8aa8] mb-6">
+            Choose your services below. Pricing and duration calibrate in real time.
           </p>
 
           <div id="booking-services-checkboxes" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <!-- Dynamically populated via JS -->
           </div>
 
-          <div class="flex items-center justify-between pt-4 border-t border-freshaBorder">
-            <button onclick="window.goToBookingStep(1)" class="fresha-btn-secondary px-5 py-2.5 text-xs font-bold">
+          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
+            <button onclick="window.goToBookingStep(1)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
               ← Back
             </button>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-6">
               <div class="text-right">
-                <span class="text-[10px] text-freshaMuted block uppercase font-bold">Estimated Total</span>
-                <span class="text-base font-black text-freshaPurple" id="services-live-total">BDT 350</span>
+                <span class="font-mono text-[10px] text-[#7e8aa8] block uppercase tracking-wider">Estimated Total</span>
+                <span class="font-mono text-lg font-black text-[#e8220a]" id="services-live-total">BDT 350</span>
               </div>
-              <button onclick="window.goToBookingStep(3)" class="fresha-btn-purple px-7 py-3 text-xs font-bold shadow-md flex items-center gap-2">
+              <button onclick="window.goToBookingStep(3)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
                 <span>Next: Date & Time</span>
                 <span>→</span>
               </button>
@@ -896,51 +985,51 @@
 
         <!-- STEP 3: Choose Date & Time Slot -->
         <div id="booking-step-3" class="booking-step-panel hidden">
-          <div class="flex items-center justify-between mb-6 pb-3 border-b border-freshaBorder">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-freshaPurple block">Step 03 / 05</span>
-              <h3 class="text-xl font-bold text-freshaDark">Choose Date & Time</h3>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 03 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Choose Date & Time</h3>
             </div>
-            <span class="text-xs text-freshaMuted">Live BST Calendar</span>
+            <span class="font-mono text-xs text-[#7e8aa8]">Live BST Calendar</span>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             <div class="sm:col-span-1">
-              <label class="block text-xs font-semibold text-freshaDark mb-2">Reservation Date: *</label>
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Reservation Date: *</label>
               <input 
                 type="date" 
                 id="booking-date-input" 
-                class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark font-medium focus:outline-none focus:border-freshaPurple" 
+                class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-xs text-white font-mono focus:outline-none focus:border-[#e8220a]" 
                 onchange="window.generateDynamicTimeSlots()"
               />
-              <span class="text-[10px] text-freshaMuted mt-1.5 block">Bookings available 7 days in advance.</span>
+              <span class="font-mono text-[10px] text-[#7e8aa8] mt-1.5 block">Bookings available 7 days in advance.</span>
             </div>
 
             <div class="sm:col-span-2">
-              <label class="block text-xs font-semibold text-freshaDark mb-2">Preferred Stylist / Staff Member (Optional):</label>
-              <select id="booking-stylist-select" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark font-medium focus:outline-none focus:border-freshaPurple">
-                <option value="Any Available Master Barber">Any professional (Fastest slot)</option>
-                <option value="Master Belal Hossain">Master Belal Hossain (Classic Cuts / Shave)</option>
-                <option value="Shafikur Rahman">Shafikur Rahman (Fade & Beard Specialist)</option>
-                <option value="Farhan Tanvir">Farhan Tanvir (Skin Care & VIP Styling)</option>
-                <option value="Tariqul Islam">Tariqul Islam (Classic Grooming)</option>
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Preferred Master Barber:</label>
+              <select id="booking-stylist-select" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]">
+                <option value="Any Available Master Barber">Any Available Master Barber (Fastest Slot)</option>
+                <option value="James Kingston">James Kingston — Founder & Master Barber (40 yrs exp)</option>
+                <option value="Marcus Webb">Marcus Webb — Senior Barber (Fade & Beard Specialist)</option>
+                <option value="Dario Ferrara">Dario Ferrara — Hot Towel & Traditional Shave</option>
+                <option value="Tom Russell">Tom Russell — Scissor Specialist & Styling</option>
               </select>
             </div>
           </div>
 
           <!-- Dynamic Slots Grid -->
           <div class="mb-8">
-            <label class="block text-xs font-semibold text-freshaDark mb-3">Available Slots (BST Time): *</label>
+            <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-3">Available BST Time Slots: *</label>
             <div id="dynamic-time-slots-container" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
               <!-- Dynamically populated via JS -->
             </div>
           </div>
 
-          <div class="flex items-center justify-between pt-4 border-t border-freshaBorder">
-            <button onclick="window.goToBookingStep(2)" class="fresha-btn-secondary px-5 py-2.5 text-xs font-bold">
+          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
+            <button onclick="window.goToBookingStep(2)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
               ← Back
             </button>
-            <button onclick="window.goToBookingStep(4)" class="fresha-btn-purple px-7 py-3 text-xs font-bold shadow-md flex items-center gap-2">
+            <button onclick="window.goToBookingStep(4)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
               <span>Next: Client Details</span>
               <span>→</span>
             </button>
@@ -949,54 +1038,54 @@
 
         <!-- STEP 4: Customer Details & Confirmation -->
         <div id="booking-step-4" class="booking-step-panel hidden">
-          <div class="flex items-center justify-between mb-6 pb-3 border-b border-freshaBorder">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-freshaPurple block">Step 04 / 05</span>
-              <h3 class="text-xl font-bold text-freshaDark">Enter Contact Information</h3>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 04 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Client Information</h3>
             </div>
-            <span class="text-xs text-freshaGreen font-semibold">Pay at venue</span>
+            <span class="font-mono text-xs text-emerald-400 font-bold">Pay at chair</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
             <!-- Form -->
-            <div class="md:col-span-7 space-y-4">
+            <div class="md:col-span-7 space-y-5">
               <div>
-                <label class="block text-xs font-semibold text-freshaDark mb-1.5">Full Name: *</label>
-                <input type="text" id="customer-name" required placeholder="e.g. Tanvir Ahmed / Farhan Khan" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple">
+                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Full Name: *</label>
+                <input type="text" id="customer-name" required placeholder="e.g. Tanvir Ahmed / Farhan Khan" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]">
               </div>
 
               <div>
-                <label class="block text-xs font-semibold text-freshaDark mb-1.5">Mobile Phone (For SMS Reminders): *</label>
-                <input type="tel" id="customer-phone" required placeholder="017XXXXXXXX or +880 1XXXXXXXXX" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple font-mono">
-                <span class="text-[10px] text-freshaMuted mt-1 block">Free automated booking confirmation and SMS reminder.</span>
+                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Mobile Phone (For Confirmation): *</label>
+                <input type="tel" id="customer-phone" required placeholder="017XXXXXXXX or +880 1XXXXXXXXX" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-mono focus:outline-none focus:border-[#e8220a]">
+                <span class="font-mono text-[10px] text-[#7e8aa8] mt-1 block">Free automated booking confirmation and SMS reminder.</span>
               </div>
 
               <div>
-                <label class="block text-xs font-semibold text-freshaDark mb-1.5">Special Requests (Optional):</label>
-                <textarea id="customer-notes" rows="2" placeholder="e.g. Low taper fade, extra beard steam..." class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple"></textarea>
+                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Special Grooming Instructions (Optional):</label>
+                <textarea id="customer-notes" rows="2" placeholder="e.g. Low skin taper fade, straight razor neck clean, extra hot towel..." class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]"></textarea>
               </div>
             </div>
 
             <!-- Order Summary Box -->
-            <div class="md:col-span-5 bg-freshaGray p-5 rounded-2xl border border-freshaBorder flex flex-col justify-between">
+            <div class="md:col-span-5 bg-[#172138] p-6 rounded border border-[#243050] flex flex-col justify-between">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-freshaPurple block mb-3">Booking Summary</span>
-                <div id="booking-order-summary-box" class="space-y-2 text-xs">
+                <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#e8220a] block mb-4">Reservation Summary</span>
+                <div id="booking-order-summary-box" class="space-y-3 font-sans text-xs text-[#7e8aa8]">
                   <!-- Dynamically populated via JS -->
                 </div>
               </div>
 
-              <div class="pt-4 border-t border-freshaBorder mt-4 text-[11px] text-freshaMuted">
-                <span>Free cancellation anytime. Pay directly at the salon.</span>
+              <div class="pt-5 border-t border-[#243050] mt-6 font-mono text-[11px] text-[#7e8aa8]">
+                <span>No cancellation fees. Settle payment directly in the chair.</span>
               </div>
             </div>
           </div>
 
-          <div class="flex items-center justify-between pt-4 border-t border-freshaBorder">
-            <button onclick="window.goToBookingStep(3)" class="fresha-btn-secondary px-5 py-2.5 text-xs font-bold">
+          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
+            <button onclick="window.goToBookingStep(3)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
               ← Back
             </button>
-            <button onclick="window.submitBookingForm()" class="fresha-btn-purple px-8 py-3.5 text-xs font-bold shadow-lg shadow-freshaPurple/30 flex items-center gap-2">
+            <button onclick="window.submitBookingForm()" class="btn-barber-primary px-9 py-4 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 shadow-lg shadow-[#e8220a]/30">
               <span>Confirm Appointment</span>
               <span>✓</span>
             </button>
@@ -1005,64 +1094,64 @@
 
         <!-- STEP 5: Success & Printable Token Slip -->
         <div id="booking-step-5" class="booking-step-panel hidden">
-          <div class="text-center py-6">
-            <div class="w-16 h-16 rounded-full bg-emerald-100 text-freshaGreen flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+          <div class="text-center py-8">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-2xl font-bold font-mono">
               ✓
             </div>
-            <h3 class="text-2xl font-black text-freshaDark tracking-tight">Appointment Confirmed!</h3>
-            <p class="text-xs text-freshaMuted mt-2 max-w-md mx-auto">
-              Your appointment has been booked. You will receive an SMS reminder before your scheduled time.
+            <h3 class="font-display text-3xl font-black text-white tracking-tight">Your Chair Is Reserved</h3>
+            <p class="font-sans text-xs text-[#7e8aa8] mt-2 max-w-md mx-auto">
+              Your appointment has been registered in our schedule. Present your reference token upon arrival.
             </p>
 
             <!-- Printable Slip Container -->
-            <div id="booking-confirmation-slip" class="max-w-md mx-auto my-8 p-6 rounded-2xl bg-freshaGray border border-freshaBorder text-left text-xs shadow-md relative">
-              <div class="flex items-center justify-between pb-4 border-b border-freshaBorder">
-                <span class="font-bold text-freshaPurple">FRESHA / BOOKING RECEIPT</span>
-                <span class="text-freshaGreen font-bold" id="slip-token-id">#TK-94021</span>
+            <div id="booking-confirmation-slip" class="max-w-md mx-auto my-8 p-6 rounded bg-[#172138] border border-[#243050] text-left text-xs shadow-2xl relative">
+              <div class="flex items-center justify-between pb-4 border-b border-[#243050]">
+                <span class="font-mono text-xs font-bold text-[#e8220a] uppercase tracking-wider">THE MIDNIGHT TRIM BD / SLIP</span>
+                <span class="font-mono text-xs text-emerald-400 font-bold" id="slip-token-id">#TK-94021</span>
               </div>
 
-              <div class="py-4 space-y-2.5 border-b border-freshaBorder text-freshaDark">
+              <div class="py-4 space-y-2.5 border-b border-[#243050] text-white font-sans text-xs">
                 <div class="flex justify-between">
-                  <span class="text-freshaMuted">Venue:</span>
-                  <span class="font-bold" id="slip-salon-name">The Haven Studio</span>
+                  <span class="text-[#7e8aa8]">Studio Venue:</span>
+                  <span class="font-bold text-white" id="slip-salon-name">The Haven Studio</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-freshaMuted">Address:</span>
-                  <span id="slip-salon-address">Dhanmondi 27, Dhaka</span>
+                  <span class="text-[#7e8aa8]">Address:</span>
+                  <span class="text-white" id="slip-salon-address">Dhanmondi 27, Dhaka</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-freshaMuted">Date & Time:</span>
-                  <span class="text-freshaPurple font-bold" id="slip-slot-time">Tomorrow @ 4:30 PM</span>
+                  <span class="text-[#7e8aa8]">Scheduled Slot:</span>
+                  <span class="text-[#e8220a] font-mono font-bold" id="slip-slot-time">Tomorrow @ 4:30 PM</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-freshaMuted">Professional:</span>
-                  <span id="slip-stylist">Master Belal Hossain</span>
+                  <span class="text-[#7e8aa8]">Master Barber:</span>
+                  <span class="text-white" id="slip-stylist">Master Belal Hossain</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-freshaMuted">Client:</span>
-                  <span id="slip-customer-name">Tanvir Ahmed</span>
+                  <span class="text-[#7e8aa8]">Client:</span>
+                  <span class="text-white font-bold" id="slip-customer-name">Tanvir Ahmed</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-freshaMuted">Phone:</span>
-                  <span id="slip-customer-phone">+880 1711-XXXXXX</span>
+                  <span class="text-[#7e8aa8]">Contact Phone:</span>
+                  <span class="font-mono text-white" id="slip-customer-phone">+880 1711-XXXXXX</span>
                 </div>
               </div>
 
-              <div class="pt-4 flex items-center justify-between text-[11px] text-freshaMuted">
-                <span>Free cancellation anytime</span>
-                <span class="text-freshaGreen font-bold">Guaranteed Slot</span>
+              <div class="pt-4 flex items-center justify-between font-mono text-[10px] text-[#7e8aa8]">
+                <span>Walk-in friendly guarantee</span>
+                <span class="text-emerald-400 font-bold">Confirmed</span>
               </div>
             </div>
 
             <!-- Action Buttons -->
             <div class="flex flex-wrap items-center justify-center gap-3">
-              <button onclick="window.printBookingToken()" class="fresha-btn-purple px-6 py-2.5 text-xs font-bold shadow-md">
+              <button onclick="window.printBookingToken()" class="btn-barber-primary px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
                 Print Confirmation
               </button>
-              <button onclick="window.copyTokenId()" class="fresha-btn-secondary px-5 py-2.5 text-xs font-bold">
+              <button onclick="window.copyTokenId()" class="btn-barber-ghost px-5 py-3 font-mono text-xs uppercase tracking-widest font-bold">
                 Copy Reference Code
               </button>
-              <button onclick="window.resetBookingEngine()" class="px-5 py-2.5 text-freshaMuted hover:text-freshaDark text-xs font-semibold">
+              <button onclick="window.resetBookingEngine()" class="px-5 py-3 text-[#7e8aa8] hover:text-white font-mono text-xs uppercase tracking-wider">
                 Book Another Appointment
               </button>
             </div>
@@ -1078,108 +1167,132 @@
 
 
   <!-- =========================================================================
-       FRESHA 9: FRESHA FOR BUSINESS (B2B SECTION)
+       SECTION 9: BARBER RED BOOKING CTA STRIP
        ========================================================================= -->
-  <section id="fresha-business" class="py-20 bg-freshaGray border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-20 bg-[#e8220a] relative overflow-hidden text-white">
+    <!-- Subtle Barber Pole Stripes Overlay -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background: repeating-linear-gradient(-45deg, #ffffff 0px, #ffffff 20px, transparent 20px, transparent 40px);"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+      <!-- Live Available Chair Status -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/25 border border-white/20 mb-8 backdrop-blur-sm">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-mono text-xs font-semibold tracking-wider uppercase text-white/95">Next Available Chair Today · 2:15 PM</span>
+      </div>
+
+      <h2 class="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+        Ready for your <span class="italic font-normal">best cut yet?</span>
+      </h2>
+      
+      <p class="font-sans text-base sm:text-lg text-white/90 max-w-xl mx-auto mb-10 leading-relaxed font-light">
+        Walk-ins welcome, appointments preferred. Step into our vintage chairs and experience three generations of craft and precision.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#booking-engine" class="px-8 py-4 bg-white text-[#e8220a] hover:bg-[#0c1220] hover:text-white font-mono text-xs uppercase tracking-widest font-black transition-all shadow-xl rounded-none">
+          Book your chair now
+        </a>
+        <a href="tel:+8801711904421" class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#e8220a] font-mono text-xs uppercase tracking-widest font-bold transition-all rounded-none">
+          Call the shop: 01711-904421
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 10: FIND US & SHOP DIRECTIONS
+       ========================================================================= -->
+  <section id="find-us" class="py-24 bg-[#0c1220] border-b border-[#243050]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Content -->
-        <div class="lg:col-span-6">
-          <span class="text-xs font-bold uppercase tracking-wider text-freshaPurple block mb-2">Fresha for business</span>
-          <h2 class="text-3xl sm:text-5xl font-black text-freshaDark tracking-tight leading-tight mb-4">
-            Supercharge your business with the world's top booking platform
-          </h2>
-          <p class="text-base text-freshaMuted leading-relaxed mb-6">
-            Everything you need to grow and thrive. Fresha is packed with tools to boost sales, manage your calendar, eliminate no-shows, and retain clients.
-          </p>
-          <div class="flex flex-wrap items-center gap-4">
-            <button onclick="window.openRegisterModal()" class="fresha-btn-purple px-8 py-3.5 text-sm font-bold shadow-lg shadow-freshaPurple/25">
-              Get started now
-            </button>
-            <a href="#services" class="fresha-btn-secondary px-6 py-3.5 text-sm font-bold">
-              Explore features
+        <!-- Left: Shop Details -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-[2px] bg-[#e8220a]"></span>
+              <span class="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#e8220a]">Find Us</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+              In the heart of <span class="italic text-[#e8220a]">the city.</span>
+            </h2>
+            <p class="font-sans text-sm text-[#7e8aa8] mt-4 leading-relaxed">
+              Located in the historic Northern Quarter and our premier Dhaka flagship at Road 27 Dhanmondi. Look for the rotating barber pole outside.
+            </p>
+          </div>
+
+          <!-- Address & Contact Info -->
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 rounded bg-[#111a2e] border border-[#243050]">
+              <div class="w-10 h-10 rounded bg-[#172138] border border-[#243050] flex items-center justify-center text-[#e8220a] font-mono font-bold text-sm flex-shrink-0">
+                HQ
+              </div>
+              <div>
+                <span class="font-mono text-[10px] text-[#7e8aa8] uppercase tracking-wider block">Flagship Location</span>
+                <span class="font-display text-base font-bold text-white block mt-0.5">Road 27 (Old 16), Dhanmondi, Dhaka</span>
+                <span class="font-sans text-xs text-[#7e8aa8] block mt-0.5">UK Heritage: 14 Northern Quarter, Manchester M4 1BE</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded bg-[#111a2e] border border-[#243050]">
+              <div class="w-10 h-10 rounded bg-[#172138] border border-[#243050] flex items-center justify-center text-[#e8220a] font-mono font-bold text-sm flex-shrink-0">
+                TEL
+              </div>
+              <div>
+                <span class="font-mono text-[10px] text-[#7e8aa8] uppercase tracking-wider block">Hotline & WhatsApp</span>
+                <a href="tel:+8801711904421" class="font-mono text-sm font-bold text-white hover:text-[#e8220a] block mt-0.5 transition-colors">+880 1711-904421 / 02-9661234</a>
+                <span class="font-sans text-xs text-[#7e8aa8] block mt-0.5">Lines open daily from 8:30 AM BST</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded bg-[#111a2e] border border-[#243050]">
+              <div class="w-10 h-10 rounded bg-[#172138] border border-[#243050] flex items-center justify-center text-[#e8220a] font-mono font-bold text-sm flex-shrink-0">
+                CAR
+              </div>
+              <div>
+                <span class="font-mono text-[10px] text-[#7e8aa8] uppercase tracking-wider block">Transit & Parking</span>
+                <span class="font-sans text-xs text-[#7e8aa8] block mt-0.5">Valet parking available at venue. 5 mins walk from metro & bus hubs.</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#e8220a] hover:text-white font-bold transition-colors">
+              <span>Open in Google Maps</span>
+              <span>→</span>
             </a>
           </div>
         </div>
 
-        <!-- Right App Calendar Mockup -->
-        <div class="lg:col-span-6">
-          <div class="fresha-card p-6 bg-white shadow-xl relative overflow-hidden">
-            <div class="flex items-center justify-between pb-4 border-b border-freshaBorder mb-4">
-              <div>
-                <span class="text-xs text-freshaMuted block">Today's Schedule</span>
-                <span class="text-base font-bold text-freshaDark">Wednesday, 24 October</span>
-              </div>
-              <span class="badge-best-in-class">Live Calendar</span>
-            </div>
-            
-            <div class="space-y-3">
-              <div class="p-3 rounded-xl bg-freshaPurpleLight border border-freshaPurple/20 flex items-center justify-between">
+        <!-- Right: Map / Vintage Storefront Visual Frame -->
+        <div class="lg:col-span-7">
+          <div class="kingston-card bg-[#111a2e] border border-[#243050] p-3 shadow-2xl relative">
+            <div class="relative w-full h-[380px] sm:h-[440px] rounded overflow-hidden bg-[#0c1220]">
+              <!-- Barber pole stripe accent edge on card -->
+              <div class="absolute top-0 right-0 bottom-0 w-2 z-20 barber-pole-divider"></div>
+              
+              <img 
+                src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80" 
+                alt="The Midnight Trim Barbershop Interior" 
+                class="w-full h-full object-cover object-center filter brightness-[0.78] contrast-[1.1] hover:scale-105 transition-transform duration-700"
+              />
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-transparent z-10"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between">
                 <div>
-                  <span class="text-xs font-bold text-freshaPurple block">10:15 - 11:00</span>
-                  <span class="text-sm font-bold text-freshaDark">Executive Haircut & Skin Fade</span>
-                  <span class="text-xs text-freshaMuted block">Client: Callum Scott · Master Belal</span>
+                  <span class="font-mono text-[10px] text-[#e8220a] uppercase tracking-widest font-bold block">Vintage Interior · Station 01</span>
+                  <span class="font-display text-xl font-bold text-white block mt-0.5">The Midnight Trim bd</span>
                 </div>
-                <span class="text-xs font-bold text-freshaPurple">BDT 350</span>
-              </div>
-
-              <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
-                <div>
-                  <span class="text-xs font-bold text-freshaGreen block">11:30 - 12:15</span>
-                  <span class="text-sm font-bold text-freshaDark">Hot Towel Razor Shave</span>
-                  <span class="text-xs text-freshaMuted block">Client: Tanvir Ahmed · Shafikur</span>
-                </div>
-                <span class="text-xs font-bold text-freshaGreen">BDT 250</span>
-              </div>
-
-              <div class="p-3 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-between">
-                <div>
-                  <span class="text-xs font-bold text-purple-700 block">14:00 - 15:00</span>
-                  <span class="text-sm font-bold text-freshaDark">VIP Full Grooming Package</span>
-                  <span class="text-xs text-freshaMuted block">Client: Samiul Islam · Farhan</span>
-                </div>
-                <span class="text-xs font-bold text-purple-700">BDT 800</span>
+                <a href="#booking-engine" class="btn-barber-primary px-4 py-2 font-mono text-[10px] uppercase tracking-widest font-bold">
+                  Book A Chair
+                </a>
               </div>
             </div>
-
           </div>
-        </div>
-
-      </div>
-
-      <!-- 3 Core Business Pillars from Fresha -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="fresha-card p-6 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-freshaPurpleLight text-freshaPurple flex items-center justify-center font-bold text-xl mb-4">
-            📅
-          </div>
-          <h3 class="text-lg font-bold text-freshaDark mb-2">Manage</h3>
-          <p class="text-xs text-freshaMuted leading-relaxed">
-            Manage bookings, staff rosters, multi-location calendars, inventory and client history. 41% of bookings occur outside business hours.
-          </p>
-        </div>
-
-        <div class="fresha-card p-6 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-freshaGreen flex items-center justify-center font-bold text-xl mb-4">
-            📈
-          </div>
-          <h3 class="text-lg font-bold text-freshaDark mb-2">Grow</h3>
-          <p class="text-xs text-freshaMuted leading-relaxed">
-            Reach new clients on the Fresha marketplace. Automated marketing campaigns and client reminders generate +26% more bookings.
-          </p>
-        </div>
-
-        <div class="fresha-card p-6 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-freshaPurpleLight text-freshaPurple flex items-center justify-center font-bold text-xl mb-4">
-            💳
-          </div>
-          <h3 class="text-lg font-bold text-freshaDark mb-2">Get Paid</h3>
-          <p class="text-xs text-freshaMuted leading-relaxed">
-            Hassle-free payment processing. Reduce no-shows by 89% with upfront deposits, flexible cancellation policies, and tap to pay.
-          </p>
         </div>
 
       </div>
@@ -1188,135 +1301,59 @@
   </section>
 
   <!-- =========================================================================
-       FRESHA 10: DOWNLOAD THE FRESHA APP
+       SECTION 11: OFFICIAL HERITAGE BARBERSHOP FOOTER
        ========================================================================= -->
-  <section class="py-16 bg-white border-b border-freshaBorder">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fresha-card p-8 sm:p-12 bg-freshaPurple text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-purple-200 block mb-1">Available on iOS & Android</span>
-          <h3 class="text-2xl sm:text-4xl font-black">Download the Fresha app</h3>
-          <p class="text-sm text-purple-100 mt-2 max-w-md">
-            Book unforgettable beauty and wellness experiences with the Fresha mobile app. Anytime, anywhere.
-          </p>
-        </div>
-        <div class="flex items-center gap-4 flex-shrink-0">
-          <div class="w-24 h-24 bg-white p-2 rounded-2xl shadow">
-            <img src="assets/salon-bd-logo.jpg" alt="App QR" class="w-full h-full object-cover rounded-xl">
-          </div>
-          <div class="space-y-2">
-            <button class="fresha-btn-primary bg-black text-white px-5 py-2 text-xs font-semibold block w-full text-center">
-              App Store
-            </button>
-            <button class="fresha-btn-primary bg-black text-white px-5 py-2 text-xs font-semibold block w-full text-center">
-              Google Play
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       FRESHA 11: BROWSE BY CITY / DISTRICT
-       ========================================================================= -->
-  <section id="trending-cities" class="py-16 bg-freshaGray border-b border-freshaBorder">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="bg-[#080c16] pt-20 pb-12 border-t border-[#1e293b] text-[#7e8aa8] text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="mb-8">
-        <h2 class="text-xl sm:text-2xl font-extrabold text-freshaDark tracking-tight">
-          Browse by District & City
-        </h2>
-        <p class="text-xs text-freshaMuted mt-1">
-          Explore salons and spas across premier hubs in Bangladesh
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <a href="#around-you" onclick="window.filterByNavLocation('Dhanmondi')" class="p-3 bg-white rounded-xl border border-freshaBorder text-xs font-medium text-freshaDark hover:border-freshaPurple hover:text-freshaPurple transition-colors">
-          Salons in Dhanmondi
-        </a>
-        <a href="#around-you" onclick="window.filterByNavLocation('Banani')" class="p-3 bg-white rounded-xl border border-freshaBorder text-xs font-medium text-freshaDark hover:border-freshaPurple hover:text-freshaPurple transition-colors">
-          Salons in Banani
-        </a>
-        <a href="#around-you" onclick="window.filterByNavLocation('Gulshan')" class="p-3 bg-white rounded-xl border border-freshaBorder text-xs font-medium text-freshaDark hover:border-freshaPurple hover:text-freshaPurple transition-colors">
-          Salons in Gulshan
-        </a>
-        <a href="#around-you" onclick="window.filterByNavLocation('Mirpur')" class="p-3 bg-white rounded-xl border border-freshaBorder text-xs font-medium text-freshaDark hover:border-freshaPurple hover:text-freshaPurple transition-colors">
-          Salons in Mirpur
-        </a>
-        <a href="#around-you" onclick="window.filterByNavLocation('Uttara')" class="p-3 bg-white rounded-xl border border-freshaBorder text-xs font-medium text-freshaDark hover:border-freshaPurple hover:text-freshaPurple transition-colors">
-          Salons in Uttara
-        </a>
-        <a href="#around-you" onclick="window.filterByNavLocation('Chattogram')" class="p-3 bg-white rounded-xl border border-freshaBorder text-xs font-medium text-freshaDark hover:border-freshaPurple hover:text-freshaPurple transition-colors">
-          Salons in Chattogram
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       FRESHA 12: OFFICIAL FOOTER & SITEMAP
-       ========================================================================= -->
-  <footer class="bg-white pt-16 pb-12 border-t border-freshaBorder text-freshaMuted text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-freshaBorder">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-[#1e293b]">
         
-        <!-- Col 1: About -->
-        <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-freshaDark mb-4">About Fresha</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Careers</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Customer Support</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Blog & Guides</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Press & Media</a></li>
+        <!-- Col 1: Wordmark & Heritage Brand -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-display text-2xl font-black tracking-tight text-white uppercase">The Midnight Trim</span>
+            <span class="font-mono text-[10px] px-1.5 py-0.5 bg-[#e8220a] text-white font-bold rounded">BD</span>
+          </div>
+          <p class="font-sans text-xs text-[#7e8aa8] leading-relaxed max-w-sm">
+            Traditional barbering. Modern precision. Three generations of master craft — serving the finest gentlemen with sharp haircuts, precision beard trims, and authentic hot towel shaves.
+          </p>
+          <div class="font-mono text-[11px] text-[#e8220a] pt-2">
+            <span>Est. 1987 · Manchester & Dhaka</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Services Menu -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-white">Craft Services</h4>
+          <ul class="space-y-2 font-sans text-xs">
+            <li><a href="#services" class="hover:text-[#e8220a] transition-colors">01 · Classic Cut</a></li>
+            <li><a href="#services" class="hover:text-[#e8220a] transition-colors">02 · Cut & Beard</a></li>
+            <li><a href="#services" class="hover:text-[#e8220a] transition-colors">03 · Hot Towel Shave</a></li>
+            <li><a href="#services" class="hover:text-[#e8220a] transition-colors">04 · Skin Fade</a></li>
+            <li><a href="#services" class="hover:text-[#e8220a] transition-colors">06 · The Works VIP</a></li>
           </ul>
         </div>
 
-        <!-- Col 2: For Business -->
-        <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-freshaDark mb-4">For Business</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#fresha-business" class="hover:text-freshaPurple transition-colors">Fresha for Business</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Pricing & Features</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Point of Sale (POS)</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Bookings App</a></li>
+        <!-- Col 3: Hours & Schedule -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-white">Opening Hours</h4>
+          <ul class="space-y-2 font-mono text-xs">
+            <li class="flex justify-between"><span class="text-[#7e8aa8]">Mon–Fri:</span> <span class="text-white">9:00 am – 7:00 pm</span></li>
+            <li class="flex justify-between"><span class="text-[#7e8aa8]">Saturday:</span> <span class="text-white">8:00 am – 6:00 pm</span></li>
+            <li class="flex justify-between"><span class="text-[#7e8aa8]">Sunday:</span> <span class="text-white">10:00 am – 4:00 pm</span></li>
+            <li class="pt-2 text-[10px] text-[#e8220a] uppercase tracking-wider">Walk-ins welcome daily</li>
           </ul>
         </div>
 
-        <!-- Col 3: Legal -->
-        <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-freshaDark mb-4">Legal</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Terms of Business</a></li>
-            <li><a href="#" class="hover:text-freshaPurple transition-colors">Cookie Policy</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Top Services -->
-        <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-freshaDark mb-4">Top Services</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#services" class="hover:text-freshaPurple transition-colors">Hair Salons</a></li>
-            <li><a href="#services" class="hover:text-freshaPurple transition-colors">Barbershops</a></li>
-            <li><a href="#services" class="hover:text-freshaPurple transition-colors">Massage & Spa</a></li>
-            <li><a href="#services" class="hover:text-freshaPurple transition-colors">Facials & Skin</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 5: App Download -->
-        <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-freshaDark mb-4">Get the App</h4>
-          <div class="space-y-2">
-            <button class="fresha-btn-secondary px-4 py-2 w-full text-left text-xs font-semibold block">
-              Download for iOS
-            </button>
-            <button class="fresha-btn-secondary px-4 py-2 w-full text-left text-xs font-semibold block">
-              Download for Android
+        <!-- Col 4: Hub Locations & Partner -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-white">Bangladesh Network</h4>
+          <p class="font-sans text-xs text-[#7e8aa8] leading-relaxed">
+            Dhanmondi · Banani · Gulshan · Mirpur · Uttara · Chattogram · Sylhet
+          </p>
+          <div class="pt-2">
+            <button onclick="window.openRegisterModal()" class="w-full py-2.5 px-4 bg-[#111a2e] border border-[#243050] hover:border-[#e8220a] text-white hover:text-[#e8220a] font-mono text-[10px] uppercase tracking-widest font-bold transition-all">
+              Partner Barber Studio Portal →
             </button>
           </div>
         </div>
@@ -1324,16 +1361,16 @@
       </div>
 
       <!-- Bottom Disclaimer -->
-      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-freshaLightText text-[11px] gap-4">
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-[#546080] font-mono text-[11px] gap-4">
         <div>
-          © 2026 Fresha.com (SalonBD Platform). All rights reserved.
+          © 2026 The Midnight Trim bd. Timeless craftsmanship & precision grooming.
         </div>
         <div class="flex items-center gap-4">
-          <span>English (US)</span>
+          <a href="#community-hero" class="hover:text-white transition-colors">Back to top ↑</a>
           <span>•</span>
           <span>BDT (৳)</span>
           <span>•</span>
-          <span>Bangladesh Standard Time</span>
+          <span>BST (UTC+6)</span>
         </div>
       </div>
 
@@ -1341,28 +1378,28 @@
   </footer>
 
   <!-- MODAL: List Your Salon (Partner Registration Window) -->
-  <div id="register-salon-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="fresha-card max-w-lg w-full overflow-hidden bg-white shadow-2xl">
-      <div class="px-6 py-4 bg-freshaGray border-b border-freshaBorder flex items-center justify-between">
-        <span class="font-bold text-sm text-freshaDark">Partner With Fresha / SalonBD</span>
-        <button onclick="window.closeRegisterModal()" class="text-freshaMuted hover:text-freshaDark text-lg">✕</button>
+  <div id="register-salon-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="kingston-card max-w-lg w-full overflow-hidden bg-[#111a2e] border border-[#243050] shadow-2xl">
+      <div class="px-6 py-4 bg-[#172138] border-b border-[#243050] flex items-center justify-between">
+        <span class="font-display font-bold text-sm text-white tracking-wide">Partner With The Midnight Trim bd</span>
+        <button onclick="window.closeRegisterModal()" class="text-[#7e8aa8] hover:text-white text-lg">✕</button>
       </div>
 
       <div class="p-6">
-        <p class="text-xs text-freshaMuted mb-4 leading-relaxed">
-          List your business on the world's leading salon and spa booking marketplace. Free setup, no long-term contracts.
+        <p class="font-sans text-xs text-[#7e8aa8] mb-5 leading-relaxed">
+          List your studio or join the master barber collective on The Midnight Trim bd. Join our verified network with automated scheduling and walk-in routing.
         </p>
 
         <form onsubmit="event.preventDefault(); window.handleSalonRegistration();" class="space-y-4">
           <div>
-            <label class="block text-xs font-semibold text-freshaDark mb-1">Business Name: *</label>
-            <input type="text" id="reg-salon-name" required placeholder="e.g. Vibe Studio" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple">
+            <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-1">Business / Studio Name: *</label>
+            <input type="text" id="reg-salon-name" required placeholder="e.g. Vintage Blades Studio" class="w-full p-3 rounded bg-[#172138] border border-[#243050] text-xs text-white focus:outline-none focus:border-[#e8220a]">
           </div>
 
           <div class="grid grid-cols-2 gap-3">
             <div>
-              <label class="block text-xs font-semibold text-freshaDark mb-1">Division: *</label>
-              <select id="reg-division" required class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-1">Division: *</label>
+              <select id="reg-division" required class="w-full p-3 rounded bg-[#172138] border border-[#243050] text-xs text-white focus:outline-none focus:border-[#e8220a]">
                 <option value="Dhaka">Dhaka Division</option>
                 <option value="Chattogram">Chattogram Division</option>
                 <option value="Sylhet">Sylhet Division</option>
@@ -1371,30 +1408,30 @@
               </select>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-freshaDark mb-1">Area / Street: *</label>
-              <input type="text" id="reg-area" required placeholder="e.g. Road 11, Banani" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-1">Area / Street: *</label>
+              <input type="text" id="reg-area" required placeholder="e.g. Road 27, Dhanmondi" class="w-full p-3 rounded bg-[#172138] border border-[#243050] text-xs text-white focus:outline-none focus:border-[#e8220a]">
             </div>
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-freshaDark mb-1">Business Mobile Phone: *</label>
-            <input type="tel" id="reg-phone" required placeholder="+880 1711-XXXXXX" class="w-full p-3 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark font-mono focus:outline-none focus:border-freshaPurple">
+            <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-1">Business Mobile Phone: *</label>
+            <input type="tel" id="reg-phone" required placeholder="+880 1711-XXXXXX" class="w-full p-3 rounded bg-[#172138] border border-[#243050] text-xs text-white font-mono focus:outline-none focus:border-[#e8220a]">
           </div>
 
           <div class="grid grid-cols-2 gap-3">
             <div>
-              <label class="block text-xs font-semibold text-freshaDark mb-1">Opening Time: *</label>
-              <input type="time" id="reg-open-time" value="09:30" required class="w-full p-2.5 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-1">Opening Time: *</label>
+              <input type="time" id="reg-open-time" value="09:00" required class="w-full p-2.5 rounded bg-[#172138] border border-[#243050] text-xs text-white focus:outline-none focus:border-[#e8220a]">
             </div>
             <div>
-              <label class="block text-xs font-semibold text-freshaDark mb-1">Closing Time: *</label>
-              <input type="time" id="reg-close-time" value="22:30" required class="w-full p-2.5 rounded-xl bg-freshaGray border border-freshaBorder text-xs text-freshaDark focus:outline-none focus:border-freshaPurple">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-1">Closing Time: *</label>
+              <input type="time" id="reg-close-time" value="21:00" required class="w-full p-2.5 rounded bg-[#172138] border border-[#243050] text-xs text-white focus:outline-none focus:border-[#e8220a]">
             </div>
           </div>
 
-          <div class="pt-2 flex justify-end gap-3">
-            <button type="button" onclick="window.closeRegisterModal()" class="px-5 py-2.5 border border-freshaBorder text-freshaDark text-xs font-semibold rounded-full hover:bg-freshaGray">Cancel</button>
-            <button type="submit" class="fresha-btn-purple px-6 py-2.5 text-xs font-bold shadow-md">Get Started Free</button>
+          <div class="pt-3 flex justify-end gap-3">
+            <button type="button" onclick="window.closeRegisterModal()" class="px-5 py-2.5 border border-[#243050] text-[#7e8aa8] hover:text-white font-mono text-xs uppercase tracking-wider">Cancel</button>
+            <button type="submit" class="btn-barber-primary px-6 py-2.5 font-mono text-xs uppercase tracking-widest font-bold">Submit Application</button>
           </div>
         </form>
       </div>
