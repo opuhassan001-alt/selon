@@ -334,14 +334,329 @@
         </p>
 
         <!-- Subtle Bottom Scroll Hint -->
-        <a href="#hero" class="mt-4 text-xs font-semibold text-[#00F0FF] hover:text-white flex items-center gap-1.5 transition-colors group cursor-pointer">
-          <span>Explore Salons & Studios</span>
+        <a href="#booking-engine" class="mt-4 text-xs font-semibold text-[#00F0FF] hover:text-white flex items-center gap-1.5 transition-colors group cursor-pointer">
+          <span>Reserve a Chair Online</span>
           <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform text-[#00F0FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </a>
       </div>
 
     </div>
 
+  </section>
+
+  <!-- =========================================================================
+       KINGSTON'S CLASSIC 5-STEP BOOKING ENGINE (CALENDAR & CHECKOUT WIZARD)
+       ========================================================================= -->
+  <section id="booking-engine" class="py-24 bg-[#0c1220] border-b border-[#243050] relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <span class="w-8 h-[2px] bg-[#e8220a]"></span>
+          <span class="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#e8220a]">Online Reservation</span>
+          <span class="w-8 h-[2px] bg-[#e8220a]"></span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          Reserve a chair, <span class="italic text-[#e8220a]">anytime.</span>
+        </h2>
+        <p class="font-sans text-sm text-[#7e8aa8] mt-3 max-w-lg mx-auto leading-relaxed">
+          Select your local branch, customize your service package, pick your master barber, and confirm your slot instantly with zero fees.
+        </p>
+      </div>
+
+      <!-- 5-Step Progress Indicator -->
+      <div class="flex items-center justify-between max-w-xl mx-auto mb-12 relative px-4">
+        <div class="absolute top-1/2 left-6 right-6 h-[2px] bg-[#243050] -translate-y-1/2 z-0"></div>
+        
+        <button onclick="window.goToBookingStep(1)" id="step-nav-1" class="relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-mono text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 transition-all">
+          01
+        </button>
+        <button onclick="window.goToBookingStep(2)" id="step-nav-2" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          02
+        </button>
+        <button onclick="window.goToBookingStep(3)" id="step-nav-3" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          03
+        </button>
+        <button onclick="window.goToBookingStep(4)" id="step-nav-4" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          04
+        </button>
+        <button onclick="window.goToBookingStep(5)" id="step-nav-5" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
+          05
+        </button>
+      </div>
+
+      <!-- Booking Card Window -->
+      <div class="max-w-4xl mx-auto kingston-card bg-[#111a2e] border border-[#243050] p-6 sm:p-10 shadow-2xl">
+        
+        <!-- STEP 1: Choose Salon & Area -->
+        <div id="booking-step-1" class="booking-step-panel">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
+            <div>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 01 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Select Location & Studio</h3>
+            </div>
+            <span class="font-mono text-[11px] uppercase tracking-wider px-3 py-1 bg-[#172138] border border-[#243050] text-[#e8220a] rounded">Direct Walk-in / Booking</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">District / Hub Filter:</label>
+              <select id="booking-hub-filter" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]" onchange="window.filterBookingSalonsByArea(this.value)">
+                <option value="all">All Locations (64 Districts)</option>
+                <option value="Dhanmondi" selected>Dhanmondi Hub</option>
+                <option value="Banani">Banani Hub</option>
+                <option value="Gulshan">Gulshan Hub</option>
+                <option value="Mirpur">Mirpur Hub</option>
+                <option value="Uttara">Uttara Hub</option>
+                <option value="Chattogram">Chattogram Hub</option>
+                <option value="Sylhet">Sylhet Hub</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Select Studio Chair: *</label>
+              <select id="booking-salon-select" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]" onchange="window.onBookingSalonChange(this.value)">
+                <!-- Dynamically populated via JS -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Active Selected Salon Summary Preview -->
+          <div id="booking-active-salon-card" class="p-5 rounded bg-[#172138] border border-[#243050] mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-[#e8220a] block mb-1" id="booking-salon-window-badge">Dhanmondi Hub • Rated 4.92</span>
+              <h4 class="font-display text-lg font-bold text-white" id="preview-salon-name">The Haven Luxury Grooming Studio</h4>
+              <p class="font-sans text-xs text-[#7e8aa8] mt-1" id="preview-salon-address">Road 27 (Old 16), Dhanmondi, Dhaka-1209</p>
+            </div>
+            <div class="text-left sm:text-right">
+              <span class="font-mono text-xs font-bold text-emerald-400 block" id="preview-salon-hours">Open Now · Closes in 12h 20m</span>
+              <span class="font-mono text-xs text-[#7e8aa8] block mt-1">Direct Hotline: +880 1711-904421</span>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button onclick="window.goToBookingStep(2)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
+              <span>Next: Select Services</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Choose Services & Pricing -->
+        <div id="booking-step-2" class="booking-step-panel hidden">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
+            <div>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 02 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Select Services & Treatments</h3>
+            </div>
+            <span class="font-mono text-xs text-[#7e8aa8]" id="services-step-salon-indicator">The Haven Studio</span>
+          </div>
+
+          <p class="font-sans text-xs text-[#7e8aa8] mb-6">
+            Choose your services below. Pricing and duration calibrate in real time.
+          </p>
+
+          <div id="booking-services-checkboxes" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
+            <button onclick="window.goToBookingStep(1)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
+              ← Back
+            </button>
+            <div class="flex items-center gap-6">
+              <div class="text-right">
+                <span class="font-mono text-[10px] text-[#7e8aa8] block uppercase tracking-wider">Estimated Total</span>
+                <span class="font-mono text-lg font-black text-[#e8220a]" id="services-live-total">BDT 350</span>
+              </div>
+              <button onclick="window.goToBookingStep(3)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
+                <span>Next: Date & Time</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Choose Date & Time Slot -->
+        <div id="booking-step-3" class="booking-step-panel hidden">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
+            <div>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 03 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Choose Date & Time</h3>
+            </div>
+            <span class="font-mono text-xs text-[#7e8aa8]">Live BST Calendar</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+            <div class="sm:col-span-1">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Reservation Date: *</label>
+              <input 
+                type="date" 
+                id="booking-date-input" 
+                class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-xs text-white font-mono focus:outline-none focus:border-[#e8220a]" 
+                onchange="window.generateDynamicTimeSlots()"
+              />
+              <span class="font-mono text-[10px] text-[#7e8aa8] mt-1.5 block">Bookings available 7 days in advance.</span>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Preferred Master Barber:</label>
+              <select id="booking-stylist-select" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]">
+                <option value="Any Available Master Barber">Any Available Master Barber (Fastest Slot)</option>
+                <option value="James Kingston">James Kingston — Founder & Master Barber (40 yrs exp)</option>
+                <option value="Marcus Webb">Marcus Webb — Senior Barber (Fade & Beard Specialist)</option>
+                <option value="Dario Ferrara">Dario Ferrara — Hot Towel & Traditional Shave</option>
+                <option value="Tom Russell">Tom Russell — Scissor Specialist & Styling</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Slots Grid -->
+          <div class="mb-8">
+            <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-3">Available BST Time Slots: *</label>
+            <div id="dynamic-time-slots-container" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
+            <button onclick="window.goToBookingStep(2)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
+              ← Back
+            </button>
+            <button onclick="window.goToBookingStep(4)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
+              <span>Next: Client Details</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Customer Details & Confirmation -->
+        <div id="booking-step-4" class="booking-step-panel hidden">
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
+            <div>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 04 / 05</span>
+              <h3 class="font-display text-2xl font-bold text-white">Client Information</h3>
+            </div>
+            <span class="font-mono text-xs text-emerald-400 font-bold">Pay at chair</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+            <!-- Form -->
+            <div class="md:col-span-7 space-y-5">
+              <div>
+                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Full Name: *</label>
+                <input type="text" id="customer-name" required placeholder="e.g. Tanvir Ahmed / Farhan Khan" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]">
+              </div>
+
+              <div>
+                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Mobile Phone (For Confirmation): *</label>
+                <input type="tel" id="customer-phone" required placeholder="017XXXXXXXX or +880 1XXXXXXXXX" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-mono focus:outline-none focus:border-[#e8220a]">
+                <span class="font-mono text-[10px] text-[#7e8aa8] mt-1 block">Free automated booking confirmation and SMS reminder.</span>
+              </div>
+
+              <div>
+                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Special Grooming Instructions (Optional):</label>
+                <textarea id="customer-notes" rows="2" placeholder="e.g. Low skin taper fade, straight razor neck clean, extra hot towel..." class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]"></textarea>
+              </div>
+            </div>
+
+            <!-- Order Summary Box -->
+            <div class="md:col-span-5 bg-[#172138] p-6 rounded border border-[#243050] flex flex-col justify-between">
+              <div>
+                <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#e8220a] block mb-4">Reservation Summary</span>
+                <div id="booking-order-summary-box" class="space-y-3 font-sans text-xs text-[#7e8aa8]">
+                  <!-- Dynamically populated via JS -->
+                </div>
+              </div>
+
+              <div class="pt-5 border-t border-[#243050] mt-6 font-mono text-[11px] text-[#7e8aa8]">
+                <span>No cancellation fees. Settle payment directly in the chair.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
+            <button onclick="window.goToBookingStep(3)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
+              ← Back
+            </button>
+            <button onclick="window.submitBookingForm()" class="btn-barber-primary px-9 py-4 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 shadow-lg shadow-[#e8220a]/30">
+              <span>Confirm Appointment</span>
+              <span>✓</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 5: Success & Printable Token Slip -->
+        <div id="booking-step-5" class="booking-step-panel hidden">
+          <div class="text-center py-8">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-2xl font-bold font-mono">
+              ✓
+            </div>
+            <h3 class="font-display text-3xl font-black text-white tracking-tight">Your Chair Is Reserved</h3>
+            <p class="font-sans text-xs text-[#7e8aa8] mt-2 max-w-md mx-auto">
+              Your appointment has been registered in our schedule. Present your reference token upon arrival.
+            </p>
+
+            <!-- Printable Slip Container -->
+            <div id="booking-confirmation-slip" class="max-w-md mx-auto my-8 p-6 rounded bg-[#172138] border border-[#243050] text-left text-xs shadow-2xl relative">
+              <div class="flex items-center justify-between pb-4 border-b border-[#243050]">
+                <span class="font-mono text-xs font-bold text-[#e8220a] uppercase tracking-wider">THE MIDNIGHT TRIM BD / SLIP</span>
+                <span class="font-mono text-xs text-emerald-400 font-bold" id="slip-token-id">#TK-94021</span>
+              </div>
+
+              <div class="py-4 space-y-2.5 border-b border-[#243050] text-white font-sans text-xs">
+                <div class="flex justify-between">
+                  <span class="text-[#7e8aa8]">Studio Venue:</span>
+                  <span class="font-bold text-white" id="slip-salon-name">The Haven Studio</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#7e8aa8]">Address:</span>
+                  <span class="text-white" id="slip-salon-address">Dhanmondi 27, Dhaka</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#7e8aa8]">Scheduled Slot:</span>
+                  <span class="text-[#e8220a] font-mono font-bold" id="slip-slot-time">Tomorrow @ 4:30 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#7e8aa8]">Master Barber:</span>
+                  <span class="text-white" id="slip-stylist">Master Belal Hossain</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#7e8aa8]">Client:</span>
+                  <span class="text-white font-bold" id="slip-customer-name">Tanvir Ahmed</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#7e8aa8]">Contact Phone:</span>
+                  <span class="font-mono text-white" id="slip-customer-phone">+880 1711-XXXXXX</span>
+                </div>
+              </div>
+
+              <div class="pt-4 flex items-center justify-between font-mono text-[10px] text-[#7e8aa8]">
+                <span>Walk-in friendly guarantee</span>
+                <span class="text-emerald-400 font-bold">Confirmed</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3">
+              <button onclick="window.printBookingToken()" class="btn-barber-primary px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
+                Print Confirmation
+              </button>
+              <button onclick="window.copyTokenId()" class="btn-barber-ghost px-5 py-3 font-mono text-xs uppercase tracking-widest font-bold">
+                Copy Reference Code
+              </button>
+              <button onclick="window.resetBookingEngine()" class="px-5 py-3 text-[#7e8aa8] hover:text-white font-mono text-xs uppercase tracking-wider">
+                Book Another Appointment
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </section>
 
   <!-- =========================================================================
@@ -848,323 +1163,6 @@
 
     </div>
   </section>
-
-  <!-- =========================================================================
-       KINGSTON'S CLASSIC 5-STEP BOOKING ENGINE (CALENDAR & CHECKOUT WIZARD)
-       ========================================================================= -->
-  <section id="booking-engine" class="py-24 bg-[#0c1220] border-b border-[#243050] relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <div class="flex items-center justify-center gap-3 mb-3">
-          <span class="w-8 h-[2px] bg-[#e8220a]"></span>
-          <span class="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#e8220a]">Online Reservation</span>
-          <span class="w-8 h-[2px] bg-[#e8220a]"></span>
-        </div>
-        <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-          Reserve a chair, <span class="italic text-[#e8220a]">anytime.</span>
-        </h2>
-        <p class="font-sans text-sm text-[#7e8aa8] mt-3 max-w-lg mx-auto leading-relaxed">
-          Select your local branch, customize your service package, pick your master barber, and confirm your slot instantly with zero fees.
-        </p>
-      </div>
-
-      <!-- 5-Step Progress Indicator -->
-      <div class="flex items-center justify-between max-w-xl mx-auto mb-12 relative px-4">
-        <div class="absolute top-1/2 left-6 right-6 h-[2px] bg-[#243050] -translate-y-1/2 z-0"></div>
-        
-        <button onclick="window.goToBookingStep(1)" id="step-nav-1" class="relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-mono text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 transition-all">
-          01
-        </button>
-        <button onclick="window.goToBookingStep(2)" id="step-nav-2" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
-          02
-        </button>
-        <button onclick="window.goToBookingStep(3)" id="step-nav-3" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
-          03
-        </button>
-        <button onclick="window.goToBookingStep(4)" id="step-nav-4" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
-          04
-        </button>
-        <button onclick="window.goToBookingStep(5)" id="step-nav-5" class="relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all hover:border-[#e8220a]/50">
-          05
-        </button>
-      </div>
-
-      <!-- Booking Card Window -->
-      <div class="max-w-4xl mx-auto kingston-card bg-[#111a2e] border border-[#243050] p-6 sm:p-10 shadow-2xl">
-        
-        <!-- STEP 1: Choose Salon & Area -->
-        <div id="booking-step-1" class="booking-step-panel">
-          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
-            <div>
-              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 01 / 05</span>
-              <h3 class="font-display text-2xl font-bold text-white">Select Location & Studio</h3>
-            </div>
-            <span class="font-mono text-[11px] uppercase tracking-wider px-3 py-1 bg-[#172138] border border-[#243050] text-[#e8220a] rounded">Direct Walk-in / Booking</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div>
-              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">District / Hub Filter:</label>
-              <select id="booking-hub-filter" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]" onchange="window.filterBookingSalonsByArea(this.value)">
-                <option value="all">All Locations (64 Districts)</option>
-                <option value="Dhanmondi" selected>Dhanmondi Hub</option>
-                <option value="Banani">Banani Hub</option>
-                <option value="Gulshan">Gulshan Hub</option>
-                <option value="Mirpur">Mirpur Hub</option>
-                <option value="Uttara">Uttara Hub</option>
-                <option value="Chattogram">Chattogram Hub</option>
-                <option value="Sylhet">Sylhet Hub</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Select Studio Chair: *</label>
-              <select id="booking-salon-select" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]" onchange="window.onBookingSalonChange(this.value)">
-                <!-- Dynamically populated via JS -->
-              </select>
-            </div>
-          </div>
-
-          <!-- Active Selected Salon Summary Preview -->
-          <div id="booking-active-salon-card" class="p-5 rounded bg-[#172138] border border-[#243050] mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <span class="font-mono text-[10px] uppercase tracking-wider text-[#e8220a] block mb-1" id="booking-salon-window-badge">Dhanmondi Hub • Rated 4.92</span>
-              <h4 class="font-display text-lg font-bold text-white" id="preview-salon-name">The Haven Luxury Grooming Studio</h4>
-              <p class="font-sans text-xs text-[#7e8aa8] mt-1" id="preview-salon-address">Road 27 (Old 16), Dhanmondi, Dhaka-1209</p>
-            </div>
-            <div class="text-left sm:text-right">
-              <span class="font-mono text-xs font-bold text-emerald-400 block" id="preview-salon-hours">Open Now · Closes in 12h 20m</span>
-              <span class="font-mono text-xs text-[#7e8aa8] block mt-1">Direct Hotline: +880 1711-904421</span>
-            </div>
-          </div>
-
-          <div class="flex justify-end">
-            <button onclick="window.goToBookingStep(2)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
-              <span>Next: Select Services</span>
-              <span>→</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- STEP 2: Choose Services & Pricing -->
-        <div id="booking-step-2" class="booking-step-panel hidden">
-          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
-            <div>
-              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 02 / 05</span>
-              <h3 class="font-display text-2xl font-bold text-white">Select Services & Treatments</h3>
-            </div>
-            <span class="font-mono text-xs text-[#7e8aa8]" id="services-step-salon-indicator">The Haven Studio</span>
-          </div>
-
-          <p class="font-sans text-xs text-[#7e8aa8] mb-6">
-            Choose your services below. Pricing and duration calibrate in real time.
-          </p>
-
-          <div id="booking-services-checkboxes" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <!-- Dynamically populated via JS -->
-          </div>
-
-          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
-            <button onclick="window.goToBookingStep(1)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
-              ← Back
-            </button>
-            <div class="flex items-center gap-6">
-              <div class="text-right">
-                <span class="font-mono text-[10px] text-[#7e8aa8] block uppercase tracking-wider">Estimated Total</span>
-                <span class="font-mono text-lg font-black text-[#e8220a]" id="services-live-total">BDT 350</span>
-              </div>
-              <button onclick="window.goToBookingStep(3)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
-                <span>Next: Date & Time</span>
-                <span>→</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 3: Choose Date & Time Slot -->
-        <div id="booking-step-3" class="booking-step-panel hidden">
-          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
-            <div>
-              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 03 / 05</span>
-              <h3 class="font-display text-2xl font-bold text-white">Choose Date & Time</h3>
-            </div>
-            <span class="font-mono text-xs text-[#7e8aa8]">Live BST Calendar</span>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-            <div class="sm:col-span-1">
-              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Reservation Date: *</label>
-              <input 
-                type="date" 
-                id="booking-date-input" 
-                class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-xs text-white font-mono focus:outline-none focus:border-[#e8220a]" 
-                onchange="window.generateDynamicTimeSlots()"
-              />
-              <span class="font-mono text-[10px] text-[#7e8aa8] mt-1.5 block">Bookings available 7 days in advance.</span>
-            </div>
-
-            <div class="sm:col-span-2">
-              <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Preferred Master Barber:</label>
-              <select id="booking-stylist-select" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-medium focus:outline-none focus:border-[#e8220a]">
-                <option value="Any Available Master Barber">Any Available Master Barber (Fastest Slot)</option>
-                <option value="James Kingston">James Kingston — Founder & Master Barber (40 yrs exp)</option>
-                <option value="Marcus Webb">Marcus Webb — Senior Barber (Fade & Beard Specialist)</option>
-                <option value="Dario Ferrara">Dario Ferrara — Hot Towel & Traditional Shave</option>
-                <option value="Tom Russell">Tom Russell — Scissor Specialist & Styling</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Dynamic Slots Grid -->
-          <div class="mb-8">
-            <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-3">Available BST Time Slots: *</label>
-            <div id="dynamic-time-slots-container" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
-              <!-- Dynamically populated via JS -->
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
-            <button onclick="window.goToBookingStep(2)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
-              ← Back
-            </button>
-            <button onclick="window.goToBookingStep(4)" class="btn-barber-primary px-8 py-3.5 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2">
-              <span>Next: Client Details</span>
-              <span>→</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- STEP 4: Customer Details & Confirmation -->
-        <div id="booking-step-4" class="booking-step-panel hidden">
-          <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#243050]">
-            <div>
-              <span class="font-mono text-[10px] uppercase tracking-widest text-[#e8220a] block mb-1">Step 04 / 05</span>
-              <h3 class="font-display text-2xl font-bold text-white">Client Information</h3>
-            </div>
-            <span class="font-mono text-xs text-emerald-400 font-bold">Pay at chair</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
-            <!-- Form -->
-            <div class="md:col-span-7 space-y-5">
-              <div>
-                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Full Name: *</label>
-                <input type="text" id="customer-name" required placeholder="e.g. Tanvir Ahmed / Farhan Khan" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]">
-              </div>
-
-              <div>
-                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Mobile Phone (For Confirmation): *</label>
-                <input type="tel" id="customer-phone" required placeholder="017XXXXXXXX or +880 1XXXXXXXXX" class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white font-mono focus:outline-none focus:border-[#e8220a]">
-                <span class="font-mono text-[10px] text-[#7e8aa8] mt-1 block">Free automated booking confirmation and SMS reminder.</span>
-              </div>
-
-              <div>
-                <label class="block font-mono text-[11px] uppercase tracking-wider text-[#7e8aa8] mb-2">Special Grooming Instructions (Optional):</label>
-                <textarea id="customer-notes" rows="2" placeholder="e.g. Low skin taper fade, straight razor neck clean, extra hot towel..." class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]"></textarea>
-              </div>
-            </div>
-
-            <!-- Order Summary Box -->
-            <div class="md:col-span-5 bg-[#172138] p-6 rounded border border-[#243050] flex flex-col justify-between">
-              <div>
-                <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#e8220a] block mb-4">Reservation Summary</span>
-                <div id="booking-order-summary-box" class="space-y-3 font-sans text-xs text-[#7e8aa8]">
-                  <!-- Dynamically populated via JS -->
-                </div>
-              </div>
-
-              <div class="pt-5 border-t border-[#243050] mt-6 font-mono text-[11px] text-[#7e8aa8]">
-                <span>No cancellation fees. Settle payment directly in the chair.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between pt-6 border-t border-[#243050]">
-            <button onclick="window.goToBookingStep(3)" class="btn-barber-ghost px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
-              ← Back
-            </button>
-            <button onclick="window.submitBookingForm()" class="btn-barber-primary px-9 py-4 font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 shadow-lg shadow-[#e8220a]/30">
-              <span>Confirm Appointment</span>
-              <span>✓</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- STEP 5: Success & Printable Token Slip -->
-        <div id="booking-step-5" class="booking-step-panel hidden">
-          <div class="text-center py-8">
-            <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-2xl font-bold font-mono">
-              ✓
-            </div>
-            <h3 class="font-display text-3xl font-black text-white tracking-tight">Your Chair Is Reserved</h3>
-            <p class="font-sans text-xs text-[#7e8aa8] mt-2 max-w-md mx-auto">
-              Your appointment has been registered in our schedule. Present your reference token upon arrival.
-            </p>
-
-            <!-- Printable Slip Container -->
-            <div id="booking-confirmation-slip" class="max-w-md mx-auto my-8 p-6 rounded bg-[#172138] border border-[#243050] text-left text-xs shadow-2xl relative">
-              <div class="flex items-center justify-between pb-4 border-b border-[#243050]">
-                <span class="font-mono text-xs font-bold text-[#e8220a] uppercase tracking-wider">THE MIDNIGHT TRIM BD / SLIP</span>
-                <span class="font-mono text-xs text-emerald-400 font-bold" id="slip-token-id">#TK-94021</span>
-              </div>
-
-              <div class="py-4 space-y-2.5 border-b border-[#243050] text-white font-sans text-xs">
-                <div class="flex justify-between">
-                  <span class="text-[#7e8aa8]">Studio Venue:</span>
-                  <span class="font-bold text-white" id="slip-salon-name">The Haven Studio</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-[#7e8aa8]">Address:</span>
-                  <span class="text-white" id="slip-salon-address">Dhanmondi 27, Dhaka</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-[#7e8aa8]">Scheduled Slot:</span>
-                  <span class="text-[#e8220a] font-mono font-bold" id="slip-slot-time">Tomorrow @ 4:30 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-[#7e8aa8]">Master Barber:</span>
-                  <span class="text-white" id="slip-stylist">Master Belal Hossain</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-[#7e8aa8]">Client:</span>
-                  <span class="text-white font-bold" id="slip-customer-name">Tanvir Ahmed</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-[#7e8aa8]">Contact Phone:</span>
-                  <span class="font-mono text-white" id="slip-customer-phone">+880 1711-XXXXXX</span>
-                </div>
-              </div>
-
-              <div class="pt-4 flex items-center justify-between font-mono text-[10px] text-[#7e8aa8]">
-                <span>Walk-in friendly guarantee</span>
-                <span class="text-emerald-400 font-bold">Confirmed</span>
-              </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center justify-center gap-3">
-              <button onclick="window.printBookingToken()" class="btn-barber-primary px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold">
-                Print Confirmation
-              </button>
-              <button onclick="window.copyTokenId()" class="btn-barber-ghost px-5 py-3 font-mono text-xs uppercase tracking-widest font-bold">
-                Copy Reference Code
-              </button>
-              <button onclick="window.resetBookingEngine()" class="px-5 py-3 text-[#7e8aa8] hover:text-white font-mono text-xs uppercase tracking-wider">
-                Book Another Appointment
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
 
   <!-- =========================================================================
        SECTION 9: BARBER RED BOOKING CTA STRIP
