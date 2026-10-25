@@ -37,6 +37,7 @@
 - `#34` Relocated "Online Reservation: Reserve a chair, anytime" 5-step booking engine (#booking-engine) immediately after the Hero section (#community-hero), allowing instant chair reservations directly below the animated hero showcase (2026-10-25)
 - `#35` Fixed hero section: background photo now full-bleed with `position:absolute; inset:0; object-fit:cover` (no flex centering artifact), orbit rings scaled 22% smaller (outer 96→75vmin, middle 74→57vmin, inner 50→38vmin), left-edge gradient overlay added to blend naturally dark image edge (2026-10-25)
 - `#36` Relocated Red Barber CTA strip ("Ready for your best cut yet?") immediately after the Hero section, removed shop phone number button, and centered single "Book your chair now" CTA button (2026-10-25)
+- `#37` Renamed website brand identity to "Hair and Care bd" across document title, SEO meta descriptions, top navigation logo wordmark, booking confirmation slip, storefront card, footer brand heading, partner modal, and copyright disclaimer (2026-10-25)
 
 ## Backlog
 - `#6` Connect real SMS / OTP gateway via local provider (e.g. SSL Wireless or Greenweb) for customer booking tokens
