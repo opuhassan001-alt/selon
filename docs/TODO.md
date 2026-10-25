@@ -35,6 +35,8 @@
 - `#32` Renamed website brand identity to "The Midnight Trim bd" across document title, meta tags, top navigation brand logo crest, partner registration modal, and footer copyright (2026-10-25)
 - `#33` Integrated Kingston's Traditional Barbershop design system and editorial sections (deep navy #0c1220, barber red #e8220a, Playfair Display/Inter/JetBrains Mono typography, animated barber pole dividers, craft services 3x2 grid with hover glow, master barber team profiles, 9-photo masonry gallery, customer testimonials, dark-themed 5-step interactive booking wizard, red barber CTA strip with live available chair status, Find Us directions with vintage storefront visual, and 4-column heritage footer) while keeping the animated Batman Community Hero section 100% locked and intact as requested (2026-10-25)
 - `#34` Relocated "Online Reservation: Reserve a chair, anytime" 5-step booking engine (#booking-engine) immediately after the Hero section (#community-hero), allowing instant chair reservations directly below the animated hero showcase (2026-10-25)
+- `#35` Fixed hero section: background photo now full-bleed with `position:absolute; inset:0; object-fit:cover` (no flex centering artifact), orbit rings scaled 22% smaller (outer 96→75vmin, middle 74→57vmin, inner 50→38vmin), left-edge gradient overlay added to blend naturally dark image edge (2026-10-25)
+- `#36` Relocated Red Barber CTA strip ("Ready for your best cut yet?") immediately after the Hero section, removed shop phone number button, and centered single "Book your chair now" CTA button (2026-10-25)
 
 ## Backlog
 - `#6` Connect real SMS / OTP gateway via local provider (e.g. SSL Wireless or Greenweb) for customer booking tokens
