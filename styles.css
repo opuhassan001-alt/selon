@@ -219,26 +219,32 @@ body {
   pointer-events: none;
   user-select: none;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero-art-backdrop img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 60% center;
   opacity: 1;
   filter: brightness(1.05) contrast(1.12);
-  transform: scale(1.02);
 }
 
 .hero-art-overlay {
   position: absolute;
   inset: 0;
-  /* Zero top shading so transparent navbar reveals pure artwork; gentle bottom fade into next section */
-  background: linear-gradient(to bottom, transparent 0%, transparent 92%, #050508 100%);
+  /* Left-edge fill so dark image edges blend smoothly; bottom fade into next section */
+  background: linear-gradient(
+    to right,
+    rgba(5, 5, 8, 0.65) 0%,
+    rgba(5, 5, 8, 0.25) 30%,
+    transparent 55%,
+    transparent 85%,
+    rgba(5, 5, 8, 0.2) 100%
+  ),
+  linear-gradient(to bottom, transparent 0%, transparent 88%, #050508 100%);
   pointer-events: none;
 }
 
@@ -301,8 +307,8 @@ body {
 
 /* Orbit Rings */
 .orbit-ring-outer {
-  width: 96vmin;
-  height: 96vmin;
+  width: 75vmin;
+  height: 75vmin;
   border: 1px solid rgba(0, 240, 255, 0.4);
   border-radius: 50%;
   position: absolute;
@@ -314,8 +320,8 @@ body {
 }
 
 .orbit-ring-middle {
-  width: 74vmin;
-  height: 74vmin;
+  width: 57vmin;
+  height: 57vmin;
   border: 1px solid rgba(255, 30, 86, 0.35);
   border-radius: 50%;
   position: absolute;
@@ -327,8 +333,8 @@ body {
 }
 
 .orbit-ring-inner {
-  width: 50vmin;
-  height: 50vmin;
+  width: 38vmin;
+  height: 38vmin;
   border: 1px solid rgba(0, 240, 255, 0.25);
   border-radius: 50%;
   position: absolute;
