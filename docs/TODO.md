@@ -1,6 +1,7 @@
 # Project Backlog & Task Management
 
 ## In Progress
+- CLAIM #47 session a3e0d779-e2cf-46e3-984f-a0f748522318 2026-10-25T09:56:05Z "Build verified review submission engine and 30-40 day customer retention CRM in merchant portal"
 
 ## Done
 - `#1` Complete 11-section Bangladesh Salon Directory & Advance Booking Platform (2026-10-24)
@@ -38,7 +39,17 @@
 - `#35` Fixed hero section: background photo now full-bleed with `position:absolute; inset:0; object-fit:cover` (no flex centering artifact), orbit rings scaled 22% smaller (outer 96→75vmin, middle 74→57vmin, inner 50→38vmin), left-edge gradient overlay added to blend naturally dark image edge (2026-10-25)
 - `#36` Relocated Red Barber CTA strip ("Ready for your best cut yet?") immediately after the Hero section, removed shop phone number button, and centered single "Book your chair now" CTA button (2026-10-25)
 - `#37` Renamed website brand identity to "Hair and Care bd" across document title, SEO meta descriptions, top navigation logo wordmark, booking confirmation slip, storefront card, footer brand heading, partner modal, and copyright disclaimer (2026-10-25)
+- `#38` Design Supabase PostgreSQL multi-tenant architecture & RLS security layer following `supabase-postgres-best-practices` (profiles, salon_applications, salons, salon_staff, services, bookings, reviews) and author comprehensive implementation plan via `writing-plans` superpower skill (2026-10-25)
+- `#39` Complete Super Admin Control Center UI at `admin/index.html` with real-time BST clock, partner applications triage table, review & approval modal executing `approve_salon_application` flow, super admin team delegation & invite engine, 64-district analytics pulse, and persistent security audit trail (2026-10-25)
+- `#40` Complete Salon Partner Merchant Dashboard UI at `portal/index.html` (Shopify-style merchant workspace) with live chair station radar, queue check-in, token verifier POS mode, services & rate card catalog builder, staff roster management, and RBAC role switcher (2026-10-25)
+- `#41` Wire frontend "List your business" onboarding modal to submit verified partner applications directly into the Super Admin triage queue, and validate end-to-end flow via Playwright: public submission -> Super Admin review -> one-click approval -> active tenant provisioning (2026-10-25)
+- `#43` Synchronize public 5-step advance reservation engine with Salon Partner Merchant Portal in real-time via BroadcastChannel & LocalStorage events: bookings generated on index.html instantly appear in portal/index.html live chair queue, increment KPI metrics, log to Super Admin audit trail, and enable one-click chair check-in (2026-10-25)
+- `#45` Implement dual-engine platform monetization architecture: 1. Pay-As-You-Go 10% commission engine with real-time settlement ledger across Super Admin and Merchant Portal, 2. Customizable 30-day Sponsored Boosting Placement (default ৳200/mo, customizable by Super Admin), live boost activation in Merchant Portal, and golden '⭐ FEATURED STUDIO' top-ranking badges on public directory (2026-10-25)
+- `#46` Complete Shopify-style dedicated Salon Brand Storefront micro-site at `salon/index.html?slug=...` with studio banner photo, verified gold crest, one-click social bio link copy (`Copy Bio Link`), transparent service rate card catalog, pre-locked 1-click chair booking terminal, master barber profiles, and instant cross-sync to merchant queue (2026-10-25)
+- `#47` Anti-AI-Slop comprehensive audit via `design-taste-frontend` inspector, `karpathy-guidelines`, and `ponytail`: eliminated eyebrow kickers, decorative index numbers, emoji stars in testimonials, font-mono pollution, artificial micro-label tracking, and low-contrast text colors across all sections (2026-10-25)
 
 ## Backlog
 - `#6` Connect real SMS / OTP gateway via local provider (e.g. SSL Wireless or Greenweb) for customer booking tokens
+- `#42` Add Supabase JS client adapter with local mock fallback in `js/supabase-client.js`
+- `#44` Build "Track My Token" live client queue & waiting time estimator modal
 

@@ -229,9 +229,12 @@
       );
     }
 
+    // Sort Sponsored / Boosted Salons to the very top of results
+    filtered.sort((a, b) => (b.is_boosted ? 1 : 0) - (a.is_boosted ? 1 : 0));
+
     if (filtered.length === 0) {
       gridEl.innerHTML = `
-        <div class="col-span-full py-16 text-center border border-dashed border-[#243050] rounded bg-[#111a2e] text-xs text-[#7e8aa8] font-mono">
+        <div class="col-span-full py-16 text-center border border-dashed border-[#243050] rounded bg-[#111a2e] text-xs text-[#9ca3af] font-sans">
           No verified studios found matching your criteria. Try selecting another district or service.
         </div>
       `;
@@ -240,9 +243,10 @@
 
     gridEl.innerHTML = filtered.map((salon) => {
       const status = calculateSalonStatus(salon.openTime, salon.closeTime);
+      const isSponsored = salon.is_boosted !== false;
 
       return `
-        <div class="kingston-card bg-[#111a2e] border border-[#243050] rounded overflow-hidden flex flex-col justify-between group hover:border-[#e8220a]/50 transition-all duration-300">
+        <div class="Hair and Care-card bg-[#111a2e] border ${isSponsored ? 'border-amber-500/60 shadow-lg shadow-amber-500/10' : 'border-[#243050]'} rounded overflow-hidden flex flex-col justify-between group hover:border-[#e8220a]/50 transition-all duration-300">
           
           <!-- Card Image & Overlay Badges -->
           <div class="relative h-52 overflow-hidden bg-[#0c1220]">
@@ -252,18 +256,24 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.85]"
             />
             
-            <!-- Category Tag (Top Left) -->
+            <!-- Category / Sponsored Tag (Top Left) -->
             <div class="absolute top-3.5 left-3.5">
-              <span class="font-mono text-[10px] px-2.5 py-1 uppercase tracking-wider font-bold bg-[#172138]/90 border border-[#243050] text-[#e8220a] backdrop-blur-sm">
-                Master Studio
-              </span>
+              ${isSponsored ? `
+                <span class="font-sans text-[10px] px-2.5 py-1 uppercase tracking-wider font-bold bg-amber-400 text-black border border-amber-300 shadow-md flex items-center gap-1">
+                  <span>⭐ FEATURED STUDIO</span>
+                </span>
+              ` : `
+                <span class="font-sans text-[10px] px-2.5 py-1 uppercase tracking-wider font-bold bg-[#172138]/90 border border-[#243050] text-[#e8220a] backdrop-blur-sm">
+                  Master Studio
+                </span>
+              `}
             </div>
 
             <!-- Rating Pill (Top Right) -->
-            <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded bg-[#172138]/90 border border-[#243050] text-white text-xs font-mono font-bold flex items-center gap-1 backdrop-blur-sm">
+            <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded bg-[#172138]/90 border border-[#243050] text-white text-xs font-sans font-bold flex items-center gap-1 backdrop-blur-sm">
               <span class="text-[#e8220a]">★</span>
               <span>${salon.rating}</span>
-              <span class="text-[#7e8aa8] font-normal">(${salon.reviewsCount})</span>
+              <span class="text-[#9ca3af] font-normal">(${salon.reviewsCount})</span>
             </div>
           </div>
 
@@ -271,26 +281,28 @@
           <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
               <div class="mb-3">
-                <h3 class="font-display text-lg font-bold text-white group-hover:text-[#e8220a] transition-colors leading-snug">
-                  ${salon.name}
-                </h3>
-                <p class="font-sans text-xs text-[#7e8aa8] mt-1 leading-relaxed">
+                <a href="salon/index.html?slug=${salon.slug || 'vintage-crown'}" target="_blank" class="hover:underline">
+                  <h3 class="font-display text-lg font-bold text-white group-hover:text-[#e8220a] transition-colors leading-snug">
+                    ${salon.name}
+                  </h3>
+                </a>
+                <p class="font-sans text-xs text-[#9ca3af] mt-1 leading-relaxed">
                   ${salon.area}, ${salon.district} • ${salon.address}
                 </p>
               </div>
 
               <!-- Operating Hours: Single Clean Line -->
-              <div class="flex items-center gap-2 py-2 px-3 rounded bg-[#172138] border border-[#243050] my-3 font-mono text-xs">
+              <div class="flex items-center gap-2 py-2 px-3 rounded bg-[#172138] border border-[#243050] my-3 font-sans text-xs">
                 <span class="w-2 h-2 rounded-full ${status.isOpen ? 'bg-emerald-400' : 'bg-rose-500'}"></span>
                 <span class="font-bold ${status.isOpen ? 'text-emerald-400' : 'text-rose-400'}">${status.statusText}</span>
                 <span class="text-[#243050]">·</span>
-                <span class="text-[#7e8aa8]">${status.hoursRange}</span>
+                <span class="text-[#9ca3af]">${status.hoursRange}</span>
               </div>
 
               <!-- Service Tags -->
               <div class="flex flex-wrap gap-1.5 mb-4">
                 ${salon.services.slice(0, 3).map(srv => `
-                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#172138] border border-[#243050] text-[#7e8aa8]">
+                  <span class="font-sans text-[10px] px-2 py-0.5 rounded bg-[#172138] border border-[#243050] text-[#9ca3af]">
                     ${srv}
                   </span>
                 `).join('')}
@@ -300,14 +312,23 @@
             <!-- Card Bottom Bar (Starting Price & Actions) -->
             <div class="pt-4 border-t border-[#243050] flex items-center justify-between mt-auto">
               <div>
-                <span class="font-mono text-[9px] text-[#7e8aa8] block uppercase tracking-wider">From</span>
-                <span class="font-mono text-base font-black text-white">BDT ${salon.startingPrice}</span>
+                <span class="font-sans text-[9px] text-[#9ca3af] block uppercase tracking-wider">From</span>
+                <span class="font-sans text-base font-black text-white">BDT ${salon.startingPrice}</span>
               </div>
 
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-1.5">
+                <a 
+                  href="salon/index.html?slug=${salon.slug || 'vintage-crown'}" 
+                  target="_blank"
+                  class="p-2 rounded border border-[#243050] hover:border-amber-400 text-amber-300 hover:text-white transition-colors flex items-center gap-1 font-sans text-[11px]"
+                  title="View Dedicated Studio Storefront (Bio Link)"
+                >
+                  <span>Page ↗</span>
+                </a>
+
                 <a 
                   href="tel:${salon.phone.replace(/[^0-9+]/g, '')}" 
-                  class="p-2 rounded border border-[#243050] hover:border-[#e8220a] text-[#7e8aa8] hover:text-white transition-colors flex items-center gap-1 font-mono text-xs"
+                  class="p-2 rounded border border-[#243050] hover:border-[#e8220a] text-[#9ca3af] hover:text-white transition-colors flex items-center gap-1 font-sans text-xs"
                   title="Direct Call: ${salon.phone}"
                 >
                   <svg class="w-3.5 h-3.5 text-[#e8220a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,9 +339,9 @@
                 
                 <button 
                   onclick="window.selectSalonForBooking('${salon.name}', '${salon.area}')" 
-                  class="btn-barber-primary px-4 py-2 font-mono text-xs uppercase tracking-wider font-bold"
+                  class="btn-barber-primary px-3 sm:px-4 py-2 font-sans text-xs uppercase tracking-wider font-bold"
                 >
-                  Book Chair →
+                  Book →
                 </button>
               </div>
             </div>
@@ -372,7 +393,7 @@
             <input type="checkbox" value="${srv.name}" data-price="${srv.price}" ${isSelected ? 'checked' : ''} onchange="window.onServiceCheckChange()" class="w-4 h-4 rounded text-[#e8220a] accent-[#e8220a]">
             <span class="text-white font-medium">${srv.name}</span>
           </div>
-          <span class="font-mono text-xs font-bold text-[#e8220a]">BDT ${srv.price}</span>
+          <span class="font-sans text-xs font-bold text-[#e8220a]">BDT ${srv.price}</span>
         </label>
       `;
     }).join('');
@@ -434,12 +455,12 @@
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 w-full">
           <div>
             <h4 class="font-display text-white font-bold text-base">${activeBookingSalon.name}</h4>
-            <span class="text-[#7e8aa8] text-xs block font-sans mt-0.5">${activeBookingSalon.address}</span>
-            <span class="font-mono text-[#e8220a] text-xs block mt-1 font-semibold">Direct Helpline: ${activeBookingSalon.phone}</span>
+            <span class="text-[#9ca3af] text-xs block font-sans mt-0.5">${activeBookingSalon.address}</span>
+            <span class="font-sans text-[#e8220a] text-xs block mt-1 font-semibold">Direct Helpline: ${activeBookingSalon.phone}</span>
           </div>
           <div class="sm:text-right">
-            <span class="font-mono text-emerald-400 font-bold text-xs block">Verified Kingston Branch</span>
-            <span class="font-mono text-[#7e8aa8] text-xs">${openFormatted} – ${closeFormatted}</span>
+            <span class="font-sans text-emerald-400 font-bold text-xs block">Verified Hair and Care Branch</span>
+            <span class="font-sans text-[#9ca3af] text-xs">${openFormatted} – ${closeFormatted}</span>
           </div>
         </div>
       `;
@@ -448,7 +469,7 @@
     if (badgeEl) {
       badgeEl.innerHTML = `
         <span>Schedule: ${activeBookingSalon.openTime} AM – ${activeBookingSalon.closeTime} PM</span>
-        <span class="text-[#7e8aa8]">(${activeBookingSalon.totalHours})</span>
+        <span class="text-[#9ca3af]">(${activeBookingSalon.totalHours})</span>
       `;
     }
 
@@ -463,16 +484,16 @@
 
     box.innerHTML = `
       <div class="flex justify-between text-xs pb-2 border-b border-[#243050]">
-        <span class="text-[#7e8aa8]">Selected Studio:</span>
+        <span class="text-[#9ca3af]">Selected Studio:</span>
         <strong class="text-white font-display">${activeBookingSalon.name}</strong>
       </div>
       <div class="flex justify-between text-xs py-1">
-        <span class="text-[#7e8aa8]">Selected Items:</span>
-        <span class="text-white font-mono text-[11px] text-right max-w-[200px]">${selectedServices.map(s => s.name).join(', ')}</span>
+        <span class="text-[#9ca3af]">Selected Items:</span>
+        <span class="text-white font-sans text-[11px] text-right max-w-[200px]">${selectedServices.map(s => s.name).join(', ')}</span>
       </div>
       <div class="flex justify-between text-xs pt-3 border-t border-[#243050] items-center">
-        <span class="text-[#7e8aa8] uppercase font-mono text-[10px] tracking-wider">Estimated Total:</span>
-        <strong class="text-[#e8220a] font-mono text-lg font-black">BDT ${total}</strong>
+        <span class="text-[#9ca3af] uppercase font-sans text-[10px] tracking-wider">Estimated Total:</span>
+        <strong class="text-[#e8220a] font-sans text-lg font-black">BDT ${total}</strong>
       </div>
     `;
   }
@@ -496,7 +517,7 @@
     }
 
     container.innerHTML = slots.map((timeStr, idx) => `
-      <label class="time-slot-pill flex items-center justify-center py-2.5 px-3 rounded bg-[#172138] border border-[#243050] hover:border-[#e8220a] text-[#7e8aa8] hover:text-white cursor-pointer text-center font-mono text-xs transition-all shadow-sm">
+      <label class="time-slot-pill flex items-center justify-center py-2.5 px-3 rounded bg-[#172138] border border-[#243050] hover:border-[#e8220a] text-[#9ca3af] hover:text-white cursor-pointer text-center font-sans text-xs transition-all shadow-sm">
         <input type="radio" name="booking-slot" value="${timeStr}" class="sr-only" ${idx === 2 ? 'checked' : ''} onchange="window.handleSlotSelection(this)">
         <span class="w-full text-center slot-label-text">
           ${timeStr}
@@ -511,19 +532,19 @@
   window.handleSlotSelection = function (radioEl) {
     document.querySelectorAll('.time-slot-pill').forEach(pill => {
       pill.classList.remove('border-[#e8220a]', 'bg-[#e8220a]', 'text-white', 'shadow-md');
-      pill.classList.add('border-[#243050]', 'bg-[#172138]', 'text-[#7e8aa8]');
+      pill.classList.add('border-[#243050]', 'bg-[#172138]', 'text-[#9ca3af]');
       const text = pill.querySelector('.slot-label-text');
       if (text) {
         text.classList.remove('text-white', 'font-bold');
-        text.classList.add('text-[#7e8aa8]');
+        text.classList.add('text-[#9ca3af]');
       }
     });
     if (radioEl.parentElement) {
-      radioEl.parentElement.classList.remove('border-[#243050]', 'bg-[#172138]', 'text-[#7e8aa8]');
+      radioEl.parentElement.classList.remove('border-[#243050]', 'bg-[#172138]', 'text-[#9ca3af]');
       radioEl.parentElement.classList.add('border-[#e8220a]', 'bg-[#e8220a]', 'text-white', 'shadow-md');
       const text = radioEl.parentElement.querySelector('.slot-label-text');
       if (text) {
-        text.classList.remove('text-[#7e8aa8]');
+        text.classList.remove('text-[#9ca3af]');
         text.classList.add('text-white', 'font-bold');
       }
     }
@@ -536,11 +557,11 @@
       if (panel) panel.classList.add('hidden');
       if (navBtn) {
         if (i < stepNumber) {
-          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#172138] border border-[#e8220a] text-[#e8220a] font-mono text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
+          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#172138] border border-[#e8220a] text-[#e8220a] font-sans text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
         } else if (i === stepNumber) {
-          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-mono text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 cursor-pointer";
+          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-sans text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 cursor-pointer";
         } else {
-          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#7e8aa8] font-mono text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
+          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#9ca3af] font-sans text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
         }
       }
     }
@@ -551,7 +572,7 @@
     updateOrderSummaryBox();
   };
 
-  // Direct selection helpers for Kingston's sections
+  // Direct selection helpers for Hair and Care's sections
   window.selectServiceDirect = function (serviceName, price) {
     const foundService = MASTER_SERVICES_CATALOG.find(s => 
       s.name.toLowerCase().includes(serviceName.toLowerCase()) || 
@@ -634,9 +655,12 @@
     const stylistSelect = document.getElementById('booking-stylist-select');
     const stylist = stylistSelect ? stylistSelect.value : 'Any Master Barber';
 
-    const areaCode = activeBookingSalon.area.substring(0, 3).toUpperCase();
+    const areaCode = (activeBookingSalon.area || 'DHA').substring(0, 3).toUpperCase();
     const randomNum = Math.floor(1000 + Math.random() * 9000);
     const tokenId = `SLN-${areaCode}-${randomNum}`;
+
+    const totalAmount = selectedServices.reduce((sum, s) => sum + (s.price || 0), 0) || 500;
+    const serviceNameSummary = selectedServices.map(s => s.name).join(' + ') || 'Signature Haircut';
 
     document.getElementById('slip-token-id').innerText = tokenId;
     document.getElementById('slip-salon-name').innerText = activeBookingSalon.name;
@@ -645,6 +669,44 @@
     document.getElementById('slip-stylist').innerText = stylist;
     document.getElementById('slip-customer-name').innerText = name;
     document.getElementById('slip-customer-phone').innerText = phone;
+
+    // --- REAL-TIME MERCHANT PORTAL SYNCHRONIZATION ---
+    try {
+      const currentBookings = JSON.parse(localStorage.getItem('portal_bookings')) || [];
+      const newBooking = {
+        id: tokenId,
+        customer_name: name,
+        customer_phone: phone,
+        barber: stylist,
+        chair: Math.floor(1 + Math.random() * 4), // Assign to one of the 4 barber chairs
+        service: serviceNameSummary,
+        time_slot: slotTime,
+        booking_date: date,
+        total: totalAmount,
+        status: 'confirmed' // confirmed, in_chair, completed
+      };
+
+      currentBookings.unshift(newBooking);
+      localStorage.setItem('portal_bookings', JSON.stringify(currentBookings));
+
+      // Broadcast to any open Merchant Portal tabs
+      if (typeof BroadcastChannel !== 'undefined') {
+        const syncChannel = new BroadcastChannel('salon_live_sync');
+        syncChannel.postMessage({ type: 'NEW_BOOKING', booking: newBooking });
+      }
+
+      // Log to Super Admin Audit Trail
+      const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+      currentAudit.unshift({
+        timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+        actor: name,
+        action: 'ONLINE_BOOKING_PLACED',
+        detail: `New reservation ${tokenId} generated for ${activeBookingSalon.name} (${slotTime} BST, ৳${totalAmount}).`
+      });
+      localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+    } catch (e) {
+      console.warn('Sync notice:', e);
+    }
 
     window.goToBookingStep(5);
     window.showToast(`Booking confirmed! Verification Token ID: ${tokenId}`);
@@ -738,36 +800,57 @@
   };
 
   window.handleSalonRegistration = function () {
-    const name = document.getElementById('reg-salon-name').value;
-    const division = document.getElementById('reg-division').value;
-    const area = document.getElementById('reg-area').value;
-    const phone = document.getElementById('reg-phone').value;
-    const openT = document.getElementById('reg-open-time').value;
-    const closeT = document.getElementById('reg-close-time').value;
+    const salonName = document.getElementById('reg-salon-name')?.value?.trim();
+    const ownerName = document.getElementById('reg-owner-name')?.value?.trim() || 'Salon Partner';
+    const phone = document.getElementById('reg-phone')?.value?.trim();
+    const email = document.getElementById('reg-email')?.value?.trim() || 'partner@barbershop.bd';
+    const division = document.getElementById('reg-division')?.value || 'Dhaka';
+    const area = document.getElementById('reg-area')?.value?.trim() || 'Main City';
+    const tradeLicense = document.getElementById('reg-trade-license')?.value?.trim() || 'TRAD/DNCC/2026';
+    const chairsCount = parseInt(document.getElementById('reg-chairs-count')?.value, 10) || 4;
+    const openT = document.getElementById('reg-open-time')?.value || '10:00';
+    const closeT = document.getElementById('reg-close-time')?.value || '22:00';
 
-    const newSalon = {
-      id: `sln-${area.toLowerCase().substring(0, 3)}-${Date.now()}`,
-      name: name,
-      division: division,
+    if (!salonName || !phone) {
+      window.showToast('Please provide your business name and contact number.', 'error');
+      return;
+    }
+
+    // Persist into Super Admin Triage queue
+    const currentApps = JSON.parse(localStorage.getItem('salon_admin_apps')) || [];
+    const newApplication = {
+      id: Date.now(),
+      salon_name: salonName,
+      owner_name: ownerName,
+      owner_phone: phone,
+      owner_email: email,
       district: division,
       area: area,
-      address: `${area}, ${division}`,
-      phone: phone,
-      openTime: openT,
-      closeTime: closeT,
-      totalHours: '13 Hours Daily',
-      startingPrice: 300,
-      rating: '5.0',
-      reviewsCount: 1,
-      verified: true,
-      services: ['Executive Haircut', 'Beard Trim']
+      full_address: `${area}, ${division}`,
+      chairs_count: chairsCount,
+      trade_license_number: tradeLicense,
+      status: 'pending',
+      opening_time: openT,
+      closing_time: closeT,
+      submitted_at: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+      notes: `New partner application submitted via public portal for ${chairsCount} chairs.`
     };
 
-    SALON_DATABASE.unshift(newSalon);
-    renderSalonDirectoryGrid('all', '');
-    populateBookingSalonDropdown();
+    currentApps.unshift(newApplication);
+    localStorage.setItem('salon_admin_apps', JSON.stringify(currentApps));
+
+    // Log to Audit Trail
+    const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+    currentAudit.unshift({
+      timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+      actor: ownerName,
+      action: 'NEW_APPLICATION_SUBMITTED',
+      detail: `${salonName} (${division}) submitted onboarding application.`
+    });
+    localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+
     window.closeRegisterModal();
-    window.showToast(`Congratulations! "${name}" has been registered successfully.`);
+    window.showToast(`✓ Application submitted for "${salonName}"! Super Admin will review within 24 hours.`);
   };
 
   window.handleNewsletter = function () {

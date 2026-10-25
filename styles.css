@@ -9,7 +9,7 @@
   --border: 222 28% 20%;            /* #243050 border */
   --border-soft: 222 24% 26%;       /* #2e3e62 secondary border */
   --foreground: 210 40% 96%;        /* #f0f4fc off-white */
-  --muted-foreground: 220 15% 55%;  /* #7e8aa8 muted blue-grey */
+  --muted-foreground: 220 15% 55%;  /* #9ca3af muted blue-grey */
   --subtle: 220 12% 38%;            /* #546080 very muted */
   --primary: 4 80% 50%;             /* #e8220a barber red */
   --primary-foreground: 0 0% 100%;
@@ -26,7 +26,7 @@
   --border-dark: #243050;
   --border-secondary: #2e3e62;
   --text-main: #f0f4fc;
-  --text-muted: #7e8aa8;
+  --text-muted: #9ca3af;
   --accent-red: #e8220a;
   --accent-red-hover: #c11a07;
   --accent-blue: #1a3a9c;
@@ -113,7 +113,7 @@ body {
 
 .btn-barber-ghost {
   background-color: transparent;
-  color: #7e8aa8;
+  color: #9ca3af;
   border: 1px solid #2e3e62;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
