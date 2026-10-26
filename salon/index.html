@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#0C1220] text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Vintage Crown Barbershop | Dedicated Studio Storefront</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            serif: ['"Playfair Display"', 'serif'],
+            display: ['"Bebas Neue"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#E8220A',
+              redHover: '#CC1C07',
+              gold: '#D4AF37',
+              navy: '#0C1220',
+              card: '#121622',
+              surface: '#172138',
+              border: '#243050',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0c1220; }
+    ::-webkit-scrollbar-thumb { background: #243050; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #e8220a; }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #AA8010 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="font-sans selection:bg-brand-red selection:text-white antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ============================================================================ -->
+  <!-- TOP BRAND NAVBAR -->
+  <!-- ============================================================================ -->
+  <nav class="sticky top-0 z-50 bg-[#0C1220]/90 backdrop-blur-md border-b border-brand-border px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <!-- Platform Backlink & Studio Monogram -->
+    <div class="flex items-center space-x-4">
+      <a href="../index.html" class="flex items-center space-x-2 text-xs font-mono text-slate-400 hover:text-white transition-colors group">
+        <span>←</span>
+        <span>Hair and Care <strong class="text-brand-red font-semibold">bd</strong></span>
+      </a>
+
+      <div class="hidden sm:block h-4 w-[1px] bg-brand-border"></div>
+
+      <div class="flex items-center space-x-2">
+        <span class="text-xs uppercase font-mono font-bold px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">
+          ⭐ Verified Studio Storefront
+        </span>
+      </div>
+    </div>
+
+    <!-- Right Quick Actions: Share Studio & Direct Dial -->
+    <div class="flex items-center space-x-3">
+      <!-- One-Click Social Share Button (For Instagram / Facebook Bio) -->
+      <button id="btn-share-storefront" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#172138] hover:bg-[#1f2c4a] border border-brand-border hover:border-amber-400 text-xs font-semibold text-amber-300 transition-all shadow-sm">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+        <span>Copy Bio Link</span>
+      </button>
+
+      <a id="nav-phone-call" href="tel:+8801712445566" class="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-brand-border hover:bg-white/5 text-xs text-slate-300 transition-colors">
+        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span id="nav-phone-number">+880 1712-445566</span>
+      </a>
+
+      <a href="#dedicated-booking" class="px-3.5 py-1.5 rounded-lg bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold shadow-md shadow-brand-red/20 transition-all">
+        Book Chair Now
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================================ -->
+  <!-- HERO BANNER: STUDIO IDENTITY -->
+  <!-- ============================================================================ -->
+  <header class="relative border-b border-brand-border bg-[#0E1526] overflow-hidden">
+    <!-- Background Texture Photo -->
+    <div class="absolute inset-0 z-0 opacity-25">
+      <img id="salon-cover-img" src="../assets/studio-haven.jpg" alt="Salon Cover" class="w-full h-full object-cover filter blur-[2px] scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0C1220] via-[#0C1220]/80 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        
+        <!-- Left: Crest, Name, Location -->
+        <div class="space-y-3">
+          <div class="flex items-center space-x-2">
+            <span class="font-mono text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded bg-brand-red text-white shadow-sm">
+              Flagship Studio
+            </span>
+            <span id="salon-status-chip" class="font-mono text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center space-x-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="salon-live-bst-status">Open Today (BST 10:00 AM - 10:30 PM)</span>
+            </span>
+          </div>
+
+          <h1 id="salon-hero-name" class="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            Vintage Crown Barbershop
+          </h1>
+
+          <p id="salon-hero-address" class="text-sm text-slate-300 max-w-xl leading-relaxed flex items-center space-x-2">
+            <span>📍 Road 27, Dhanmondi R/A, Dhaka-1209 • Master Grooming & Classic Shaves</span>
+          </p>
+
+          <div class="flex items-center space-x-4 pt-1 font-mono text-xs">
+            <div class="flex items-center text-amber-400">
+              <span>★★★★★</span>
+              <span class="ml-1 text-white font-bold" id="salon-rating">4.95</span>
+              <span class="text-slate-400 ml-1">(420+ Verified Reviews)</span>
+            </div>
+            <span class="text-slate-600">•</span>
+            <span class="text-emerald-400 font-semibold">Zero No-Wait Priority Slots</span>
+          </div>
+        </div>
+
+        <!-- Right: Fast Share & Direct Action Card -->
+        <div class="bg-[#121622]/90 border border-brand-border rounded-2xl p-4 sm:p-5 backdrop-blur-md space-y-3 shrink-0 md:max-w-xs w-full shadow-2xl">
+          <div class="text-[11px] font-mono uppercase text-slate-400 flex justify-between">
+            <span>Share Studio Link</span>
+            <span class="text-amber-400">Instagram Bio</span>
+          </div>
+
+          <div class="bg-[#0C1220] p-2.5 rounded-lg border border-brand-border font-mono text-xs text-slate-300 truncate select-all" id="shareable-url-box">
+            hairandcare.bd/salon/?slug=vintage-crown
+          </div>
+
+          <button onclick="copyStorefrontLink()" class="w-full py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs shadow-md transition-all flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            <span>Copy Bio Booking Link</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================================ -->
+  <!-- MAIN CONTENT: MENU & DIRECT BOOKING TERMINAL -->
+  <!-- ============================================================================ -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 space-y-12">
+
+    <!-- Section 1: Services Rate Card Catalog -->
+    <section id="services-catalog" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-brand-border pb-4">
+        <div>
+          <span class="font-mono text-xs text-brand-red font-bold uppercase tracking-widest">Rate Card</span>
+          <h2 class="font-serif text-2xl font-bold text-white mt-1">Craft Grooming Services & Pricing</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Transparent BDT Rates • Pay at Chair</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="storefront-services-grid">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- Section 2: Dedicated 1-Click Chair Reservation Wizard -->
+    <section id="dedicated-booking" class="scroll-mt-24 p-6 sm:p-8 rounded-2xl bg-[#111A2E] border border-brand-border shadow-2xl space-y-6">
+      <div class="border-b border-brand-border pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <span class="font-mono text-[10px] uppercase font-bold tracking-widest text-brand-red">Direct Studio Reservation</span>
+          <h2 class="font-serif text-2xl font-bold text-white mt-0.5">Reserve Your Chair at <span id="booking-target-salon">Vintage Crown</span></h2>
+        </div>
+        <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-full">
+          Pre-Locked: Zero Salon Switching
+        </span>
+      </div>
+
+      <!-- Booking Form -->
+      <form id="storefront-booking-form" onsubmit="event.preventDefault(); submitStorefrontBooking();" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Service Selection -->
+          <div>
+            <label class="block text-xs font-mono text-slate-300 font-semibold mb-1.5 uppercase">Select Service: *</label>
+            <select id="sf-service-select" required class="w-full bg-[#172138] border border-brand-border rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-brand-red">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+
+          <!-- Master Barber Selection -->
+          <div>
+            <label class="block text-xs font-mono text-slate-300 font-semibold mb-1.5 uppercase">Preferred Barber: *</label>
+            <select id="sf-barber-select" required class="w-full bg-[#172138] border border-brand-border rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-brand-red">
+              <option value="Any Master Barber">Any Available Master Barber (Fastest Slot)</option>
+              <option value="Kabir Hossain (Master Barber)">Kabir Hossain - Master Barber (Chair 1)</option>
+              <option value="Jewel Ahmed (Senior Stylist)">Jewel Ahmed - Senior Stylist (Chair 2)</option>
+              <option value="Tanvir Mia (Fade Specialist)">Tanvir Mia - Fade Specialist (Chair 3)</option>
+              <option value="Nayeem Islam (Beard Artisan)">Nayeem Islam - Beard Artisan (Chair 4)</option>
+            </select>
+          </div>
+
+          <!-- Time Slot Selection -->
+          <div>
+            <label class="block text-xs font-mono text-slate-300 font-semibold mb-1.5 uppercase">Time Slot (BST): *</label>
+            <select id="sf-slot-select" required class="w-full bg-[#172138] border border-brand-border rounded-xl px-3.5 py-3 text-xs text-white font-mono focus:outline-none focus:border-brand-red">
+              <option value="11:00 AM">11:00 AM BST</option>
+              <option value="11:45 AM">11:45 AM BST</option>
+              <option value="02:30 PM">02:30 PM BST</option>
+              <option value="04:15 PM">04:15 PM BST</option>
+              <option value="06:00 PM">06:00 PM BST</option>
+              <option value="07:30 PM">07:30 PM BST</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-300 font-semibold mb-1.5 uppercase">Your Full Name: *</label>
+            <input type="text" id="sf-customer-name" required placeholder="e.g. Asif Mahmud" class="w-full bg-[#172138] border border-brand-border rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-brand-red">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 font-semibold mb-1.5 uppercase">Phone Number (+880): *</label>
+            <input type="tel" id="sf-customer-phone" required placeholder="+880 1711-XXXXXX" class="w-full bg-[#172138] border border-brand-border rounded-xl px-3.5 py-3 text-xs text-white font-mono focus:outline-none focus:border-brand-red">
+          </div>
+        </div>
+
+        <!-- No-Show Deposit Option -->
+        <div class="p-3.5 rounded-xl bg-[#0C1220] border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div class="space-y-0.5">
+            <span class="font-mono text-amber-400 font-bold text-[11px] block">🛡️ No-Show Protection Hold</span>
+            <p class="text-slate-300 text-[11px]">৳50 deposit secures chair slot, 100% adjusted on final bill.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#172138] border border-[#E2136E]/60 text-white cursor-pointer text-xs">
+              <input type="radio" name="sf-deposit-mfs" value="bkash" checked class="accent-[#E2136E]">
+              <span class="font-bold text-[#E2136E]">bKash ৳50</span>
+            </label>
+            <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#172138] border border-[#F7941D]/60 text-white cursor-pointer text-xs">
+              <input type="radio" name="sf-deposit-mfs" value="nagad" class="accent-[#F7941D]">
+              <span class="font-bold text-[#F7941D]">Nagad ৳50</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+          <div class="text-xs text-slate-400 font-mono">
+            <span>Payment Mode: </span>
+            <strong class="text-emerald-400">Pay at Salon Cash / bKash (Zero Booking Fee)</strong>
+          </div>
+
+          <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-red/30 transition-all">
+            Confirm Chair Reservation →
+          </button>
+        </div>
+      </form>
+
+      <!-- Storefront Digital Token Slip (Reveals upon booking) -->
+      <div id="storefront-token-slip" class="hidden p-6 rounded-xl border border-brand-border bg-[#0C1220] space-y-4">
+        <div class="flex items-center justify-between border-b border-brand-border pb-3">
+          <div>
+            <span class="text-[10px] uppercase font-mono text-slate-400">Your Booking Slip</span>
+            <div class="text-xl font-bold text-amber-400 font-mono" id="slip-token-number">VC-DHN-8942</div>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            ✓ Confirmed with Merchant
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs">
+          <div>
+            <div class="text-slate-500 font-mono text-[10px]">Client:</div>
+            <div class="text-white font-medium" id="slip-client-name">Asif Mahmud</div>
+          </div>
+          <div>
+            <div class="text-slate-500 font-mono text-[10px]">Barber:</div>
+            <div class="text-white font-medium" id="slip-barber-name">Kabir Hossain</div>
+          </div>
+          <div>
+            <div class="text-slate-500 font-mono text-[10px]">Time Slot:</div>
+            <div class="text-amber-400 font-mono font-bold" id="slip-slot-display">11:45 AM BST</div>
+          </div>
+          <div>
+            <div class="text-slate-500 font-mono text-[10px]">Total Bill:</div>
+            <div class="text-white font-mono font-bold" id="slip-price-display">৳ 500</div>
+          </div>
+          <div>
+            <div class="text-slate-500 font-mono text-[10px]">Deposit Paid:</div>
+            <div class="text-emerald-400 font-mono font-bold" id="slip-deposit-display">৳ 50 (bKash)</div>
+          </div>
+          <div>
+            <div class="text-slate-500 font-mono text-[10px]">Due at Chair:</div>
+            <div class="text-amber-300 font-mono font-bold" id="slip-due-display">৳ 450</div>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-slate-400 italic">
+          Show this token code or screenshot when you arrive at the front desk. Your chair is reserved.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Master Barbers Team Showcase -->
+    <section class="space-y-6">
+      <div class="border-b border-brand-border pb-4">
+        <span class="font-mono text-xs text-brand-red font-bold uppercase tracking-widest">Artists & Craftsmen</span>
+        <h2 class="font-serif text-2xl font-bold text-white mt-1">Master Barbers on Duty</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="storefront-barbers-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Section 3.5: Verified Client Reviews (Token Authenticated) -->
+    <section class="space-y-6">
+      <div class="border-b border-brand-border pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <span class="font-mono text-xs text-brand-red font-bold uppercase tracking-widest">Zero-Fake Social Proof</span>
+          <h2 class="font-serif text-2xl font-bold text-white mt-1">Verified Client Reviews</h2>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            🔒 In-Person Verified Only
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="storefront-reviews-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Section 4: Studio Location & BST Operating Hours -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 rounded-2xl bg-[#111A2E] border border-brand-border">
+      <div class="space-y-2 md:col-span-2">
+        <span class="font-mono text-[10px] text-brand-red uppercase font-bold tracking-wider">Directions & Location</span>
+        <h3 class="text-xl font-bold text-white font-serif" id="info-salon-name">Vintage Crown Barbershop</h3>
+        <p class="text-xs text-slate-300 font-mono leading-relaxed" id="info-salon-address">
+          House 42, Road 27, Dhanmondi R/A, Dhaka 1209 (Next to Medinova Medical Center)
+        </p>
+        <div class="pt-2 flex items-center space-x-3 text-xs">
+          <a href="https://maps.google.com" target="_blank" class="px-3 py-1.5 rounded-lg bg-[#172138] hover:bg-[#1f2c4a] border border-brand-border text-slate-300 hover:text-white transition-colors">
+            Open in Google Maps ↗
+          </a>
+          <a id="info-phone-link" href="tel:+8801712445566" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30">
+            Call Reception
+          </a>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-[#0C1220] border border-brand-border space-y-2 text-xs">
+        <span class="text-[10px] font-mono uppercase text-slate-400 font-semibold">BST Operating Schedule</span>
+        <div class="flex justify-between text-slate-300">
+          <span>Saturday – Thursday:</span>
+          <span class="font-mono text-white">10:00 AM – 10:30 PM</span>
+        </div>
+        <div class="flex justify-between text-slate-300">
+          <span>Friday:</span>
+          <span class="font-mono text-white">02:00 PM – 11:00 PM</span>
+        </div>
+        <div class="pt-2 text-[11px] text-emerald-400 font-mono">
+          ✓ Walk-in & Advance Online Reservations
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================================ -->
+  <footer class="border-t border-brand-border bg-[#090E1A] py-8 text-center text-xs text-slate-500 font-mono">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        Powered by <a href="../index.html" class="text-slate-300 hover:text-brand-red font-semibold">Hair and Care bd</a> • Multi-Tenant Salon Engine
+      </div>
+      <div class="flex items-center space-x-4 text-slate-400">
+        <a href="../portal/index.html" class="hover:text-white">Merchant Portal ↗</a>
+        <span>•</span>
+        <a href="../admin/index.html" class="hover:text-white">Super Admin ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- ============================================================================ -->
+  <!-- JAVASCRIPT STATE & STOREFRONT CONTROLLER -->
+  <!-- ============================================================================ -->
+  <script>
+    // URL Query Params: ?slug=vintage-crown or ?id=101
+    const urlParams = new URLSearchParams(window.location.search);
+    const activeSlug = urlParams.get('slug') || urlParams.get('id') || 'vintage-crown';
+
+    // Storefront Data Matrix
+    const STORE_DATA = {
+      'vintage-crown': {
+        name: "Vintage Crown Barbershop",
+        slug: "vintage-crown",
+        district: "Dhaka",
+        area: "Dhanmondi 27",
+        address: "House 42, Road 27, Dhanmondi R/A, Dhaka 1209",
+        phone: "+880 1712-445566",
+        rating: "4.95",
+        reviewsCount: 420,
+        cover: "../assets/studio-haven.jpg",
+        openTime: "10:00 AM",
+        closeTime: "10:30 PM",
+        services: [
+          { id: 1, name: "Signature Scissor Fade", category: "Haircut", duration: 35, price: 500, desc: "Precision scissor taper, foil razor finish, and hot-towel neck shave." },
+          { id: 2, name: "English Hot-Towel Beard Sculpt", category: "Beard", duration: 30, price: 350, desc: "Sandalwood pre-shave oil, straight razor contouring, and cold compress." },
+          { id: 3, name: "Deep Charcoal Detox Facial", category: "Facial", duration: 45, price: 800, desc: "Blackhead extraction, charcoal clay mask, and tea tree soothing serum." },
+          { id: 4, name: "Executive Crown Combo (Cut + Beard)", category: "VIP", duration: 60, price: 850, desc: "Complete haircut, beard detailing, eyebrow shaping, and scalp massage." },
+          { id: 5, name: "Keratin Protein Hair Spa", category: "Spa", duration: 50, price: 1200, desc: "Intense hair moisture treatment for damaged hair and frizz control." }
+        ],
+        barbers: [
+          { name: "Kabir Hossain", title: "Founder & Master Barber", exp: "14 Years Exp", chair: 1, avatar: "../assets/barber-1.jpg" },
+          { name: "Jewel Ahmed", title: "Senior Fade Stylist", exp: "8 Years Exp", chair: 2, avatar: "../assets/barber-2.jpg" },
+          { name: "Tanvir Mia", title: "Hot-Towel Specialist", exp: "9 Years Exp", chair: 3, avatar: "../assets/barber-3.jpg" },
+          { name: "Nayeem Islam", title: "Beard Sculptor", exp: "6 Years Exp", chair: 4, avatar: "../assets/barber-4.jpg" }
+        ]
+      },
+      'barbarian': {
+        name: "Barbarian Traditional Barbershop",
+        slug: "barbarian",
+        district: "Dhaka",
+        area: "Banani 11",
+        address: "Road 11, Block D, Banani, Dhaka 1213",
+        phone: "+880 1711-223344",
+        rating: "4.92",
+        reviewsCount: 380,
+        cover: "../assets/studio-barberia.jpg",
+        openTime: "10:00 AM",
+        closeTime: "10:00 PM",
+        services: [
+          { id: 1, name: "Barbarian Skin Taper", category: "Haircut", duration: 40, price: 600, desc: "Signature skin fade with razor edging and matte styling clay." },
+          { id: 2, name: "Traditional Straight-Razor Shave", category: "Beard", duration: 30, price: 400, desc: "Double hot towel steam and classic badger brush lather." }
+        ],
+        barbers: [
+          { name: "James Kingston", title: "Master Barber", exp: "20 Years Exp", chair: 1, avatar: "../assets/barber-1.jpg" },
+          { name: "Marcus Webb", title: "Senior Stylist", exp: "12 Years Exp", chair: 2, avatar: "../assets/barber-2.jpg" }
+        ]
+      }
+    };
+
+    // Active Storefront Resolution
+    const currentStore = STORE_DATA[activeSlug] || STORE_DATA['vintage-crown'];
+
+    // Render Store Info
+    document.getElementById('page-title').textContent = `${currentStore.name} | Official Storefront`;
+    document.getElementById('salon-hero-name').textContent = currentStore.name;
+    document.getElementById('salon-hero-address').textContent = `📍 ${currentStore.address} • Master Grooming & Classic Shaves`;
+    document.getElementById('salon-rating').textContent = currentStore.rating;
+    document.getElementById('nav-phone-number').textContent = currentStore.phone;
+    document.getElementById('nav-phone-call').href = `tel:${currentStore.phone.replace(/[^0-9+]/g, '')}`;
+    document.getElementById('info-salon-name').textContent = currentStore.name;
+    document.getElementById('info-salon-address').textContent = currentStore.address;
+    document.getElementById('booking-target-salon').textContent = currentStore.name;
+    document.getElementById('salon-cover-img').src = currentStore.cover;
+    document.getElementById('shareable-url-box').textContent = `${window.location.origin}/salon/?slug=${currentStore.slug}`;
+
+    // Toast Notification
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const borderCol = type === 'success' ? 'border-emerald-500/40 bg-emerald-950/90 text-emerald-200' : 'border-red-500/40 bg-red-950/90 text-red-200';
+      toast.className = `px-4 py-3 rounded-xl border ${borderCol} shadow-xl backdrop-blur-md text-xs font-medium pointer-events-auto flex items-center space-x-2 transition-all transform translate-y-2 opacity-0`;
+      toast.innerHTML = `<span>${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    // Social Sharing Link Copy
+    function copyStorefrontLink() {
+      const shareUrl = `${window.location.origin}${window.location.pathname}?slug=${currentStore.slug}`;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        showToast(`✓ Storefront Link Copied! Ready to paste in Instagram Bio or Facebook page.`);
+      });
+    }
+    document.getElementById('btn-share-storefront').addEventListener('click', copyStorefrontLink);
+
+    // Render Rate Card
+    const servicesGrid = document.getElementById('storefront-services-grid');
+    const sfServiceSelect = document.getElementById('sf-service-select');
+    servicesGrid.innerHTML = '';
+    sfServiceSelect.innerHTML = '';
+
+    currentStore.services.forEach(svc => {
+      // Card in menu
+      const card = document.createElement('div');
+      card.className = 'p-5 rounded-xl bg-[#111A2E] border border-brand-border flex flex-col justify-between hover:border-brand-red/50 transition-all';
+      card.innerHTML = `
+        <div>
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span class="font-mono text-[10px] uppercase font-bold text-brand-red px-2 py-0.5 rounded bg-brand-red/10 border border-brand-red/20">${svc.category}</span>
+            <span class="font-mono text-slate-400">${svc.duration} mins</span>
+          </div>
+          <h3 class="text-base font-bold text-white mt-2">${svc.name}</h3>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">${svc.desc}</p>
+        </div>
+
+        <div class="pt-4 border-t border-brand-border flex items-center justify-between mt-4">
+          <div class="text-lg font-bold text-emerald-400 font-mono">৳ ${svc.price}</div>
+          <button onclick="pickServiceForBooking('${svc.name}', ${svc.price})" class="px-3 py-1.5 rounded-lg bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold shadow-sm transition-all">
+            Book Service →
+          </button>
+        </div>
+      `;
+      servicesGrid.appendChild(card);
+
+      // Option in booking form
+      const opt = document.createElement('option');
+      opt.value = `${svc.name} (৳${svc.price})`;
+      opt.textContent = `${svc.name} — ৳${svc.price} (${svc.duration}m)`;
+      sfServiceSelect.appendChild(opt);
+    });
+
+    window.pickServiceForBooking = function(serviceName, price) {
+      for (let i = 0; i < sfServiceSelect.options.length; i++) {
+        if (sfServiceSelect.options[i].value.includes(serviceName)) {
+          sfServiceSelect.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById('dedicated-booking').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Selected "${serviceName}". Choose your preferred barber and slot.`);
+    };
+
+    // Render Barbers
+    const barbersGrid = document.getElementById('storefront-barbers-grid');
+    barbersGrid.innerHTML = '';
+    currentStore.barbers.forEach(b => {
+      const bcard = document.createElement('div');
+      bcard.className = 'p-4 rounded-xl bg-[#111A2E] border border-brand-border text-center space-y-3';
+      bcard.innerHTML = `
+        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-brand-border">
+          <img src="${b.avatar}" alt="${b.name}" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white">${b.name}</h4>
+          <div class="text-[11px] text-amber-400 font-mono mt-0.5">${b.title}</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-1">Station: Chair #${b.chair} • ${b.exp}</div>
+        </div>
+      `;
+      barbersGrid.appendChild(bcard);
+    });
+
+    // Render Verified Reviews (Zero Fake Reviews Engine)
+    const reviewsGrid = document.getElementById('storefront-reviews-grid');
+    const allVerifiedReviews = JSON.parse(localStorage.getItem('salon_verified_reviews')) || [
+      {
+        id: 1,
+        token_id: 'SLN-DHN-8940',
+        salon_name: currentStore.name,
+        customer_name: 'Zubair Ahmed',
+        barber: 'Kabir Hossain',
+        service: 'Signature Scissor Fade',
+        rating: 5,
+        tags: ['Razor Sharp Fade', 'Hot Towel Steam', 'Punctual & No-Wait'],
+        comment: 'Master Kabir is hands down the best fade artisan in Dhanmondi. Zero waiting time with the advance token slip. Chair comfort and razor hygiene are unmatched.',
+        created_at: '10:45 AM BST'
+      }
+    ];
+
+    const storeReviews = allVerifiedReviews.filter(r => !r.salon_name || r.salon_name.toLowerCase().includes(currentStore.name.toLowerCase().split(' ')[0]));
+    const displayReviews = storeReviews.length > 0 ? storeReviews : allVerifiedReviews;
+
+    reviewsGrid.innerHTML = '';
+    displayReviews.forEach(rev => {
+      const card = document.createElement('div');
+      card.className = 'p-5 rounded-xl bg-[#111A2E] border border-brand-border space-y-3';
+      const stars = '★'.repeat(rev.rating) + '☆'.repeat(5 - rev.rating);
+      const tagsHtml = (rev.tags || []).map(t => `<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-[#172138] text-slate-300 border border-brand-border">${t}</span>`).join(' ');
+
+      card.innerHTML = `
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="text-amber-400 font-bold text-sm tracking-widest">${stars}</span>
+            <span class="text-xs font-mono font-bold text-white">${rev.customer_name}</span>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">✓ Verified Cut</span>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed italic">"${rev.comment}"</p>
+        <div class="flex flex-wrap gap-1.5 pt-1">${tagsHtml}</div>
+        <div class="pt-2 border-t border-brand-border flex items-center justify-between text-[11px] text-slate-500 font-mono">
+          <span>Barber: <strong class="text-slate-300">${rev.barber}</strong> (${rev.service})</span>
+          <span>Token: ${rev.token_id}</span>
+        </div>
+      `;
+      reviewsGrid.appendChild(card);
+    });
+
+    // Storefront Booking Submission
+    window.submitStorefrontBooking = function() {
+      const serviceVal = document.getElementById('sf-service-select').value;
+      const barberVal = document.getElementById('sf-barber-select').value;
+      const slotVal = document.getElementById('sf-slot-select').value;
+      const name = document.getElementById('sf-customer-name').value.trim();
+      const phone = document.getElementById('sf-customer-phone').value.trim();
+
+      const prefix = currentStore.slug.substring(0, 2).toUpperCase();
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const tokenId = `${prefix}-DHN-${randomNum}`;
+
+      // Price & Deposit extraction
+      const priceMatch = serviceVal.match(/৳(\d+)/);
+      const price = priceMatch ? parseInt(priceMatch[1], 10) : 500;
+      const depositMfsRadio = document.querySelector('input[name="sf-deposit-mfs"]:checked');
+      const depositMethod = depositMfsRadio && depositMfsRadio.value === 'nagad' ? 'Nagad' : 'bKash';
+      const depositAmount = 50;
+      const dueAmount = Math.max(0, price - depositAmount);
+      const randomTrx = `TRX-${depositMethod === 'Nagad' ? 'NG' : 'BK'}-${Math.floor(100000 + Math.random() * 900000)}`;
+
+      // Persist in Merchant Portal Bookings
+      try {
+        const currentBookings = JSON.parse(localStorage.getItem('portal_bookings')) || [];
+        const newBooking = {
+          id: tokenId,
+          salon_name: currentStore.name,
+          customer_name: name,
+          customer_phone: phone,
+          barber: barberVal.split('-')[0].trim(),
+          chair: Math.floor(1 + Math.random() * 4),
+          service: serviceVal.split('(')[0].trim(),
+          time_slot: slotVal,
+          booking_date: new Date().toISOString().split('T')[0],
+          total: price,
+          deposit_paid: depositAmount,
+          deposit_method: depositMethod,
+          trx_id: randomTrx,
+          due_at_salon: dueAmount,
+          status: 'confirmed'
+        };
+
+        currentBookings.unshift(newBooking);
+        localStorage.setItem('portal_bookings', JSON.stringify(currentBookings));
+
+        // Cross-tab broadcast
+        if (typeof BroadcastChannel !== 'undefined') {
+          const syncChannel = new BroadcastChannel('salon_live_sync');
+          syncChannel.postMessage({ type: 'NEW_BOOKING', booking: newBooking });
+        }
+
+        // Audit log
+        const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+        currentAudit.unshift({
+          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+          actor: `${name} (Direct Storefront)`,
+          action: 'STOREFRONT_MFS_DEPOSIT',
+          detail: `Direct booking ${tokenId} created on ${currentStore.name} storefront with ৳${depositAmount} deposit via ${depositMethod} (TRX: ${randomTrx}). Due at chair: ৳${dueAmount}.`
+        });
+        localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+      } catch (err) {
+        console.warn(err);
+      }
+
+      // Display slip
+      document.getElementById('slip-token-number').textContent = tokenId;
+      document.getElementById('slip-client-name').textContent = name;
+      document.getElementById('slip-barber-name').textContent = barberVal;
+      document.getElementById('slip-slot-display').textContent = slotVal;
+      document.getElementById('slip-price-display').textContent = `৳ ${price}`;
+      document.getElementById('slip-deposit-display').textContent = `৳ ${depositAmount} (${depositMethod})`;
+      document.getElementById('slip-due-display').textContent = `৳ ${dueAmount}`;
+
+      document.getElementById('storefront-token-slip').classList.remove('hidden');
+      document.getElementById('storefront-token-slip').scrollIntoView({ behavior: 'smooth' });
+      showToast(`✓ Chair reserved! ৳${depositAmount} deposit secured via ${depositMethod}. Token ID: ${tokenId}`);
+      return;
+    };
+  </script>
+</body>
+</html>

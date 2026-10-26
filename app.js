@@ -481,6 +481,35 @@
     if (!box) return;
 
     const total = selectedServices.reduce((acc, curr) => acc + curr.price, 0);
+    const depositAmount = 50;
+    const dueAtChair = Math.max(0, total - depositAmount);
+
+    box.innerHTML = `
+      <div class="flex justify-between text-xs pb-2 border-b border-[#243050]">
+        <span class="text-[#9ca3af]">Selected Studio:</span>
+        <strong class="text-white font-display">${activeBookingSalon.name}</strong>
+      </div>
+      <div class="flex justify-between text-xs py-1">
+        <span class="text-[#9ca3af]">Selected Items:</span>
+        <span class="text-white font-sans text-[11px] text-right max-w-[200px]">${selectedServices.map(s => s.name).join(', ')}</span>
+      </div>
+      <div class="flex justify-between text-xs py-1">
+        <span class="text-[#9ca3af]">Gross Service Bill:</span>
+        <span class="text-white font-mono font-semibold">BDT ${total}</span>
+      </div>
+      <div class="flex justify-between text-xs py-1 text-emerald-400">
+        <span>Advance Token Deposit:</span>
+        <span class="font-mono font-bold">- BDT ${depositAmount} (bKash/Nagad)</span>
+      </div>
+      <div class="flex justify-between text-xs pt-3 border-t border-[#243050] items-center">
+        <div>
+          <span class="text-[#9ca3af] uppercase font-sans text-[10px] tracking-wider block">Due at Salon Chair:</span>
+          <span class="text-[10px] text-slate-400 font-mono">Paid after service</span>
+        </div>
+        <strong class="text-emerald-400 font-mono text-lg font-black">BDT ${dueAtChair}</strong>
+      </div>
+    `;
+    return;
 
     box.innerHTML = `
       <div class="flex justify-between text-xs pb-2 border-b border-[#243050]">
@@ -646,7 +675,91 @@
     window.goToBookingStep(3);
   };
 
-  window.submitBookingForm = function () {
+  // --------------------------------------------------------------------------
+  // BKASH / NAGAD ADVANCE DEPOSIT (NO-SHOW PROTECTION)
+  // --------------------------------------------------------------------------
+  let currentMfsProvider = 'bkash';
+
+  window.onMfsRadioChange = function (provider) {
+    currentMfsProvider = provider;
+    const btnText = document.getElementById('btn-submit-booking-text');
+    if (btnText) {
+      btnText.textContent = `Pay ৳50 Deposit via ${provider === 'nagad' ? 'Nagad' : 'bKash'} & Confirm`;
+    }
+  };
+
+  window.initiateMfsDeposit = function () {
+    const nameInput = document.getElementById('customer-name');
+    const phoneInput = document.getElementById('customer-phone');
+
+    if (!nameInput.value.trim()) {
+      window.showToast('Please enter your full name.', 'error');
+      nameInput.focus();
+      return;
+    }
+    if (!phoneInput.value.trim()) {
+      window.showToast('Please enter your mobile phone number.', 'error');
+      phoneInput.focus();
+      return;
+    }
+
+    const modal = document.getElementById('modal-mfs-checkout');
+    if (!modal) {
+      window.submitBookingForm();
+      return;
+    }
+
+    // Configure MFS Provider Theme
+    const isNagad = currentMfsProvider === 'nagad';
+    const banner = document.getElementById('mfs-banner');
+    const title = document.getElementById('mfs-provider-title');
+    const labelWallet = document.getElementById('mfs-label-wallet');
+    const confirmBtn = document.getElementById('btn-mfs-confirm-pay');
+
+    if (isNagad) {
+      banner.className = "p-5 bg-gradient-to-r from-[#D9381E] to-[#F7941D] text-white flex items-center justify-between transition-colors";
+      title.textContent = "Nagad Payment Gateway";
+      labelWallet.textContent = "Nagad";
+      confirmBtn.className = "w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D9381E] to-[#F7941D] text-white font-bold text-xs uppercase font-mono tracking-wider shadow-lg shadow-[#F7941D]/30 hover:opacity-95 transition-all flex items-center justify-center gap-2";
+    } else {
+      banner.className = "p-5 bg-gradient-to-r from-[#D12053] to-[#E2136E] text-white flex items-center justify-between transition-colors";
+      title.textContent = "bKash Payment Gateway";
+      labelWallet.textContent = "bKash";
+      confirmBtn.className = "w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D12053] to-[#E2136E] text-white font-bold text-xs uppercase font-mono tracking-wider shadow-lg shadow-[#E2136E]/30 hover:opacity-95 transition-all flex items-center justify-center gap-2";
+    }
+
+    document.getElementById('mfs-order-salon').textContent = activeBookingSalon.name;
+    document.getElementById('mfs-order-service').textContent = selectedServices.map(s => s.name).join(' + ');
+
+    modal.classList.remove('hidden');
+  };
+
+  window.closeMfsModal = function () {
+    const modal = document.getElementById('modal-mfs-checkout');
+    if (modal) modal.classList.add('hidden');
+  };
+
+  window.processMfsPayment = function () {
+    const walletNum = document.getElementById('mfs-wallet-input').value.trim();
+    if (!walletNum) {
+      window.showToast('Please enter your MFS mobile wallet number.', 'error');
+      return;
+    }
+
+    const providerName = currentMfsProvider === 'nagad' ? 'Nagad' : 'bKash';
+    const prefix = currentMfsProvider === 'nagad' ? 'TRX-NG' : 'TRX-BK';
+    const randomTrx = `${prefix}-${Math.floor(100000 + Math.random() * 900000)}`;
+
+    window.closeMfsModal();
+    window.submitBookingForm({
+      deposit_paid: 50,
+      deposit_method: providerName,
+      trx_id: randomTrx,
+      wallet_number: walletNum
+    });
+  };
+
+  window.submitBookingForm = function (mfsData = null) {
     const name = document.getElementById('customer-name').value.trim();
     const phone = document.getElementById('customer-phone').value.trim();
     const date = document.getElementById('booking-date-input').value;
@@ -660,6 +773,10 @@
     const tokenId = `SLN-${areaCode}-${randomNum}`;
 
     const totalAmount = selectedServices.reduce((sum, s) => sum + (s.price || 0), 0) || 500;
+    const depositAmount = mfsData?.deposit_paid || 50;
+    const dueAmount = Math.max(0, totalAmount - depositAmount);
+    const mfsMethod = mfsData?.deposit_method || 'bKash';
+    const trxId = mfsData?.trx_id || `TRX-BK-${Math.floor(100000 + Math.random() * 900000)}`;
     const serviceNameSummary = selectedServices.map(s => s.name).join(' + ') || 'Signature Haircut';
 
     document.getElementById('slip-token-id').innerText = tokenId;
@@ -670,11 +787,19 @@
     document.getElementById('slip-customer-name').innerText = name;
     document.getElementById('slip-customer-phone').innerText = phone;
 
+    const totalEl = document.getElementById('slip-total-bill');
+    const depositEl = document.getElementById('slip-deposit-amount');
+    const dueEl = document.getElementById('slip-due-balance');
+    if (totalEl) totalEl.innerText = `৳ ${totalAmount}`;
+    if (depositEl) depositEl.innerText = `৳ ${depositAmount} (${mfsMethod} Paid ✓ TRX: ${trxId})`;
+    if (dueEl) dueEl.innerText = `৳ ${dueAmount}`;
+
     // --- REAL-TIME MERCHANT PORTAL SYNCHRONIZATION ---
     try {
       const currentBookings = JSON.parse(localStorage.getItem('portal_bookings')) || [];
       const newBooking = {
         id: tokenId,
+        salon_name: activeBookingSalon.name,
         customer_name: name,
         customer_phone: phone,
         barber: stylist,
@@ -683,7 +808,11 @@
         time_slot: slotTime,
         booking_date: date,
         total: totalAmount,
-        status: 'confirmed' // confirmed, in_chair, completed
+        deposit_paid: depositAmount,
+        deposit_method: mfsMethod,
+        trx_id: trxId,
+        due_at_salon: dueAmount,
+        status: 'confirmed' // confirmed, in_chair, completed, no_show
       };
 
       currentBookings.unshift(newBooking);
@@ -699,9 +828,9 @@
       const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
       currentAudit.unshift({
         timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-        actor: name,
-        action: 'ONLINE_BOOKING_PLACED',
-        detail: `New reservation ${tokenId} generated for ${activeBookingSalon.name} (${slotTime} BST, ৳${totalAmount}).`
+        actor: `${name} (Client)`,
+        action: 'MFS_DEPOSIT_COLLECTED',
+        detail: `Collected ৳${depositAmount} advance booking deposit via ${mfsMethod} (TRX: ${trxId}) for ${activeBookingSalon.name}. Balance due at chair: ৳${dueAmount}.`
       });
       localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
     } catch (e) {
@@ -709,8 +838,8 @@
     }
 
     window.goToBookingStep(5);
-    window.showToast(`Booking confirmed! Verification Token ID: ${tokenId}`);
-  };
+    window.showToast(`Deposit confirmed! ৳${depositAmount} secured via ${mfsMethod}. Token ID: ${tokenId}`);
+    };
 
   window.resetBookingEngine = function () {
     window.goToBookingStep(1);
@@ -883,6 +1012,177 @@
   // --------------------------------------------------------------------------
   // 8. INITIALIZATION
   // --------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
+  // TRACK MY TOKEN & QUEUE RADAR
+  // --------------------------------------------------------------------------
+  window.openTrackTokenModal = function (prefillToken) {
+    const modal = document.getElementById('modal-track-token');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+
+    if (prefillToken) {
+      const cleanToken = prefillToken.replace('#', '').trim();
+      document.getElementById('track-token-input').value = cleanToken;
+      window.lookupTokenStatus(cleanToken);
+    } else {
+      document.getElementById('track-token-input').focus();
+    }
+  };
+
+  window.closeTrackTokenModal = function () {
+    const modal = document.getElementById('modal-track-token');
+    if (modal) modal.classList.add('hidden');
+  };
+
+  window.fillAndTrackToken = function (tokenId) {
+    document.getElementById('track-token-input').value = tokenId;
+    window.lookupTokenStatus(tokenId);
+  };
+
+  window.lookupTokenStatus = function (targetToken) {
+    const tokenQuery = (targetToken || document.getElementById('track-token-input').value || '').trim().toUpperCase().replace('#', '');
+    if (!tokenQuery) return;
+
+    const notFoundEl = document.getElementById('track-not-found');
+    const resultCardEl = document.getElementById('track-result-card');
+
+    // Default fallback bookings matching merchant portal defaults
+    const DEFAULT_BOOKINGS = [
+      {
+        id: "SLN-DHN-8942",
+        salon_name: "Vintage Crown Barbershop",
+        customer_name: "Tanvir Hasan",
+        customer_phone: "+880 1712-445566",
+        barber: "Kabir Hossain",
+        chair: 1,
+        service: "Royal Beard Sculpt & Razor Line",
+        time_slot: "11:30 AM",
+        total: 550,
+        status: "in_chair"
+      },
+      {
+        id: "SLN-DHN-8941",
+        salon_name: "Vintage Crown Barbershop",
+        customer_name: "Rakib Al-Hasan",
+        customer_phone: "+880 1912-556677",
+        barber: "Jewel Ahmed",
+        chair: 2,
+        service: "Deep Charcoal Detox Facial",
+        time_slot: "12:15 PM",
+        total: 800,
+        status: "confirmed"
+      },
+      {
+        id: "SLN-DHN-8945",
+        salon_name: "Vintage Crown Barbershop",
+        customer_name: "Mahir Faisal",
+        customer_phone: "+880 1611-778899",
+        barber: "Nayeem Islam",
+        chair: 4,
+        service: "Traditional English Hot-Towel Shave",
+        time_slot: "12:45 PM",
+        total: 350,
+        status: "confirmed"
+      },
+      {
+        id: "SLN-DHN-8940",
+        salon_name: "Vintage Crown Barbershop",
+        customer_name: "Zubair Ahmed",
+        customer_phone: "+880 1722-112233",
+        barber: "Kabir Hossain",
+        chair: 1,
+        service: "Signature Scissor Fade",
+        time_slot: "10:15 AM",
+        total: 500,
+        status: "completed"
+      }
+    ];
+
+    const currentBookings = JSON.parse(localStorage.getItem('portal_bookings')) || DEFAULT_BOOKINGS;
+    const booking = currentBookings.find(b => b.id.toUpperCase() === tokenQuery);
+
+    if (!booking) {
+      notFoundEl.classList.remove('hidden');
+      resultCardEl.classList.add('hidden');
+      return;
+    }
+
+    notFoundEl.classList.add('hidden');
+    resultCardEl.classList.remove('hidden');
+
+    // Populate Client & Service Details
+    document.getElementById('track-res-client').textContent = booking.customer_name;
+    document.getElementById('track-res-salon').textContent = booking.salon_name || "Vintage Crown Barbershop";
+    document.getElementById('track-res-barber').textContent = `${booking.barber} (Chair #${booking.chair || 1})`;
+    document.getElementById('track-res-service').textContent = booking.service;
+    document.getElementById('track-res-slot').textContent = `${booking.time_slot} BST`;
+    document.getElementById('track-res-bill').textContent = `৳ ${booking.total}`;
+
+    // Calculate queue position & estimated wait time
+    const activeConfirmed = currentBookings.filter(b => b.status === 'confirmed');
+    const indexInQueue = activeConfirmed.findIndex(b => b.id.toUpperCase() === tokenQuery);
+
+    const statusDot = document.getElementById('track-status-dot');
+    const statusText = document.getElementById('track-status-text');
+    const statusSubtext = document.getElementById('track-status-subtext');
+    const waitDisplay = document.getElementById('track-wait-display');
+    const reviewBtn = document.getElementById('track-review-btn');
+
+    // Reset steps
+    const s1 = document.getElementById('step-track-1');
+    const s2 = document.getElementById('step-track-2');
+    const s3 = document.getElementById('step-track-3');
+    const s4 = document.getElementById('step-track-4');
+    [s1, s2, s3, s4].forEach(el => {
+      el.className = "p-2 rounded-lg bg-[#111A2E] border border-[#243050] text-slate-500 font-mono";
+    });
+    s1.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
+
+    if (booking.status === 'in_chair') {
+      statusDot.className = "w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse";
+      statusText.textContent = "In-Chair Right Now";
+      statusText.className = "text-sm font-bold text-amber-400 font-mono";
+      statusSubtext.textContent = `Master Barber is currently styling your service at Station Chair #${booking.chair || 1}.`;
+      waitDisplay.textContent = "0 Mins";
+      waitDisplay.className = "text-xl sm:text-2xl font-bold font-mono text-emerald-400";
+      reviewBtn.classList.add('hidden');
+
+      s2.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
+      s3.className = "p-2 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold font-mono";
+    } else if (booking.status === 'completed') {
+      statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-400";
+      statusText.textContent = "Service Completed";
+      statusText.className = "text-sm font-bold text-emerald-400 font-mono";
+      statusSubtext.textContent = "Thank you for visiting! Please share your authentic in-person review.";
+      waitDisplay.textContent = "Done ✓";
+      waitDisplay.className = "text-xl sm:text-2xl font-bold font-mono text-emerald-400";
+      
+      reviewBtn.href = `review/index.html?token=${booking.id}`;
+      reviewBtn.classList.remove('hidden');
+
+      s2.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
+      s3.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
+      s4.className = "p-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold font-mono";
+    } else {
+      // Confirmed / waiting in queue
+      const aheadCount = indexInQueue >= 0 ? indexInQueue : 1;
+      const estimatedWaitMins = (aheadCount + 1) * 15;
+
+      statusDot.className = "w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse";
+      statusText.textContent = aheadCount === 0 ? "Next in Line for Chair" : `Queue Position: #${aheadCount + 1}`;
+      statusText.className = "text-sm font-bold text-blue-400 font-mono";
+      statusSubtext.textContent = aheadCount === 0 
+        ? "Your chair is being prepped. Please be seated in the studio lounge." 
+        : `There are ${aheadCount} client(s) ahead of you in the queue.`;
+      
+      waitDisplay.textContent = `~${estimatedWaitMins} Mins`;
+      waitDisplay.className = "text-xl sm:text-2xl font-bold font-mono text-blue-400";
+      reviewBtn.classList.add('hidden');
+
+      s2.className = "p-2 rounded-lg bg-blue-500/20 border border-blue-500/40 text-blue-300 font-bold font-mono";
+    }
+  };
+
   document.addEventListener('DOMContentLoaded', () => {
     renderSalonDirectoryGrid('all');
     initBookingEngine();

@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0B0D13] text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchant Portal | Vintage Crown Barbershop</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              red: '#E8220A',
+              redHover: '#CC1C07',
+              gold: '#D4AF37',
+              navy: '#0C1220',
+              card: '#121622',
+              border: '#1F2639',
+              subtle: '#8E9BB2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0d13; }
+    ::-webkit-scrollbar-thumb { background: #1f2639; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2f3a55; }
+    
+    .tab-active {
+      background: rgba(232, 34, 10, 0.12);
+      color: #FFFFFF;
+      border-color: #E8220A;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col font-sans selection:bg-brand-red selection:text-white antialiased">
+
+  <!-- ============================================================================ -->
+  <!-- TOP BAR: TENANT BRAND & ROLE SIMULATOR -->
+  <!-- ============================================================================ -->
+  <header class="h-16 border-b border-brand-border bg-[#0E121C]/95 backdrop-blur-md sticky top-0 z-40 px-4 sm:px-6 flex items-center justify-between">
+    <!-- Active Salon Tenant Identity -->
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md border border-amber-500/30">
+        VC
+      </div>
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="text-sm font-bold text-white tracking-tight" id="header-salon-name">Vintage Crown Barbershop</span>
+          <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">Verified Partner</span>
+        </div>
+        <div class="flex items-center space-x-2 text-[11px] text-slate-400 font-mono">
+          <span>📍 Dhanmondi 27, Dhaka</span>
+          <span>•</span>
+          <span class="text-emerald-400">Open (BST 10:00 AM - 10:30 PM)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Controls: Role Simulator & Fast POS -->
+    <div class="flex items-center space-x-3">
+      <!-- Role-Based Access Control Switcher -->
+      <div class="hidden sm:flex items-center space-x-2 bg-[#121622] px-2.5 py-1.5 rounded-lg border border-brand-border text-xs">
+        <span class="text-slate-400 font-mono text-[10px] uppercase">Active Role:</span>
+        <select id="role-switcher" class="bg-transparent text-amber-400 font-semibold focus:outline-none cursor-pointer">
+          <option value="owner" class="bg-[#121622] text-white">Salon Owner (Full Control)</option>
+          <option value="manager" class="bg-[#121622] text-white">Branch Manager (Queue & Inventory)</option>
+          <option value="receptionist" class="bg-[#121622] text-white">Receptionist (Desk POS & Check-In)</option>
+          <option value="stylist" class="bg-[#121622] text-white">Master Barber (My Appointments)</option>
+        </select>
+      </div>
+
+      <!-- Quick Desk POS Scanner Button -->
+      <button id="btn-quick-scan" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-sm transition-all shadow-emerald-600/20">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+        <span>Desk POS Verify</span>
+      </button>
+
+      <a href="../salon/index.html?slug=vintage-crown" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-amber-500/30 hover:border-amber-400 bg-amber-500/10 text-xs text-amber-300 font-semibold transition-all" title="View Public Instagram/Facebook Storefront">
+        <span>Public Storefront</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+
+      <a href="../admin/index.html" class="hidden md:inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg border border-brand-border hover:bg-white/5 text-xs text-slate-400 hover:text-white transition-colors" title="Switch to Super Admin">
+        <span>Super Admin</span>
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============================================================================ -->
+  <!-- MAIN WORKSPACE -->
+  <!-- ============================================================================ -->
+  <div class="flex-1 flex overflow-hidden">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="w-60 border-r border-brand-border bg-[#0E121C] flex flex-col justify-between shrink-0">
+      <div class="p-4 space-y-5">
+        <!-- Navigation Tabs -->
+        <div class="space-y-1">
+          <div class="px-3 text-[10px] uppercase font-mono font-bold tracking-wider text-slate-500 mb-2">Live Floor Operations</div>
+          
+          <button data-tab="queue" class="nav-tab w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-transparent transition-all tab-active">
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span>Live Queue & Chairs</span>
+            </div>
+            <span id="badge-active-queue" class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-brand-red text-white">3</span>
+          </button>
+
+          <button data-tab="scanner" class="nav-tab w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-transparent transition-all">
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+              <span>Token Check-In (POS)</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="space-y-1" id="nav-management-group">
+          <div class="px-3 text-[10px] uppercase font-mono font-bold tracking-wider text-slate-500 mb-2">Salon Catalog & Team</div>
+          
+          <button data-tab="services" class="nav-tab w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-transparent transition-all">
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879a3 3 0 11-4.242-4.242L9.757 9.757m4.364 4.364l-4.364-4.364"/></svg>
+              <span>Services & Rates</span>
+            </div>
+            <span id="badge-services-count" class="px-2 py-0.5 text-[10px] font-mono font-semibold rounded bg-slate-800 text-slate-300">6</span>
+          </button>
+
+          <button data-tab="staff" class="nav-tab w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-transparent transition-all">
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>Master Barbers</span>
+            </div>
+            <span id="badge-staff-count" class="px-2 py-0.5 text-[10px] font-mono font-semibold rounded bg-slate-800 text-slate-300">5</span>
+          </button>
+
+          <button data-tab="boost" class="nav-tab w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-transparent transition-all">
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span>Boost My Studio</span>
+            </div>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Top #1</span>
+          </button>
+
+          <button data-tab="crm" class="nav-tab w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-transparent transition-all">
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              <span>Retention CRM</span>
+            </div>
+            <span id="badge-crm-count" class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-purple-900/60 text-purple-300 border border-purple-500/30">4 Lapsed</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="p-4 border-t border-brand-border bg-[#0B0D13]">
+        <div class="text-[11px] text-slate-400 mb-1 flex items-center justify-between">
+          <span>Tenant ID:</span>
+          <span class="font-mono text-xs text-amber-400">tnt_dhn_8942</span>
+        </div>
+        <p class="text-[10px] text-slate-500 font-mono">Row-Level Security: Active</p>
+      </div>
+    </aside>
+
+    <!-- Center Content Scrollable Canvas -->
+    <main class="flex-1 overflow-y-auto p-6 lg:p-8 space-y-6">
+
+      <!-- ============================================================================ -->
+      <!-- TAB 1: LIVE QUEUE & CHAIR APPOINTMENTS (DEFAULT) -->
+      <!-- ============================================================================ -->
+      <section id="tab-queue" class="tab-pane space-y-6">
+        <!-- Floor KPI Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 rounded-xl bg-[#121622] border border-brand-border">
+            <div class="text-[11px] font-mono uppercase text-slate-400">Today's Total Bookings</div>
+            <div class="text-2xl font-bold text-white mt-1" id="stat-total-today">8 <span class="text-xs text-slate-400 font-normal">Clients</span></div>
+            <div class="text-[11px] text-emerald-400 mt-2">Zero No-Shows Today</div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#121622] border border-brand-border">
+            <div class="text-[11px] font-mono uppercase text-slate-400">In-Chair Right Now</div>
+            <div class="text-2xl font-bold text-amber-400 mt-1" id="stat-in-chair">2 <span class="text-xs text-slate-400 font-normal">Active Cuts</span></div>
+            <div class="text-[11px] text-slate-500 mt-2">Chairs 1 & 3 occupied</div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#121622] border border-brand-border">
+            <div class="text-[11px] font-mono uppercase text-slate-400 flex justify-between">
+              <span>Gross Sales (Pay at Salon)</span>
+              <span class="text-[10px] text-slate-500 font-mono">10% Fee</span>
+            </div>
+            <div class="text-2xl font-bold text-slate-200 mt-1" id="stat-today-revenue">৳ 4,800</div>
+            <div class="text-[11px] text-amber-400 mt-2">Platform Cut (10%): <strong id="stat-platform-fee">-৳ 480</strong></div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#121622] border border-emerald-500/30 bg-emerald-950/15">
+            <div class="text-[11px] font-mono uppercase text-emerald-400 flex justify-between">
+              <span>Your Net Payout (90%)</span>
+              <span class="text-[10px] font-bold text-emerald-300">PayG</span>
+            </div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1" id="stat-net-earnings">৳ 4,320</div>
+            <div class="text-[11px] text-emerald-500 mt-2">Direct Merchant Take-Home</div>
+          </div>
+        </div>
+
+        <!-- Live Chair Status Radar -->
+        <div class="border border-brand-border rounded-xl bg-[#121622] p-5">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-bold text-white">Live Chair Station Radar (BST)</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Real-time occupancy of master barber chairs</p>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center space-x-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Floor Active</span>
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-3" id="chair-stations-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Today's Appointments Table -->
+        <div class="border border-brand-border rounded-xl bg-[#121622] overflow-hidden">
+          <div class="p-4 border-b border-brand-border flex items-center justify-between bg-[#0E121C]">
+            <h3 class="text-sm font-bold text-white">Advance Reservation Schedule</h3>
+            <span class="text-xs font-mono text-slate-400" id="current-schedule-date">Today (BST UTC+6)</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-brand-border text-[11px] font-mono text-slate-400 uppercase bg-[#0E121C]/60">
+                  <th class="py-3 px-4">Token & Client</th>
+                  <th class="py-3 px-4">Barber & Chair</th>
+                  <th class="py-3 px-4">Service & Time</th>
+                  <th class="py-3 px-4">Total (BDT)</th>
+                  <th class="py-3 px-4">Status</th>
+                  <th class="py-3 px-4 text-right">Floor Action</th>
+                </tr>
+              </thead>
+              <tbody id="bookings-table-body" class="divide-y divide-brand-border text-xs">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================================ -->
+      <!-- TAB 2: TOKEN SCANNER & DESK POS -->
+      <!-- ============================================================================ -->
+      <section id="tab-scanner" class="tab-pane hidden space-y-6">
+        <div class="border-b border-brand-border pb-5">
+          <h1 class="text-xl font-bold text-white tracking-tight">Front Desk Token Verifier & POS</h1>
+          <p class="text-xs text-slate-400 mt-1">Instant check-in for customers presenting digital token slips (`SLN-DHN-XXXX`).</p>
+        </div>
+
+        <div class="max-w-xl mx-auto border border-brand-border rounded-2xl bg-[#121622] p-6 space-y-5 shadow-2xl">
+          <div class="space-y-2">
+            <label class="block text-xs font-mono uppercase text-slate-300 font-semibold">Enter Customer Token ID</label>
+            <div class="flex space-x-2">
+              <input type="text" id="scan-token-input" placeholder="e.g. SLN-DHN-8942" class="flex-1 bg-[#0E121C] border border-brand-border rounded-xl px-4 py-2.5 text-sm font-mono text-amber-400 font-semibold uppercase placeholder-slate-600 focus:outline-none focus:border-brand-red">
+              <button id="btn-scan-lookup" class="px-5 py-2.5 bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold rounded-xl transition-all shadow-md shadow-brand-red/20">
+                Verify
+              </button>
+            </div>
+          </div>
+
+          <!-- Token Card Result Area -->
+          <div id="token-result-card" class="hidden p-5 rounded-xl border border-brand-border bg-[#0E121C] space-y-4">
+            <div class="flex items-center justify-between border-b border-brand-border pb-3">
+              <div>
+                <span class="text-[10px] uppercase font-mono text-slate-500">Verified Reservation</span>
+                <div class="text-base font-bold text-white font-mono" id="token-res-id">SLN-DHN-8942</div>
+              </div>
+              <span id="token-res-status-chip" class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                Confirmed
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div>
+                <span class="text-slate-500 font-mono text-[10px]">Client Name:</span>
+                <div class="text-white font-medium" id="token-res-client">Tanvir Rahman</div>
+              </div>
+              <div>
+                <span class="text-slate-500 font-mono text-[10px]">Phone Number:</span>
+                <div class="text-slate-300 font-mono" id="token-res-phone">+880 1711-223344</div>
+              </div>
+              <div>
+                <span class="text-slate-500 font-mono text-[10px]">Service:</span>
+                <div class="text-slate-200" id="token-res-service">Executive Haircut + Beard</div>
+              </div>
+              <div>
+                <span class="text-slate-500 font-mono text-[10px]">Master Barber:</span>
+                <div class="text-slate-200" id="token-res-barber">Master Kabir (Chair 1)</div>
+              </div>
+              <div>
+                <span class="text-slate-500 font-mono text-[10px]">Scheduled Slot:</span>
+                <div class="text-amber-400 font-mono font-bold" id="token-res-time">11:30 AM BST</div>
+              </div>
+              <div>
+                <span class="text-slate-500 font-mono text-[10px]">Total Bill (Pay at Salon):</span>
+                <div class="text-emerald-400 font-mono font-bold" id="token-res-bill">৳ 850</div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-brand-border flex items-center space-x-3">
+              <button id="btn-token-checkin" class="flex-1 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors">
+                Seat at Chair (Check-In)
+              </button>
+              <button id="btn-token-complete" class="flex-1 py-2.5 rounded-lg bg-brand-red hover:bg-brand-redHover text-white font-semibold text-xs transition-colors">
+                Complete & Collect ৳ Bill
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================================ -->
+      <!-- TAB 3: SERVICES & RATE CARD BUILDER -->
+      <!-- ============================================================================ -->
+      <section id="tab-services" class="tab-pane hidden space-y-6">
+        <div class="flex items-center justify-between border-b border-brand-border pb-5">
+          <div>
+            <h1 class="text-xl font-bold text-white tracking-tight">Services & Rate Card Catalog</h1>
+            <p class="text-xs text-slate-400 mt-1">Configure pricing (৳ BDT), durations, and offerings visible to clients during advance booking.</p>
+          </div>
+          <button id="btn-add-service-trigger" class="px-3.5 py-1.5 rounded-lg bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold shadow-md shadow-brand-red/20">
+            + Add New Service
+          </button>
+        </div>
+
+        <div class="border border-brand-border rounded-xl bg-[#121622] overflow-hidden">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-brand-border text-[11px] font-mono text-slate-400 uppercase bg-[#0E121C]/60">
+                <th class="py-3 px-4">Service Name</th>
+                <th class="py-3 px-4">Category</th>
+                <th class="py-3 px-4">Duration</th>
+                <th class="py-3 px-4">Price (BDT)</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="services-table-body" class="divide-y divide-brand-border text-xs">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============================================================================ -->
+      <!-- TAB 4: STAFF & MASTER BARBERS -->
+      <!-- ============================================================================ -->
+      <section id="tab-staff" class="tab-pane hidden space-y-6">
+        <div class="flex items-center justify-between border-b border-brand-border pb-5">
+          <div>
+            <h1 class="text-xl font-bold text-white tracking-tight">Master Barbers & Salon Team</h1>
+            <p class="text-xs text-slate-400 mt-1">Staff roster, chair stations, and role permissions.</p>
+          </div>
+          <button id="btn-add-staff-trigger" class="px-3.5 py-1.5 rounded-lg bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold shadow-md shadow-brand-red/20">
+            + Add Team Member
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="staff-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- ============================================================================ -->
+      <!-- TAB 5: BOOST MY STUDIO (SPONSORED PLACEMENT) -->
+      <!-- ============================================================================ -->
+      <section id="tab-boost" class="tab-pane hidden space-y-6">
+        <div class="border-b border-brand-border pb-5">
+          <h1 class="text-xl font-bold text-white tracking-tight">Sponsored Studio Placement & Boosting</h1>
+          <p class="text-xs text-slate-400 mt-1">Get pinned at the top of Dhanmondi directory searches and attract 3.8x more advance bookings.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Current Placement Status -->
+          <div class="p-6 rounded-2xl bg-[#121622] border border-brand-border space-y-4">
+            <span class="text-[10px] font-mono uppercase text-slate-400 tracking-wider">Current Placement</span>
+            <div id="boost-status-container">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-base font-bold text-white">⭐ #1 Sponsored Studio</span>
+              </div>
+              <p class="text-xs text-amber-300/80 mt-1">Active in Dhanmondi Hub (24 Days Remaining)</p>
+            </div>
+
+            <div class="pt-4 border-t border-brand-border space-y-2 text-xs">
+              <div class="flex justify-between text-slate-400">
+                <span>Placement Tier:</span>
+                <span class="text-amber-400 font-mono font-semibold">Priority #1 Search</span>
+              </div>
+              <div class="flex justify-between text-slate-400">
+                <span>Homepage Badge:</span>
+                <span class="text-emerald-400 font-mono font-semibold">Featured Gold Crest</span>
+              </div>
+              <div class="flex justify-between text-slate-400">
+                <span>Monthly Investment:</span>
+                <span class="text-white font-mono font-bold" id="portal-boost-cost-display">৳ 200 / Month</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Boost Upgrade / Renewal Card -->
+          <div class="md:col-span-2 p-6 rounded-2xl bg-gradient-to-br from-[#121622] via-[#161c2d] to-[#1c121e] border border-amber-500/30 space-y-5 shadow-2xl">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-mono font-bold tracking-widest text-amber-400 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">30-Day Growth Booster</span>
+                <h3 class="text-lg font-bold text-white mt-2">Dominate Grooming Bookings in Your District</h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  When clients in Dhanmondi search for haircuts or beard styling, your studio appears first above all competitors with a verified golden spotlight badge.
+                </p>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-2xl font-bold text-amber-400 font-mono" id="portal-boost-price">৳ 200</div>
+                <div class="text-[10px] text-slate-400 font-mono">per 30 days</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
+                <div class="text-amber-400 font-bold text-base font-mono">3.8x</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">More Direct Client Clicks</div>
+              </div>
+              <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
+                <div class="text-emerald-400 font-bold text-base font-mono">#1 Position</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Top of District Directory</div>
+              </div>
+              <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
+                <div class="text-purple-400 font-bold text-base font-mono">PayG Ready</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">10% standard fee applies</div>
+              </div>
+            </div>
+
+            <div class="pt-2 flex items-center justify-between">
+              <span class="text-[11px] text-slate-400 font-mono flex items-center space-x-1">
+                <span>💳 Pay with bKash, Nagad, or Salon Earnings</span>
+              </span>
+              <button id="btn-activate-boost" class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs shadow-lg shadow-amber-500/20 transition-all flex items-center space-x-2">
+                <span>🚀 Renew / Activate 30-Day Boost</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================================ -->
+      <!-- TAB 6: RETENTION CRM (30-45 DAYS LAPSED CLIENT RE-ENGAGEMENT) -->
+      <!-- ============================================================================ -->
+      <section id="tab-crm" class="tab-pane hidden space-y-6">
+        <div class="border-b border-brand-border pb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 class="text-xl font-bold text-white tracking-tight">Client Retention & Loyalty CRM</h1>
+            <p class="text-xs text-slate-400 mt-1">Re-engage clients who haven't visited in 30–45 days with automated win-back SMS discounts.</p>
+          </div>
+          <button id="btn-batch-retention-sms" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs shadow-lg shadow-purple-600/20 transition-all flex items-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            <span>⚡ Send 15% Off SMS to All Lapsed Clients</span>
+          </button>
+        </div>
+
+        <!-- CRM KPI Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 rounded-xl bg-[#121622] border border-brand-border">
+            <div class="text-[11px] font-mono uppercase text-slate-400">Total Client Database</div>
+            <div class="text-2xl font-bold text-white mt-1">128 <span class="text-xs text-slate-400 font-normal">Clients</span></div>
+            <div class="text-[11px] text-slate-500 mt-2">Dhanmondi Hub Regulars</div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#121622] border border-brand-border">
+            <div class="text-[11px] font-mono uppercase text-slate-400">Active Clients (&lt;30 Days)</div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">112 <span class="text-xs text-slate-400 font-normal">Frequent</span></div>
+            <div class="text-[11px] text-emerald-500 mt-2">Healthy Grooming Cycle</div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#121622] border border-purple-500/30 bg-purple-950/15">
+            <div class="text-[11px] font-mono uppercase text-purple-300 flex justify-between">
+              <span>Lapsed (30–45 Days)</span>
+              <span class="text-[10px] font-bold text-purple-400">At Risk</span>
+            </div>
+            <div class="text-2xl font-bold text-purple-300 mt-1" id="crm-kpi-lapsed">4 <span class="text-xs text-slate-400 font-normal">Clients</span></div>
+            <div class="text-[11px] text-amber-400 mt-2">Overdue for Haircut / Beard</div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#121622] border border-brand-border">
+            <div class="text-[11px] font-mono uppercase text-slate-400">Win-Back Success Rate</div>
+            <div class="text-2xl font-bold text-white mt-1">34.8%</div>
+            <div class="text-[11px] text-emerald-400 mt-2">↑ Return within 48h of SMS</div>
+          </div>
+        </div>
+
+        <!-- Lapsed Clients Action Table -->
+        <div class="border border-brand-border rounded-xl bg-[#121622] overflow-hidden">
+          <div class="p-4 border-b border-brand-border bg-[#0E121C] flex items-center justify-between">
+            <div>
+              <h3 class="text-sm font-bold text-white">Lapsed Clients Re-Engagement List</h3>
+              <p class="text-xs text-slate-400 mt-0.5">High-priority clients ready for automated loyalty discount messages.</p>
+            </div>
+            <span class="text-xs font-mono text-purple-400">Targeting 30+ Days Dormancy</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-brand-border text-[11px] font-mono text-slate-400 uppercase bg-[#0E121C]/60">
+                  <th class="py-3 px-4">Client Contact</th>
+                  <th class="py-3 px-4">Favorite Barber</th>
+                  <th class="py-3 px-4">Last Service</th>
+                  <th class="py-3 px-4">Days Inactive</th>
+                  <th class="py-3 px-4">Retention Status</th>
+                  <th class="py-3 px-4 text-right">Loyalty Action</th>
+                </tr>
+              </thead>
+              <tbody id="crm-clients-table-body" class="divide-y divide-brand-border">
+                <!-- Dynamically Populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Automated Win-Back SMS Template Preview -->
+        <div class="p-5 rounded-xl border border-brand-border bg-[#0E121C] space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] uppercase font-mono font-bold text-purple-400 tracking-wider">SMS Gateway Dispatch Preview</span>
+            <span class="text-[10px] text-slate-500 font-mono">Character Count: 142 • 1 SMS</span>
+          </div>
+          <div class="bg-[#121622] p-3.5 rounded-lg border border-brand-border font-mono text-xs text-slate-200 leading-relaxed">
+            "Assalamu Alaikum <span class="text-amber-400 font-semibold">[Client Name]</span>! It's been <span class="text-purple-400 font-semibold">[Days]</span> days since your last cut with <span class="text-emerald-400 font-semibold">[Barber Name]</span> at Vintage Crown. We miss you! Book this week & get <strong class="text-brand-red">15% OFF</strong>. Reserve chair: hairandcare.bd/salon/?slug=vintage-crown"
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- MODAL: ADD NEW SERVICE -->
+  <!-- ============================================================================ -->
+  <div id="modal-service" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[#121622] border border-brand-border rounded-2xl w-full max-w-md shadow-2xl overflow-hidden">
+      <div class="p-5 border-b border-brand-border flex items-center justify-between bg-[#0E121C]">
+        <h3 class="text-base font-bold text-white">Add New Service</h3>
+        <button id="modal-service-close" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form id="form-service" class="p-6 space-y-4 text-xs">
+        <div>
+          <label class="block text-slate-300 font-medium mb-1">Service Title</label>
+          <input type="text" id="svc-name" required placeholder="e.g. Luxury Hot Towel Beard Shave" class="w-full bg-[#0E121C] border border-brand-border rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-medium mb-1">Category</label>
+            <select id="svc-category" class="w-full bg-[#0E121C] border border-brand-border rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-red">
+              <option value="Haircut & Styling">Haircut & Styling</option>
+              <option value="Beard Grooming">Beard Grooming</option>
+              <option value="Facial & Spa">Facial & Spa</option>
+              <option value="VIP Package">VIP Package</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-300 font-medium mb-1">Duration (Mins)</label>
+            <input type="number" id="svc-duration" required min="10" step="5" value="30" class="w-full bg-[#0E121C] border border-brand-border rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+          </div>
+        </div>
+        <div>
+          <label class="block text-slate-300 font-medium mb-1">Price (৳ BDT)</label>
+          <input type="number" id="svc-price" required min="50" step="50" placeholder="500" class="w-full bg-[#0E121C] border border-brand-border rounded-lg px-3 py-2 text-white font-mono focus:outline-none focus:border-brand-red">
+        </div>
+        <div class="pt-2">
+          <button type="submit" class="w-full py-2.5 rounded-lg bg-brand-red hover:bg-brand-redHover text-white font-semibold shadow-lg shadow-brand-red/20 transition-all">
+            Save Service to Rate Card
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- ============================================================================ -->
+  <!-- JAVASCRIPT LOGIC & STATE ENGINE -->
+  <!-- ============================================================================ -->
+  <script>
+    // Initial Merchant Data
+    const INITIAL_SERVICES = [
+      { id: 1, name: "Signature Scissor Fade", category: "Haircut & Styling", duration: 35, price: 500, is_active: true },
+      { id: 2, name: "Traditional English Hot-Towel Shave", category: "Beard Grooming", duration: 30, price: 350, is_active: true },
+      { id: 3, name: "Deep Charcoal Detox Facial", category: "Facial & Spa", duration: 45, price: 800, is_active: true },
+      { id: 4, name: "Executive Cut + Beard Sculpt Combo", category: "VIP Package", duration: 60, price: 850, is_active: true },
+      { id: 5, name: "Keratin Hair Protein Spa", category: "Facial & Spa", duration: 50, price: 1200, is_active: true },
+      { id: 6, name: "Head & Shoulder Acupressure Massage", category: "Facial & Spa", duration: 25, price: 400, is_active: true }
+    ];
+
+    const INITIAL_STAFF = [
+      { id: 1, name: "Kabir Hossain", title: "Master Barber", role: "stylist", chair: 1, status: "occupied", cuts_today: 4 },
+      { id: 2, name: "Jewel Ahmed", title: "Senior Stylist", role: "stylist", chair: 2, status: "available", cuts_today: 3 },
+      { id: 3, name: "Tanvir Mia", title: "Fade Specialist", role: "stylist", chair: 3, status: "occupied", cuts_today: 3 },
+      { id: 4, name: "Nayeem Islam", title: "Beard Artisan", role: "stylist", chair: 4, status: "available", cuts_today: 2 },
+      { id: 5, name: "Shahriar Hasan", title: "Desk Receptionist", role: "receptionist", chair: null, status: "on_duty", cuts_today: 0 }
+    ];
+
+    const INITIAL_BOOKINGS = [
+      {
+        id: "SLN-DHN-8942",
+        customer_name: "Tanvir Rahman",
+        customer_phone: "+880 1711-223344",
+        barber: "Kabir Hossain",
+        chair: 1,
+        service: "Executive Cut + Beard Sculpt Combo",
+        time_slot: "11:30 AM",
+        total: 850,
+        status: "in_chair" // in_chair, confirmed, completed, cancelled
+      },
+      {
+        id: "SLN-DHN-8943",
+        customer_name: "Farhan Chowdhury",
+        customer_phone: "+880 1819-334455",
+        barber: "Tanvir Mia",
+        chair: 3,
+        service: "Signature Scissor Fade",
+        time_slot: "11:45 AM",
+        total: 500,
+        status: "in_chair"
+      },
+      {
+        id: "SLN-DHN-8944",
+        customer_name: "Rakib Al-Hasan",
+        customer_phone: "+880 1912-556677",
+        barber: "Jewel Ahmed",
+        chair: 2,
+        service: "Deep Charcoal Detox Facial",
+        time_slot: "12:15 PM",
+        total: 800,
+        status: "confirmed"
+      },
+      {
+        id: "SLN-DHN-8945",
+        customer_name: "Mahir Faisal",
+        customer_phone: "+880 1611-778899",
+        barber: "Nayeem Islam",
+        chair: 4,
+        service: "Traditional English Hot-Towel Shave",
+        time_slot: "12:45 PM",
+        total: 350,
+        status: "confirmed"
+      },
+      {
+        id: "SLN-DHN-8940",
+        customer_name: "Zubair Ahmed",
+        customer_phone: "+880 1722-112233",
+        barber: "Kabir Hossain",
+        chair: 1,
+        service: "Signature Scissor Fade",
+        time_slot: "10:15 AM",
+        total: 500,
+        status: "completed"
+      }
+    ];
+
+    const DEFAULT_CRM_CLIENTS = [
+      {
+        id: "CRM-101",
+        name: "Saifullah Mansoor",
+        phone: "+880 1711-223344",
+        favorite_barber: "Kabir Hossain",
+        last_service: "Signature Scissor Fade + Beard Sculpt",
+        last_visit_date: "19 Sep 2026",
+        days_inactive: 36,
+        status: "pending"
+      },
+      {
+        id: "CRM-102",
+        name: "Farhan Tanvir",
+        phone: "+880 1819-334455",
+        favorite_barber: "Jewel Ahmed",
+        last_service: "Deep Charcoal Detox Facial",
+        last_visit_date: "16 Sep 2026",
+        days_inactive: 39,
+        status: "pending"
+      },
+      {
+        id: "CRM-103",
+        name: "Ahsan Habib",
+        phone: "+880 1913-667788",
+        favorite_barber: "Nayeem Islam",
+        last_service: "Traditional English Hot-Towel Shave",
+        last_visit_date: "13 Sep 2026",
+        days_inactive: 42,
+        status: "pending"
+      },
+      {
+        id: "CRM-104",
+        name: "Mahmudul Karim",
+        phone: "+880 1618-990011",
+        favorite_barber: "Tariqul Alam",
+        last_service: "Executive Haircut & Scalp Treatment",
+        last_visit_date: "10 Sep 2026",
+        days_inactive: 45,
+        status: "pending"
+      }
+    ];
+
+    // LocalStorage State
+    let services = JSON.parse(localStorage.getItem('portal_services')) || INITIAL_SERVICES;
+    let staff = JSON.parse(localStorage.getItem('portal_staff')) || INITIAL_STAFF;
+    let bookings = JSON.parse(localStorage.getItem('portal_bookings')) || INITIAL_BOOKINGS;
+    let crmClients = JSON.parse(localStorage.getItem('portal_crm_clients')) || DEFAULT_CRM_CLIENTS;
+
+    function savePortalState() {
+      localStorage.setItem('portal_services', JSON.stringify(services));
+      localStorage.setItem('portal_staff', JSON.stringify(staff));
+      localStorage.setItem('portal_bookings', JSON.stringify(bookings));
+      localStorage.setItem('portal_crm_clients', JSON.stringify(crmClients));
+    }
+
+    // --- Real-Time Cross-Tab / Public Website Booking Sync ---
+    if (typeof BroadcastChannel !== 'undefined') {
+      const syncChannel = new BroadcastChannel('salon_live_sync');
+      syncChannel.onmessage = (event) => {
+        if (event.data?.type === 'NEW_BOOKING') {
+          bookings = JSON.parse(localStorage.getItem('portal_bookings')) || [];
+          renderBookings();
+          showToast(`🔔 New Online Reservation: ${event.data.booking.id} (${event.data.booking.customer_name})!`, 'success');
+        }
+      };
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'portal_bookings') {
+        bookings = JSON.parse(e.newValue) || [];
+        renderBookings();
+        showToast('Floor Queue synced with public reservations.', 'success');
+      }
+    });
+
+    // --- Toast Notification ---
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const borderCol = type === 'success' ? 'border-emerald-500/40 bg-emerald-950/90 text-emerald-200' : 'border-red-500/40 bg-red-950/90 text-red-200';
+      toast.className = `px-4 py-3 rounded-xl border ${borderCol} shadow-xl backdrop-blur-md text-xs font-medium pointer-events-auto flex items-center space-x-2 transition-all transform translate-y-2 opacity-0`;
+      toast.innerHTML = `<span>${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    // --- Tab Switching ---
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        navTabs.forEach(t => t.classList.remove('tab-active'));
+        tab.classList.add('tab-active');
+
+        const targetTab = tab.getAttribute('data-tab');
+        tabPanes.forEach(pane => {
+          if (pane.id === `tab-${targetTab}`) {
+            pane.classList.remove('hidden');
+          } else {
+            pane.classList.add('hidden');
+          }
+        });
+
+        if (targetTab === 'services') renderServicesTable();
+        if (targetTab === 'staff') renderStaffGrid();
+        if (targetTab === 'crm') renderCRMTable();
+      });
+    });
+
+    document.getElementById('btn-quick-scan').addEventListener('click', () => {
+      document.querySelector('button[data-tab="scanner"]').click();
+      document.getElementById('scan-token-input').focus();
+    });
+
+    // --- Role Simulator Guard ---
+    const roleSwitcher = document.getElementById('role-switcher');
+    roleSwitcher.addEventListener('change', (e) => {
+      const selectedRole = e.target.value;
+      const managementGroup = document.getElementById('nav-management-group');
+      
+      if (selectedRole === 'stylist') {
+        managementGroup.classList.add('hidden');
+        showToast("Switched to Stylist View: Showing your chair queue only.", "success");
+      } else if (selectedRole === 'receptionist') {
+        managementGroup.classList.remove('hidden');
+        showToast("Switched to Front Desk: POS Verification and Check-in prioritized.", "success");
+      } else {
+        managementGroup.classList.remove('hidden');
+        showToast(`Role switched to ${selectedRole.toUpperCase()}: Full permissions active.`, "success");
+      }
+      renderBookings();
+    });
+
+    // --- Floor Queue & Bookings Rendering ---
+    function renderBookings() {
+      const tbody = document.getElementById('bookings-table-body');
+      tbody.innerHTML = '';
+
+      const totalToday = bookings.length;
+      const inChair = bookings.filter(b => b.status === 'in_chair').length;
+      const queueWaiting = bookings.filter(b => b.status === 'confirmed').length;
+      const revenue = bookings
+        .filter(b => b.status === 'completed' || b.status === 'in_chair')
+        .reduce((sum, b) => sum + b.total, 0);
+
+      // Load Super Admin monetization settings (10% PayG default)
+      const platformSettings = JSON.parse(localStorage.getItem('platform_monetization_settings')) || { commission_rate: 10, boost_fee: 200 };
+      const commRate = platformSettings.commission_rate || 10;
+      const platformFee = Math.round(revenue * (commRate / 100));
+      const netEarnings = revenue - platformFee;
+
+      document.getElementById('stat-total-today').innerHTML = `${totalToday} <span class="text-xs text-slate-400 font-normal">Clients</span>`;
+      document.getElementById('stat-in-chair').innerHTML = `${inChair} <span class="text-xs text-slate-400 font-normal">Active Cuts</span>`;
+      document.getElementById('stat-today-revenue').textContent = `৳ ${revenue.toLocaleString()}`;
+      document.getElementById('stat-platform-fee').textContent = `-৳ ${platformFee.toLocaleString()} (${commRate}%)`;
+      document.getElementById('stat-net-earnings').textContent = `৳ ${netEarnings.toLocaleString()}`;
+      document.getElementById('badge-active-queue').textContent = inChair + queueWaiting;
+
+      bookings.forEach(b => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-white/[0.02] transition-colors';
+
+        let statusBadge = '';
+        if (b.status === 'in_chair') {
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">In-Chair Right Now</span>';
+        } else if (b.status === 'confirmed') {
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-blue-500/15 text-blue-400 border border-blue-500/30">Confirmed / Awaiting</span>';
+        } else if (b.status === 'completed') {
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">Completed</span>';
+        } else if (b.status === 'no_show') {
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-red-500/15 text-red-400 border border-red-500/30">No-Show (৳50 Claimed)</span>';
+        }
+
+        const dueBalance = b.due_at_salon !== undefined ? b.due_at_salon : Math.max(0, b.total - (b.deposit_paid || 0));
+
+        tr.innerHTML = `
+          <td class="py-3 px-4">
+            <div class="font-mono font-bold text-amber-400">${b.id}</div>
+            <div class="text-white font-medium mt-0.5">${b.customer_name}</div>
+            <div class="text-[11px] text-slate-500 font-mono">${b.customer_phone}</div>
+          </td>
+          <td class="py-3 px-4">
+            <div class="text-slate-200 font-medium">${b.barber}</div>
+            <div class="text-[11px] text-slate-400 font-mono">Station: Chair ${b.chair}</div>
+          </td>
+          <td class="py-3 px-4">
+            <div class="text-slate-300">${b.service}</div>
+            <div class="text-[11px] font-mono text-amber-400 mt-0.5">${b.time_slot} BST</div>
+          </td>
+          <td class="py-3 px-4 font-mono">
+            <div class="font-bold text-white">৳ ${b.total}</div>
+            ${b.deposit_paid ? `
+              <div class="text-[10px] text-emerald-400 font-mono mt-0.5">Deposit: ৳${b.deposit_paid} (${b.deposit_method || 'bKash'})</div>
+              <div class="text-[10px] text-amber-300 font-mono font-bold">Due: ৳${dueBalance}</div>
+            ` : `
+              <div class="text-[10px] text-slate-400 font-mono mt-0.5">Pay at Chair</div>
+            `}
+          </td>
+          <td class="py-3 px-4">
+            ${statusBadge}
+          </td>
+          <td class="py-3 px-4 text-right">
+            <div class="flex items-center justify-end gap-1.5">
+              ${b.status === 'confirmed' ? `
+                <button onclick="seatCustomer('${b.id}')" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-sm transition-all">
+                  Seat
+                </button>
+                <button onclick="markNoShow('${b.id}')" title="Customer failed to arrive. Forfeit ৳50 deposit to studio." class="px-2 py-1 rounded bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-red-300 text-xs font-semibold transition-all">
+                  No-Show
+                </button>
+              ` : b.status === 'in_chair' ? `
+                <button onclick="completeBooking('${b.id}')" class="px-2.5 py-1 rounded bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold shadow-sm transition-all">
+                  Collect ৳${dueBalance} & Done
+                </button>
+              ` : b.status === 'no_show' ? `
+                <span class="text-xs text-red-400 font-mono">Deposit Claimed</span>
+              ` : `
+                <span class="text-xs text-slate-500 font-mono">Paid (Cash)</span>
+              `}
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      renderChairs();
+    }
+
+    // --- Live Chair Stations Radar ---
+    function renderChairs() {
+      const grid = document.getElementById('chair-stations-grid');
+      grid.innerHTML = '';
+
+      const barberChairs = staff.filter(s => s.chair !== null);
+      barberChairs.forEach(bc => {
+        const activeBooking = bookings.find(b => b.chair === bc.chair && b.status === 'in_chair');
+        const isOccupied = !!activeBooking;
+
+        const card = document.createElement('div');
+        card.className = `p-3.5 rounded-xl border ${isOccupied ? 'border-amber-500/40 bg-amber-950/15' : 'border-brand-border bg-[#0E121C]'} flex flex-col justify-between`;
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between text-[11px]">
+              <span class="font-mono text-slate-400">Chair ${bc.chair}</span>
+              <span class="w-2 h-2 rounded-full ${isOccupied ? 'bg-amber-400 animate-pulse' : 'bg-emerald-500'}"></span>
+            </div>
+            <div class="text-xs font-semibold text-white mt-1">${bc.name}</div>
+            <div class="text-[10px] text-slate-400 font-mono">${bc.title}</div>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 text-[11px]">
+            ${isOccupied ? `
+              <div class="text-amber-400 font-medium">In Service:</div>
+              <div class="text-slate-300 truncate">${activeBooking.customer_name}</div>
+            ` : `
+              <span class="text-emerald-400 font-mono">Ready for client</span>
+            `}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    window.seatCustomer = function(id) {
+      const b = bookings.find(item => item.id === id);
+      if (b) {
+        b.status = 'in_chair';
+        savePortalState();
+        renderBookings();
+        showToast(`✓ ${b.customer_name} checked-in at Chair ${b.chair}!`);
+      }
+    };
+
+    
+    window.markNoShow = function(id) {
+      const b = bookings.find(item => item.id === id);
+      if (b) {
+        b.status = 'no_show';
+        savePortalState();
+        renderBookings();
+
+        const depositFee = b.deposit_paid || 50;
+
+        const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+        currentAudit.unshift({
+          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+          actor: "Vintage Crown Barbershop (Front Desk)",
+          action: "NO_SHOW_DEPOSIT_CLAIMED",
+          detail: `Client ${b.customer_name} (${b.customer_phone}) failed to arrive for ${b.time_slot}. Barber chair slot protected; ৳${depositFee} deposit claimed by studio.`
+        });
+        localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+
+        showToast(`⚠️ No-Show recorded for ${b.customer_name}. ৳${depositFee} deposit forfeited to studio.`, 'error');
+      }
+    };
+
+    window.completeBooking = function(id) {
+      const b = bookings.find(item => item.id === id);
+      if (b) {
+        b.status = 'completed';
+        savePortalState();
+        renderBookings();
+        
+        const reviewUrl = `${window.location.origin}/review/index.html?token=${b.id}`;
+
+        // Log to Super Admin Audit Trail
+        const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+        currentAudit.unshift({
+          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+          actor: "Vintage Crown Barbershop (Checkout)",
+          action: "SERVICE_COMPLETED_REVIEW_DISPATCHED",
+          detail: `Cut completed for ${b.customer_name} (৳${b.total}). Anti-fake review token SMS generated: ${b.id}`
+        });
+        localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+
+        const collectedDue = b.due_at_salon !== undefined ? b.due_at_salon : Math.max(0, b.total - (b.deposit_paid || 0));
+        showToast(`✓ Completed cut for ${b.customer_name}! Collected remaining ৳${collectedDue} (৳${b.deposit_paid || 0} deposit adjusted). <a href="${reviewUrl}" target="_blank" class="underline text-amber-300 ml-1 font-mono">Open Review Link ↗</a>`);
+      }
+    };
+
+    // --- POS Scanner Lookup ---
+    document.getElementById('btn-scan-lookup').addEventListener('click', () => {
+      const query = document.getElementById('scan-token-input').value.trim().toUpperCase();
+      const card = document.getElementById('token-result-card');
+      
+      const found = bookings.find(b => b.id.toUpperCase() === query);
+      if (!found) {
+        showToast("Token not found or invalid format.", "error");
+        card.classList.add('hidden');
+        return;
+      }
+
+      document.getElementById('token-res-id').textContent = found.id;
+      document.getElementById('token-res-client').textContent = found.customer_name;
+      document.getElementById('token-res-phone').textContent = found.customer_phone;
+      document.getElementById('token-res-service').textContent = found.service;
+      document.getElementById('token-res-barber').textContent = `${found.barber} (Chair ${found.chair})`;
+      document.getElementById('token-res-time').textContent = `${found.time_slot} BST`;
+      document.getElementById('token-res-bill').textContent = `৳ ${found.total}`;
+
+      const chip = document.getElementById('token-res-status-chip');
+      chip.textContent = found.status === 'in_chair' ? 'In-Chair' : found.status === 'completed' ? 'Completed' : 'Confirmed';
+
+      card.classList.remove('hidden');
+
+      // Bind actions
+      document.getElementById('btn-token-checkin').onclick = () => {
+        seatCustomer(found.id);
+        chip.textContent = 'In-Chair';
+      };
+      document.getElementById('btn-token-complete').onclick = () => {
+        completeBooking(found.id);
+        chip.textContent = 'Completed';
+      };
+    });
+
+    // --- Services Table Rendering & Add Modal ---
+    function renderServicesTable() {
+      const tbody = document.getElementById('services-table-body');
+      tbody.innerHTML = '';
+      document.getElementById('badge-services-count').textContent = services.length;
+
+      services.forEach(svc => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-white/[0.02] transition-colors';
+        tr.innerHTML = `
+          <td class="py-3 px-4 font-semibold text-white">${svc.name}</td>
+          <td class="py-3 px-4 text-slate-300">${svc.category}</td>
+          <td class="py-3 px-4 font-mono text-slate-400">${svc.duration} mins</td>
+          <td class="py-3 px-4 font-mono font-bold text-emerald-400">৳ ${svc.price}</td>
+          <td class="py-3 px-4">
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" ${svc.is_active ? 'checked' : ''} onchange="toggleService(${svc.id})" class="sr-only peer">
+              <div class="w-9 h-5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand-red"></div>
+            </label>
+          </td>
+          <td class="py-3 px-4 text-right">
+            <button onclick="deleteService(${svc.id})" class="text-red-400 hover:text-red-300 font-mono text-xs">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.toggleService = function(id) {
+      const svc = services.find(s => s.id === id);
+      if (svc) {
+        svc.is_active = !svc.is_active;
+        savePortalState();
+        showToast(`${svc.name} is now ${svc.is_active ? 'Active' : 'Disabled'}.`);
+      }
+    };
+
+    window.deleteService = function(id) {
+      services = services.filter(s => s.id !== id);
+      savePortalState();
+      renderServicesTable();
+      showToast("Service removed from catalog.", "error");
+    };
+
+    const modalService = document.getElementById('modal-service');
+    document.getElementById('btn-add-service-trigger').addEventListener('click', () => modalService.classList.remove('hidden'));
+    document.getElementById('modal-service-close').addEventListener('click', () => modalService.classList.add('hidden'));
+
+    document.getElementById('form-service').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newSvc = {
+        id: Date.now(),
+        name: document.getElementById('svc-name').value.trim(),
+        category: document.getElementById('svc-category').value,
+        duration: parseInt(document.getElementById('svc-duration').value, 10),
+        price: parseFloat(document.getElementById('svc-price').value),
+        is_active: true
+      };
+
+      services.push(newSvc);
+      savePortalState();
+      modalService.classList.add('hidden');
+      document.getElementById('form-service').reset();
+      renderServicesTable();
+      showToast(`✓ Added ${newSvc.name} to rate card!`);
+    });
+
+    // --- Staff Grid Rendering ---
+    function renderStaffGrid() {
+      const grid = document.getElementById('staff-grid');
+      grid.innerHTML = '';
+      document.getElementById('badge-staff-count').textContent = staff.length;
+
+      staff.forEach(st => {
+        const card = document.createElement('div');
+        card.className = 'p-5 rounded-xl bg-[#121622] border border-brand-border flex flex-col justify-between space-y-4';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-red/10 text-brand-red border border-brand-red/20 font-semibold uppercase">${st.role}</span>
+              <span class="text-xs font-mono text-slate-400">${st.chair ? 'Chair #' + st.chair : 'Front Desk'}</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-2">${st.name}</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">${st.title}</p>
+          </div>
+
+          <div class="pt-3 border-t border-brand-border flex items-center justify-between text-xs">
+            <span class="text-slate-400">Cuts Today: <strong class="text-emerald-400 font-mono">${st.cuts_today}</strong></span>
+            <span class="text-xs text-emerald-400 font-mono font-medium">On Duty (BST)</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    document.getElementById('btn-add-staff-trigger').addEventListener('click', () => {
+      const name = prompt("Enter Barber / Staff Name:");
+      if (!name) return;
+      const title = prompt("Enter Title (e.g. Master Barber, Hair Colorist):") || "Stylist";
+      const chairNum = prompt("Enter Chair Station Number (1-5):") || null;
+
+      staff.push({
+        id: Date.now(),
+        name: name,
+        title: title,
+        role: "stylist",
+        chair: chairNum ? parseInt(chairNum, 10) : null,
+        status: "available",
+        cuts_today: 0
+      });
+
+      savePortalState();
+      renderStaffGrid();
+      showToast(`✓ ${name} added to salon roster!`);
+    });
+
+    // --- Sponsored Boost Activation Logic ---
+    function initPortalMonetization() {
+      const platformSettings = JSON.parse(localStorage.getItem('platform_monetization_settings')) || { commission_rate: 10, boost_fee: 200 };
+      const boostFee = platformSettings.boost_fee || 200;
+      const boostPriceEl = document.getElementById('portal-boost-price');
+      const boostCostDispEl = document.getElementById('portal-boost-cost-display');
+      if (boostPriceEl) boostPriceEl.textContent = `৳ ${boostFee}`;
+      if (boostCostDispEl) boostCostDispEl.textContent = `৳ ${boostFee} / Month`;
+    }
+
+    const activateBoostBtn = document.getElementById('btn-activate-boost');
+    if (activateBoostBtn) {
+      activateBoostBtn.addEventListener('click', () => {
+        const platformSettings = JSON.parse(localStorage.getItem('platform_monetization_settings')) || { commission_rate: 10, boost_fee: 200 };
+        const fee = platformSettings.boost_fee || 200;
+
+        const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+        currentAudit.unshift({
+          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+          actor: "Vintage Crown Barbershop (Merchant)",
+          action: "SPONSORED_BOOST_PURCHASED",
+          detail: `Renewed 30-Day Sponsored Boost in Dhanmondi Hub (৳${fee} platform fee billed).`
+        });
+        localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+
+        showToast(`🚀 Boost Active! Vintage Crown Barbershop is featured #1 in Dhanmondi for 30 days! (৳${fee} billed)`);
+      });
+    }
+
+    // --- Retention CRM Rendering & SMS Dispatch ---
+    function renderCRMTable() {
+      const tbody = document.getElementById('crm-clients-table-body');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const lapsedCount = crmClients.filter(c => c.status !== 'offer_sent').length;
+      const lapsedKpi = document.getElementById('crm-kpi-lapsed');
+      if (lapsedKpi) lapsedKpi.innerHTML = `${lapsedCount} <span class="text-xs text-slate-400 font-normal">Clients</span>`;
+
+      crmClients.forEach(client => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-white/[0.02] transition-colors';
+
+        const isSent = client.status === 'offer_sent';
+
+        tr.innerHTML = `
+          <td class="py-3 px-4">
+            <div class="font-semibold text-white">${client.name}</div>
+            <div class="text-[11px] font-mono text-slate-400">${client.phone}</div>
+          </td>
+          <td class="py-3 px-4">
+            <div class="text-slate-200">${client.favorite_barber}</div>
+            <div class="text-[10px] text-slate-500 font-mono">Preferred Master</div>
+          </td>
+          <td class="py-3 px-4">
+            <div class="text-slate-300">${client.last_service}</div>
+            <div class="text-[11px] font-mono text-slate-500">${client.last_visit_date}</div>
+          </td>
+          <td class="py-3 px-4">
+            <span class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              ${client.days_inactive} Days Overdue
+            </span>
+          </td>
+          <td class="py-3 px-4" id="crm-status-${client.id}">
+            ${isSent 
+              ? '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/40">✓ 15% SMS Dispatched</span>'
+              : '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-red-500/10 text-red-400 border border-red-500/20">Needs Win-Back</span>'
+            }
+          </td>
+          <td class="py-3 px-4 text-right">
+            ${isSent 
+              ? '<span class="text-xs text-slate-500 font-mono">Offer Sent</span>'
+              : `<button onclick="sendRetentionSMS('${client.id}')" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs shadow-md shadow-purple-600/20 transition-all inline-flex items-center space-x-1 ml-auto"><span>📱 Send 15% Off SMS</span></button>`
+            }
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.sendRetentionSMS = function(id) {
+      const client = crmClients.find(c => c.id === id);
+      if (!client) return;
+
+      client.status = 'offer_sent';
+      savePortalState();
+      renderCRMTable();
+
+      // Log in Super Admin Audit Trail
+      const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+      currentAudit.unshift({
+        timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+        actor: "Vintage Crown Barbershop (CRM)",
+        action: "RETENTION_SMS_DISPATCHED",
+        detail: `Sent 15% discount win-back SMS to ${client.name} (${client.phone}, inactive for ${client.days_inactive} days).`
+      });
+      localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+
+      showToast(`✓ Win-Back SMS dispatched to ${client.name} (${client.phone})! Promo Code: VINTAGE15`);
+    };
+
+    const batchSmsBtn = document.getElementById('btn-batch-retention-sms');
+    if (batchSmsBtn) {
+      batchSmsBtn.addEventListener('click', () => {
+        let sentCount = 0;
+        crmClients.forEach(c => {
+          if (c.status !== 'offer_sent') {
+            c.status = 'offer_sent';
+            sentCount++;
+          }
+        });
+
+        if (sentCount === 0) {
+          showToast("All lapsed clients have already received the 15% win-back discount.", "error");
+          return;
+        }
+
+        savePortalState();
+        renderCRMTable();
+
+        const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
+        currentAudit.unshift({
+          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
+          actor: "Vintage Crown Barbershop (CRM)",
+          action: "BATCH_RETENTION_SMS_DISPATCHED",
+          detail: `Batch-dispatched 15% discount win-back SMS to ${sentCount} lapsed clients (30-45 days inactive).`
+        });
+        localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+
+        showToast(`⚡ Batch SMS Sent: Re-engaged ${sentCount} lapsed clients with 15% discount!`);
+      });
+    }
+
+    // Initial render
+    initPortalMonetization();
+    renderBookings();
+    renderCRMTable();
+  </script>
+</body>
+</html>
+

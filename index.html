@@ -105,6 +105,12 @@
           <span>Syndicate</span>
         </button>
 
+        <!-- Track My Token Button -->
+        <button onclick="window.openTrackTokenModal()" class="text-xs font-mono font-bold text-amber-400 hover:text-white transition-all px-3 py-1.5 flex items-center gap-1.5 cursor-pointer rounded-full border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 shadow-sm">
+          <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Track Token</span>
+        </button>
+
         <!-- Log In / Partner Button -->
         <button onclick="window.openRegisterModal()" class="syndicate-cta-btn text-xs px-5 py-2.5">
           List your business
@@ -576,6 +582,40 @@
                 <label class="block font-sans text-xs  text-[#9ca3af] mb-2">Special Grooming Instructions (Optional):</label>
                 <textarea id="customer-notes" rows="2" placeholder="e.g. Low skin taper fade, straight razor neck clean, extra hot towel..." class="w-full p-3.5 rounded bg-[#172138] border border-[#243050] text-sm text-white focus:outline-none focus:border-[#e8220a]"></textarea>
               </div>
+
+              <!-- No-Show Protection & Advance Deposit -->
+              <div class="p-4 rounded-xl bg-[#111A2E] border border-amber-500/30 space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <span class="text-xs font-bold text-white font-mono uppercase tracking-wide">No-Show Protection & Chair Hold</span>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">৳50 Deposit</span>
+                </div>
+
+                <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+                  To guarantee your reserved barber chair and prevent vacant slots, pay a <strong>৳50 advance deposit</strong> via bKash/Nagad. This ৳50 is <strong>100% deducted</strong> from your final bill at the salon.
+                </p>
+
+                <!-- Payment Option Radio Pills -->
+                <div class="grid grid-cols-2 gap-2.5 pt-1">
+                  <label class="payment-method-pill flex items-center justify-between p-3 rounded-lg bg-[#172138] border border-[#E2136E]/60 hover:border-[#E2136E] cursor-pointer text-xs transition-all">
+                    <div class="flex items-center gap-2">
+                      <input type="radio" name="deposit-mfs" value="bkash" checked class="text-[#E2136E] accent-[#E2136E]" onchange="window.onMfsRadioChange(this.value)">
+                      <span class="text-white font-bold">bKash</span>
+                    </div>
+                    <span class="text-[10px] font-mono text-[#E2136E] font-semibold">৳50 Now</span>
+                  </label>
+
+                  <label class="payment-method-pill flex items-center justify-between p-3 rounded-lg bg-[#172138] border border-[#F7941D]/60 hover:border-[#F7941D] cursor-pointer text-xs transition-all">
+                    <div class="flex items-center gap-2">
+                      <input type="radio" name="deposit-mfs" value="nagad" class="text-[#F7941D] accent-[#F7941D]" onchange="window.onMfsRadioChange(this.value)">
+                      <span class="text-white font-bold">Nagad</span>
+                    </div>
+                    <span class="text-[10px] font-mono text-[#F7941D] font-semibold">৳50 Now</span>
+                  </label>
+                </div>
+              </div>
             </div>
 
             <!-- Order Summary Box -->
@@ -597,7 +637,11 @@
             <button onclick="window.goToBookingStep(3)" class="btn-barber-ghost px-6 py-3 font-sans text-xs  font-bold">
               ← Back
             </button>
-            <button onclick="window.submitBookingForm()" class="btn-barber-primary px-9 py-4 font-sans text-xs  font-bold flex items-center gap-2 shadow-lg shadow-[#e8220a]/30">
+            <button onclick="window.initiateMfsDeposit()" class="btn-barber-primary px-9 py-4 font-sans text-xs font-bold flex items-center gap-2 shadow-lg shadow-[#e8220a]/30">
+              <span id="btn-submit-booking-text">Pay ৳50 Deposit via bKash & Confirm</span>
+              <span>→</span>
+            </button>
+            <button style="display:none" onclick="window.submitBookingForm()" class="btn-barber-primary px-9 py-4 font-sans text-xs  font-bold flex items-center gap-2 shadow-lg shadow-[#e8220a]/30">
               <span>Confirm Appointment</span>
               <span>✓</span>
             </button>
@@ -647,6 +691,18 @@
                   <span class="text-[#9ca3af]">Contact Phone:</span>
                   <span class="font-sans text-white" id="slip-customer-phone">+880 1711-XXXXXX</span>
                 </div>
+                <div class="flex justify-between pt-2 border-t border-[#243050]/60">
+                  <span class="text-[#9ca3af]">Total Service Fee:</span>
+                  <span class="font-mono text-white font-semibold" id="slip-total-bill">৳ 500</span>
+                </div>
+                <div class="flex justify-between text-emerald-400">
+                  <span id="slip-mfs-label">Advance Deposit Paid:</span>
+                  <span class="font-mono font-bold" id="slip-deposit-amount">৳ 50 (bKash Paid ✓)</span>
+                </div>
+                <div class="flex justify-between text-amber-300 font-semibold">
+                  <span>Balance Payable at Chair:</span>
+                  <span class="font-mono font-bold" id="slip-due-balance">৳ 450</span>
+                </div>
               </div>
 
               <div class="pt-4 flex items-center justify-between font-sans text-xs text-[#9ca3af]">
@@ -657,6 +713,10 @@
 
             <!-- Action Buttons -->
             <div class="flex flex-wrap items-center justify-center gap-3">
+              <button onclick="window.openTrackTokenModal(document.getElementById('slip-token-id').innerText)" class="px-5 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-sans text-xs font-bold flex items-center gap-1.5 shadow-lg shadow-amber-500/20 transition-all">
+                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Track Live Queue Status →</span>
+              </button>
               <button onclick="window.printBookingToken()" class="btn-barber-primary px-6 py-3 font-sans text-xs  font-bold">
                 Print Confirmation
               </button>
@@ -1510,10 +1570,244 @@
     </div>
   </div>
 
+  <!-- =========================================================================
+       MODAL: TRACK MY TOKEN & LIVE QUEUE RADAR
+       ========================================================================= -->
+  <div id="modal-track-token" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden animate-fadeIn">
+    <div class="relative w-full max-w-lg rounded-3xl bg-[#111A2E] border border-[#243050] shadow-2xl overflow-hidden text-white">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-[#243050] bg-[#0C1220] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-white font-serif">Track Live Queue & Waiting Time</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Real-time chair occupancy & arrival radar</p>
+          </div>
+        </div>
+
+        <button onclick="window.closeTrackTokenModal()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <!-- Search Input & Quick Chips -->
+      <div class="p-6 space-y-4">
+        <form onsubmit="event.preventDefault(); window.lookupTokenStatus();" class="flex gap-2">
+          <div class="relative flex-1">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 font-mono text-xs">#</span>
+            <input 
+              type="text" 
+              id="track-token-input" 
+              required 
+              placeholder="Enter Token ID (e.g. SLN-DHN-8942)" 
+              class="w-full bg-[#172138] border border-[#243050] rounded-xl pl-8 pr-4 py-3 text-xs sm:text-sm font-mono text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors uppercase"
+            />
+          </div>
+          <button type="submit" id="btn-lookup-track" class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase font-mono tracking-wider shadow-lg shadow-amber-500/20 transition-all shrink-0">
+            Track Queue
+          </button>
+        </form>
+
+        <!-- Quick Demo Chips -->
+        <div class="flex items-center gap-2 text-xs flex-wrap">
+          <span class="text-slate-400 font-mono text-[11px]">Quick Tokens:</span>
+          <button type="button" onclick="window.fillAndTrackToken('SLN-DHN-8942')" class="px-2.5 py-1 rounded-lg bg-[#172138] border border-[#243050] text-amber-400 font-mono text-[11px] hover:border-amber-400/60 transition-colors">SLN-DHN-8942 (In-Chair)</button>
+          <button type="button" onclick="window.fillAndTrackToken('SLN-DHN-8941')" class="px-2.5 py-1 rounded-lg bg-[#172138] border border-[#243050] text-blue-400 font-mono text-[11px] hover:border-blue-400/60 transition-colors">SLN-DHN-8941 (Next in line)</button>
+          <button type="button" onclick="window.fillAndTrackToken('SLN-DHN-8940')" class="px-2.5 py-1 rounded-lg bg-[#172138] border border-[#243050] text-emerald-400 font-mono text-[11px] hover:border-emerald-400/60 transition-colors">SLN-DHN-8940 (Completed)</button>
+        </div>
+
+        <!-- NOT FOUND STATE -->
+        <div id="track-not-found" class="hidden p-4 rounded-xl bg-red-950/20 border border-red-500/30 text-center space-y-1">
+          <span class="text-red-400 font-mono text-xs font-semibold">Token not found in reservation records.</span>
+          <p class="text-[11px] text-slate-400">Please double check your token spelling or booking confirmation slip.</p>
+        </div>
+
+        <!-- RESULT CARD -->
+        <div id="track-result-card" class="hidden space-y-5 pt-2">
+          
+          <!-- Radar Status Banner -->
+          <div class="p-4 rounded-2xl bg-[#0C1220] border border-[#243050] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <span id="track-status-dot" class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span id="track-status-text" class="text-sm font-bold text-white font-mono">In-Chair Right Now</span>
+              </div>
+              <p id="track-status-subtext" class="text-xs text-slate-400 font-mono mt-1">Master Barber is currently styling your cut.</p>
+            </div>
+
+            <div class="sm:text-right shrink-0">
+              <span class="text-[10px] font-mono text-slate-500 uppercase block">Estimated Wait</span>
+              <div id="track-wait-display" class="text-xl sm:text-2xl font-bold font-mono text-amber-400">~0 Mins</div>
+            </div>
+          </div>
+
+          <!-- 4-Step Queue Progress Bar -->
+          <div class="p-4 rounded-xl bg-[#172138]/60 border border-[#243050]">
+            <span class="text-[10px] font-mono uppercase text-slate-400 block mb-3">Live Progress Radar</span>
+            <div class="grid grid-cols-4 gap-2 text-center text-[10px] font-mono">
+              <div id="step-track-1" class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                1. Confirmed
+              </div>
+              <div id="step-track-2" class="p-2 rounded-lg bg-[#111A2E] border border-[#243050] text-slate-400">
+                2. In Queue
+              </div>
+              <div id="step-track-3" class="p-2 rounded-lg bg-[#111A2E] border border-[#243050] text-slate-400">
+                3. In Chair
+              </div>
+              <div id="step-track-4" class="p-2 rounded-lg bg-[#111A2E] border border-[#243050] text-slate-400">
+                4. Completed
+              </div>
+            </div>
+          </div>
+
+          <!-- Reservation Details Grid -->
+          <div class="p-4 rounded-xl bg-[#0C1220] border border-[#243050] space-y-2.5 text-xs">
+            <div class="flex justify-between pb-2 border-b border-[#243050]">
+              <span class="text-slate-400 font-mono">Client Name:</span>
+              <strong id="track-res-client" class="text-white">Tanvir Hasan</strong>
+            </div>
+            <div class="flex justify-between pb-2 border-b border-[#243050]">
+              <span class="text-slate-400 font-mono">Studio Venue:</span>
+              <span id="track-res-salon" class="text-white font-medium">Vintage Crown Barbershop</span>
+            </div>
+            <div class="flex justify-between pb-2 border-b border-[#243050]">
+              <span class="text-slate-400 font-mono">Barber & Station:</span>
+              <span id="track-res-barber" class="text-amber-400 font-semibold font-mono">Kabir Hossain (Chair #1)</span>
+            </div>
+            <div class="flex justify-between pb-2 border-b border-[#243050]">
+              <span class="text-slate-400 font-mono">Service:</span>
+              <span id="track-res-service" class="text-slate-300">Signature Scissor Fade</span>
+            </div>
+            <div class="flex justify-between pb-2 border-b border-[#243050]">
+              <span class="text-slate-400 font-mono">Scheduled Slot:</span>
+              <span id="track-res-slot" class="text-slate-300 font-mono">11:30 AM BST</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400 font-mono">Pay at Salon:</span>
+              <span id="track-res-bill" class="text-emerald-400 font-mono font-bold">৳ 500</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2">
+              <a href="tel:+8801712445566" class="px-3.5 py-2 rounded-xl bg-[#172138] hover:bg-[#1f2c4a] border border-[#243050] text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono">
+                <span>📞 Call Desk</span>
+              </a>
+              <a href="https://maps.google.com" target="_blank" class="px-3.5 py-2 rounded-xl bg-[#172138] hover:bg-[#1f2c4a] border border-[#243050] text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono">
+                <span>📍 Directions</span>
+              </a>
+            </div>
+
+            <!-- Review Button (Shown if completed) -->
+            <a id="track-review-btn" href="review/index.html" class="hidden px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redHover text-white font-bold font-mono transition-all">
+              Leave Verified Review ↗
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: BKASH / NAGAD MFS DEPOSIT CHECKOUT (NO-SHOW PROTECTION)
+       ========================================================================= -->
+  <div id="modal-mfs-checkout" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden animate-fadeIn">
+    <div class="relative w-full max-w-md rounded-3xl bg-[#111A2E] border border-[#243050] shadow-2xl overflow-hidden text-white">
+      
+      <!-- Top Provider Banner (bKash pink or Nagad orange based on selection) -->
+      <div id="mfs-banner" class="p-5 bg-gradient-to-r from-[#D12053] to-[#E2136E] text-white flex items-center justify-between transition-colors">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center font-bold text-lg font-mono">
+            ৳
+          </div>
+          <div>
+            <span id="mfs-provider-title" class="text-sm font-bold tracking-tight block">bKash Payment Gateway</span>
+            <span class="text-[10px] text-white/80 font-mono">Secured Token Deposit • No-Show Protection</span>
+          </div>
+        </div>
+
+        <button onclick="window.closeMfsModal()" class="w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 text-white flex items-center justify-center transition-colors text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <!-- Amount & Order Card -->
+      <div class="p-6 space-y-4">
+        <div class="p-4 rounded-2xl bg-[#0C1220] border border-[#243050] flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-slate-400">Advance Deposit Amount</span>
+            <div class="text-2xl font-bold font-mono text-white mt-0.5">৳ 50.00</div>
+            <p class="text-[10px] text-emerald-400 mt-1 font-mono">✓ 100% Deducted from final salon bill</p>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] font-mono uppercase text-slate-400">Partner Studio</span>
+            <div id="mfs-order-salon" class="text-xs font-bold text-amber-400 mt-0.5">Vintage Crown Barbershop</div>
+            <div id="mfs-order-service" class="text-[11px] text-slate-300 truncate max-w-[150px]">Signature Scissor Fade</div>
+          </div>
+        </div>
+
+        <!-- MFS Checkout Steps Form -->
+        <form id="form-mfs-payment" onsubmit="event.preventDefault(); window.processMfsPayment();" class="space-y-4 text-xs font-sans">
+          
+          <!-- Step 1: Wallet Account Number -->
+          <div id="mfs-step-wallet" class="space-y-1.5">
+            <label class="block text-slate-300 font-medium">Your <span id="mfs-label-wallet">bKash</span> Account Number (11 Digits): *</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono text-xs">+880</span>
+              <input 
+                type="tel" 
+                id="mfs-wallet-input" 
+                required 
+                maxlength="11" 
+                value="01712445566"
+                placeholder="01XXXXXXXXX" 
+                class="w-full bg-[#172138] border border-[#243050] rounded-xl pl-14 pr-4 py-3 text-white font-mono text-xs sm:text-sm focus:outline-none focus:border-brand-red transition-colors"
+              />
+            </div>
+          </div>
+
+          <!-- Step 2: OTP / Verification Code (Auto-populated in demo mode) -->
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-slate-300 font-medium mb-1">Simulated OTP Code:</label>
+              <input type="text" id="mfs-otp-input" value="849201" readonly class="w-full bg-[#172138] border border-[#243050] rounded-xl px-3 py-2 text-slate-400 font-mono text-xs">
+            </div>
+            <div>
+              <label class="block text-slate-300 font-medium mb-1">Demo PIN (4 Digits):</label>
+              <input type="password" id="mfs-pin-input" value="1234" readonly class="w-full bg-[#172138] border border-[#243050] rounded-xl px-3 py-2 text-slate-400 font-mono text-xs">
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300 leading-relaxed font-mono">
+            🛡️ <strong>Sandbox Mode:</strong> Confirms ৳50 token deposit, locks chair slot against no-shows, and guarantees ৳50 deduction on arrival.
+          </div>
+
+          <button type="submit" id="btn-mfs-confirm-pay" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D12053] to-[#E2136E] text-white font-bold text-xs uppercase font-mono tracking-wider shadow-lg shadow-[#E2136E]/30 hover:opacity-95 transition-all flex items-center justify-center gap-2">
+            <span>Confirm ৳ 50.00 Deposit</span>
+            <span>→</span>
+          </button>
+        </form>
+
+      </div>
+
+      <div class="p-3 border-t border-[#243050] bg-[#0C1220] text-center text-[10px] font-mono text-slate-500">
+        Hair and Care bd • Certified MFS Payment Gateway Integration
+      </div>
+
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
   <!-- Main JavaScript Logic Engine -->
-  <script src="app.js?v=fresha10"></script>
+  <script src="app.js?v=fresha11"></script>
 </body>
 </html>

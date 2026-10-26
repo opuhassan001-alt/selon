@@ -1,9 +1,10 @@
 # Project Backlog & Task Management
 
 ## In Progress
-- CLAIM #47 session a3e0d779-e2cf-46e3-984f-a0f748522318 2026-10-25T09:56:05Z "Build verified review submission engine and 30-40 day customer retention CRM in merchant portal"
 
 ## Done
+- `#50` Commit and push all latest modules (Super Admin control center, Merchant Portal, Salon storefront micro-sites, Verified Review engine, Supabase migrations, bKash/Nagad deposit engine, and live queue radar) to GitHub (2026-10-26)
+- `#49` Implement bKash and Nagad advance booking deposit (No-Show Protection) with checkout modal, ৳50 billing deduction, receptionist desk collection, and merchant no-show forfeiture (2026-10-25)
 - `#1` Complete 11-section Bangladesh Salon Directory & Advance Booking Platform (2026-10-24)
 - `#2` Implement Seative Digital Pinned Headline & 3D Layered Cascade Motion Section (2026-10-24)
 - `#3` Create complete documentation suite (Prd.md, Architecture.md, Rules.md, Phases.md, Design.md, Memory.md) (2026-10-24)
@@ -47,9 +48,10 @@
 - `#45` Implement dual-engine platform monetization architecture: 1. Pay-As-You-Go 10% commission engine with real-time settlement ledger across Super Admin and Merchant Portal, 2. Customizable 30-day Sponsored Boosting Placement (default ৳200/mo, customizable by Super Admin), live boost activation in Merchant Portal, and golden '⭐ FEATURED STUDIO' top-ranking badges on public directory (2026-10-25)
 - `#46` Complete Shopify-style dedicated Salon Brand Storefront micro-site at `salon/index.html?slug=...` with studio banner photo, verified gold crest, one-click social bio link copy (`Copy Bio Link`), transparent service rate card catalog, pre-locked 1-click chair booking terminal, master barber profiles, and instant cross-sync to merchant queue (2026-10-25)
 - `#47` Anti-AI-Slop comprehensive audit via `design-taste-frontend` inspector, `karpathy-guidelines`, and `ponytail`: eliminated eyebrow kickers, decorative index numbers, emoji stars in testimonials, font-mono pollution, artificial micro-label tracking, and low-contrast text colors across all sections (2026-10-25)
+- `#48` Complete Anti-Fake Verified Review Engine (`review/index.html?token=...` allowing reviews only for in-person completed cuts, blocking fake 1★/5★ attacks or duplicates) and Customer Retention & Loyalty CRM in Merchant Portal (`portal/index.html` tracking 30–45 days inactive clients with individual & batch 15% discount win-back SMS dispatch and audit trail logging) (2026-10-25)
+- `#44` Build "Track My Token" live client queue & waiting time estimator radar modal (`#modal-track-token` on `index.html`) with real-time chair radar, estimated wait minutes, 4-step queue progress tracker, direct salon call/maps, and direct verified review link upon service completion (2026-10-25)
 
 ## Backlog
 - `#6` Connect real SMS / OTP gateway via local provider (e.g. SSL Wireless or Greenweb) for customer booking tokens
 - `#42` Add Supabase JS client adapter with local mock fallback in `js/supabase-client.js`
-- `#44` Build "Track My Token" live client queue & waiting time estimator modal
 
