@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0c1220;
+  --foreground: #f0f4fc;
+  --primary-red: #e8220a;
+  --primary-red-hover: #c11a07;
+  --brand-navy: #0c1220;
+  --brand-card: #121622;
+  --brand-surface: #172138;
+  --brand-border: #1f2639;
+  --brand-border-light: #243050;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0d13;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2639;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e8220a;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #AA8010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tab-active {
+  background: rgba(232, 34, 10, 0.12);
+  color: #FFFFFF;
+  border-color: #E8220A;
+}
+
+.btn-barber-primary {
+  background-color: #e8220a;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-barber-primary:hover {
+  background-color: #c11a07;
+  box-shadow: 0 4px 20px rgba(232, 34, 10, 0.3);
+}
+
+.btn-barber-secondary {
+  background-color: transparent;
+  color: #f0f4fc;
+  border: 1px solid #243050;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-barber-secondary:hover {
+  border-color: #e8220a;
+  background-color: rgba(232, 34, 10, 0.08);
+}
+

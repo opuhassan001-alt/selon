@@ -23,24 +23,6 @@
             mono: ['"JetBrains Mono"', 'monospace'],
             serif: ['"Playfair Display"', 'serif'],
           }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
           colors: {
             brand: {
               red: '#E8220A',
@@ -51,100 +33,10 @@
               border: '#1F2639',
               subtle: '#8E9BB2',
             }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
           }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
         }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
       }
-    };
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
   </script>
   <style>
     /* Custom Scrollbar */
@@ -158,24 +50,6 @@
       color: #FFFFFF;
       border-color: #E8220A;
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
   </style>
 </head>
 <body class="h-full flex flex-col font-sans selection:bg-brand-red selection:text-white antialiased">
@@ -779,24 +653,6 @@
         submitted_at: "2026-10-25 09:15 BST",
         notes: "Established in 2021. Offers executive haircuts, charcoal facials, and beard styling."
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
       {
         id: 102,
         salon_name: "The Royal Blade & Spa",
@@ -814,24 +670,6 @@
         submitted_at: "2026-10-25 10:45 BST",
         notes: "Full luxury barbershop with dedicated VIP groom suite and 8 master barbers."
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
       {
         id: 103,
         salon_name: "Sylhet Grooming Hub",
@@ -849,24 +687,6 @@
         submitted_at: "2026-10-25 11:20 BST",
         notes: "Specialized in classic English hot-towel shaves and modern fades."
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
       {
         id: 104,
         salon_name: "Mirpur Elite Hair Studio",
@@ -884,24 +704,6 @@
         submitted_at: "2026-10-25 12:00 BST",
         notes: "High-volume shop looking to streamline customer queue via advance booking."
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
       {
         id: 99,
         salon_name: "Barbarian Traditional Barbershop",
@@ -919,24 +721,6 @@
         submitted_at: "2026-10-20 14:00 BST",
         notes: "Approved flagship partner."
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
     ];
 
     const DEFAULT_ADMINS = [
@@ -948,24 +732,6 @@
         is_root: true,
         since: "October 2024"
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
       {
         id: "usr_adm_002",
         name: "Tanvir Ahmed",
@@ -974,24 +740,6 @@
         is_root: false,
         since: "2026-10-15"
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };,
       {
         id: "usr_adm_003",
         name: "Sabbir Hossain",
@@ -1000,24 +748,6 @@
         is_root: false,
         since: "2026-10-22"
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
     ];
 
     const DEFAULT_AUDIT = [
@@ -1037,53 +767,18 @@
       localStorage.setItem('salon_admin_audit', JSON.stringify(auditTrail));
     }
 
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
-
-    // --- BST Clock ---
-    function updateBSTClock() {
-      const now = new Date();
-      const bstTime = new Intl.DateTimeFormat('en-GB', {
-        timeZone: 'Asia/Dhaka',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };).format(now);
-      document.getElementById('live-bst-clock').textContent = `${bstTime} BST`;
+    function getAdminSalonPhoto(name, currentImg) {
+      const q = (name || '').toLowerCase();
+      if (q.includes('haven')) return '../assets/studio-haven.jpg';
+      if (q.includes('barbarian') || q.includes('barberia')) return '../assets/studio-barberia.jpg';
+      if (q.includes('crown')) return '../assets/hero-barber.jpg';
+      if (q.includes('kingsman')) return '../assets/service-shave.jpg';
+      if (q.includes('mirpur')) return '../assets/service-hair.jpg';
+      if (q.includes('sylhet')) return '../assets/service-style.jpg';
+      if (q.includes('blade') || q.includes('royal blade')) return '../assets/service-trim.jpg';
+      if (q.includes('royal cut')) return '../assets/service-trim.jpg';
+      if (q.includes('gentlemen') || q.includes('uttara')) return '../assets/service-style.jpg';
+      return currentImg || '../assets/hero-barber.jpg';
     }
 
     window.deleteSalon = function(id) {
@@ -1103,6 +798,20 @@
         showToast(`✓ Deleted "${salonName}".`, 'error');
       }
     };
+
+
+    // --- BST Clock ---
+    function updateBSTClock() {
+      const now = new Date();
+      const bstTime = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Dhaka',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      }).format(now);
+      document.getElementById('live-bst-clock').textContent = `${bstTime} BST`;
+    }
     setInterval(updateBSTClock, 1000);
     updateBSTClock();
 
@@ -1117,67 +826,13 @@
 
       requestAnimationFrame(() => {
         toast.classList.remove('translate-y-2', 'opacity-0');
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
 
       setTimeout(() => {
         toast.classList.add('opacity-0', 'translate-y-2');
         setTimeout(() => toast.remove(), 300);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };, 4000);
+      } 4000);
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     // --- Navigation Tabs ---
     const navTabs = document.querySelectorAll('.nav-tab');
@@ -1192,107 +847,17 @@
         tabPanes.forEach(pane => {
           if (pane.id === `tab-${targetTab}`) {
             pane.classList.remove('hidden');
-          }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    }; else {
+          } else {
             pane.classList.add('hidden');
           }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
         });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
-        }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
 
         if (targetTab === 'salons') renderActiveSalons();
         if (targetTab === 'team') renderAdminTeam();
         if (targetTab === 'monetization') renderMonetizationHub();
         if (targetTab === 'audit') renderAuditTrail();
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
+    });
 
     // --- Applications Triage Rendering ---
     let currentFilter = 'pending';
@@ -1302,67 +867,13 @@
         filterButtons.forEach(b => {
           b.classList.remove('bg-brand-red', 'text-white');
           b.classList.add('text-slate-400');
-        }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
         });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
         btn.classList.add('bg-brand-red', 'text-white');
         btn.classList.remove('text-slate-400');
         currentFilter = btn.getAttribute('data-filter');
         renderApplicationsTable();
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
+    });
 
     document.getElementById('app-search-input').addEventListener('input', renderApplicationsTable);
     document.getElementById('app-district-filter').addEventListener('change', renderApplicationsTable);
@@ -1393,48 +904,12 @@
           app.district.toLowerCase().includes(search);
 
         return matchesFilter && matchesDistrict && matchesSearch;
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
 
       if (filtered.length === 0) {
         document.getElementById('no-apps-state').classList.remove('hidden');
         return;
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
       document.getElementById('no-apps-state').classList.add('hidden');
 
       filtered.forEach(app => {
@@ -1444,65 +919,11 @@
         let statusBadge = '';
         if (app.status === 'pending') {
           statusBadge = '<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">Pending Review</span>';
-        }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    }; else if (app.status === 'approved') {
+        } else if (app.status === 'approved') {
           statusBadge = '<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Approved Tenant</span>';
-        }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    }; else if (app.status === 'rejected') {
+        } else if (app.status === 'rejected') {
           statusBadge = '<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-red-500/10 text-red-400 border border-red-500/20">Rejected</span>';
         }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
         tr.innerHTML = `
           <td class="py-3 px-4">
@@ -1539,44 +960,8 @@
           </td>
         `;
         tbody.appendChild(tr);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     // --- Modal Logic ---
     let selectedAppId = null;
@@ -1622,47 +1007,11 @@
       `;
 
       document.getElementById('modal-app-review').classList.remove('hidden');
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
+    };
 
     document.getElementById('modal-app-close').addEventListener('click', () => {
       document.getElementById('modal-app-review').classList.add('hidden');
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+    });
 
     // Quick Approve
     window.quickApproveApp = function(id) {
@@ -1676,48 +1025,12 @@
         actor: "Primary Super Admin",
         action: "APPLICATION_APPROVED",
         detail: `Approved ${app.salon_name} (Slug: ${slug}). Provisioned tenant account.`
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
 
       saveState();
       renderApplicationsTable();
       showToast(`✓ ${app.salon_name} approved! Merchant tenant provisioned.`);
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
+    };
 
     // Modal Actions
     document.getElementById('modal-btn-approve').addEventListener('click', () => {
@@ -1725,43 +1038,7 @@
         quickApproveApp(selectedAppId);
         document.getElementById('modal-app-review').classList.add('hidden');
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+    });
 
     document.getElementById('modal-btn-reject').addEventListener('click', () => {
       if (selectedAppId) {
@@ -1773,129 +1050,21 @@
             actor: "Primary Super Admin",
             action: "APPLICATION_REJECTED",
             detail: `Rejected ${app.salon_name} application.`
-          }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+          });
           saveState();
           renderApplicationsTable();
           document.getElementById('modal-app-review').classList.add('hidden');
           showToast(`Application for ${app.salon_name} marked as rejected.`, 'error');
         }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
       }
-    };
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+    });
 
     document.getElementById('modal-btn-changes').addEventListener('click', () => {
       if (selectedAppId) {
         showToast("Feedback notification dispatched to salon owner.", "success");
         document.getElementById('modal-app-review').classList.add('hidden');
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+    });
 
     // --- Active Salons Tab ---
     function renderActiveSalons() {
@@ -1907,7 +1076,12 @@
       approvedApps.forEach(s => {
         const card = document.createElement('div');
         card.className = 'p-5 rounded-xl bg-[#121622] border border-brand-border flex flex-col justify-between space-y-4';
+        const photoUrl = getAdminSalonPhoto(s.salon_name, s.cover_photo_url);
         card.innerHTML = `
+          <div class="h-36 -mx-5 -mt-5 mb-3 rounded-t-xl overflow-hidden bg-black/40 relative">
+            <img src="${photoUrl}" alt="${s.salon_name}" class="w-full h-full object-cover">
+            <div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/60 text-[10px] font-mono text-white backdrop-blur-sm">Active Tenant</div>
+          </div>
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">Active Tenant</span>
@@ -1936,62 +1110,8 @@
           </div>
         `;
         grid.appendChild(card);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : ('Salon #' + id);
-      if (confirm('Are you sure you want to delete "' + salonName + '"?')) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: 'Primary Super Admin',
-          action: 'SALON_DELETED',
-          detail: 'Deleted salon "' + salonName + '" from platform records.'
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast('✓ Deleted "' + salonName + '".', 'error');
-      }
-    };
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     // --- Super Admin Delegation Modal & Team Tab ---
     const inviteModal = document.getElementById('modal-invite-admin');
@@ -2013,25 +1133,7 @@
         role: roleLabel,
         is_root: false,
         since: new Date().toLocaleDateString('en-GB')
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
+      };
 
       admins.push(newAdmin);
       auditTrail.unshift({
@@ -2039,50 +1141,14 @@
         actor: "Primary Super Admin",
         action: "ADMIN_INVITED",
         detail: `Granted ${roleLabel} privileges to ${name} (${contact}).`
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
 
       saveState();
       inviteModal.classList.add('hidden');
       document.getElementById('form-invite-admin').reset();
       renderAdminTeam();
       showToast(`✓ ${name} has been invited as ${roleLabel}!`);
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+    });
 
     function renderAdminTeam() {
       const container = document.getElementById('admin-team-list');
@@ -2117,44 +1183,8 @@
           </div>
         `;
         container.appendChild(item);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     window.revokeAdmin = function(id) {
       const adm = admins.find(a => a.id === id);
@@ -2166,115 +1196,25 @@
           actor: "Primary Super Admin",
           action: "ADMIN_REVOKED",
           detail: `Revoked privileges from ${adm.name}.`
-        }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
         });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
         saveState();
         renderAdminTeam();
         showToast(`Revoked privileges from ${adm.name}.`, 'error');
       }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
     };
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
 
     // --- Platform Monetization & Revenue Logic ---
     const DEFAULT_MONETIZATION = {
       commission_rate: 10,
       boost_fee: 200,
       boost_duration: 30
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
+    };
 
     let monetizationSettings = JSON.parse(localStorage.getItem('platform_monetization_settings')) || DEFAULT_MONETIZATION;
 
     function saveMonetizationSettings() {
       localStorage.setItem('platform_monetization_settings', JSON.stringify(monetizationSettings));
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     document.getElementById('btn-save-monetization').addEventListener('click', () => {
       const commRate = parseFloat(document.getElementById('setting-commission-rate').value) || 10;
@@ -2287,25 +1227,7 @@
         boost_fee: boostFee,
         deposit_fee: depositFee,
         boost_duration: duration
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
+      };
 
       saveMonetizationSettings();
 
@@ -2314,48 +1236,12 @@
         actor: "Primary Super Admin",
         action: "MONETIZATION_RULES_UPDATED",
         detail: `Commission updated to ${commRate}% PayG, No-Show Deposit set to ৳${depositFee}, Monthly Boost set to ৳${boostFee}.`
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
       saveState();
 
       renderMonetizationHub();
       showToast(`✓ Monetization rules saved! ${commRate}% PayG, ৳${depositFee} No-Show Deposit & ৳${boostFee} Boost applied.`);
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+    });
 
     function renderMonetizationHub() {
       document.getElementById('setting-commission-rate').value = monetizationSettings.commission_rate;
@@ -2424,25 +1310,7 @@
           </td>
         `;
         boostTbody.appendChild(tr);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
 
       // Render Commission Settlement Ledger
       const ledgerTbody = document.getElementById('commission-ledger-table-body');
@@ -2470,44 +1338,8 @@
           </td>
         `;
         ledgerTbody.appendChild(tr);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     window.toggleSalonBoost = function(salonId) {
       const salon = applications.find(a => a.id === salonId);
@@ -2519,48 +1351,12 @@
         actor: "Primary Super Admin",
         action: salon.is_boosted ? "SPONSORED_BOOST_ACTIVATED" : "SPONSORED_BOOST_REVOKED",
         detail: `${salon.salon_name} ${salon.is_boosted ? 'boosted to #1 Featured Placement' : 'returned to Standard tier'}.`
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
 
       saveState();
       renderMonetizationHub();
       showToast(`${salon.salon_name}: Boost status ${salon.is_boosted ? 'ACTIVATED (⭐ #1 Placement)' : 'REVOKED'}.`);
-    }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };;
+    };
 
     // --- Audit Trail Rendering ---
     function renderAuditTrail() {
@@ -2577,44 +1373,8 @@
           <div class="text-[10px] text-slate-400 shrink-0 pl-4">${log.timestamp}</div>
         `;
         list.appendChild(row);
-      }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };);
+      });
     }
-
-    window.deleteSalon = function(id) {
-      const salon = applications.find(a => a.id === id);
-      const salonName = salon ? salon.salon_name : `Salon #${id}`;
-      if (confirm(`Are you sure you want to delete "${salonName}"?`)) {
-        applications = applications.filter(a => a.id !== id);
-        auditTrail.unshift({
-          timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-          actor: "Primary Super Admin",
-          action: "SALON_DELETED",
-          detail: `Deleted salon "${salonName}" from platform records.`
-        });
-        saveState();
-        renderActiveSalons();
-        renderApplicationsTable();
-        showToast(`✓ Deleted "${salonName}".`, 'error');
-      }
-    };
 
     // Initial render
     renderApplicationsTable();

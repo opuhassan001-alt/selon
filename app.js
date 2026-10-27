@@ -205,7 +205,20 @@
   // --------------------------------------------------------------------------
   // 3. RENDER SALON DIRECTORY GRID (FRESHA LIGHT AESTHETIC)
   // --------------------------------------------------------------------------
-  function renderSalonDirectoryGrid(filterArea = 'all', searchQuery = '') {
+  function getCanonicalImage(name, currentImg) {
+  const q = (name || '').toLowerCase();
+  if (q.includes('haven')) return 'assets/studio-haven.jpg';
+  if (q.includes('barbarian') || q.includes('barberia')) return 'assets/studio-barberia.jpg';
+  if (q.includes('crown')) return 'assets/hero-barber.jpg';
+  if (q.includes('kingsman')) return 'assets/service-shave.jpg';
+  if (q.includes('mirpur')) return 'assets/service-hair.jpg';
+  if (q.includes('sylhet')) return 'assets/service-style.jpg';
+  if (q.includes('blade') || q.includes('royal blade')) return 'assets/service-trim.jpg';
+  if (q.includes('royal cut')) return 'assets/service-trim.jpg';
+  if (q.includes('gentlemen') || q.includes('uttara')) return 'assets/service-style.jpg';
+  return currentImg || 'assets/hero-barber.jpg';
+}
+function renderSalonDirectoryGrid(filterArea = 'all', searchQuery = '') {
     const gridEl = document.getElementById('salon-directory-grid');
     if (!gridEl) return;
 
@@ -251,7 +264,7 @@
           <!-- Card Image & Overlay Badges -->
           <div class="relative h-52 overflow-hidden bg-[#0c1220]">
             <img 
-              src="${salon.image || 'assets/studio-haven.jpg'}" 
+              src="${getCanonicalImage(salon.name, salon.image)}" 
               alt="${salon.name}" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.85]"
             />

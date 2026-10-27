@@ -1,0 +1,385 @@
+{
+  "applications": [
+    {
+      "id": 101,
+      "salon_name": "Vintage Crown Barbershop",
+      "owner_name": "Rafiqul Islam",
+      "owner_phone": "+880 1712-445566",
+      "owner_email": "rafiq@vintagecrown.com",
+      "district": "Dhaka",
+      "area": "Dhanmondi 27",
+      "full_address": "House 42, Road 27, Dhanmondi R/A, Dhaka 1209",
+      "chairs_count": 5,
+      "trade_license_number": "TRAD/DNCC/092144/2024",
+      "status": "pending",
+      "cover_photo_url": "/assets/hero-barber.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:30",
+      "submitted_at": "2026-10-25 09:15 BST",
+      "notes": "Established in 2021. Offers executive haircuts, charcoal facials, and beard styling."
+    },
+    {
+      "id": 102,
+      "salon_name": "The Royal Blade & Spa",
+      "owner_name": "Mahmud Hasan",
+      "owner_phone": "+880 1819-887766",
+      "owner_email": "mahmud@royalblade.bd",
+      "district": "Chittagong",
+      "area": "Nasirabad",
+      "full_address": "City Heights, 3rd Floor, CDA Avenue, Nasirabad, Chittagong",
+      "chairs_count": 8,
+      "trade_license_number": "TRAD/CCC/778129/2023",
+      "status": "pending",
+      "cover_photo_url": "/assets/service-trim.jpg",
+      "opening_time": "09:30",
+      "closing_time": "23:00",
+      "submitted_at": "2026-10-25 10:45 BST",
+      "notes": "Full luxury barbershop with dedicated VIP groom suite and 8 master barbers."
+    },
+    {
+      "id": 103,
+      "salon_name": "Sylhet Artisan Grooming Hub",
+      "owner_name": "Kazi Farhan",
+      "owner_phone": "+880 1911-332211",
+      "owner_email": "farhan@sylhetartisan.com",
+      "district": "Sylhet",
+      "area": "Zindabazar",
+      "full_address": "Jalalabad Center, Zindabazar, Sylhet 3100",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/SCC/445120/2024",
+      "status": "pending",
+      "cover_photo_url": "/assets/service-style.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-25 11:20 BST",
+      "notes": "Specialized in classic English hot-towel shaves and modern fades."
+    },
+    {
+      "id": 104,
+      "salon_name": "Mirpur Elite Hair Studio",
+      "owner_name": "Shahadat Hossain",
+      "owner_phone": "+880 1612-990011",
+      "owner_email": "shahadat@mirpurelite.com",
+      "district": "Dhaka",
+      "area": "Mirpur 10",
+      "full_address": "Block C, Main Boulevard, Mirpur 10, Dhaka",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/110294/2024",
+      "status": "pending",
+      "cover_photo_url": "/assets/service-hair.jpg",
+      "opening_time": "09:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-25 12:00 BST",
+      "notes": "High-volume shop looking to streamline customer queue via advance booking."
+    },
+    {
+      "id": 99,
+      "salon_name": "Barbarian Traditional Barbershop",
+      "owner_name": "Zubair Rahman",
+      "owner_phone": "+880 1711-223344",
+      "owner_email": "zubair@barbarianbd.com",
+      "district": "Dhaka",
+      "area": "Banani 11",
+      "full_address": "Road 11, Block D, Banani, Dhaka 1213",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/001923/2022",
+      "status": "approved",
+      "cover_photo_url": "/assets/studio-barberia.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-20 14:00 BST",
+      "notes": "Approved flagship partner."
+    }
+  ],
+  "salons": [
+    {
+      "id": "sln-dhn-01",
+      "application_id": 98,
+      "name": "The Haven Luxury Grooming Studio",
+      "slug": "the-haven-dhanmondi",
+      "owner_name": "Kamrul Hassan",
+      "owner_phone": "+880 1711-904421",
+      "phone": "+880 1711-904421",
+      "email": "contact@thehaven.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "Road 27 (Old 16), Dhanmondi, Dhaka-1209",
+      "cover_photo_url": "/assets/studio-haven.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:30",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/019284/2022",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.92",
+      "reviews_count": 340,
+      "starting_price": 350,
+      "services": [
+        { "id": 1, "name": "Executive Haircut", "duration_minutes": 35, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Precision scissor cut with refreshing wash and blow-dry style." },
+        { "id": 2, "name": "Beard Art & Sculpt", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Razor edge lining, volume trimming, and organic argan oil finish." },
+        { "id": 3, "name": "Hot Towel Shave", "duration_minutes": 30, "price_bdt": 300, "category": "Shave", "is_active": true, "description": "Double steam hot towel compress with luxury cedarwood lather." },
+        { "id": 4, "name": "Charcoal Deep Facial", "duration_minutes": 45, "price_bdt": 750, "category": "Facial", "is_active": true, "description": "Deep pore extraction, organic clay mask, and hydrating ice mist." }
+      ],
+      "barbers": [
+        { "id": 1, "name": "Kabir Hossain", "title": "Founder & Master Barber", "chair": 1, "exp": "14 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true },
+        { "id": 2, "name": "Jewel Ahmed", "title": "Senior Fade Stylist", "chair": 2, "exp": "8 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true }
+      ]
+    },
+    {
+      "id": "sln-ban-02",
+      "application_id": 99,
+      "name": "Barbarian Traditional Barbershop",
+      "slug": "barbarian-banani",
+      "owner_name": "Zubair Rahman",
+      "owner_phone": "+880 1711-223344",
+      "phone": "+880 1711-223344",
+      "email": "zubair@barbarianbd.com",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "Road 11, Block D, Banani, Dhaka-1213",
+      "cover_photo_url": "/assets/studio-barberia.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/001923/2022",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.95",
+      "reviews_count": 520,
+      "starting_price": 400,
+      "services": [
+        { "id": 11, "name": "Barbarian Skin Taper", "duration_minutes": 40, "price_bdt": 600, "category": "Haircut", "is_active": true, "description": "Signature skin fade with razor edging and matte styling clay." },
+        { "id": 12, "name": "Traditional Straight-Razor Shave", "duration_minutes": 30, "price_bdt": 400, "category": "Beard", "is_active": true, "description": "Double hot towel steam and classic badger brush lather." },
+        { "id": 13, "name": "Scalp Spa & Hot Oil Massage", "duration_minutes": 35, "price_bdt": 500, "category": "Spa", "is_active": true, "description": "Nourishing coconut and rosemary oil blend with acupressure massage." }
+      ],
+      "barbers": [
+        { "id": 10, "name": "James Kingston", "title": "Master Barber", "chair": 1, "exp": "20 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true },
+        { "id": 11, "name": "Marcus Webb", "title": "Senior Stylist", "chair": 2, "exp": "12 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true }
+      ]
+    },
+    {
+      "id": "sln-dhn-03",
+      "application_id": 101,
+      "name": "Vintage Crown Barbershop",
+      "slug": "vintage-crown-dhanmondi",
+      "owner_name": "Rafiqul Islam",
+      "owner_phone": "+880 1712-445566",
+      "phone": "+880 1712-445566",
+      "email": "rafiq@vintagecrown.com",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "House 42, Road 27, Dhanmondi R/A, Dhaka 1209",
+      "cover_photo_url": "/assets/hero-barber.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:30",
+      "chairs_count": 5,
+      "trade_license_number": "TRAD/DNCC/092144/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.95",
+      "reviews_count": 420,
+      "starting_price": 500,
+      "services": [
+        { "id": 21, "name": "Signature Scissor Fade", "duration_minutes": 35, "price_bdt": 500, "category": "Haircut", "is_active": true, "description": "Precision scissor taper, foil razor finish, and hot-towel neck shave." },
+        { "id": 22, "name": "English Hot-Towel Beard Sculpt", "duration_minutes": 30, "price_bdt": 350, "category": "Beard", "is_active": true, "description": "Sandalwood pre-shave oil, straight razor contouring, and cold compress." },
+        { "id": 23, "name": "Deep Charcoal Detox Facial", "duration_minutes": 45, "price_bdt": 800, "category": "Facial", "is_active": true, "description": "Blackhead extraction, charcoal clay mask, and tea tree soothing serum." },
+        { "id": 24, "name": "Executive Crown Combo (Cut + Beard)", "duration_minutes": 60, "price_bdt": 850, "category": "VIP", "is_active": true, "description": "Complete haircut, beard detailing, eyebrow shaping, and scalp massage." }
+      ],
+      "barbers": [
+        { "id": 20, "name": "Kabir Hossain", "title": "Founder & Master Barber", "chair": 1, "exp": "14 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true },
+        { "id": 21, "name": "Jewel Ahmed", "title": "Senior Fade Stylist", "chair": 2, "exp": "8 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true },
+        { "id": 22, "name": "Tanvir Mia", "title": "Hot-Towel Specialist", "chair": 3, "exp": "9 Years Exp", "avatar": "/assets/barber-3.jpg", "is_active": true },
+        { "id": 23, "name": "Nayeem Islam", "title": "Beard Sculptor", "chair": 4, "exp": "6 Years Exp", "avatar": "/assets/barber-4.jpg", "is_active": true }
+      ]
+    },
+    {
+      "id": "sln-gul-04",
+      "name": "Kingsman Barbershop & Spa",
+      "slug": "kingsman-gulshan",
+      "owner_name": "Rezaul Karim",
+      "owner_phone": "+880 1977-889901",
+      "phone": "+880 1977-889901",
+      "email": "reza@kingsmanbd.com",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Avenue 2, Circle 2, Gulshan, Dhaka-1212",
+      "cover_photo_url": "/assets/service-shave.jpg",
+      "opening_time": "10:00",
+      "closing_time": "23:30",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/084321/2023",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.88",
+      "reviews_count": 410,
+      "starting_price": 450,
+      "services": [
+        { "id": 31, "name": "Royal Shave", "duration_minutes": 35, "price_bdt": 450, "category": "Shave", "is_active": true, "description": "Traditional hot towel ritual with premium balm and straight blade." },
+        { "id": 32, "name": "VIP Styling Cabin", "duration_minutes": 60, "price_bdt": 1100, "category": "VIP", "is_active": true, "description": "Private groom room session with full hair and beard treatment." }
+      ],
+      "barbers": [
+        { "id": 30, "name": "Sajid Khan", "title": "VIP Stylist", "chair": 1, "exp": "11 Years Exp", "avatar": "/assets/barber-3.jpg", "is_active": true }
+      ]
+    },
+    {
+      "id": "sln-mir-05",
+      "application_id": 104,
+      "name": "Mirpur Elite Hair Studio",
+      "slug": "mirpur-elite-hair-studio",
+      "owner_name": "Shahadat Hossain",
+      "owner_phone": "+880 1612-990011",
+      "phone": "+880 1612-990011",
+      "email": "shahadat@mirpurelite.com",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Mirpur 10",
+      "address": "Block C, Main Boulevard, Mirpur 10, Dhaka",
+      "cover_photo_url": "/assets/service-hair.jpg",
+      "opening_time": "09:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/110294/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.85",
+      "reviews_count": 290,
+      "starting_price": 350,
+      "services": [
+        { "id": 41, "name": "Signature Haircut", "duration_minutes": 30, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Classic cut and razor neck taper." },
+        { "id": 42, "name": "Beard Sculpt & Shave", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Hot-towel contour and clean line." }
+      ],
+      "barbers": [
+        { "id": 40, "name": "Imran Ali", "title": "Senior Stylist", "chair": 1, "exp": "7 Years Exp", "avatar": "/assets/barber-4.jpg", "is_active": true }
+      ]
+    },
+    {
+      "id": "sln-syl-06",
+      "application_id": 103,
+      "name": "Sylhet Artisan Grooming Hub",
+      "slug": "sylhet-artisan-grooming-hub",
+      "owner_name": "Kazi Farhan",
+      "owner_phone": "+880 1911-332211",
+      "phone": "+880 1911-332211",
+      "email": "farhan@sylhetartisan.com",
+      "division": "Sylhet",
+      "district": "Sylhet",
+      "area": "Zindabazar",
+      "address": "Jalalabad Center, Zindabazar, Sylhet 3100",
+      "cover_photo_url": "/assets/service-style.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/SCC/445120/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.89",
+      "reviews_count": 310,
+      "starting_price": 350,
+      "services": [
+        { "id": 51, "name": "Signature Haircut", "duration_minutes": 35, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Classic cut and styling." },
+        { "id": 52, "name": "Beard Sculpt & Shave", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Hot towel beard shaping." }
+      ],
+      "barbers": [
+        { "id": 50, "name": "Babar Azam", "title": "Artisan Stylist", "chair": 1, "exp": "6 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true }
+      ]
+    },
+    {
+      "id": "sln-ctg-07",
+      "application_id": 102,
+      "name": "The Royal Blade & Spa",
+      "slug": "the-royal-blade-and-spa",
+      "owner_name": "Mahmud Hasan",
+      "owner_phone": "+880 1819-887766",
+      "phone": "+880 1819-887766",
+      "email": "mahmud@royalblade.bd",
+      "division": "Chittagong",
+      "district": "Chittagong",
+      "area": "Nasirabad",
+      "address": "City Heights, 3rd Floor, CDA Avenue, Nasirabad, Chittagong",
+      "cover_photo_url": "/assets/service-trim.jpg",
+      "opening_time": "09:30",
+      "closing_time": "23:00",
+      "chairs_count": 8,
+      "trade_license_number": "TRAD/CCC/778129/2023",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.94",
+      "reviews_count": 460,
+      "starting_price": 350,
+      "services": [
+        { "id": 61, "name": "Signature Haircut", "duration_minutes": 30, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Haircut, beard sculpt, and mini facial." },
+        { "id": 62, "name": "Beard Sculpt & Shave", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Straight blade precision shave." }
+      ],
+      "barbers": [
+        { "id": 60, "name": "Farhad Reza", "title": "Master Barber", "chair": 1, "exp": "10 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true }
+      ]
+    }
+  ],
+  "admins": [
+    {
+      "id": "usr_root_001",
+      "name": "You (Platform Founder)",
+      "contact": "founder@hairandcare.bd",
+      "role": "Primary Super Admin",
+      "is_root": true,
+      "since": "October 2024"
+    },
+    {
+      "id": "usr_adm_002",
+      "name": "Tanvir Ahmed",
+      "contact": "+880 1711-554433",
+      "role": "Platform Super Admin",
+      "is_root": false,
+      "since": "2026-10-15"
+    },
+    {
+      "id": "usr_adm_003",
+      "name": "Sabbir Hossain",
+      "contact": "sabbir.ops@hairandcare.bd",
+      "role": "Operations Reviewer",
+      "is_root": false,
+      "since": "2026-10-22"
+    }
+  ],
+  "audit_trail": [
+    {
+      "id": "aud-1",
+      "timestamp": "12:00:15 PM BST",
+      "actor": "System",
+      "action": "NEW_APPLICATION_SUBMITTED",
+      "detail": "Mirpur Elite Hair Studio submitted onboarding request."
+    },
+    {
+      "id": "aud-2",
+      "timestamp": "10:45:00 AM BST",
+      "actor": "Primary Super Admin",
+      "action": "TENANT_APPROVED",
+      "detail": "Barbarian Traditional Barbershop approved and issued slug 'barbarian-banani'."
+    },
+    {
+      "id": "aud-3",
+      "timestamp": "09:30:22 AM BST",
+      "actor": "Primary Super Admin",
+      "action": "ADMIN_INVITED",
+      "detail": "Sabbir Hossain assigned Operations Reviewer role."
+    }
+  ],
+  "monetization": {
+    "commission_rate": 10,
+    "boost_fee": 200,
+    "deposit_fee": 50,
+    "boost_duration": 30
+  }
+}
+

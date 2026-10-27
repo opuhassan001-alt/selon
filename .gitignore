@@ -12,13 +12,13 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
-node_modules
+node_modules/
 
 # Next.js build artifacts
 .next/
-*.log
-
-# Next.js build artifacts
-.next/
+out/
+build/
+dist/
+*.tsbuildinfo
 *.log
 
