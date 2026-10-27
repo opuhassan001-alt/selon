@@ -3,6 +3,9 @@
 ## In Progress
 
 ## Done
+- `#52` Assign unique, authentic, distinct barbershop photography to every salon tenant in Super Admin control center (Active Salons section) and seed dataset, eliminating all duplicate images and adding high-resolution photo preview banners to each salon card (2026-10-27)
+- `#51` Convert entire platform into modern Next.js 14 App Router, Tailwind CSS, and TypeScript with unified data store, zero hardcoded records, full Super Admin approve/pending-approve/delete actions, and View Shop routing to `/salon/[slug]` (2026-10-27)
+- `#42` Add Supabase JS client adapter and local reactive data store in `lib/store.ts` and `lib/seed-data.ts` (2026-10-27)
 - `#50` Commit and push all latest modules (Super Admin control center, Merchant Portal, Salon storefront micro-sites, Verified Review engine, Supabase migrations, bKash/Nagad deposit engine, and live queue radar) to GitHub (2026-10-26)
 - `#49` Implement bKash and Nagad advance booking deposit (No-Show Protection) with checkout modal, ৳50 billing deduction, receptionist desk collection, and merchant no-show forfeiture (2026-10-25)
 - `#1` Complete 11-section Bangladesh Salon Directory & Advance Booking Platform (2026-10-24)
@@ -53,5 +56,4 @@
 
 ## Backlog
 - `#6` Connect real SMS / OTP gateway via local provider (e.g. SSL Wireless or Greenweb) for customer booking tokens
-- `#42` Add Supabase JS client adapter with local mock fallback in `js/supabase-client.js`
 
