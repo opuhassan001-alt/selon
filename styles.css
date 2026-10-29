@@ -1,469 +1,206 @@
+@import url('https://api.fontshare.com/v2/css?f[]=boska@400,500,600,700,900&f[]=general-sans@400,500,600,700&display=swap');
+
 /* ==========================================================================
-   KINGSTON'S TRADITIONAL BARBERSHOP DESIGN SYSTEM (DEEP NAVY, BARBER RED & WHITE)
+   HAIR AND CARE BD — OFFICIAL CLEAN LUXURY DESIGN SYSTEM (WHITE THEME)
    ========================================================================== */
 
 :root {
-  --background: 222 42% 8%;         /* #0c1220 deep navy dark */
-  --surface: 222 38% 11%;           /* #111a2e surface layer */
-  --surface-raised: 222 34% 14%;    /* #172138 card bg */
-  --border: 222 28% 20%;            /* #243050 border */
-  --border-soft: 222 24% 26%;       /* #2e3e62 secondary border */
-  --foreground: 210 40% 96%;        /* #f0f4fc off-white */
-  --muted-foreground: 220 15% 55%;  /* #9ca3af muted blue-grey */
-  --subtle: 220 12% 38%;            /* #546080 very muted */
-  --primary: 4 80% 50%;             /* #e8220a barber red */
-  --primary-foreground: 0 0% 100%;
-  --primary-dark: 4 84% 40%;        /* #c11a07 dark red hover */
-  --primary-light: 4 60% 14%;       /* #291007 red tint bg */
-  --blue: 222 72% 38%;              /* #1a3a9c medium blue */
-  --blue-light: 222 60% 24%;        /* #162462 blue surface */
-  --white: 0 0% 100%;               /* #ffffff pure white */
+  --bg-page: #FFFFFF;
+  --bg-surface: #F9F9FB;
+  --bg-surface-raised: #FFFFFF;
+  --bg-muted: #F3F3F6;
+  --bg-dark: #0D0D0D;
+  
+  --text-primary: #0D0D0D;
+  --text-secondary: #5E5E5E;
+  --text-muted: #8A8A8E;
+  --text-inverse: #FFFFFF;
+  
+  --border-subtle: #E8E8EC;
+  --border-strong: #D1D1D6;
+  
+  --brand-red: #E8220A;
+  --brand-red-hover: #C11A07;
+  
+  --pill-radius: 9999px;
+  --card-radius: 20px;
+  --surface-radius: 24px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
 
-  /* Direct Hex Tokens */
-  --bg-dark: #0c1220;
-  --bg-surface: #111a2e;
-  --bg-card: #172138;
-  --border-dark: #243050;
-  --border-secondary: #2e3e62;
-  --text-main: #f0f4fc;
-  --text-muted: #9ca3af;
-  --accent-red: #e8220a;
-  --accent-red-hover: #c11a07;
-  --accent-blue: #1a3a9c;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #0c1220;
-  color: #f0f4fc;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
-/* Custom Clean Scrollbar */
+.font-display {
+  font-family: 'Boska', 'Playfair Display', Georgia, serif;
+}
+
+.font-serif {
+  font-family: 'Boska', 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c1220;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #243050;
+  background: #D1D1D6;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e8220a;
+  background: #A0A0A5;
 }
 
-/* Font Classes */
-.font-display {
-  font-family: 'Playfair Display', Georgia, serif;
+/* Hide scrollbar for carousel while preserving smooth touch/mouse scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.font-mono-code {
-  font-family: 'JetBrains Mono', monospace;
-}
-.font-sans-ui {
-  font-family: 'Inter', sans-serif;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Red Decorative Line Accent */
-.red-accent-line {
-  width: 48px;
-  height: 2px;
-  background-color: #e8220a;
-  display: inline-block;
-  margin-bottom: 12px;
+/* 3-Input Search Capsule Container */
+.search-capsule {
+  background: #FFFFFF;
+  border-radius: 9999px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Kingston's Card with Hover Glow */
-.kingston-card {
-  background-color: #172138;
-  border: 1px solid #243050;
-  border-radius: 4px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+.search-capsule:hover {
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.11), 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-.kingston-card:hover {
+
+/* Venue Card */
+.venue-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.venue-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(232, 34, 10, 0.45);
-  box-shadow: 0 12px 40px rgba(232, 34, 10, 0.14);
 }
 
-/* Buttons */
-.btn-barber-primary {
-  background-color: #e8220a;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  padding: 13px 28px;
-  border-radius: 2px;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.btn-barber-primary:hover {
-  background-color: #c11a07;
-  transform: translateY(-1px);
-}
-
-.btn-barber-ghost {
-  background-color: transparent;
-  color: #9ca3af;
-  border: 1px solid #2e3e62;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  padding: 13px 28px;
-  border-radius: 2px;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.btn-barber-ghost:hover {
-  border-color: #f0f4fc;
-  color: #f0f4fc;
-  transform: translateY(-1px);
-}
-
-/* 56px Animated Barber Pole Divider Stripe */
-.barber-pole-divider {
-  width: 100%;
-  height: 56px;
-  overflow: hidden;
-  border-top: 1px solid #243050;
-  border-bottom: 1px solid #243050;
-  background: repeating-linear-gradient(
-    -45deg,
-    #e8220a 0px 20px,
-    rgba(255, 255, 255, 0.08) 20px 40px,
-    #1a3a9c 40px 60px,
-    rgba(255, 255, 255, 0.08) 60px 80px
-  );
-  background-size: 113px 113px;
-  animation: stripe-scroll 3s linear infinite;
-}
-
-@keyframes stripe-scroll {
-  from { background-position: 0 0; }
-  to { background-position: 113px 0; }
-}
-
-/* Live Wait Indicator Pulse Animation */
-@keyframes pulse-live {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.9); }
-}
-.pulse-live-indicator {
-  animation: pulse-live 2s ease-in-out infinite;
-}
-
-/* Print Stylesheet */
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #booking-confirmation-slip, #booking-confirmation-slip * {
-    visibility: visible;
-  }
-  #booking-confirmation-slip {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background: #ffffff !important;
-    color: #000000 !important;
-    padding: 20px;
-    border: 2px solid #000000 !important;
-  }
-}
-
-/* ==========================================================================
-   COMMUNITY ORBIT HERO — "NEON UNDERWORLD" (CYBER-GOTH / DARK GAMING VIBE)
-   ========================================================================== */
-
-:root {
-  --neon-void: #050508;
-  --neon-panel: #12121A;
-  --neon-magenta: #FF1E56;
-  --neon-cyan: #00F0FF;
-  --neon-text-head: #FFFFFF;
-  --neon-text-sub: #8F90A6;
-}
-
-.community-hero-section {
-  background-color: var(--neon-void);
-  min-height: 100vh;
-  min-height: 100dvh;
-  width: 100%;
+.venue-card .card-img-container {
   position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 16px;
+  background-color: #F3F3F6;
 }
 
-/* Cinematic Artwork Backdrop behind rotating circles */
-.hero-art-backdrop {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-  overflow: hidden;
-}
-
-.hero-art-backdrop img {
-  position: absolute;
-  inset: 0;
+.venue-card .card-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 60% center;
-  opacity: 1;
-  filter: brightness(1.05) contrast(1.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-art-overlay {
-  position: absolute;
-  inset: 0;
-  /* Left-edge fill so dark image edges blend smoothly; bottom fade into next section */
-  background: linear-gradient(
-    to right,
-    rgba(5, 5, 8, 0.65) 0%,
-    rgba(5, 5, 8, 0.25) 30%,
-    transparent 55%,
-    transparent 85%,
-    rgba(5, 5, 8, 0.2) 100%
-  ),
-  linear-gradient(to bottom, transparent 0%, transparent 88%, #050508 100%);
-  pointer-events: none;
+.venue-card:hover .card-img-container img {
+  transform: scale(1.04);
 }
 
-/* ==========================================================================
-   CYBER-GOTH & DARK GAMING CALLIGRAPHY TYPOGRAPHY
-   ========================================================================== */
-
-.realm-calligraphy-title {
-  font-family: 'Bebas Neue', 'Cinzel Decorative', Impact, sans-serif;
-  letter-spacing: 0.04em;
-  line-height: 0.88;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  text-shadow: 
-    0 0 15px rgba(255, 30, 86, 0.85),
-    0 0 35px rgba(255, 30, 86, 0.5),
-    0 2px 6px rgba(0, 0, 0, 0.95);
-  filter: drop-shadow(0 0 25px rgba(255, 30, 86, 0.65));
-}
-
-.realm-calligraphy-sub {
-  font-family: 'Orbitron', monospace;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: #00F0FF;
-  text-shadow: 0 0 12px rgba(0, 240, 255, 0.85);
-}
-
-.community-gothic-heading {
-  font-family: 'Cinzel Decorative', 'Bebas Neue', serif;
-  letter-spacing: 0.05em;
-  font-weight: 900;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #FFFFFF 0%, #00F0FF 45%, #FF1E56 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.75)) drop-shadow(0 0 40px rgba(255, 30, 86, 0.5));
-}
-
-/* Ambient Center Backlight */
-.ambient-cyan-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vmin;
-  height: 80vmin;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.14) 0%, rgba(255, 30, 86, 0.08) 45%, transparent 75%);
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: 1;
-  animation: ambient-pulse 9s ease-in-out infinite alternate;
-}
-
-@keyframes ambient-pulse {
-  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.55; }
-  100% { transform: translate(-50%, -50%) scale(1.18); opacity: 0.9; }
-}
-
-/* Orbit Rings */
-.orbit-ring-outer {
-  width: 75vmin;
-  height: 75vmin;
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: orbit-cw 68s linear infinite;
-  z-index: 3;
-}
-
-.orbit-ring-middle {
-  width: 57vmin;
-  height: 57vmin;
-  border: 1px solid rgba(255, 30, 86, 0.35);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: orbit-ccw 55s linear infinite;
-  z-index: 4;
-}
-
-.orbit-ring-inner {
-  width: 38vmin;
-  height: 38vmin;
-  border: 1px solid rgba(0, 240, 255, 0.25);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Avatar Safeguards */
-.orbit-ring-outer img,
-.orbit-ring-middle img {
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  flex-shrink: 0 !important;
-}
-
-/* Orbit Rotations */
-@keyframes orbit-cw {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes orbit-ccw {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(-360deg); }
-}
-
-/* Counter-rotations to keep faces and bubbles upright */
-.counter-cw {
-  animation: counter-cw 68s linear infinite;
-}
-
-.counter-ccw {
-  animation: counter-ccw 55s linear infinite;
-}
-
-@keyframes counter-cw {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
-@keyframes counter-ccw {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Repeating notification cycle on select message bubble (~7s cycle, ~1.7s delay) */
-@keyframes bubble-expand-contract {
-  0%, 15% {
-    opacity: 0;
-    transform: scale(0.65) translateY(6px);
-    pointer-events: none;
-  }
-  25%, 80% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-  }
-  90%, 100% {
-    opacity: 0;
-    transform: scale(0.65) translateY(-6px);
-    pointer-events: none;
-  }
-}
-
-.bubble-pulse-cycle {
-  animation: bubble-expand-contract 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-  animation-delay: 1.7s;
-}
-
-/* Luminous Background Twinkling Particles */
-.luminous-particle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: particle-twinkle ease-in-out infinite alternate;
-}
-
-@keyframes particle-twinkle {
-  0%, 100% {
-    opacity: 0.15;
-    transform: scale(0.7);
-  }
-  50% {
-    opacity: 0.95;
-    transform: scale(1.35);
-  }
-}
-
-/* Ring Satellite Spark Points */
-.ring-satellite-point {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #00F0FF;
-  pointer-events: none;
-}
-
-/* Syndicate Button */
-.syndicate-cta-btn {
-  background-color: #00F0FF;
-  color: #050508;
-  font-weight: 800;
+/* Category Chip / Pill */
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #F3F3F6;
+  color: #0D0D0D;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
 }
 
-.syndicate-cta-btn:hover {
-  transform: translateY(-2px) scale(1.04);
-  background-color: #33F5FF;
+.category-pill:hover {
+  background: #E8E8ED;
+  transform: translateY(-1px);
 }
 
-.syndicate-cta-btn:active {
-  transform: scale(0.97);
+.category-pill.active {
+  background: #0D0D0D;
+  color: #FFFFFF;
 }
 
-/* Accessible Reduced-Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  .orbit-ring-outer,
-  .orbit-ring-middle,
-  .counter-cw,
-  .counter-ccw,
-  .bubble-pulse-cycle,
-  .ambient-cyan-glow,
-  .luminous-particle {
-    animation: none !important;
-  }
+/* Carousel Control Buttons */
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E7;
+  color: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #0D0D0D;
+  transform: scale(1.05);
+}
+
+/* Review Card */
+.review-card {
+  background: #F9F9FB;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 300px;
+  max-width: 340px;
+  border: 1px solid #EAEAEA;
+  transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Modal Backdrop */
+.modal-backdrop-blur {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }

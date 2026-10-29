@@ -11,10 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', "sans-serif"],
+        sans: ['"General Sans"', '"Plus Jakarta Sans"', '"Inter"', "sans-serif"],
         mono: ['"JetBrains Mono"', "monospace"],
-        serif: ['"Playfair Display"', "serif"],
-        display: ['"Bebas Neue"', "sans-serif"],
+        serif: ['"Boska"', '"Playfair Display"', "serif"],
+        display: ['"Boska"', '"Playfair Display"', "serif"],
       },
       colors: {
         brand: {

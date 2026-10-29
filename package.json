@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 3000"
   },
   "repository": {
     "type": "git",
@@ -27,11 +27,11 @@
     "@types/node": "^26.6.5",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.6.2",
+    "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "lucide-react": "^1.62.0",
     "next": "^14.2.15",
-    "postcss": "^8.5.32",
+    "postcss": "^8.4.47",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^3.7.0",

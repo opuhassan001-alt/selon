@@ -90,23 +90,23 @@ export default function SalonStorefrontPage() {
 
   if (!salon) {
     return (
-      <div className="min-h-screen bg-[#0C1220] flex items-center justify-center text-xs font-mono text-slate-400">
+      <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center text-xs font-mono text-gray-500">
         Loading salon storefront...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0C1220] text-slate-100 font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#FDFDFD] text-[#0D0D0D] font-sans flex flex-col justify-between">
       {/* Top Storefront Navbar */}
-      <nav className="sticky top-0 z-50 bg-[#0C1220]/90 backdrop-blur-md border-b border-[#243050] px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <Link href="/" className="flex items-center space-x-2 text-xs font-mono text-slate-400 hover:text-white transition-colors">
+          <Link href="/" className="flex items-center space-x-2 text-xs font-medium text-gray-600 hover:text-black transition-colors">
             <span>←</span>
-            <span>Hair and Care <strong className="text-[#E8220A] font-semibold">bd</strong></span>
+            <span>Hair and Care <strong className="text-[#E8220A] font-bold">bd</strong></span>
           </Link>
-          <div className="hidden sm:block h-4 w-[1px] bg-[#243050]"></div>
-          <span className="text-xs uppercase font-mono font-bold px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">
+          <div className="hidden sm:block h-4 w-[1px] bg-gray-200"></div>
+          <span className="text-xs uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
             ⭐ Verified Studio Storefront
           </span>
         </div>
@@ -114,21 +114,21 @@ export default function SalonStorefrontPage() {
         <div className="flex items-center space-x-3">
           <button
             onClick={copyBioLink}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#172138] hover:bg-[#1f2c4a] border border-[#243050] hover:border-amber-400 text-xs font-semibold text-amber-300 transition-all shadow-sm"
+            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-xs font-semibold text-gray-800 transition-all shadow-sm"
           >
             <span>Copy Bio Link</span>
           </button>
 
           <a
             href={`tel:${salon.phone.replace(/[^0-9+]/g, "")}`}
-            className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-[#243050] hover:bg-white/5 text-xs text-slate-300 transition-colors"
+            className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gray-200 hover:bg-gray-50 text-xs text-gray-700 transition-colors"
           >
             <span>📞 {salon.phone}</span>
           </a>
 
           <a
             href="#storefront-booking"
-            className="px-3.5 py-1.5 rounded-lg bg-[#E8220A] hover:bg-[#CC1C07] text-white text-xs font-semibold shadow-md shadow-[#E8220A]/20 transition-all"
+            className="px-4 py-1.5 rounded-full bg-[#E8220A] hover:bg-[#B51B08] text-white text-xs font-semibold shadow-sm transition-all"
           >
             Book Chair Now
           </a>
@@ -136,31 +136,31 @@ export default function SalonStorefrontPage() {
       </nav>
 
       {/* Hero Header */}
-      <header className="relative border-b border-[#243050] bg-[#0E1526] overflow-hidden py-16 px-4 sm:px-8">
+      <header className="relative border-b border-gray-200 bg-white overflow-hidden py-14 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl">
-            <div className="flex items-center space-x-2 text-xs font-mono text-amber-400">
+            <div className="flex items-center space-x-2 text-xs font-mono text-amber-600">
               <span>★ {salon.rating} Rated Studio</span>
               <span>•</span>
-              <span className="text-slate-400">{salon.reviews_count} Verified Cuts</span>
+              <span className="text-gray-500">{salon.reviews_count} Verified Cuts</span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-[#0D0D0D] tracking-tight leading-tight">
               {salon.name}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
               📍 {salon.address} ({salon.area}, {salon.district}) • Master Grooming, Precision Fades & Classic Hot-Towel Shaves.
             </p>
             <div className="pt-2 flex items-center gap-3 text-xs font-mono">
-              <span className="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+              <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
                 Open Daily BST {salon.opening_time} – {salon.closing_time}
               </span>
-              <span className="text-slate-400">
+              <span className="text-gray-500">
                 {salon.chairs_count || 4} Barber Chairs Active
               </span>
             </div>
           </div>
 
-          <div className="w-full md:w-80 h-52 rounded-2xl overflow-hidden border border-[#243050] shadow-2xl relative shrink-0">
+          <div className="w-full md:w-80 h-52 rounded-2xl overflow-hidden border border-gray-200 shadow-md relative shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={
@@ -171,7 +171,6 @@ export default function SalonStorefrontPage() {
               alt={salon.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E1526] via-transparent to-transparent opacity-60"></div>
           </div>
         </div>
       </header>
@@ -180,42 +179,42 @@ export default function SalonStorefrontPage() {
       <main className="max-w-6xl mx-auto py-12 px-4 sm:px-8 space-y-16 w-full">
         {/* Services & Rate Card Catalog */}
         <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-[#243050] pb-4">
+          <div className="flex items-center justify-between border-b border-gray-200 pb-4">
             <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">Services & Transparent Rate Card</h2>
-              <p className="text-xs text-slate-400 mt-0.5">Fixed prices, master hygiene standards, and zero hidden charges.</p>
+              <h2 className="text-xl font-bold text-[#0D0D0D] tracking-tight">Services & Transparent Rate Card</h2>
+              <p className="text-xs text-gray-500 mt-0.5">Fixed prices, master hygiene standards, and zero hidden charges.</p>
             </div>
-            <span className="text-xs font-mono text-slate-400">{salon.services.length} Services Offered</span>
+            <span className="text-xs font-mono text-gray-500">{salon.services.length} Services Offered</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {salon.services.map((srv) => (
               <div
                 key={srv.id}
-                className="p-5 rounded-xl bg-[#111A2E] border border-[#243050] flex flex-col justify-between hover:border-[#E8220A]/50 transition-all space-y-4"
+                className="p-5 rounded-2xl bg-white border border-gray-200 flex flex-col justify-between hover:border-gray-400 hover:shadow-md transition-all space-y-4"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="font-mono text-[10px] uppercase font-bold text-[#E8220A] px-2 py-0.5 rounded bg-[#E8220A]/10 border border-[#E8220A]/20">
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#E8220A] px-2 py-0.5 rounded-full bg-red-50 border border-red-100">
                       {srv.category}
                     </span>
-                    <span className="font-mono text-slate-400">{srv.duration_minutes} mins</span>
+                    <span className="font-mono text-gray-500">{srv.duration_minutes} mins</span>
                   </div>
-                  <h3 className="text-base font-bold text-white mt-2">{srv.name}</h3>
-                  <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  <h3 className="text-base font-bold text-[#0D0D0D] mt-2">{srv.name}</h3>
+                  <p className="text-xs text-gray-500 mt-1 leading-relaxed">
                     {srv.description || "Master grooming finish with razor edge line."}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#243050] flex items-center justify-between">
-                  <div className="text-base font-bold text-emerald-400 font-mono">৳ {srv.price_bdt}</div>
+                <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div className="text-base font-bold text-gray-900 font-mono">৳ {srv.price_bdt}</div>
                   <button
                     onClick={() => {
                       setSelectedService(srv);
                       const el = document.getElementById("storefront-booking");
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="px-3 py-1.5 rounded-lg bg-[#E8220A] hover:bg-[#CC1C07] text-white text-xs font-semibold shadow-sm transition-all"
+                    className="px-3.5 py-1.5 rounded-lg bg-[#E8220A] hover:bg-[#B51B08] text-white text-xs font-semibold shadow-sm transition-all"
                   >
                     Select & Book →
                   </button>
@@ -227,22 +226,22 @@ export default function SalonStorefrontPage() {
 
         {/* Master Barbers */}
         <section className="space-y-6">
-          <div className="border-b border-[#243050] pb-4">
-            <h2 className="text-xl font-bold text-white tracking-tight">Our Master Barbers & Station Chairs</h2>
-            <p className="text-xs text-slate-400 mt-0.5">Experienced stylists dedicated to chair hygiene and precision cutting.</p>
+          <div className="border-b border-gray-200 pb-4">
+            <h2 className="text-xl font-bold text-[#0D0D0D] tracking-tight">Our Master Stylists & Station Chairs</h2>
+            <p className="text-xs text-gray-500 mt-0.5">Experienced stylists dedicated to chair hygiene and precision cutting.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {salon.barbers.map((b) => (
-              <div key={b.id || b.name} className="p-4 rounded-xl bg-[#111A2E] border border-[#243050] text-center space-y-3">
-                <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-[#243050]">
+              <div key={b.id || b.name} className="p-5 rounded-2xl bg-white border border-gray-200 text-center space-y-3 shadow-sm">
+                <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-gray-200">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={b.avatar} alt={b.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">{b.name}</h4>
-                  <div className="text-[11px] text-amber-400 font-mono mt-0.5">{b.title}</div>
-                  <div className="text-[10px] text-slate-400 font-mono mt-1">Station: Chair #{b.chair} • {b.exp}</div>
+                  <h4 className="text-sm font-bold text-[#0D0D0D]">{b.name}</h4>
+                  <div className="text-[11px] text-amber-700 font-mono mt-0.5">{b.title}</div>
+                  <div className="text-[10px] text-gray-500 font-mono mt-1">Station: Chair #{b.chair} • {b.exp}</div>
                 </div>
               </div>
             ))}
@@ -250,28 +249,28 @@ export default function SalonStorefrontPage() {
         </section>
 
         {/* Dedicated Storefront Booking Terminal */}
-        <section id="storefront-booking" className="p-8 rounded-2xl bg-[#111A2E] border border-[#243050] space-y-6">
+        <section id="storefront-booking" className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm space-y-6">
           <div>
             <span className="text-[10px] font-mono uppercase font-bold text-[#E8220A] tracking-wider">
-              Direct Reservation
+              Direct Instant Web Booking
             </span>
-            <h2 className="text-2xl font-bold text-white mt-1">Reserve A Chair at {salon.name}</h2>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Lock your time slot with ৳50 bKash/Nagad advance deposit. The balance (৳{Math.max(0, (selectedService?.price_bdt || 350) - 50)}) is payable at the salon desk.
+            <h2 className="text-2xl font-bold text-[#0D0D0D] mt-1">Reserve A Chair at {salon.name}</h2>
+            <p className="text-xs text-gray-500 mt-0.5">
+              Lock your time slot with ৳50 bKash/Nagad advance deposit. The balance (৳{Math.max(0, (selectedService?.price_bdt || 350) - 50)}) is payable at the salon desk. No mobile apps needed.
             </p>
           </div>
 
           <form onSubmit={handleBookingSubmit} className="space-y-5 text-xs">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">Service</label>
+                <label className="block text-gray-700 font-semibold mb-1">Service</label>
                 <select
                   value={selectedService?.id || ""}
                   onChange={(e) => {
                     const found = salon.services.find((s) => String(s.id) === e.target.value);
                     if (found) setSelectedService(found);
                   }}
-                  className="w-full bg-[#0C1220] border border-[#243050] rounded-lg px-3 py-2 text-white"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 focus:outline-none focus:border-[#E8220A]"
                 >
                   {salon.services.map((s) => (
                     <option key={s.id} value={s.id}>
@@ -282,14 +281,14 @@ export default function SalonStorefrontPage() {
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">Preferred Barber</label>
+                <label className="block text-gray-700 font-semibold mb-1">Preferred Barber</label>
                 <select
                   value={selectedBarber?.name || ""}
                   onChange={(e) => {
                     const found = salon.barbers.find((b) => b.name === e.target.value);
                     if (found) setSelectedBarber(found);
                   }}
-                  className="w-full bg-[#0C1220] border border-[#243050] rounded-lg px-3 py-2 text-white"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 focus:outline-none focus:border-[#E8220A]"
                 >
                   {salon.barbers.map((b) => (
                     <option key={b.id || b.name} value={b.name}>
@@ -300,11 +299,11 @@ export default function SalonStorefrontPage() {
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">Time Slot (BST)</label>
+                <label className="block text-gray-700 font-semibold mb-1">Time Slot (BST)</label>
                 <select
                   value={selectedSlot}
                   onChange={(e) => setSelectedSlot(e.target.value)}
-                  className="w-full bg-[#0C1220] border border-[#243050] rounded-lg px-3 py-2 text-white font-mono"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 font-mono focus:outline-none focus:border-[#E8220A]"
                 >
                   {["10:00 AM", "11:00 AM", "12:00 PM", "02:30 PM", "03:30 PM", "05:00 PM", "06:30 PM", "08:00 PM", "09:00 PM"].map((t) => (
                     <option key={t} value={t}>{t}</option>
@@ -315,42 +314,42 @@ export default function SalonStorefrontPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">Your Full Name *</label>
+                <label className="block text-gray-700 font-semibold mb-1">Your Full Name *</label>
                 <input
                   type="text"
                   required
                   value={clientName}
                   onChange={(e) => setClientName(e.target.value)}
                   placeholder="e.g. Shakib Ahmed"
-                  className="w-full bg-[#0C1220] border border-[#243050] rounded-lg px-3 py-2 text-white"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-gray-900 focus:outline-none focus:border-[#E8220A]"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">Mobile Number (+880) *</label>
+                <label className="block text-gray-700 font-semibold mb-1">Mobile Number (+880) *</label>
                 <input
                   type="tel"
                   required
                   value={clientPhone}
                   onChange={(e) => setClientPhone(e.target.value)}
                   placeholder="01712-445566"
-                  className="w-full bg-[#0C1220] border border-[#243050] rounded-lg px-3 py-2 text-white font-mono"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-gray-900 font-mono focus:outline-none focus:border-[#E8220A]"
                 />
               </div>
             </div>
 
             {/* Advance Deposit Section */}
-            <div className="p-4 rounded-xl bg-[#0C1220] border border-amber-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] uppercase font-mono font-bold text-amber-400">Advance Chair Deposit</span>
-                <div className="text-white font-bold text-sm">৳ 50 Advance via bKash or Nagad</div>
-                <div className="flex gap-4 mt-1">
-                  <label className="flex items-center gap-1.5 cursor-pointer text-slate-300">
-                    <input type="radio" name="sf-mfs" checked={depositMfs === "bKash"} onChange={() => setDepositMfs("bKash")} />
+                <span className="text-[10px] uppercase font-mono font-bold text-amber-800">Advance Chair Deposit</span>
+                <div className="text-gray-900 font-bold text-sm">৳ 50 Advance via bKash or Nagad</div>
+                <div className="flex gap-4 mt-1.5">
+                  <label className="flex items-center gap-1.5 cursor-pointer text-gray-700 font-medium">
+                    <input type="radio" name="sf-mfs" checked={depositMfs === "bKash"} onChange={() => setDepositMfs("bKash")} className="accent-[#E8220A]" />
                     <span>bKash</span>
                   </label>
-                  <label className="flex items-center gap-1.5 cursor-pointer text-slate-300">
-                    <input type="radio" name="sf-mfs" checked={depositMfs === "Nagad"} onChange={() => setDepositMfs("Nagad")} />
+                  <label className="flex items-center gap-1.5 cursor-pointer text-gray-700 font-medium">
+                    <input type="radio" name="sf-mfs" checked={depositMfs === "Nagad"} onChange={() => setDepositMfs("Nagad")} className="accent-[#E8220A]" />
                     <span>Nagad</span>
                   </label>
                 </div>
@@ -358,7 +357,7 @@ export default function SalonStorefrontPage() {
 
               <button
                 type="submit"
-                className="btn-barber-primary px-6 py-2.5 text-xs font-bold shrink-0"
+                className="px-6 py-2.5 rounded-full bg-[#E8220A] hover:bg-[#B51B08] text-white text-xs font-bold shrink-0 shadow-sm transition-all"
               >
                 Confirm Booking & Pay ৳50 →
               </button>
@@ -367,22 +366,22 @@ export default function SalonStorefrontPage() {
 
           {/* Confirmed Slip */}
           {confirmedBooking && (
-            <div className="p-6 rounded-xl bg-[#0C1220] border border-emerald-500/40 text-xs font-mono space-y-3">
-              <div className="flex justify-between items-center border-b border-[#243050] pb-2">
-                <span className="text-slate-400">Token ID:</span>
-                <strong className="text-emerald-400 text-sm">{confirmedBooking.id}</strong>
+            <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs font-mono space-y-3">
+              <div className="flex justify-between items-center border-b border-emerald-200/60 pb-2">
+                <span className="text-gray-600">Token ID:</span>
+                <strong className="text-emerald-800 text-sm">{confirmedBooking.id}</strong>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Customer:</span>
-                <span className="text-white">{confirmedBooking.customer_name}</span>
+                <span className="text-gray-600">Customer:</span>
+                <span className="text-gray-900 font-bold">{confirmedBooking.customer_name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Time:</span>
-                <span className="text-amber-400">{confirmedBooking.time_slot} ({confirmedBooking.booking_date})</span>
+                <span className="text-gray-600">Time:</span>
+                <span className="text-amber-800 font-semibold">{confirmedBooking.time_slot} ({confirmedBooking.booking_date})</span>
               </div>
-              <div className="flex justify-between border-t border-[#243050] pt-2">
-                <span className="text-slate-400">Due at Salon:</span>
-                <span className="text-white font-bold">৳ {confirmedBooking.due_at_salon}</span>
+              <div className="flex justify-between border-t border-emerald-200/60 pt-2">
+                <span className="text-gray-600">Due at Salon:</span>
+                <span className="text-gray-900 font-bold">৳ {confirmedBooking.due_at_salon}</span>
               </div>
             </div>
           )}
@@ -391,23 +390,24 @@ export default function SalonStorefrontPage() {
 
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-5 right-5 z-50 px-4 py-3 rounded-xl border border-emerald-500/40 bg-emerald-950/90 text-emerald-200 text-xs font-semibold shadow-xl backdrop-blur-md">
+        <div className="fixed bottom-5 right-5 z-50 px-4 py-3 rounded-xl border border-emerald-200 bg-white text-emerald-800 text-xs font-semibold shadow-xl">
           {toastMsg}
         </div>
       )}
 
       {/* Footer */}
-      <footer className="border-t border-[#243050] bg-[#090D17] text-slate-400 text-xs py-6 px-4 sm:px-8 text-center">
+      <footer className="border-t border-gray-200 bg-[#F9F9FB] text-gray-500 text-xs py-8 px-4 sm:px-8 text-center">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>&copy; {new Date().getFullYear()} {salon.name}. Powered by Hair and Care bd.</span>
           <div className="flex items-center space-x-3">
-            <Link href="/" className="hover:text-white">Directory Home</Link>
+            <Link href="/" className="hover:text-black">Directory Home</Link>
             <span>•</span>
-            <Link href="/admin" className="hover:text-white">Super Admin</Link>
+            <Link href="/browse" className="hover:text-black">Browse All</Link>
+            <span>•</span>
+            <Link href="/admin" className="hover:text-black">Admin</Link>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-

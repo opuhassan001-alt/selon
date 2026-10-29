@@ -55,6 +55,12 @@ function setStoredItem<T>(key: string, value: T): void {
   if (typeof window === "undefined") return;
   try {
     localStorage.setItem(key, JSON.stringify(value));
+    window.dispatchEvent(new CustomEvent("hairandcare_store_updated", { detail: { key } }));
+    try {
+      const bc = new BroadcastChannel("hairandcare_realtime");
+      bc.postMessage({ type: "STORE_UPDATED", key, timestamp: Date.now() });
+      bc.close();
+    } catch (_) {}
   } catch (err) {
     console.warn("Storage quota exceeded or unavailable", err);
   }

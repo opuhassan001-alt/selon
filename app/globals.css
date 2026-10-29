@@ -1,94 +1,184 @@
+@import url('https://api.fontshare.com/v2/css?f[]=boska@400,500,600,700,900&f[]=general-sans@400,500,600,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #0c1220;
-  --foreground: #f0f4fc;
-  --primary-red: #e8220a;
-  --primary-red-hover: #c11a07;
-  --brand-navy: #0c1220;
-  --brand-card: #121622;
-  --brand-surface: #172138;
-  --brand-border: #1f2639;
-  --brand-border-light: #243050;
+  --background: #FFFFFF;
+  --foreground: #0D0D0D;
+  --bg-surface: #F9F9FB;
+  --bg-muted: #F3F3F6;
+  --border-subtle: #E8E8EC;
+  --border-strong: #D1D1D6;
+  --brand-red: #E8220A;
+  --brand-red-hover: #C11A07;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #FFFFFF;
+  color: #0D0D0D;
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Clean Scrollbar */
+.font-display {
+  font-family: 'Boska', 'Playfair Display', Georgia, serif;
+}
+
+.font-serif {
+  font-family: 'Boska', 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0d13;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2639;
-  border-radius: 3px;
+  background: #D1D1D6;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e8220a;
+  background: #A0A0A5;
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #AA8010 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Hide scrollbar for carousel while preserving smooth touch/mouse scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.tab-active {
-  background: rgba(232, 34, 10, 0.12);
+/* 3-Input Search Capsule Container */
+.search-capsule {
+  background: #FFFFFF;
+  border-radius: 9999px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-capsule:hover {
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.11), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Venue Card */
+.venue-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.venue-card:hover {
+  transform: translateY(-3px);
+}
+
+.venue-card .card-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #F3F3F6;
+}
+
+.venue-card .card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.venue-card:hover .card-img-container img {
+  transform: scale(1.04);
+}
+
+/* Category Chip / Pill */
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  background: #F3F3F6;
+  color: #0D0D0D;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.category-pill:hover {
+  background: #E8E8ED;
+  transform: translateY(-1px);
+}
+
+.category-pill.active {
+  background: #0D0D0D;
   color: #FFFFFF;
-  border-color: #E8220A;
 }
 
-.btn-barber-primary {
-  background-color: #e8220a;
-  color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  padding: 12px 24px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  display: inline-flex;
+/* Carousel Control Buttons */
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E7;
+  color: #0D0D0D;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-}
-.btn-barber-primary:hover {
-  background-color: #c11a07;
-  box-shadow: 0 4px 20px rgba(232, 34, 10, 0.3);
-}
-
-.btn-barber-secondary {
-  background-color: transparent;
-  color: #f0f4fc;
-  border: 1px solid #243050;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  padding: 12px 24px;
-  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.btn-barber-secondary:hover {
-  border-color: #e8220a;
-  background-color: rgba(232, 34, 10, 0.08);
+  cursor: pointer;
+  z-index: 10;
 }
 
+.carousel-btn:hover {
+  background: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #0D0D0D;
+  transform: scale(1.05);
+}
+
+/* Review Card */
+.review-card {
+  background: #F9F9FB;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 300px;
+  max-width: 340px;
+  border: 1px solid #EAEAEA;
+  transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Modal Backdrop */
+.modal-backdrop-blur {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

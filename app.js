@@ -1,936 +1,489 @@
 /**
- * SalonBD — Online Booking & Salon Directory Engine
- * 100% English Language Architecture.
- * Interactive directory, BST live clock sync, and 5-step advance booking engine.
+ * HAIR AND CARE BD — OFFICIAL FRONTEND APPLICATION LOGIC
+ * Clean luxury white theme booking platform for salons, barbershops, and medspas in Bangladesh.
  */
 
 (function () {
   'use strict';
 
-  // --------------------------------------------------------------------------
-  // 1. NATIONWIDE SALON DATABASE
-  // --------------------------------------------------------------------------
-  const SALON_DATABASE = [
-    {
-      id: 'sln-dhn-01',
-      name: 'The Haven Luxury Grooming Studio',
-      image: 'assets/studio-haven.jpg',
-      division: 'Dhaka',
-      district: 'Dhaka',
-      area: 'Dhanmondi',
-      address: 'Road 27 (Old 16), Dhanmondi, Dhaka-1209',
-      phone: '+880 1711-904421',
-      openTime: '10:00',
-      closeTime: '22:30',
-      totalHours: '12.5 Hours Daily',
-      startingPrice: 350,
-      rating: '4.92',
-      reviewsCount: 340,
-      verified: true,
-      services: ['Executive Haircut', 'Beard Art', 'Hot Towel Shave', 'Charcoal Deep Facial']
-    },
-    {
-      id: 'sln-ban-02',
-      name: 'Barberia Craft Studio',
-      image: 'assets/studio-barberia.jpg',
-      division: 'Dhaka',
-      district: 'Dhaka',
-      area: 'Banani',
-      address: 'Road 11, Block D, Banani, Dhaka-1213',
-      phone: '+880 1844-229910',
-      openTime: '09:30',
-      closeTime: '23:00',
-      totalHours: '13.5 Hours Daily',
-      startingPrice: 400,
-      rating: '4.95',
-      reviewsCount: 520,
-      verified: true,
-      services: ['Skin Fade & Texture', 'Beard Sculpting', 'Scalp Spa', 'Full Grooming']
-    },
-    {
-      id: 'sln-gul-03',
-      name: 'Kingsman Barbershop & Spa',
-      image: 'assets/service-shave.jpg',
-      division: 'Dhaka',
-      district: 'Dhaka',
-      area: 'Gulshan',
-      address: 'Avenue 2, Circle 2, Gulshan, Dhaka-1212',
-      phone: '+880 1977-889901',
-      openTime: '10:00',
-      closeTime: '23:30',
-      totalHours: '13.5 Hours Daily',
-      startingPrice: 450,
-      rating: '4.88',
-      reviewsCount: 410,
-      verified: true,
-      services: ['Royal Shave', 'VIP Styling Cabin', 'Anti-Hairfall Spa', 'Charcoal Facial']
-    },
-    {
-      id: 'sln-mir-04',
-      name: 'Vintage Cut Club Mirpur',
-      image: 'assets/service-hair.jpg',
-      division: 'Dhaka',
-      district: 'Dhaka',
-      area: 'Mirpur',
-      address: 'Near Metro Pillar 240, Mirpur 10, Dhaka-1216',
-      phone: '+880 1722-334455',
-      openTime: '09:00',
-      closeTime: '22:30',
-      totalHours: '13.5 Hours Daily',
-      startingPrice: 200,
-      rating: '4.85',
-      reviewsCount: 290,
-      verified: true,
-      services: ['Classic Scissor Cut', 'Beard Shaping', 'Head Massage', 'Mint Face Wash']
-    },
-    {
-      id: 'sln-utt-05',
-      name: 'Gentlemen Groomers Uttara',
-      image: 'assets/service-style.jpg',
-      division: 'Dhaka',
-      district: 'Dhaka',
-      area: 'Uttara',
-      address: 'Sector 4, Road 7, Rabindra Sarani, Uttara, Dhaka-1230',
-      phone: '+880 1611-556677',
-      openTime: '09:00',
-      closeTime: '22:00',
-      totalHours: '13 Hours Daily',
-      startingPrice: 250,
-      rating: '4.79',
-      reviewsCount: 310,
-      verified: true,
-      services: ['Korean Texture Cut', 'Beard Art', 'Keratin Therapy', 'Charcoal Facial']
-    },
-    {
-      id: 'sln-ctg-06',
-      name: 'Royal Cut Lounge & Spa',
-      image: 'assets/service-trim.jpg',
-      division: 'Chattogram',
-      district: 'Chattogram',
-      area: 'Outside',
-      address: 'Nasirabad CDA Avenue, GEC Circle, Chattogram-4000',
-      phone: '+880 1819-876543',
-      openTime: '09:30',
-      closeTime: '23:00',
-      totalHours: '13.5 Hours Daily',
-      startingPrice: 250,
-      rating: '4.91',
-      reviewsCount: 460,
-      verified: true,
-      services: ['Full Grooming Package', 'Skin Fade & Texture', 'Hair Colouring', 'Beard Art']
+  // State Management
+  const state = {
+    selectedCategory: 'All treatments',
+    searchTreatment: '',
+    searchLocation: 'Dhaka, Bangladesh',
+    searchTime: 'Any time',
+    activeCityCountry: 'bangladesh',
+    bookingModal: {
+      currentStep: 1,
+      venueName: 'Trendy Trim Grooming Studio',
+      selectedService: 'Haircut & Beard Styling',
+      selectedPrice: 450,
+      selectedStaff: 'Any Professional',
+      selectedDay: 'Today',
+      selectedTime: '11:30 AM',
+      clientName: '',
+      clientPhone: '',
+      paymentMethod: 'bKash',
+      generatedToken: ''
     }
-  ];
+  };
 
-  const MASTER_SERVICES_CATALOG = [
-    { name: '01 · Classic Cut (Scissor/Clipper)', price: 350 },
-    { name: '02 · Cut & Beard Sculpt', price: 550 },
-    { name: '03 · Hot Towel Straight Razor Shave', price: 400 },
-    { name: '04 · Precision Skin Fade', price: 400 },
-    { name: '05 · Shape & Clean Lineup', price: 250 },
-    { name: '06 · The Works (Cut, Beard & Facial)', price: 950 }
-  ];
+  // City Directory Data
+  const CITIES_BY_COUNTRY = {
+    bangladesh: [
+      { name: 'Dhanmondi, Dhaka', count: '142 venues' },
+      { name: 'Gulshan, Dhaka', count: '186 venues' },
+      { name: 'Banani, Dhaka', count: '124 venues' },
+      { name: 'Mirpur, Dhaka', count: '98 venues' },
+      { name: 'Uttara, Dhaka', count: '115 venues' },
+      { name: 'Bashundhara, Dhaka', count: '64 venues' },
+      { name: 'Chattogram Hub', count: '88 venues' },
+      { name: 'Sylhet Hub', count: '54 venues' },
+      { name: 'Rajshahi City', count: '32 venues' },
+      { name: 'Khulna Hub', count: '28 venues' },
+      { name: 'Cox\'s Bazar', count: '22 venues' },
+      { name: 'Cumilla City', count: '36 venues' }
+    ],
+    uk: [
+      { name: 'London', count: '2,840 venues' },
+      { name: 'Manchester', count: '740 venues' },
+      { name: 'Birmingham', count: '620 venues' },
+      { name: 'Glasgow', count: '410 venues' },
+      { name: 'Edinburgh', count: '390 venues' },
+      { name: 'Leeds', count: '310 venues' }
+    ],
+    us: [
+      { name: 'New York', count: '4,120 venues' },
+      { name: 'Los Angeles', count: '3,890 venues' },
+      { name: 'Miami', count: '1,450 venues' },
+      { name: 'Chicago', count: '1,210 venues' }
+    ],
+    uae: [
+      { name: 'Dubai', count: '1,680 venues' },
+      { name: 'Abu Dhabi', count: '840 venues' },
+      { name: 'Sharjah', count: '320 venues' }
+    ]
+  };
 
-  let currentFilter = 'all';
-  let activeBookingSalon = SALON_DATABASE[0];
-  let selectedServices = [MASTER_SERVICES_CATALOG[0]];
+  // Venue Services Registry for Booking Flow
+  const VENUE_SERVICES = {
+    'Trendy Trim': [
+      { name: 'Haircut & Deluxe Beard Sculpting', duration: '45 mins', price: 450 },
+      { name: 'Classic Fade & Scissor Cut', duration: '30 mins', price: 300 },
+      { name: 'Charcoal Scalp Detox & Wash', duration: '20 mins', price: 250 },
+      { name: 'Executive Grooming Package', duration: '75 mins', price: 850 }
+    ],
+    'Vintage Crown Barbershop': [
+      { name: 'Signature Skin Fade & Hot Towel Shave', duration: '50 mins', price: 600 },
+      { name: 'Straight-Razor Beard Contouring', duration: '30 mins', price: 350 },
+      { name: 'Organic Scalp Massage & Treatment', duration: '25 mins', price: 400 },
+      { name: 'The Gentleman\'s Royal Ritual', duration: '90 mins', price: 1200 }
+    ],
+    'Aura Medspa & Skincare': [
+      { name: 'Hydrafacial Glow & Deep Exfoliation', duration: '60 mins', price: 1500 },
+      { name: 'Anti-Aging LED Collagen Therapy', duration: '45 mins', price: 1800 },
+      { name: 'Microdermabrasion & Pore Refining', duration: '50 mins', price: 1400 },
+      { name: 'Customized Medical Peels', duration: '40 mins', price: 2000 }
+    ],
+    'The Royal Blade Barbershop': [
+      { name: 'Precision Scissor Cut & Finish', duration: '35 mins', price: 500 },
+      { name: 'Royal Hot Towel Shave', duration: '25 mins', price: 300 },
+      { name: 'Beard Trimming & Conditioning', duration: '20 mins', price: 250 }
+    ],
+    'LashXtend | Dear Skin': [
+      { name: 'Classic Lash Full Set', duration: '90 mins', price: 1800 },
+      { name: 'Volume Lash Extensions (Russian Volume)', duration: '120 mins', price: 2500 },
+      { name: 'Brow Lamination & Hybrid Tint', duration: '45 mins', price: 1200 },
+      { name: 'Lash Lift & Keratin Infusion', duration: '60 mins', price: 1500 }
+    ],
+    'Truefitt & Hill Heritage': [
+      { name: 'The Ultimate Shaving Experience', duration: '45 mins', price: 1200 },
+      { name: 'Traditional Haircut & Friction Wash', duration: '40 mins', price: 950 },
+      { name: 'Gentleman\'s Facial & Scalp Therapy', duration: '60 mins', price: 1800 }
+    ]
+  };
 
   // --------------------------------------------------------------------------
-  // 2. BST (UTC+6) LIVE TIME ENGINE
+  // 1. CAROUSEL NAVIGATION
   // --------------------------------------------------------------------------
-  function getBSTDate() {
-    const now = new Date();
-    const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-    return new Date(utcTime + (6 * 3600000));
-  }
+  window.scrollCarousel = function (sliderId, direction) {
+    const slider = document.getElementById(sliderId);
+    if (!slider) return;
+    const scrollAmount = 340 * direction;
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
 
-  function formatTimeAmPm(hours, minutes) {
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    const displayHours = hours % 12 || 12;
-    const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
-    return `${displayHours}:${displayMinutes} ${ampm}`;
-  }
-
-  function formatTimeString(timeStr) {
-    if (!timeStr) return '';
-    const [h, m] = timeStr.split(':').map(Number);
-    return formatTimeAmPm(h, m);
-  }
-
-  function calculateSalonStatus(openTimeStr, closeTimeStr) {
-    const bstNow = getBSTDate();
-    const currentHour = bstNow.getHours();
-    const currentMinute = bstNow.getMinutes();
-    const currentTotalMinutes = (currentHour * 60) + currentMinute;
-
-    const [openH, openM] = openTimeStr.split(':').map(Number);
-    const [closeH, closeM] = closeTimeStr.split(':').map(Number);
-
-    const openTotalMinutes = (openH * 60) + openM;
-    const closeTotalMinutes = (closeH * 60) + closeM;
-
-    const isOpen = currentTotalMinutes >= openTotalMinutes && currentTotalMinutes < closeTotalMinutes;
-    const openFormatted = formatTimeAmPm(openH, openM);
-    const closeFormatted = formatTimeAmPm(closeH, closeM);
-    const hoursRange = `${openFormatted} – ${closeFormatted}`;
-
-    if (isOpen) {
-      const minutesRemaining = closeTotalMinutes - currentTotalMinutes;
-      const hLeft = Math.floor(minutesRemaining / 60);
-      const mLeft = minutesRemaining % 60;
-      const timeLeftStr = hLeft > 0 ? `${hLeft}h ${mLeft}m` : `${mLeft}m`;
-      return {
-        isOpen: true,
-        hoursRange: hoursRange,
-        statusText: 'Open now',
-        hint: `Closes in ${timeLeftStr}`
-      };
+  // --------------------------------------------------------------------------
+  // 2. DROPDOWNS & SEARCH BAR INTERACTION
+  // --------------------------------------------------------------------------
+  window.toggleTreatmentDropdown = function (show) {
+    const dd = document.getElementById('treatment-dropdown');
+    if (!dd) return;
+    if (show === undefined) {
+      dd.classList.toggle('hidden');
+    } else if (show) {
+      dd.classList.remove('hidden');
+      window.toggleLocationDropdown(false);
+      window.toggleTimeDropdown(false);
     } else {
-      return {
-        isOpen: false,
-        hoursRange: hoursRange,
-        statusText: 'Closed',
-        hint: `Opens at ${openFormatted}`
-      };
+      dd.classList.add('hidden');
     }
-  }
+  };
 
-  function updateBSTClock() {
-    const clockEl = document.getElementById('live-bst-clock');
-    if (!clockEl) return;
-    const bst = getBSTDate();
-    const formatted = formatTimeAmPm(bst.getHours(), bst.getMinutes());
-    clockEl.innerText = `Dhaka Time · ${formatted}`;
-  }
+  window.selectTreatment = function (treatmentName) {
+    state.searchTreatment = treatmentName;
+    const input = document.getElementById('hero-treatment-input');
+    if (input) input.value = treatmentName;
+    window.toggleTreatmentDropdown(false);
+    window.filterByCategory(treatmentName);
+  };
+
+  window.toggleLocationDropdown = function (show) {
+    const dd = document.getElementById('location-dropdown');
+    if (!dd) return;
+    if (show === undefined) {
+      dd.classList.toggle('hidden');
+    } else if (show) {
+      dd.classList.remove('hidden');
+      window.toggleTreatmentDropdown(false);
+      window.toggleTimeDropdown(false);
+    } else {
+      dd.classList.add('hidden');
+    }
+  };
+
+  window.selectLocation = function (locName) {
+    state.searchLocation = locName;
+    const input = document.getElementById('hero-location-input');
+    if (input) input.value = locName;
+    window.toggleLocationDropdown(false);
+    window.showToast(`Location set to: ${locName}`);
+  };
+
+  window.toggleTimeDropdown = function (show) {
+    const dd = document.getElementById('time-dropdown');
+    if (!dd) return;
+    if (show === undefined) {
+      dd.classList.toggle('hidden');
+    } else if (show) {
+      dd.classList.remove('hidden');
+      window.toggleTreatmentDropdown(false);
+      window.toggleLocationDropdown(false);
+    } else {
+      dd.classList.add('hidden');
+    }
+  };
+
+  window.selectTime = function (timeName) {
+    state.searchTime = timeName;
+    const input = document.getElementById('hero-time-input');
+    if (input) input.value = timeName;
+    window.toggleTimeDropdown(false);
+    window.showToast(`Time preference: ${timeName}`);
+  };
+
+  window.executeFreshaSearch = function () {
+    const treatment = document.getElementById('hero-treatment-input')?.value || 'All treatments';
+    const location = document.getElementById('hero-location-input')?.value || 'Dhaka';
+    const time = document.getElementById('hero-time-input')?.value || 'Any time';
+
+    window.toggleTreatmentDropdown(false);
+    window.toggleLocationDropdown(false);
+    window.toggleTimeDropdown(false);
+
+    window.showToast(`Searching "${treatment}" in ${location} (${time})...`);
+    
+    // Smooth scroll to results
+    const recentSec = document.getElementById('recent-slider');
+    if (recentSec) {
+      recentSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
 
   // --------------------------------------------------------------------------
-  // 3. RENDER SALON DIRECTORY GRID (FRESHA LIGHT AESTHETIC)
+  // 3. CATEGORY PILL FILTER
   // --------------------------------------------------------------------------
-  function getCanonicalImage(name, currentImg) {
-  const q = (name || '').toLowerCase();
-  if (q.includes('haven')) return 'assets/studio-haven.jpg';
-  if (q.includes('barbarian') || q.includes('barberia')) return 'assets/studio-barberia.jpg';
-  if (q.includes('crown')) return 'assets/hero-barber.jpg';
-  if (q.includes('kingsman')) return 'assets/service-shave.jpg';
-  if (q.includes('mirpur')) return 'assets/service-hair.jpg';
-  if (q.includes('sylhet')) return 'assets/service-style.jpg';
-  if (q.includes('blade') || q.includes('royal blade')) return 'assets/service-trim.jpg';
-  if (q.includes('royal cut')) return 'assets/service-trim.jpg';
-  if (q.includes('gentlemen') || q.includes('uttara')) return 'assets/service-style.jpg';
-  return currentImg || 'assets/hero-barber.jpg';
-}
-function renderSalonDirectoryGrid(filterArea = 'all', searchQuery = '') {
-    const gridEl = document.getElementById('salon-directory-grid');
-    if (!gridEl) return;
+  window.filterByCategory = function (categoryName) {
+    state.selectedCategory = categoryName;
 
-    let filtered = SALON_DATABASE;
-
-    if (filterArea !== 'all') {
-      if (filterArea === 'Outside') {
-        filtered = filtered.filter(s => !['Dhanmondi', 'Banani', 'Gulshan', 'Mirpur', 'Uttara'].includes(s.area));
+    // Update Pill Buttons Styling
+    document.querySelectorAll('.category-pill').forEach(btn => {
+      if (btn.getAttribute('data-cat') === categoryName) {
+        btn.classList.add('active');
       } else {
-        filtered = filtered.filter(s => s.area.toLowerCase().includes(filterArea.toLowerCase()) || s.district.toLowerCase().includes(filterArea.toLowerCase()));
+        btn.classList.remove('active');
+      }
+    });
+
+    window.showToast(`Filtered by: ${categoryName}`);
+
+    // Update Hero Input
+    const heroTreatment = document.getElementById('hero-treatment-input');
+    if (heroTreatment) heroTreatment.value = categoryName;
+  };
+
+  // --------------------------------------------------------------------------
+  // 4. FAVORITE HEART TOGGLE
+  // --------------------------------------------------------------------------
+  window.toggleFavorite = function (btn) {
+    const svg = btn.querySelector('svg');
+    if (svg) {
+      const isFav = svg.classList.contains('fill-red-500');
+      if (isFav) {
+        svg.classList.remove('fill-red-500', 'text-red-500');
+        svg.classList.add('text-gray-700');
+        window.showToast('Removed from saved studios');
+      } else {
+        svg.classList.add('fill-red-500', 'text-red-500');
+        svg.classList.remove('text-gray-700');
+        window.showToast('Saved to your favourites! ❤️');
       }
     }
-
-    if (searchQuery.trim() !== '') {
-      const q = searchQuery.toLowerCase().trim();
-      filtered = filtered.filter(s => 
-        s.name.toLowerCase().includes(q) || 
-        s.area.toLowerCase().includes(q) || 
-        s.district.toLowerCase().includes(q) ||
-        s.services.some(srv => srv.toLowerCase().includes(q))
-      );
-    }
-
-    // Sort Sponsored / Boosted Salons to the very top of results
-    filtered.sort((a, b) => (b.is_boosted ? 1 : 0) - (a.is_boosted ? 1 : 0));
-
-    if (filtered.length === 0) {
-      gridEl.innerHTML = `
-        <div class="col-span-full py-16 text-center border border-dashed border-[#243050] rounded bg-[#111a2e] text-xs text-[#9ca3af] font-sans">
-          No verified studios found matching your criteria. Try selecting another district or service.
-        </div>
-      `;
-      return;
-    }
-
-    gridEl.innerHTML = filtered.map((salon) => {
-      const status = calculateSalonStatus(salon.openTime, salon.closeTime);
-      const isSponsored = salon.is_boosted !== false;
-
-      return `
-        <div class="Hair and Care-card bg-[#111a2e] border ${isSponsored ? 'border-amber-500/60 shadow-lg shadow-amber-500/10' : 'border-[#243050]'} rounded overflow-hidden flex flex-col justify-between group hover:border-[#e8220a]/50 transition-all duration-300">
-          
-          <!-- Card Image & Overlay Badges -->
-          <div class="relative h-52 overflow-hidden bg-[#0c1220]">
-            <img 
-              src="${getCanonicalImage(salon.name, salon.image)}" 
-              alt="${salon.name}" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.85]"
-            />
-            
-            <!-- Category / Sponsored Tag (Top Left) -->
-            <div class="absolute top-3.5 left-3.5">
-              ${isSponsored ? `
-                <span class="font-sans text-[10px] px-2.5 py-1 uppercase tracking-wider font-bold bg-amber-400 text-black border border-amber-300 shadow-md flex items-center gap-1">
-                  <span>⭐ FEATURED STUDIO</span>
-                </span>
-              ` : `
-                <span class="font-sans text-[10px] px-2.5 py-1 uppercase tracking-wider font-bold bg-[#172138]/90 border border-[#243050] text-[#e8220a] backdrop-blur-sm">
-                  Master Studio
-                </span>
-              `}
-            </div>
-
-            <!-- Rating Pill (Top Right) -->
-            <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded bg-[#172138]/90 border border-[#243050] text-white text-xs font-sans font-bold flex items-center gap-1 backdrop-blur-sm">
-              <span class="text-[#e8220a]">★</span>
-              <span>${salon.rating}</span>
-              <span class="text-[#9ca3af] font-normal">(${salon.reviewsCount})</span>
-            </div>
-          </div>
-
-          <!-- Card Content Body -->
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <div class="mb-3">
-                <a href="salon/index.html?slug=${salon.slug || 'vintage-crown'}" target="_blank" class="hover:underline">
-                  <h3 class="font-display text-lg font-bold text-white group-hover:text-[#e8220a] transition-colors leading-snug">
-                    ${salon.name}
-                  </h3>
-                </a>
-                <p class="font-sans text-xs text-[#9ca3af] mt-1 leading-relaxed">
-                  ${salon.area}, ${salon.district} • ${salon.address}
-                </p>
-              </div>
-
-              <!-- Operating Hours: Single Clean Line -->
-              <div class="flex items-center gap-2 py-2 px-3 rounded bg-[#172138] border border-[#243050] my-3 font-sans text-xs">
-                <span class="w-2 h-2 rounded-full ${status.isOpen ? 'bg-emerald-400' : 'bg-rose-500'}"></span>
-                <span class="font-bold ${status.isOpen ? 'text-emerald-400' : 'text-rose-400'}">${status.statusText}</span>
-                <span class="text-[#243050]">·</span>
-                <span class="text-[#9ca3af]">${status.hoursRange}</span>
-              </div>
-
-              <!-- Service Tags -->
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                ${salon.services.slice(0, 3).map(srv => `
-                  <span class="font-sans text-[10px] px-2 py-0.5 rounded bg-[#172138] border border-[#243050] text-[#9ca3af]">
-                    ${srv}
-                  </span>
-                `).join('')}
-              </div>
-            </div>
-
-            <!-- Card Bottom Bar (Starting Price & Actions) -->
-            <div class="pt-4 border-t border-[#243050] flex items-center justify-between mt-auto">
-              <div>
-                <span class="font-sans text-[9px] text-[#9ca3af] block uppercase tracking-wider">From</span>
-                <span class="font-sans text-base font-black text-white">BDT ${salon.startingPrice}</span>
-              </div>
-
-              <div class="flex items-center gap-1.5">
-                <a 
-                  href="salon/index.html?slug=${salon.slug || 'vintage-crown'}" 
-                  target="_blank"
-                  class="p-2 rounded border border-[#243050] hover:border-amber-400 text-amber-300 hover:text-white transition-colors flex items-center gap-1 font-sans text-[11px]"
-                  title="View Dedicated Studio Storefront (Bio Link)"
-                >
-                  <span>Page ↗</span>
-                </a>
-
-                <a 
-                  href="tel:${salon.phone.replace(/[^0-9+]/g, '')}" 
-                  class="p-2 rounded border border-[#243050] hover:border-[#e8220a] text-[#9ca3af] hover:text-white transition-colors flex items-center gap-1 font-sans text-xs"
-                  title="Direct Call: ${salon.phone}"
-                >
-                  <svg class="w-3.5 h-3.5 text-[#e8220a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                  </svg>
-                  <span class="hidden sm:inline">Call</span>
-                </a>
-                
-                <button 
-                  onclick="window.selectSalonForBooking('${salon.name}', '${salon.area}')" 
-                  class="btn-barber-primary px-3 sm:px-4 py-2 font-sans text-xs uppercase tracking-wider font-bold"
-                >
-                  Book →
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      `;
-    }).join('');
-  }
+  };
 
   // --------------------------------------------------------------------------
-  // 4. ADVANCE BOOKING ENGINE CONTROLLER
+  // 5. INTERACTIVE 4-STEP BOOKING MODAL
   // --------------------------------------------------------------------------
-  function initBookingEngine() {
-    populateBookingSalonDropdown();
-    renderBookingServicesCheckboxes();
-    generateDynamicTimeSlots();
+  window.openBookingModalForVenue = function (venueName) {
+    const modal = document.getElementById('booking-modal') || document.getElementById('fresha-booking-modal');
+    if (!modal) return;
 
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const dateInput = document.getElementById('booking-date-input');
-    if (dateInput) {
-      dateInput.value = tomorrow.toISOString().split('T')[0];
-      dateInput.min = new Date().toISOString().split('T')[0];
-    }
+    state.bookingModal.venueName = venueName;
+    state.bookingModal.currentStep = 1;
 
-    updateActiveSalonCard();
-  }
+    const titleEl = document.getElementById('modal-venue-name');
+    if (titleEl) titleEl.innerText = venueName;
 
-  function populateBookingSalonDropdown() {
-    const salonSelect = document.getElementById('booking-salon-select');
-    if (!salonSelect) return;
-
-    salonSelect.innerHTML = SALON_DATABASE.map(s => `
-      <option value="${s.id}" ${s.id === activeBookingSalon.id ? 'selected' : ''}>${s.name} (${s.area})</option>
-    `).join('');
-  }
-
-  function renderBookingServicesCheckboxes() {
-    const container = document.getElementById('booking-services-checkboxes');
-    if (!container) return;
-
-    container.innerHTML = MASTER_SERVICES_CATALOG.map((srv, idx) => {
-      const isSelected = selectedServices.some(s => s.name === srv.name);
-      return `
-        <label class="flex items-center justify-between p-4 rounded bg-[#172138] border ${isSelected ? 'border-[#e8220a]' : 'border-[#243050]'} hover:border-[#e8220a]/60 cursor-pointer text-xs transition-colors">
+    // Load Venue Services
+    const services = VENUE_SERVICES[venueName] || VENUE_SERVICES['Trendy Trim'];
+    const servicesListContainer = document.getElementById('modal-services-list');
+    if (servicesListContainer) {
+      servicesListContainer.innerHTML = services.map((s, idx) => `
+        <label class="p-4 rounded-2xl border ${idx === 0 ? 'border-[#0D0D0D] bg-[#F9F9FB]' : 'border-gray-200'} hover:border-black flex items-center justify-between cursor-pointer transition-all">
           <div class="flex items-center gap-3">
-            <input type="checkbox" value="${srv.name}" data-price="${srv.price}" ${isSelected ? 'checked' : ''} onchange="window.onServiceCheckChange()" class="w-4 h-4 rounded text-[#e8220a] accent-[#e8220a]">
-            <span class="text-white font-medium">${srv.name}</span>
+            <input type="radio" name="modal-srv" value="${s.name}" data-price="${s.price}" ${idx === 0 ? 'checked' : ''} onchange="window.onModalServiceChange('${s.name}', ${s.price})" class="w-4 h-4 text-black accent-black">
+            <div>
+              <span class="text-xs font-bold text-[#0D0D0D] block">${s.name}</span>
+              <span class="text-[11px] text-gray-500">${s.duration}</span>
+            </div>
           </div>
-          <span class="font-sans text-xs font-bold text-[#e8220a]">BDT ${srv.price}</span>
+          <span class="text-xs font-bold text-[#0D0D0D]">৳${s.price}</span>
         </label>
-      `;
-    }).join('');
-  }
+      `).join('');
 
-  window.onServiceCheckChange = function () {
-    const checked = document.querySelectorAll('#booking-services-checkboxes input[type="checkbox"]:checked');
-    selectedServices = [];
-    checked.forEach(c => {
-      selectedServices.push({
-        name: c.value,
-        price: Number(c.dataset.price) || 0
-      });
-    });
-    if (selectedServices.length === 0) {
-      selectedServices.push(MASTER_SERVICES_CATALOG[0]);
+      state.bookingModal.selectedService = services[0].name;
+      state.bookingModal.selectedPrice = services[0].price;
     }
-    updateOrderSummaryBox();
+
+    // Populate Time Slots
+    const timeSlotsContainer = document.getElementById('modal-time-slots');
+    if (timeSlotsContainer) {
+      const slots = ['09:30 AM', '10:00 AM', '10:45 AM', '11:30 AM', '01:00 PM', '02:30 PM', '04:00 PM', '05:30 PM', '07:00 PM'];
+      timeSlotsContainer.innerHTML = slots.map((time, idx) => `
+        <button type="button" onclick="window.setBookingSlot('${time}')" class="modal-time-slot-btn p-2 rounded-xl border ${idx === 3 ? 'border-black bg-black text-white' : 'border-gray-200 text-gray-800'} text-xs font-semibold hover:border-black transition-all">
+          ${time}
+        </button>
+      `).join('');
+      state.bookingModal.selectedTime = slots[3];
+    }
+
+    window.updateBookingModalStepView();
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
   };
 
-  window.filterBookingSalonsByArea = function (area) {
-    let filtered = SALON_DATABASE;
-    if (area !== 'all') {
-      if (area === 'Outside') {
-        filtered = filtered.filter(s => !['Dhanmondi', 'Banani', 'Gulshan', 'Mirpur', 'Uttara'].includes(s.area));
+  window.closeBookingModal = function () {
+    const modal = document.getElementById('booking-modal') || document.getElementById('fresha-booking-modal');
+    if (modal) modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  window.onModalServiceChange = function (srvName, price) {
+    state.bookingModal.selectedService = srvName;
+    state.bookingModal.selectedPrice = price;
+  };
+
+  window.selectStaff = function (staffName) {
+    state.bookingModal.selectedStaff = staffName;
+    window.showToast(`Specialist selected: ${staffName}`);
+    window.navBookingModalStep(1);
+  };
+
+  window.setBookingDay = function (day) {
+    state.bookingModal.selectedDay = day;
+    window.showToast(`Selected date: ${day}`);
+  };
+
+  window.setBookingSlot = function (time) {
+    state.bookingModal.selectedTime = time;
+    document.querySelectorAll('.modal-time-slot-btn').forEach(btn => {
+      if (btn.innerText.trim() === time) {
+        btn.classList.add('border-black', 'bg-black', 'text-white');
+        btn.classList.remove('border-gray-200', 'text-gray-800');
       } else {
-        filtered = filtered.filter(s => s.area.toLowerCase().includes(area.toLowerCase()));
-      }
-    }
-    const salonSelect = document.getElementById('booking-salon-select');
-    if (salonSelect) {
-      salonSelect.innerHTML = filtered.map(s => `<option value="${s.id}">${s.name} (${s.area})</option>`).join('');
-      if (filtered.length > 0) {
-        activeBookingSalon = filtered[0];
-        updateActiveSalonCard();
-        generateDynamicTimeSlots();
-      }
-    }
-  };
-
-  window.onBookingSalonChange = function (salonId) {
-    const found = SALON_DATABASE.find(s => s.id === salonId);
-    if (found) {
-      activeBookingSalon = found;
-      updateActiveSalonCard();
-      generateDynamicTimeSlots();
-    }
-  };
-
-  function updateActiveSalonCard() {
-    const cardEl = document.getElementById('booking-active-salon-card');
-    const badgeEl = document.getElementById('booking-salon-window-badge');
-    if (!activeBookingSalon) return;
-
-    if (cardEl) {
-      const openFormatted = formatTimeString(activeBookingSalon.openTime);
-      const closeFormatted = formatTimeString(activeBookingSalon.closeTime);
-      cardEl.innerHTML = `
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 w-full">
-          <div>
-            <h4 class="font-display text-white font-bold text-base">${activeBookingSalon.name}</h4>
-            <span class="text-[#9ca3af] text-xs block font-sans mt-0.5">${activeBookingSalon.address}</span>
-            <span class="font-sans text-[#e8220a] text-xs block mt-1 font-semibold">Direct Helpline: ${activeBookingSalon.phone}</span>
-          </div>
-          <div class="sm:text-right">
-            <span class="font-sans text-emerald-400 font-bold text-xs block">Verified Hair and Care Branch</span>
-            <span class="font-sans text-[#9ca3af] text-xs">${openFormatted} – ${closeFormatted}</span>
-          </div>
-        </div>
-      `;
-    }
-
-    if (badgeEl) {
-      badgeEl.innerHTML = `
-        <span>Schedule: ${activeBookingSalon.openTime} AM – ${activeBookingSalon.closeTime} PM</span>
-        <span class="text-[#9ca3af]">(${activeBookingSalon.totalHours})</span>
-      `;
-    }
-
-    updateOrderSummaryBox();
-  }
-
-  function updateOrderSummaryBox() {
-    const box = document.getElementById('booking-order-summary-box');
-    if (!box) return;
-
-    const total = selectedServices.reduce((acc, curr) => acc + curr.price, 0);
-    const depositAmount = 50;
-    const dueAtChair = Math.max(0, total - depositAmount);
-
-    box.innerHTML = `
-      <div class="flex justify-between text-xs pb-2 border-b border-[#243050]">
-        <span class="text-[#9ca3af]">Selected Studio:</span>
-        <strong class="text-white font-display">${activeBookingSalon.name}</strong>
-      </div>
-      <div class="flex justify-between text-xs py-1">
-        <span class="text-[#9ca3af]">Selected Items:</span>
-        <span class="text-white font-sans text-[11px] text-right max-w-[200px]">${selectedServices.map(s => s.name).join(', ')}</span>
-      </div>
-      <div class="flex justify-between text-xs py-1">
-        <span class="text-[#9ca3af]">Gross Service Bill:</span>
-        <span class="text-white font-mono font-semibold">BDT ${total}</span>
-      </div>
-      <div class="flex justify-between text-xs py-1 text-emerald-400">
-        <span>Advance Token Deposit:</span>
-        <span class="font-mono font-bold">- BDT ${depositAmount} (bKash/Nagad)</span>
-      </div>
-      <div class="flex justify-between text-xs pt-3 border-t border-[#243050] items-center">
-        <div>
-          <span class="text-[#9ca3af] uppercase font-sans text-[10px] tracking-wider block">Due at Salon Chair:</span>
-          <span class="text-[10px] text-slate-400 font-mono">Paid after service</span>
-        </div>
-        <strong class="text-emerald-400 font-mono text-lg font-black">BDT ${dueAtChair}</strong>
-      </div>
-    `;
-    return;
-
-    box.innerHTML = `
-      <div class="flex justify-between text-xs pb-2 border-b border-[#243050]">
-        <span class="text-[#9ca3af]">Selected Studio:</span>
-        <strong class="text-white font-display">${activeBookingSalon.name}</strong>
-      </div>
-      <div class="flex justify-between text-xs py-1">
-        <span class="text-[#9ca3af]">Selected Items:</span>
-        <span class="text-white font-sans text-[11px] text-right max-w-[200px]">${selectedServices.map(s => s.name).join(', ')}</span>
-      </div>
-      <div class="flex justify-between text-xs pt-3 border-t border-[#243050] items-center">
-        <span class="text-[#9ca3af] uppercase font-sans text-[10px] tracking-wider">Estimated Total:</span>
-        <strong class="text-[#e8220a] font-sans text-lg font-black">BDT ${total}</strong>
-      </div>
-    `;
-  }
-
-  window.generateDynamicTimeSlots = function () {
-    const container = document.getElementById('dynamic-time-slots-container');
-    if (!container || !activeBookingSalon) return;
-
-    const [openH, openM] = activeBookingSalon.openTime.split(':').map(Number);
-    const [closeH, closeM] = activeBookingSalon.closeTime.split(':').map(Number);
-
-    const slots = [];
-    let curMinute = (openH * 60) + openM;
-    const endMinute = (closeH * 60) + closeM;
-
-    while (curMinute < endMinute) {
-      const h = Math.floor(curMinute / 60);
-      const m = curMinute % 60;
-      slots.push(formatTimeAmPm(h, m));
-      curMinute += 30;
-    }
-
-    container.innerHTML = slots.map((timeStr, idx) => `
-      <label class="time-slot-pill flex items-center justify-center py-2.5 px-3 rounded bg-[#172138] border border-[#243050] hover:border-[#e8220a] text-[#9ca3af] hover:text-white cursor-pointer text-center font-sans text-xs transition-all shadow-sm">
-        <input type="radio" name="booking-slot" value="${timeStr}" class="sr-only" ${idx === 2 ? 'checked' : ''} onchange="window.handleSlotSelection(this)">
-        <span class="w-full text-center slot-label-text">
-          ${timeStr}
-        </span>
-      </label>
-    `).join('');
-
-    const initial = container.querySelector('input[name="booking-slot"]:checked');
-    if (initial) window.handleSlotSelection(initial);
-  };
-
-  window.handleSlotSelection = function (radioEl) {
-    document.querySelectorAll('.time-slot-pill').forEach(pill => {
-      pill.classList.remove('border-[#e8220a]', 'bg-[#e8220a]', 'text-white', 'shadow-md');
-      pill.classList.add('border-[#243050]', 'bg-[#172138]', 'text-[#9ca3af]');
-      const text = pill.querySelector('.slot-label-text');
-      if (text) {
-        text.classList.remove('text-white', 'font-bold');
-        text.classList.add('text-[#9ca3af]');
+        btn.classList.remove('border-black', 'bg-black', 'text-white');
+        btn.classList.add('border-gray-200', 'text-gray-800');
       }
     });
-    if (radioEl.parentElement) {
-      radioEl.parentElement.classList.remove('border-[#243050]', 'bg-[#172138]', 'text-[#9ca3af]');
-      radioEl.parentElement.classList.add('border-[#e8220a]', 'bg-[#e8220a]', 'text-white', 'shadow-md');
-      const text = radioEl.parentElement.querySelector('.slot-label-text');
-      if (text) {
-        text.classList.remove('text-[#9ca3af]');
-        text.classList.add('text-white', 'font-bold');
+  };
+
+  window.navBookingModalStep = function (delta) {
+    const nextStep = state.bookingModal.currentStep + delta;
+    if (nextStep < 1) return;
+
+    if (nextStep === 5) {
+      // Validate Client Phone
+      const nameInput = document.getElementById('modal-client-name');
+      const phoneInput = document.getElementById('modal-client-phone');
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+
+      if (!name) {
+        window.showToast('Please enter your full name.', 'error');
+        return;
       }
-    }
-  };
-
-  window.goToBookingStep = function (stepNumber) {
-    for (let i = 1; i <= 5; i++) {
-      const panel = document.getElementById(`booking-step-${i}`);
-      const navBtn = document.getElementById(`step-nav-${i}`);
-      if (panel) panel.classList.add('hidden');
-      if (navBtn) {
-        if (i < stepNumber) {
-          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#172138] border border-[#e8220a] text-[#e8220a] font-sans text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
-        } else if (i === stepNumber) {
-          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#e8220a] text-white font-sans text-xs font-bold flex items-center justify-center shadow-lg shadow-[#e8220a]/30 cursor-pointer";
-        } else {
-          navBtn.className = "relative z-10 w-10 h-10 rounded-full bg-[#111a2e] border-2 border-[#243050] text-[#9ca3af] font-sans text-xs font-bold flex items-center justify-center transition-all cursor-pointer";
-        }
+      if (!phone || phone.length < 10) {
+        window.showToast('Please enter a valid mobile number for your SMS Token.', 'error');
+        return;
       }
+
+      state.bookingModal.clientName = name;
+      state.bookingModal.clientPhone = phone;
+      
+      // Generate Token ID
+      const randomToken = 'TK-' + Math.floor(1000 + Math.random() * 9000);
+      state.bookingModal.generatedToken = randomToken;
+
+      // Populate Slip
+      const slipToken = document.getElementById('slip-token');
+      const slipVenue = document.getElementById('slip-venue');
+      const slipService = document.getElementById('slip-service');
+      const slipTime = document.getElementById('slip-time');
+
+      if (slipToken) slipToken.innerText = randomToken;
+      if (slipVenue) slipVenue.innerText = state.bookingModal.venueName;
+      if (slipService) slipService.innerText = state.bookingModal.selectedService;
+      if (slipTime) slipTime.innerText = `${state.bookingModal.selectedDay} • ${state.bookingModal.selectedTime}`;
+
+      // Save to localStorage for Radar lookup
+      try {
+        const bookings = JSON.parse(localStorage.getItem('haircare_bookings') || '[]');
+        bookings.push({
+          token: randomToken,
+          venue: state.bookingModal.venueName,
+          service: state.bookingModal.selectedService,
+          day: state.bookingModal.selectedDay,
+          time: state.bookingModal.selectedTime,
+          clientName: name,
+          clientPhone: phone,
+          chair: 'Chair #2',
+          status: 'Ready'
+        });
+        localStorage.setItem('haircare_bookings', JSON.stringify(bookings));
+      } catch (e) {}
+
+      window.showToast(`✓ Chair reserved! Token ${randomToken} issued for ${state.bookingModal.venueName}.`);
     }
 
-    const targetPanel = document.getElementById(`booking-step-${stepNumber}`);
-    if (targetPanel) targetPanel.classList.remove('hidden');
-
-    updateOrderSummaryBox();
+    state.bookingModal.currentStep = nextStep;
+    window.updateBookingModalStepView();
   };
 
-  // Direct selection helpers for Hair and Care's sections
-  window.selectServiceDirect = function (serviceName, price) {
-    const foundService = MASTER_SERVICES_CATALOG.find(s => 
-      s.name.toLowerCase().includes(serviceName.toLowerCase()) || 
-      serviceName.toLowerCase().includes(s.name.toLowerCase())
-    );
-    if (foundService) {
-      selectedServices = [foundService];
-    } else {
-      selectedServices = [{ name: serviceName, price: price || 350 }];
-    }
-    renderBookingServicesCheckboxes();
-    updateOrderSummaryBox();
-    const engineEl = document.getElementById('booking-engine');
-    if (engineEl) engineEl.scrollIntoView({ behavior: 'smooth' });
-    window.goToBookingStep(3);
-    window.showToast(`Selected: ${serviceName}`);
-  };
-
-  window.selectBarberDirect = function (barberName) {
-    const stylistSelect = document.getElementById('booking-stylist-select');
-    if (stylistSelect) {
-      for (let i = 0; i < stylistSelect.options.length; i++) {
-        if (stylistSelect.options[i].text.toLowerCase().includes(barberName.toLowerCase())) {
-          stylistSelect.selectedIndex = i;
-          break;
-        }
+  window.updateBookingModalStepView = function () {
+    const step = state.bookingModal.currentStep;
+    
+    // Toggle Step Visibility
+    [1, 2, 3, 4, 5].forEach(s => {
+      const el = document.getElementById(`booking-step-${s}`);
+      if (el) {
+        if (s === step) el.classList.remove('hidden');
+        else el.classList.add('hidden');
       }
-    }
-    const engineEl = document.getElementById('booking-engine');
-    if (engineEl) engineEl.scrollIntoView({ behavior: 'smooth' });
-    window.goToBookingStep(3);
-    window.showToast(`Master Barber selected: ${barberName}`);
-  };
+    });
 
-  window.selectServiceAndBook = function (serviceName) {
-    const foundService = MASTER_SERVICES_CATALOG.find(s => s.name.toLowerCase().includes(serviceName.toLowerCase()) || serviceName.toLowerCase().includes(s.name.toLowerCase()));
-    if (foundService) {
-      selectedServices = [foundService];
-      renderBookingServicesCheckboxes();
-    }
-    const engineEl = document.getElementById('booking-engine');
-    if (engineEl) engineEl.scrollIntoView({ behavior: 'smooth' });
-    window.goToBookingStep(3);
-    window.showToast(`Service selected: ${serviceName}`);
-  };
+    // Update Step Indicator
+    const indicator = document.getElementById('modal-step-indicator');
+    const prevBtn = document.getElementById('modal-prev-btn');
+    const nextBtn = document.getElementById('modal-next-btn');
+    const footerNav = document.getElementById('modal-footer-nav');
 
-  window.selectSalonForBooking = function (salonName, area) {
-    const found = SALON_DATABASE.find(s => s.name === salonName || s.area === area);
-    if (found) {
-      activeBookingSalon = found;
-      populateBookingSalonDropdown();
-      updateActiveSalonCard();
-      generateDynamicTimeSlots();
+    if (step === 1) {
+      if (indicator) indicator.innerText = 'Step 1 of 4 • Select Service';
+      if (prevBtn) prevBtn.classList.add('hidden');
+      if (nextBtn) { nextBtn.innerText = 'Continue to Specialist'; nextBtn.classList.remove('hidden'); }
+      if (footerNav) footerNav.classList.remove('hidden');
+    } else if (step === 2) {
+      if (indicator) indicator.innerText = 'Step 2 of 4 • Select Specialist';
+      if (prevBtn) prevBtn.classList.remove('hidden');
+      if (nextBtn) { nextBtn.innerText = 'Continue to Date & Time'; nextBtn.classList.remove('hidden'); }
+      if (footerNav) footerNav.classList.remove('hidden');
+    } else if (step === 3) {
+      if (indicator) indicator.innerText = 'Step 3 of 4 • Choose Slot';
+      if (prevBtn) prevBtn.classList.remove('hidden');
+      if (nextBtn) { nextBtn.innerText = 'Continue to Details'; nextBtn.classList.remove('hidden'); }
+      if (footerNav) footerNav.classList.remove('hidden');
+    } else if (step === 4) {
+      if (indicator) indicator.innerText = 'Step 4 of 4 • Contact & Deposit';
+      if (prevBtn) prevBtn.classList.remove('hidden');
+      if (nextBtn) { nextBtn.innerText = 'Confirm Reservation'; nextBtn.classList.remove('hidden'); }
+      if (footerNav) footerNav.classList.remove('hidden');
+    } else if (step === 5) {
+      if (indicator) indicator.innerText = 'Confirmed • Booking Receipt';
+      if (footerNav) footerNav.classList.add('hidden');
     }
-    const engineEl = document.getElementById('booking-engine');
-    if (engineEl) engineEl.scrollIntoView({ behavior: 'smooth' });
-    window.goToBookingStep(2);
-  };
-
-  window.selectStylistBooking = function (stylistName, salonName) {
-    window.selectSalonForBooking(salonName, '');
-    const stylistSelect = document.getElementById('booking-stylist-select');
-    if (stylistSelect) {
-      for (let i = 0; i < stylistSelect.options.length; i++) {
-        if (stylistSelect.options[i].text.includes(stylistName)) {
-          stylistSelect.selectedIndex = i;
-          break;
-        }
-      }
-    }
-    window.goToBookingStep(3);
   };
 
   // --------------------------------------------------------------------------
-  // BKASH / NAGAD ADVANCE DEPOSIT (NO-SHOW PROTECTION)
+  // 6. TRACK TOKEN & RADAR LOOKUP
   // --------------------------------------------------------------------------
-  let currentMfsProvider = 'bkash';
-
-  window.onMfsRadioChange = function (provider) {
-    currentMfsProvider = provider;
-    const btnText = document.getElementById('btn-submit-booking-text');
-    if (btnText) {
-      btnText.textContent = `Pay ৳50 Deposit via ${provider === 'nagad' ? 'Nagad' : 'bKash'} & Confirm`;
+  window.openTrackTokenModal = function (prefillToken) {
+    const modal = document.getElementById('track-token-modal');
+    if (!modal) return;
+    if (prefillToken) {
+      const input = document.getElementById('track-token-input');
+      if (input) input.value = prefillToken;
+      window.executeTrackToken();
     }
-  };
-
-  window.initiateMfsDeposit = function () {
-    const nameInput = document.getElementById('customer-name');
-    const phoneInput = document.getElementById('customer-phone');
-
-    if (!nameInput.value.trim()) {
-      window.showToast('Please enter your full name.', 'error');
-      nameInput.focus();
-      return;
-    }
-    if (!phoneInput.value.trim()) {
-      window.showToast('Please enter your mobile phone number.', 'error');
-      phoneInput.focus();
-      return;
-    }
-
-    const modal = document.getElementById('modal-mfs-checkout');
-    if (!modal) {
-      window.submitBookingForm();
-      return;
-    }
-
-    // Configure MFS Provider Theme
-    const isNagad = currentMfsProvider === 'nagad';
-    const banner = document.getElementById('mfs-banner');
-    const title = document.getElementById('mfs-provider-title');
-    const labelWallet = document.getElementById('mfs-label-wallet');
-    const confirmBtn = document.getElementById('btn-mfs-confirm-pay');
-
-    if (isNagad) {
-      banner.className = "p-5 bg-gradient-to-r from-[#D9381E] to-[#F7941D] text-white flex items-center justify-between transition-colors";
-      title.textContent = "Nagad Payment Gateway";
-      labelWallet.textContent = "Nagad";
-      confirmBtn.className = "w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D9381E] to-[#F7941D] text-white font-bold text-xs uppercase font-mono tracking-wider shadow-lg shadow-[#F7941D]/30 hover:opacity-95 transition-all flex items-center justify-center gap-2";
-    } else {
-      banner.className = "p-5 bg-gradient-to-r from-[#D12053] to-[#E2136E] text-white flex items-center justify-between transition-colors";
-      title.textContent = "bKash Payment Gateway";
-      labelWallet.textContent = "bKash";
-      confirmBtn.className = "w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D12053] to-[#E2136E] text-white font-bold text-xs uppercase font-mono tracking-wider shadow-lg shadow-[#E2136E]/30 hover:opacity-95 transition-all flex items-center justify-center gap-2";
-    }
-
-    document.getElementById('mfs-order-salon').textContent = activeBookingSalon.name;
-    document.getElementById('mfs-order-service').textContent = selectedServices.map(s => s.name).join(' + ');
-
     modal.classList.remove('hidden');
   };
 
-  window.closeMfsModal = function () {
-    const modal = document.getElementById('modal-mfs-checkout');
+  window.closeTrackTokenModal = function () {
+    const modal = document.getElementById('track-token-modal');
     if (modal) modal.classList.add('hidden');
   };
 
-  window.processMfsPayment = function () {
-    const walletNum = document.getElementById('mfs-wallet-input').value.trim();
-    if (!walletNum) {
-      window.showToast('Please enter your MFS mobile wallet number.', 'error');
+  window.executeTrackToken = function () {
+    const input = document.getElementById('track-token-input');
+    const token = input ? input.value.trim().toUpperCase() : '';
+    if (!token) {
+      window.showToast('Please enter a Token ID.');
       return;
     }
 
-    const providerName = currentMfsProvider === 'nagad' ? 'Nagad' : 'bKash';
-    const prefix = currentMfsProvider === 'nagad' ? 'TRX-NG' : 'TRX-BK';
-    const randomTrx = `${prefix}-${Math.floor(100000 + Math.random() * 900000)}`;
+    const salonNameEl = document.getElementById('track-salon-name');
+    const detailEl = document.getElementById('track-detail');
 
-    window.closeMfsModal();
-    window.submitBookingForm({
-      deposit_paid: 50,
-      deposit_method: providerName,
-      trx_id: randomTrx,
-      wallet_number: walletNum
-    });
-  };
-
-  window.submitBookingForm = function (mfsData = null) {
-    const name = document.getElementById('customer-name').value.trim();
-    const phone = document.getElementById('customer-phone').value.trim();
-    const date = document.getElementById('booking-date-input').value;
-    const slotRadio = document.querySelector('input[name="booking-slot"]:checked');
-    const slotTime = slotRadio ? slotRadio.value : '04:30 PM';
-    const stylistSelect = document.getElementById('booking-stylist-select');
-    const stylist = stylistSelect ? stylistSelect.value : 'Any Master Barber';
-
-    const areaCode = (activeBookingSalon.area || 'DHA').substring(0, 3).toUpperCase();
-    const randomNum = Math.floor(1000 + Math.random() * 9000);
-    const tokenId = `SLN-${areaCode}-${randomNum}`;
-
-    const totalAmount = selectedServices.reduce((sum, s) => sum + (s.price || 0), 0) || 500;
-    const depositAmount = mfsData?.deposit_paid || 50;
-    const dueAmount = Math.max(0, totalAmount - depositAmount);
-    const mfsMethod = mfsData?.deposit_method || 'bKash';
-    const trxId = mfsData?.trx_id || `TRX-BK-${Math.floor(100000 + Math.random() * 900000)}`;
-    const serviceNameSummary = selectedServices.map(s => s.name).join(' + ') || 'Signature Haircut';
-
-    document.getElementById('slip-token-id').innerText = tokenId;
-    document.getElementById('slip-salon-name').innerText = activeBookingSalon.name;
-    document.getElementById('slip-salon-address').innerText = activeBookingSalon.address;
-    document.getElementById('slip-slot-time').innerText = `${date} @ ${slotTime}`;
-    document.getElementById('slip-stylist').innerText = stylist;
-    document.getElementById('slip-customer-name').innerText = name;
-    document.getElementById('slip-customer-phone').innerText = phone;
-
-    const totalEl = document.getElementById('slip-total-bill');
-    const depositEl = document.getElementById('slip-deposit-amount');
-    const dueEl = document.getElementById('slip-due-balance');
-    if (totalEl) totalEl.innerText = `৳ ${totalAmount}`;
-    if (depositEl) depositEl.innerText = `৳ ${depositAmount} (${mfsMethod} Paid ✓ TRX: ${trxId})`;
-    if (dueEl) dueEl.innerText = `৳ ${dueAmount}`;
-
-    // --- REAL-TIME MERCHANT PORTAL SYNCHRONIZATION ---
+    // Lookup in local records
+    let found = null;
     try {
-      const currentBookings = JSON.parse(localStorage.getItem('portal_bookings')) || [];
-      const newBooking = {
-        id: tokenId,
-        salon_name: activeBookingSalon.name,
-        customer_name: name,
-        customer_phone: phone,
-        barber: stylist,
-        chair: Math.floor(1 + Math.random() * 4), // Assign to one of the 4 barber chairs
-        service: serviceNameSummary,
-        time_slot: slotTime,
-        booking_date: date,
-        total: totalAmount,
-        deposit_paid: depositAmount,
-        deposit_method: mfsMethod,
-        trx_id: trxId,
-        due_at_salon: dueAmount,
-        status: 'confirmed' // confirmed, in_chair, completed, no_show
-      };
+      const bookings = JSON.parse(localStorage.getItem('haircare_bookings') || '[]');
+      found = bookings.find(b => b.token === token);
+    } catch (e) {}
 
-      currentBookings.unshift(newBooking);
-      localStorage.setItem('portal_bookings', JSON.stringify(currentBookings));
-
-      // Broadcast to any open Merchant Portal tabs
-      if (typeof BroadcastChannel !== 'undefined') {
-        const syncChannel = new BroadcastChannel('salon_live_sync');
-        syncChannel.postMessage({ type: 'NEW_BOOKING', booking: newBooking });
-      }
-
-      // Log to Super Admin Audit Trail
-      const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
-      currentAudit.unshift({
-        timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-        actor: `${name} (Client)`,
-        action: 'MFS_DEPOSIT_COLLECTED',
-        detail: `Collected ৳${depositAmount} advance booking deposit via ${mfsMethod} (TRX: ${trxId}) for ${activeBookingSalon.name}. Balance due at chair: ৳${dueAmount}.`
-      });
-      localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
-    } catch (e) {
-      console.warn('Sync notice:', e);
+    if (found) {
+      if (salonNameEl) salonNameEl.innerText = `${found.venue} (${found.token})`;
+      if (detailEl) detailEl.innerText = `${found.service} • ${found.chair} • ${found.day} at ${found.time} • Ready in 4 mins`;
+      window.showToast(`Found token ${token}! Status: Ready`);
+    } else {
+      if (salonNameEl) salonNameEl.innerText = `Verified Booking: ${token}`;
+      if (detailEl) detailEl.innerText = `Trendy Trim Grooming Studio • Chair #1 • Estimated wait: 5 minutes`;
+      window.showToast(`Token ${token} verified live on network!`);
     }
-
-    window.goToBookingStep(5);
-    window.showToast(`Deposit confirmed! ৳${depositAmount} secured via ${mfsMethod}. Token ID: ${tokenId}`);
-    };
-
-  window.resetBookingEngine = function () {
-    window.goToBookingStep(1);
-  };
-
-  window.printBookingToken = function () {
-    window.print();
-  };
-
-  window.copyTokenId = function () {
-    const tokenId = document.getElementById('slip-token-id').innerText;
-    navigator.clipboard.writeText(tokenId).then(() => {
-      window.showToast(`Token ID copied to clipboard: ${tokenId}`);
-    });
   };
 
   // --------------------------------------------------------------------------
-  // 5. SEARCH & FILTER DISPATCHERS
+  // 7. PARTNER SALON REGISTRATION
   // --------------------------------------------------------------------------
-  window.handleHeroSearch = function () {
-    const q = document.getElementById('hero-search-query').value;
-    const area = document.getElementById('hero-area-select').value;
-    
-    document.querySelectorAll('.filter-tab-btn').forEach(btn => {
-      btn.classList.remove('active', 'bg-freshaDark', 'text-white', 'border-freshaDark');
-      btn.classList.add('border-freshaBorder', 'bg-white', 'text-freshaDark');
-    });
-
-    renderSalonDirectoryGrid(area, q);
-
-    const dirSection = document.getElementById('around-you');
-    if (dirSection) dirSection.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  window.filterByNavLocation = function (area) {
-    currentFilter = area;
-    renderSalonDirectoryGrid(area, '');
-    const dirSection = document.getElementById('around-you');
-    if (dirSection) dirSection.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  function setupFilterTabs() {
-    const buttons = document.querySelectorAll('.filter-tab-btn');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => {
-          b.classList.remove('active', 'bg-freshaDark', 'text-white', 'border-freshaDark');
-          b.classList.add('border-freshaBorder', 'bg-white', 'text-freshaDark');
-        });
-        btn.classList.add('active', 'bg-freshaDark', 'text-white', 'border-freshaDark');
-        btn.classList.remove('border-freshaBorder', 'bg-white', 'text-freshaDark');
-
-        const filter = btn.dataset.filter;
-        currentFilter = filter;
-        renderSalonDirectoryGrid(filter, '');
-      });
-    });
-  }
-
-  // --------------------------------------------------------------------------
-  // 7. MODALS, SYNDICATE, NEWSLETTER & TOASTS
-  // --------------------------------------------------------------------------
-  window.openSyndicateModal = function () {
-    const modal = document.getElementById('syndicate-modal');
-    if (modal) modal.classList.remove('hidden');
-  };
-
-  window.closeSyndicateModal = function () {
-    const modal = document.getElementById('syndicate-modal');
-    if (modal) modal.classList.add('hidden');
-  };
-
-  window.copySyndicateInvite = function () {
-    navigator.clipboard.writeText('https://discord.gg/thetrimrealm-syndicate').then(() => {
-      window.showToast('Syndicate invite link copied to clipboard!');
-    });
-  };
-
   window.openRegisterModal = function () {
     const modal = document.getElementById('register-salon-modal');
     if (modal) modal.classList.remove('hidden');
@@ -941,292 +494,114 @@ function renderSalonDirectoryGrid(filterArea = 'all', searchQuery = '') {
     if (modal) modal.classList.add('hidden');
   };
 
-  window.handleSalonRegistration = function () {
-    const salonName = document.getElementById('reg-salon-name')?.value?.trim();
-    const ownerName = document.getElementById('reg-owner-name')?.value?.trim() || 'Salon Partner';
-    const phone = document.getElementById('reg-phone')?.value?.trim();
-    const email = document.getElementById('reg-email')?.value?.trim() || 'partner@barbershop.bd';
-    const division = document.getElementById('reg-division')?.value || 'Dhaka';
-    const area = document.getElementById('reg-area')?.value?.trim() || 'Main City';
-    const tradeLicense = document.getElementById('reg-trade-license')?.value?.trim() || 'TRAD/DNCC/2026';
-    const chairsCount = parseInt(document.getElementById('reg-chairs-count')?.value, 10) || 4;
-    const openT = document.getElementById('reg-open-time')?.value || '10:00';
-    const closeT = document.getElementById('reg-close-time')?.value || '22:00';
-
-    if (!salonName || !phone) {
-      window.showToast('Please provide your business name and contact number.', 'error');
-      return;
-    }
-
-    // Persist into Super Admin Triage queue
-    const currentApps = JSON.parse(localStorage.getItem('salon_admin_apps')) || [];
-    const newApplication = {
-      id: Date.now(),
-      salon_name: salonName,
-      owner_name: ownerName,
-      owner_phone: phone,
-      owner_email: email,
-      district: division,
-      area: area,
-      full_address: `${area}, ${division}`,
-      chairs_count: chairsCount,
-      trade_license_number: tradeLicense,
-      status: 'pending',
-      opening_time: openT,
-      closing_time: closeT,
-      submitted_at: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-      notes: `New partner application submitted via public portal for ${chairsCount} chairs.`
-    };
-
-    currentApps.unshift(newApplication);
-    localStorage.setItem('salon_admin_apps', JSON.stringify(currentApps));
-
-    // Log to Audit Trail
-    const currentAudit = JSON.parse(localStorage.getItem('salon_admin_audit')) || [];
-    currentAudit.unshift({
-      timestamp: new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' }) + ' BST',
-      actor: ownerName,
-      action: 'NEW_APPLICATION_SUBMITTED',
-      detail: `${salonName} (${division}) submitted onboarding application.`
-    });
-    localStorage.setItem('salon_admin_audit', JSON.stringify(currentAudit));
+  window.submitSalonRegistration = function () {
+    const name = document.getElementById('reg-name')?.value;
+    const city = document.getElementById('reg-city')?.value;
 
     window.closeRegisterModal();
-    window.showToast(`✓ Application submitted for "${salonName}"! Super Admin will review within 24 hours.`);
+    window.showToast(`Application submitted for "${name}" (${city})! Welcome to Hair and Care bd.`);
   };
 
-  window.handleNewsletter = function () {
-    window.showToast('Thank you! You have successfully subscribed to priority grooming slots & offers.');
+  // --------------------------------------------------------------------------
+  // 8. MENU DRAWER & LOGIN
+  // --------------------------------------------------------------------------
+  window.toggleMenuDrawer = function () {
+    const drawer = document.getElementById('menu-dropdown');
+    if (drawer) drawer.classList.toggle('hidden');
   };
 
-  window.copySalonPhone = function (phone, salonName) {
-    navigator.clipboard.writeText(phone).then(() => {
-      window.showToast(`Phone number copied to clipboard: ${phone} (${salonName})`);
+  window.openLoginModal = function () {
+    window.showToast('Log in / Sign up: SMS OTP Authentication ready.');
+  };
+
+  // --------------------------------------------------------------------------
+  // 9. BROWSE BY CITY TABS
+  // --------------------------------------------------------------------------
+  window.switchCityTab = function (countryKey) {
+    state.activeCityCountry = countryKey;
+
+    ['bangladesh', 'uk', 'us', 'uae'].forEach(k => {
+      const btn = document.getElementById(`tab-${k}`);
+      if (btn) {
+        if (k === countryKey) {
+          btn.className = 'city-tab-btn px-4 py-2 rounded-full bg-[#0D0D0D] text-white text-xs font-bold';
+        } else {
+          btn.className = 'city-tab-btn px-4 py-2 rounded-full bg-[#F3F3F6] text-[#0D0D0D] text-xs font-semibold hover:bg-[#EAEAEA]';
+        }
+      }
     });
+
+    renderCityPills(countryKey);
   };
 
-  window.showToast = function (message) {
-    const container = document.getElementById('toast-container');
+  function renderCityPills(countryKey) {
+    const container = document.getElementById('city-pills-container');
     if (!container) return;
 
-    const toast = document.createElement('div');
-    toast.className = 'p-3.5 px-5 rounded-full bg-freshaDark text-white text-xs font-medium shadow-2xl flex items-center gap-2.5 pointer-events-auto border border-white/10 animate-fadeIn';
-    toast.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-freshaGreen"></span><span>${message}</span>`;
-    container.appendChild(toast);
+    const list = CITIES_BY_COUNTRY[countryKey] || CITIES_BY_COUNTRY.bangladesh;
+    container.innerHTML = list.map(city => `
+      <div onclick="window.selectLocation('${city.name}')" class="p-3.5 rounded-2xl bg-white border border-[#EAEAEA] hover:border-black cursor-pointer transition-all">
+        <span class="font-bold text-xs text-[#0D0D0D] block truncate">${city.name}</span>
+        <span class="text-[11px] text-gray-400 mt-0.5 block">${city.count}</span>
+      </div>
+    `).join('');
+  }
 
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(8px)';
-      toast.style.transition = 'all 0.3s ease';
-      setTimeout(() => toast.remove(), 300);
-    }, 3800);
+  // --------------------------------------------------------------------------
+  // 10. TOAST NOTIFICATIONS
+  // --------------------------------------------------------------------------
+  window.showToast = function (message) {
+    const toast = document.getElementById('toast') || document.getElementById('fresha-toast');
+    const toastText = document.getElementById('toast-text');
+    if (!toast || !toastText) return;
+
+    toastText.innerText = message;
+    toast.classList.remove('hidden');
+
+    clearTimeout(window._toastTimeout);
+    window._toastTimeout = setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3500);
   };
 
   // --------------------------------------------------------------------------
-  // 8. INITIALIZATION
+  // INITIALIZATION ON DOM READY
   // --------------------------------------------------------------------------
-  // --------------------------------------------------------------------------
-  // TRACK MY TOKEN & QUEUE RADAR
-  // --------------------------------------------------------------------------
-  window.openTrackTokenModal = function (prefillToken) {
-    const modal = document.getElementById('modal-track-token');
-    if (!modal) return;
-    modal.classList.remove('hidden');
+  document.addEventListener('DOMContentLoaded', function () {
+    renderCityPills('bangladesh');
 
-    if (prefillToken) {
-      const cleanToken = prefillToken.replace('#', '').trim();
-      document.getElementById('track-token-input').value = cleanToken;
-      window.lookupTokenStatus(cleanToken);
-    } else {
-      document.getElementById('track-token-input').focus();
-    }
-  };
-
-  window.closeTrackTokenModal = function () {
-    const modal = document.getElementById('modal-track-token');
-    if (modal) modal.classList.add('hidden');
-  };
-
-  window.fillAndTrackToken = function (tokenId) {
-    document.getElementById('track-token-input').value = tokenId;
-    window.lookupTokenStatus(tokenId);
-  };
-
-  window.lookupTokenStatus = function (targetToken) {
-    const tokenQuery = (targetToken || document.getElementById('track-token-input').value || '').trim().toUpperCase().replace('#', '');
-    if (!tokenQuery) return;
-
-    const notFoundEl = document.getElementById('track-not-found');
-    const resultCardEl = document.getElementById('track-result-card');
-
-    // Default fallback bookings matching merchant portal defaults
-    const DEFAULT_BOOKINGS = [
-      {
-        id: "SLN-DHN-8942",
-        salon_name: "Vintage Crown Barbershop",
-        customer_name: "Tanvir Hasan",
-        customer_phone: "+880 1712-445566",
-        barber: "Kabir Hossain",
-        chair: 1,
-        service: "Royal Beard Sculpt & Razor Line",
-        time_slot: "11:30 AM",
-        total: 550,
-        status: "in_chair"
-      },
-      {
-        id: "SLN-DHN-8941",
-        salon_name: "Vintage Crown Barbershop",
-        customer_name: "Rakib Al-Hasan",
-        customer_phone: "+880 1912-556677",
-        barber: "Jewel Ahmed",
-        chair: 2,
-        service: "Deep Charcoal Detox Facial",
-        time_slot: "12:15 PM",
-        total: 800,
-        status: "confirmed"
-      },
-      {
-        id: "SLN-DHN-8945",
-        salon_name: "Vintage Crown Barbershop",
-        customer_name: "Mahir Faisal",
-        customer_phone: "+880 1611-778899",
-        barber: "Nayeem Islam",
-        chair: 4,
-        service: "Traditional English Hot-Towel Shave",
-        time_slot: "12:45 PM",
-        total: 350,
-        status: "confirmed"
-      },
-      {
-        id: "SLN-DHN-8940",
-        salon_name: "Vintage Crown Barbershop",
-        customer_name: "Zubair Ahmed",
-        customer_phone: "+880 1722-112233",
-        barber: "Kabir Hossain",
-        chair: 1,
-        service: "Signature Scissor Fade",
-        time_slot: "10:15 AM",
-        total: 500,
-        status: "completed"
+    // Close Dropdowns on Click Outside
+    document.addEventListener('click', function (e) {
+      const target = e.target;
+      
+      // Treatment Dropdown
+      const treatmentInput = document.getElementById('hero-treatment-input');
+      const treatmentDropdown = document.getElementById('treatment-dropdown');
+      if (treatmentDropdown && !treatmentDropdown.contains(target) && (!treatmentInput || !treatmentInput.contains(target))) {
+        treatmentDropdown.classList.add('hidden');
       }
-    ];
 
-    const currentBookings = JSON.parse(localStorage.getItem('portal_bookings')) || DEFAULT_BOOKINGS;
-    const booking = currentBookings.find(b => b.id.toUpperCase() === tokenQuery);
+      // Location Dropdown
+      const locationInput = document.getElementById('hero-location-input');
+      const locationDropdown = document.getElementById('location-dropdown');
+      if (locationDropdown && !locationDropdown.contains(target) && (!locationInput || !locationInput.contains(target))) {
+        locationDropdown.classList.add('hidden');
+      }
 
-    if (!booking) {
-      notFoundEl.classList.remove('hidden');
-      resultCardEl.classList.add('hidden');
-      return;
-    }
+      // Time Dropdown
+      const timeInput = document.getElementById('hero-time-input');
+      const timeDropdown = document.getElementById('time-dropdown');
+      if (timeDropdown && !timeDropdown.contains(target) && (!timeInput || !timeInput.contains(target))) {
+        timeDropdown.classList.add('hidden');
+      }
 
-    notFoundEl.classList.add('hidden');
-    resultCardEl.classList.remove('hidden');
-
-    // Populate Client & Service Details
-    document.getElementById('track-res-client').textContent = booking.customer_name;
-    document.getElementById('track-res-salon').textContent = booking.salon_name || "Vintage Crown Barbershop";
-    document.getElementById('track-res-barber').textContent = `${booking.barber} (Chair #${booking.chair || 1})`;
-    document.getElementById('track-res-service').textContent = booking.service;
-    document.getElementById('track-res-slot').textContent = `${booking.time_slot} BST`;
-    document.getElementById('track-res-bill').textContent = `৳ ${booking.total}`;
-
-    // Calculate queue position & estimated wait time
-    const activeConfirmed = currentBookings.filter(b => b.status === 'confirmed');
-    const indexInQueue = activeConfirmed.findIndex(b => b.id.toUpperCase() === tokenQuery);
-
-    const statusDot = document.getElementById('track-status-dot');
-    const statusText = document.getElementById('track-status-text');
-    const statusSubtext = document.getElementById('track-status-subtext');
-    const waitDisplay = document.getElementById('track-wait-display');
-    const reviewBtn = document.getElementById('track-review-btn');
-
-    // Reset steps
-    const s1 = document.getElementById('step-track-1');
-    const s2 = document.getElementById('step-track-2');
-    const s3 = document.getElementById('step-track-3');
-    const s4 = document.getElementById('step-track-4');
-    [s1, s2, s3, s4].forEach(el => {
-      el.className = "p-2 rounded-lg bg-[#111A2E] border border-[#243050] text-slate-500 font-mono";
+      // Menu Dropdown
+      const menuBtn = document.getElementById('menu-btn');
+      const menuDropdown = document.getElementById('menu-dropdown');
+      if (menuDropdown && !menuDropdown.contains(target) && (!menuBtn || !menuBtn.contains(target))) {
+        menuDropdown.classList.add('hidden');
+      }
     });
-    s1.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
-
-    if (booking.status === 'in_chair') {
-      statusDot.className = "w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse";
-      statusText.textContent = "In-Chair Right Now";
-      statusText.className = "text-sm font-bold text-amber-400 font-mono";
-      statusSubtext.textContent = `Master Barber is currently styling your service at Station Chair #${booking.chair || 1}.`;
-      waitDisplay.textContent = "0 Mins";
-      waitDisplay.className = "text-xl sm:text-2xl font-bold font-mono text-emerald-400";
-      reviewBtn.classList.add('hidden');
-
-      s2.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
-      s3.className = "p-2 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold font-mono";
-    } else if (booking.status === 'completed') {
-      statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-400";
-      statusText.textContent = "Service Completed";
-      statusText.className = "text-sm font-bold text-emerald-400 font-mono";
-      statusSubtext.textContent = "Thank you for visiting! Please share your authentic in-person review.";
-      waitDisplay.textContent = "Done ✓";
-      waitDisplay.className = "text-xl sm:text-2xl font-bold font-mono text-emerald-400";
-      
-      reviewBtn.href = `review/index.html?token=${booking.id}`;
-      reviewBtn.classList.remove('hidden');
-
-      s2.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
-      s3.className = "p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono";
-      s4.className = "p-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold font-mono";
-    } else {
-      // Confirmed / waiting in queue
-      const aheadCount = indexInQueue >= 0 ? indexInQueue : 1;
-      const estimatedWaitMins = (aheadCount + 1) * 15;
-
-      statusDot.className = "w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse";
-      statusText.textContent = aheadCount === 0 ? "Next in Line for Chair" : `Queue Position: #${aheadCount + 1}`;
-      statusText.className = "text-sm font-bold text-blue-400 font-mono";
-      statusSubtext.textContent = aheadCount === 0 
-        ? "Your chair is being prepped. Please be seated in the studio lounge." 
-        : `There are ${aheadCount} client(s) ahead of you in the queue.`;
-      
-      waitDisplay.textContent = `~${estimatedWaitMins} Mins`;
-      waitDisplay.className = "text-xl sm:text-2xl font-bold font-mono text-blue-400";
-      reviewBtn.classList.add('hidden');
-
-      s2.className = "p-2 rounded-lg bg-blue-500/20 border border-blue-500/40 text-blue-300 font-bold font-mono";
-    }
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    renderSalonDirectoryGrid('all');
-    initBookingEngine();
-    setupFilterTabs();
-
-    updateBSTClock();
-    setInterval(updateBSTClock, 1000);
-
-    setInterval(() => {
-      renderSalonDirectoryGrid(currentFilter);
-      updateActiveSalonCard();
-    }, 60000);
-
-    const openRegBtn = document.getElementById('open-register-modal-btn');
-    if (openRegBtn) openRegBtn.addEventListener('click', window.openRegisterModal);
-
-    // Navbar transparency handler: fully transparent over hero, frosted dark glass when scrolled down
-    const mainHeader = document.getElementById('main-header');
-    if (mainHeader) {
-      const handleNavScroll = () => {
-        if (window.scrollY > 60) {
-          mainHeader.classList.remove('bg-transparent', 'border-transparent');
-          mainHeader.classList.add('bg-[#050508]/90', 'backdrop-blur-md', 'border-[#00F0FF]/20', 'shadow-lg');
-        } else {
-          mainHeader.classList.add('bg-transparent', 'border-transparent');
-          mainHeader.classList.remove('bg-[#050508]/90', 'backdrop-blur-md', 'border-[#00F0FF]/20', 'shadow-lg');
-        }
-      };
-      window.addEventListener('scroll', handleNavScroll, { passive: true });
-      handleNavScroll();
-    }
   });
 
 })();
