@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { X } from "lucide-react";
 import { platformStore } from "@/lib/store";
 
 interface RegisterSalonModalProps {
@@ -62,16 +63,17 @@ export function RegisterSalonModal({ isOpen, onClose, onSuccess }: RegisterSalon
         {/* Header */}
         <div className="p-5 border-b border-[#1f2639] bg-[#0c1220] flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-[#e8220a] tracking-wider">
+            <span className="text-[10px] uppercase font-bold text-[#e8220a] tracking-wider">
               Salon Partner Onboarding
             </span>
             <h3 className="text-base font-bold text-white mt-0.5">List Your Business on Hair and Care</h3>
           </div>
           <button
             onClick={onClose}
+            aria-label="Close modal"
             className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5"
           >
-            ✕
+            <X className="w-4 h-4" />
           </button>
         </div>
 
@@ -109,7 +111,7 @@ export function RegisterSalonModal({ isOpen, onClose, onSuccess }: RegisterSalon
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="01712-445566"
-                className="w-full bg-[#0c1220] border border-[#243050] rounded-lg px-3 py-2 text-white font-mono focus:outline-none focus:border-[#e8220a]"
+                className="w-full bg-[#0c1220] border border-[#243050] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#e8220a]"
               />
             </div>
           </div>
@@ -164,7 +166,7 @@ export function RegisterSalonModal({ isOpen, onClose, onSuccess }: RegisterSalon
                 value={tradeLicense}
                 onChange={(e) => setTradeLicense(e.target.value)}
                 placeholder="TRAD/DNCC/12345/2026"
-                className="w-full bg-[#0c1220] border border-[#243050] rounded-lg px-3 py-2 text-white font-mono focus:outline-none focus:border-[#e8220a]"
+                className="w-full bg-[#0c1220] border border-[#243050] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#e8220a]"
               />
             </div>
             <div>
@@ -175,7 +177,7 @@ export function RegisterSalonModal({ isOpen, onClose, onSuccess }: RegisterSalon
                 max="25"
                 value={chairsCount}
                 onChange={(e) => setChairsCount(parseInt(e.target.value, 10) || 1)}
-                className="w-full bg-[#0c1220] border border-[#243050] rounded-lg px-3 py-2 text-white font-mono focus:outline-none focus:border-[#e8220a]"
+                className="w-full bg-[#0c1220] border border-[#243050] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#e8220a]"
               />
             </div>
           </div>

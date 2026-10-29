@@ -23,16 +23,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.font-display {
-  font-family: 'Boska', 'Playfair Display', Georgia, serif;
+/* Global Unified Typography - Matches Homepage Across All Pages */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
 }
 
-.font-serif {
-  font-family: 'Boska', 'Playfair Display', Georgia, serif;
+p, span, label, input, select, textarea, button, a, div, tr, td, th {
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.font-sans-clean {
-  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+.font-display,
+.font-serif,
+.font-sans-clean,
+.font-sans {
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* Custom Minimal Scrollbar */

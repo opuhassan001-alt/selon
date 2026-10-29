@@ -1,12 +1,31 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import {
+  Sparkles,
+  Scissors,
+  Crown,
+  Paintbrush,
+  Eye,
+  Waves,
+  Flame,
+  ShieldCheck,
+  Droplets,
+  Smile,
+  Dumbbell,
+  MapPin,
+  Star,
+  Heart,
+} from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { BookingModal } from "@/components/BookingModal";
 import { RegisterSalonModal } from "@/components/RegisterSalonModal";
 import { TrackTokenModal } from "@/components/TrackTokenModal";
 import { Footer } from "@/components/Footer";
+import { Salon } from "@/types";
+import { platformStore, getCanonicalSalonPhoto } from "@/lib/store";
 
 // City Data
 const CITIES_DATA: Record<string, Array<{ name: string; count: string }>> = {
@@ -45,7 +64,24 @@ const CITIES_DATA: Record<string, Array<{ name: string; count: string }>> = {
   ],
 };
 
+// Categories with Lucide icons
+const CATEGORIES = [
+  { name: "All treatments", icon: Sparkles },
+  { name: "Hair Salons", icon: Scissors },
+  { name: "Barbershops", icon: Crown },
+  { name: "Nail Salons", icon: Paintbrush },
+  { name: "Eyebrows & Lashes", icon: Eye },
+  { name: "Massage", icon: Waves },
+  { name: "Waxing Salons", icon: Flame },
+  { name: "Medspas", icon: ShieldCheck },
+  { name: "Spas & Saunas", icon: Droplets },
+  { name: "Facials & Skincare", icon: Smile },
+  { name: "Personal Training", icon: Dumbbell },
+];
+
 export default function Home() {
+  const router = useRouter();
+
   // Modal states
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
   const [trackModalOpen, setTrackModalOpen] = useState(false);
@@ -70,6 +106,43 @@ export default function Home() {
   // Favorites
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
 
+  // Dynamic Salons State
+  const [salons, setSalons] = useState<Salon[]>([]);
+
+  useEffect(() => {
+    try {
+      const data = platformStore.getSalons();
+      setSalons(data);
+    } catch (err) {
+      console.error("Failed to load salons in Home page:", err);
+    }
+  }, []);
+
+  // Top/Recently Viewed Salons (first 10)
+  const recentSalons = useMemo(() => {
+    if (salons.length === 0) return [];
+    return salons.slice(0, 10);
+  }, [salons]);
+
+  // Recommended Salons (sorted by rating & reviews)
+  const recommendedSalons = useMemo(() => {
+    if (salons.length === 0) return [];
+    return [...salons]
+      .sort((a, b) => {
+        const ratingDiff = (Number(b.rating) || 0) - (Number(a.rating) || 0);
+        if (ratingDiff !== 0) return ratingDiff;
+        return (b.reviews_count || 0) - (a.reviews_count || 0);
+      })
+      .slice(0, 10);
+  }, [salons]);
+
+  // Newly onboarded Dhaka Studios
+  const newSalons = useMemo(() => {
+    if (salons.length === 0) return [];
+    const dhakaScraped = salons.filter((s) => s.id.startsWith("sln-dhk-"));
+    return dhakaScraped.length > 0 ? dhakaScraped.slice(10, 20) : salons.slice(10, 20);
+  }, [salons]);
+
   // Carousel Refs
   const recentSliderRef = useRef<HTMLDivElement>(null);
   const recommendedSliderRef = useRef<HTMLDivElement>(null);
@@ -91,7 +164,7 @@ export default function Home() {
     e.stopPropagation();
     const nextState = !favorites[name];
     setFavorites((prev) => ({ ...prev, [name]: nextState }));
-    showToast(nextState ? `Saved "${name}" to your favourites! ❤️` : `Removed "${name}" from favourites.`);
+    showToast(nextState ? `Saved "${name}" to your favourites!` : `Removed "${name}" from favourites.`);
   };
 
   const openBookingFor = (name: string) => {
@@ -104,10 +177,18 @@ export default function Home() {
     setTreatmentDropdownOpen(false);
     setLocationDropdownOpen(false);
     setTimeDropdownOpen(false);
-    showToast(`Searching for "${treatment || 'All treatments'}" in ${location} (${timeSlot})...`);
-    if (recommendedSliderRef.current) {
-      recommendedSliderRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    const params = new URLSearchParams();
+    if (treatment && treatment !== "All treatments") {
+      params.set("q", treatment);
     }
+    if (location && location !== "Dhaka, Bangladesh") {
+      const cleanLoc = location.split(",")[0].trim();
+      params.set("district", cleanLoc);
+    }
+    const queryString = params.toString();
+    showToast(`Redirecting to verified venues...`);
+    router.push(`/browse${queryString ? `?${queryString}` : ""}`);
   };
 
   return (
@@ -162,30 +243,25 @@ export default function Home() {
                   <div className="absolute top-full left-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-[#EAEAEA] p-3 z-50 text-left animate-fadeIn">
                     <div className="text-xs font-bold text-gray-400 px-3 py-1.5 uppercase tracking-wider">Popular Services</div>
                     <div className="space-y-0.5 mt-1">
-                      {[
-                        { icon: "✨", name: "All treatments" },
-                        { icon: "✂️", name: "Hair Salons" },
-                        { icon: "💈", name: "Barbershops" },
-                        { icon: "💅", name: "Nail Salons" },
-                        { icon: "👁️", name: "Eyebrows & Lashes" },
-                        { icon: "💆", name: "Massage" },
-                        { icon: "💉", name: "Medspas" },
-                        { icon: "🧴", name: "Facials & Skincare" },
-                      ].map((cat) => (
-                        <button
-                          key={cat.name}
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setTreatment(cat.name);
-                            setSelectedCategory(cat.name);
-                            setTreatmentDropdownOpen(false);
-                          }}
-                          className="w-full text-left px-3 py-2 text-sm font-medium rounded-xl hover:bg-[#F3F3F6] flex items-center gap-2.5 transition-colors"
-                        >
-                          <span>{cat.icon}</span> <span>{cat.name}</span>
-                        </button>
-                      ))}
+                      {CATEGORIES.slice(0, 8).map((cat) => {
+                        const Icon = cat.icon;
+                        return (
+                          <button
+                            key={cat.name}
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setTreatment(cat.name);
+                              setSelectedCategory(cat.name);
+                              setTreatmentDropdownOpen(false);
+                            }}
+                            className="w-full text-left px-3 py-2 text-sm font-medium rounded-xl hover:bg-[#F3F3F6] flex items-center gap-2.5 transition-colors text-[#0D0D0D]"
+                          >
+                            <Icon className="w-4 h-4 text-[#5E5E5E]" />
+                            <span>{cat.name}</span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -232,7 +308,8 @@ export default function Home() {
                         }}
                         className="w-full text-left px-3 py-2 text-sm font-semibold text-[#E8220A] rounded-xl hover:bg-red-50 flex items-center gap-2.5 transition-colors"
                       >
-                        <span>📍</span> <span>Use my current location</span>
+                        <MapPin className="w-4 h-4 text-[#E8220A] shrink-0" />
+                        <span>Use my current location</span>
                       </button>
                       {[
                         "All Bangladesh",
@@ -331,31 +408,23 @@ export default function Home() {
       {/* 3. Category Quick Pills Bar */}
       <section id="services-pills" className="py-3 px-4 sm:px-8 border-y border-[#EAEAEA] bg-white sticky top-[72px] z-30">
         <div className="max-w-[1440px] mx-auto flex items-center gap-2.5 overflow-x-auto no-scrollbar py-1">
-          {[
-            { icon: "✨", name: "All treatments" },
-            { icon: "✂️", name: "Hair Salons" },
-            { icon: "💈", name: "Barbershops" },
-            { icon: "💅", name: "Nail Salons" },
-            { icon: "👁️", name: "Eyebrows & Lashes" },
-            { icon: "💆", name: "Massage" },
-            { icon: "🕯️", name: "Waxing Salons" },
-            { icon: "💉", name: "Medspas" },
-            { icon: "🧖", name: "Spas & Saunas" },
-            { icon: "🧴", name: "Facials & Skincare" },
-            { icon: "🏋️", name: "Personal Training" },
-          ].map((cat) => (
-            <button
-              key={cat.name}
-              onClick={() => {
-                setSelectedCategory(cat.name);
-                setTreatment(cat.name === "All treatments" ? "" : cat.name);
-                showToast(`Filtered by: ${cat.name}`);
-              }}
-              className={`category-pill ${selectedCategory === cat.name ? "active" : ""}`}
-            >
-              <span>{cat.icon}</span> {cat.name}
-            </button>
-          ))}
+          {CATEGORIES.map((cat) => {
+            const Icon = cat.icon;
+            return (
+              <button
+                key={cat.name}
+                onClick={() => {
+                  setSelectedCategory(cat.name);
+                  setTreatment(cat.name === "All treatments" ? "" : cat.name);
+                  showToast(`Filtered by: ${cat.name}`);
+                }}
+                className={`category-pill flex items-center gap-2 ${selectedCategory === cat.name ? "active" : ""}`}
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
         </div>
       </section>
 
@@ -377,97 +446,80 @@ export default function Home() {
         </div>
 
         <div ref={recentSliderRef} className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4">
-          {[
-            {
-              name: "Trendy Trim Grooming Studio",
-              rating: "4.9",
-              reviews: "340 reviews",
-              location: "Rakeen Tower, Section 15, Dhaka",
-              cat: "Barbershop",
-              price: "Haircut & Beard from ৳450",
-              img: "/assets/studio-haven.jpg",
-              badge: "Featured",
-            },
-            {
-              name: "Vintage Crown Barbershop",
-              rating: "5.0",
-              reviews: "520 reviews",
-              location: "Road 11, Block D, Banani, Dhaka",
-              cat: "Barbershop",
-              price: "Signature Fade & Shave from ৳600",
-              img: "/assets/studio-barberia.jpg",
-              badge: "Super Venue",
-            },
-            {
-              name: "Aura Medspa & Skincare",
-              rating: "4.9",
-              reviews: "210 reviews",
-              location: "Avenue 2, Circle 2, Gulshan, Dhaka",
-              cat: "Medspas & Facials",
-              price: "Hydrafacial & Detox from ৳1,500",
-              img: "/assets/service-facial.jpg",
-              badge: "Popular",
-            },
-            {
-              name: "The Royal Blade Studio",
-              rating: "4.8",
-              reviews: "185 reviews",
-              location: "Road 27, Dhanmondi, Dhaka",
-              cat: "Barbershop",
-              price: "Precision Scissor Cut from ৳500",
-              img: "/assets/service-trim.jpg",
-              badge: "Verified",
-            },
-          ].map((venue) => (
-            <div
-              key={venue.name}
-              className="venue-card w-[290px] sm:w-[320px] shrink-0"
-              onClick={() => openBookingFor(venue.name)}
-            >
-              <div className="card-img-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={venue.img} alt={venue.name} />
-                <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-[#0D0D0D] shadow-sm">
-                  {venue.badge}
-                </span>
-                <button
-                  onClick={(e) => toggleFavorite(venue.name, e)}
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors shadow-sm"
-                >
-                  <svg
-                    className={`w-4 h-4 ${favorites[venue.name] ? "fill-red-500 text-red-500" : ""}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </button>
-              </div>
-              <div className="pt-3.5 space-y-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-base text-[#0D0D0D] truncate">{venue.name}</h3>
-                  <div className="flex items-center gap-1 text-xs font-bold text-[#0D0D0D]">
-                    <span className="text-amber-500">★</span> {venue.rating}
-                  </div>
-                </div>
-                <p className="text-xs text-[#5E5E5E] truncate">{venue.location}</p>
-                <div className="text-xs text-[#8A8A8E]">{venue.cat} • {venue.reviews}</div>
-                <div className="flex items-center justify-between pt-2">
-                  <span className="text-xs font-semibold text-[#0D0D0D]">{venue.price}</span>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openBookingFor(venue.name);
+          {recentSalons.map((salon, index) => {
+            const isBoosted = salon.is_boosted !== false && salon.is_featured;
+            const isHaven = salon.name.toLowerCase().includes("haven");
+            const coverPhoto =
+              salon.cover_photo_url && (salon.cover_photo_url !== "/assets/studio-haven.jpg" || isHaven)
+                ? salon.cover_photo_url
+                : getCanonicalSalonPhoto(salon.name, salon.slug, index);
+            const badge = isBoosted ? "Featured" : salon.is_featured ? "Super Venue" : "Verified";
+            const serviceCat = salon.services?.[0]?.category || "Barbershop & Grooming";
+            const startingPrice = salon.starting_price || 350;
+
+            return (
+              <div
+                key={salon.id}
+                className="venue-card w-[290px] sm:w-[320px] shrink-0"
+                onClick={() => openBookingFor(salon.name)}
+              >
+                <div className="card-img-container">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={coverPhoto}
+                    alt={salon.name}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes("/assets/hero-barber.jpg")) {
+                        target.src = "/assets/hero-barber.jpg";
+                      }
                     }}
-                    className="px-4 py-1.5 rounded-full bg-[#0D0D0D] text-white text-xs font-semibold hover:bg-black transition-colors"
+                  />
+                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-[#0D0D0D] shadow-sm">
+                    {badge}
+                  </span>
+                  <button
+                    onClick={(e) => toggleFavorite(salon.name, e)}
+                    aria-label="Toggle favourite"
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors shadow-sm"
                   >
-                    Book
+                    <Heart className={`w-4 h-4 ${favorites[salon.name] ? "fill-red-500 text-red-500" : "text-gray-700"}`} />
                   </button>
                 </div>
+                <div className="pt-3.5 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={`/salon/${salon.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:underline flex-1 truncate"
+                    >
+                      <h3 className="font-bold text-base text-[#0D0D0D] truncate hover:text-[#E8220A] transition-colors">
+                        {salon.name}
+                      </h3>
+                    </Link>
+                    <div className="flex items-center gap-1 text-xs font-bold text-[#0D0D0D] ml-2 shrink-0">
+                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      <span>{salon.rating}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-[#5E5E5E] truncate">{salon.area}, {salon.district}</p>
+                  <div className="text-xs text-[#8A8A8E]">{serviceCat} • {salon.reviews_count} reviews</div>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs font-semibold text-[#0D0D0D]">From ৳{startingPrice}</span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openBookingFor(salon.name);
+                      }}
+                      className="px-4 py-1.5 rounded-full bg-[#0D0D0D] text-white text-xs font-semibold hover:bg-black transition-colors"
+                    >
+                      Book
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -489,97 +541,80 @@ export default function Home() {
         </div>
 
         <div ref={recommendedSliderRef} className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4">
-          {[
-            {
-              name: "LashXtend | Dear Skin",
-              rating: "4.8",
-              reviews: "98 reviews",
-              location: "Gulshan Avenue, Dhaka",
-              cat: "Eyebrows & Lashes",
-              price: "Classic Lash Set from ৳1,800",
-              img: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
-              badge: "Featured",
-            },
-            {
-              name: "Truefitt & Hill Heritage",
-              rating: "5.0",
-              reviews: "650 reviews",
-              location: "Road 11, Banani, Dhaka",
-              cat: "Barbershop & Spa",
-              price: "Royal Shave & Cut from ৳1,200",
-              img: "/assets/service-shave.jpg",
-              badge: "Top Rated",
-            },
-            {
-              name: "Mirpur Elite Cuts",
-              rating: "4.8",
-              reviews: "190 reviews",
-              location: "Mirpur-10 Roundabout, Dhaka",
-              cat: "Hair Salon",
-              price: "Modern Fade from ৳350",
-              img: "/assets/service-hair.jpg",
-              badge: "Verified",
-            },
-            {
-              name: "Sylhet Artisan Studio",
-              rating: "4.9",
-              reviews: "140 reviews",
-              location: "Zindabazar, Sylhet Hub",
-              cat: "Barbershop",
-              price: "Executive Trim from ৳400",
-              img: "/assets/service-style.jpg",
-              badge: "Popular",
-            },
-          ].map((venue) => (
-            <div
-              key={venue.name}
-              className="venue-card w-[290px] sm:w-[320px] shrink-0"
-              onClick={() => openBookingFor(venue.name)}
-            >
-              <div className="card-img-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={venue.img} alt={venue.name} />
-                <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-[#0D0D0D] shadow-sm">
-                  {venue.badge}
-                </span>
-                <button
-                  onClick={(e) => toggleFavorite(venue.name, e)}
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors shadow-sm"
-                >
-                  <svg
-                    className={`w-4 h-4 ${favorites[venue.name] ? "fill-red-500 text-red-500" : ""}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </button>
-              </div>
-              <div className="pt-3.5 space-y-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-base text-[#0D0D0D] truncate">{venue.name}</h3>
-                  <div className="flex items-center gap-1 text-xs font-bold text-[#0D0D0D]">
-                    <span className="text-amber-500">★</span> {venue.rating}
-                  </div>
-                </div>
-                <p className="text-xs text-[#5E5E5E] truncate">{venue.location}</p>
-                <div className="text-xs text-[#8A8A8E]">{venue.cat} • {venue.reviews}</div>
-                <div className="flex items-center justify-between pt-2">
-                  <span className="text-xs font-semibold text-[#0D0D0D]">{venue.price}</span>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openBookingFor(venue.name);
+          {recommendedSalons.map((salon, index) => {
+            const isBoosted = salon.is_boosted !== false && salon.is_featured;
+            const isHaven = salon.name.toLowerCase().includes("haven");
+            const coverPhoto =
+              salon.cover_photo_url && (salon.cover_photo_url !== "/assets/studio-haven.jpg" || isHaven)
+                ? salon.cover_photo_url
+                : getCanonicalSalonPhoto(salon.name, salon.slug, index + 3);
+            const badge = isBoosted ? "Top Rated" : salon.is_featured ? "Super Venue" : "Verified";
+            const serviceCat = salon.services?.[0]?.category || "Hair & Beauty";
+            const startingPrice = salon.starting_price || 400;
+
+            return (
+              <div
+                key={salon.id}
+                className="venue-card w-[290px] sm:w-[320px] shrink-0"
+                onClick={() => openBookingFor(salon.name)}
+              >
+                <div className="card-img-container">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={coverPhoto}
+                    alt={salon.name}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes("/assets/hero-barber.jpg")) {
+                        target.src = "/assets/hero-barber.jpg";
+                      }
                     }}
-                    className="px-4 py-1.5 rounded-full bg-[#0D0D0D] text-white text-xs font-semibold hover:bg-black transition-colors"
+                  />
+                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-[#0D0D0D] shadow-sm">
+                    {badge}
+                  </span>
+                  <button
+                    onClick={(e) => toggleFavorite(salon.name, e)}
+                    aria-label="Toggle favourite"
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors shadow-sm"
                   >
-                    Book
+                    <Heart className={`w-4 h-4 ${favorites[salon.name] ? "fill-red-500 text-red-500" : "text-gray-700"}`} />
                   </button>
                 </div>
+                <div className="pt-3.5 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={`/salon/${salon.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:underline flex-1 truncate"
+                    >
+                      <h3 className="font-bold text-base text-[#0D0D0D] truncate hover:text-[#E8220A] transition-colors">
+                        {salon.name}
+                      </h3>
+                    </Link>
+                    <div className="flex items-center gap-1 text-xs font-bold text-[#0D0D0D] ml-2 shrink-0">
+                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      <span>{salon.rating}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-[#5E5E5E] truncate">{salon.area}, {salon.district}</p>
+                  <div className="text-xs text-[#8A8A8E]">{serviceCat} • {salon.reviews_count} reviews</div>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs font-semibold text-[#0D0D0D]">From ৳{startingPrice}</span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openBookingFor(salon.name);
+                      }}
+                      className="px-4 py-1.5 rounded-full bg-[#0D0D0D] text-white text-xs font-semibold hover:bg-black transition-colors"
+                    >
+                      Book
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -601,84 +636,78 @@ export default function Home() {
         </div>
 
         <div ref={newSliderRef} className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4">
-          {[
-            {
-              name: "Sora Beauty & Aesthetics",
-              rating: "4.9",
-              reviews: "42 reviews",
-              location: "Gulshan-1 DOHS, Dhaka",
-              cat: "Medspa & Nails",
-              price: "Gel Manicure from ৳950",
-              img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-            },
-            {
-              name: "Urban Polish & Lash Bar",
-              rating: "4.8",
-              reviews: "29 reviews",
-              location: "Uttara Sector 7, Dhaka",
-              cat: "Nail Salon",
-              price: "Acrylic Full Set from ৳1,600",
-              img: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
-            },
-            {
-              name: "Zen Thai Spa & Wellness",
-              rating: "4.9",
-              reviews: "35 reviews",
-              location: "Dhanmondi Road 8, Dhaka",
-              cat: "Massage & Spa",
-              price: "60-Min Aromatherapy from ৳2,200",
-              img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
-            },
-          ].map((venue) => (
-            <div
-              key={venue.name}
-              className="venue-card w-[290px] sm:w-[320px] shrink-0"
-              onClick={() => openBookingFor(venue.name)}
-            >
-              <div className="card-img-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={venue.img} alt={venue.name} />
-                <span className="absolute top-3 left-3 bg-[#E8220A] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-sm">
-                  New
-                </span>
-                <button
-                  onClick={(e) => toggleFavorite(venue.name, e)}
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors shadow-sm"
-                >
-                  <svg
-                    className={`w-4 h-4 ${favorites[venue.name] ? "fill-red-500 text-red-500" : ""}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </button>
-              </div>
-              <div className="pt-3.5 space-y-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-base text-[#0D0D0D] truncate">{venue.name}</h3>
-                  <div className="flex items-center gap-1 text-xs font-bold text-[#0D0D0D]">
-                    <span className="text-amber-500">★</span> {venue.rating}
-                  </div>
-                </div>
-                <p className="text-xs text-[#5E5E5E] truncate">{venue.location}</p>
-                <div className="text-xs text-[#8A8A8E]">{venue.cat} • {venue.reviews}</div>
-                <div className="flex items-center justify-between pt-2">
-                  <span className="text-xs font-semibold text-[#0D0D0D]">{venue.price}</span>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openBookingFor(venue.name);
+          {newSalons.map((salon, index) => {
+            const isHaven = salon.name.toLowerCase().includes("haven");
+            const coverPhoto =
+              salon.cover_photo_url && (salon.cover_photo_url !== "/assets/studio-haven.jpg" || isHaven)
+                ? salon.cover_photo_url
+                : getCanonicalSalonPhoto(salon.name, salon.slug, index + 7);
+            const serviceCat = salon.services?.[0]?.category || "Grooming & Salon";
+            const startingPrice = salon.starting_price || 300;
+
+            return (
+              <div
+                key={salon.id}
+                className="venue-card w-[290px] sm:w-[320px] shrink-0"
+                onClick={() => openBookingFor(salon.name)}
+              >
+                <div className="card-img-container">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={coverPhoto}
+                    alt={salon.name}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes("/assets/hero-barber.jpg")) {
+                        target.src = "/assets/hero-barber.jpg";
+                      }
                     }}
-                    className="px-4 py-1.5 rounded-full bg-[#0D0D0D] text-white text-xs font-semibold hover:bg-black transition-colors"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#E8220A] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-sm">
+                    New
+                  </span>
+                  <button
+                    onClick={(e) => toggleFavorite(salon.name, e)}
+                    aria-label="Toggle favourite"
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors shadow-sm"
                   >
-                    Book
+                    <Heart className={`w-4 h-4 ${favorites[salon.name] ? "fill-red-500 text-red-500" : "text-gray-700"}`} />
                   </button>
                 </div>
+                <div className="pt-3.5 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={`/salon/${salon.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:underline flex-1 truncate"
+                    >
+                      <h3 className="font-bold text-base text-[#0D0D0D] truncate hover:text-[#E8220A] transition-colors">
+                        {salon.name}
+                      </h3>
+                    </Link>
+                    <div className="flex items-center gap-1 text-xs font-bold text-[#0D0D0D] ml-2 shrink-0">
+                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      <span>{salon.rating}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-[#5E5E5E] truncate">{salon.area}, {salon.district}</p>
+                  <div className="text-xs text-[#8A8A8E]">{serviceCat} • {salon.reviews_count} reviews</div>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs font-semibold text-[#0D0D0D]">From ৳{startingPrice}</span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openBookingFor(salon.name);
+                      }}
+                      className="px-4 py-1.5 rounded-full bg-[#0D0D0D] text-white text-xs font-semibold hover:bg-black transition-colors"
+                    >
+                      Book
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -720,7 +749,11 @@ export default function Home() {
           <div>
             <h2 className="text-2xl sm:text-[32px] font-bold text-[#0D0D0D] tracking-tight">Reviews</h2>
             <div className="flex items-center gap-2 mt-1">
-              <div className="flex text-amber-500 text-sm">★★★★★</div>
+              <div className="flex items-center gap-0.5 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
               <span className="text-sm font-semibold text-[#0D0D0D]">4.9 out of 5</span>
               <span className="text-sm text-gray-500">• Over 12,000+ verified customer reviews in Bangladesh</span>
             </div>
@@ -770,7 +803,11 @@ export default function Home() {
           ].map((rev) => (
             <div key={rev.author} className="review-card shrink-0">
               <div className="space-y-3">
-                <div className="flex text-amber-500 text-xs">★★★★★</div>
+                <div className="flex items-center gap-0.5 text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
                 <h3 className="font-bold text-base text-[#0D0D0D]">{rev.title}</h3>
                 <p className="text-sm text-[#5E5E5E] leading-relaxed">"{rev.text}"</p>
               </div>
@@ -806,7 +843,9 @@ export default function Home() {
               <p className="text-sm font-semibold text-[#5E5E5E]">appointments booked on Hair and Care bd</p>
             </div>
             <div className="space-y-1">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0D0D0D] tracking-tight">140+</div>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0D0D0D] tracking-tight">
+                {salons.length > 0 ? `${salons.length}+` : "59+"}
+              </div>
               <p className="text-sm font-semibold text-[#5E5E5E]">partner studios & salons</p>
             </div>
             <div className="space-y-1">
@@ -851,7 +890,11 @@ export default function Home() {
             </div>
 
             <div className="pt-4 flex items-center gap-4 text-xs text-[#5E5E5E]">
-              <div className="flex text-amber-500">★★★★★</div>
+              <div className="flex items-center gap-0.5 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
               <span>Trusted by top studios in Dhanmondi, Banani, Gulshan, and Sylhet</span>
             </div>
           </div>
@@ -860,7 +903,7 @@ export default function Home() {
             <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xl space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-gray-100">
                 <span className="text-sm font-bold text-[#0D0D0D]">Live Calendar & Chair Roster</span>
-                <span className="text-xs text-emerald-700 font-mono font-semibold">● 4 Chairs Active</span>
+                <span className="text-xs text-emerald-700 font-semibold">● 4 Chairs Active</span>
               </div>
               <div className="space-y-2.5">
                 <div className="p-3.5 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-between">
@@ -868,21 +911,21 @@ export default function Home() {
                     <span className="text-xs font-bold text-[#0D0D0D] block">Station #1 • Kabir Hossain</span>
                     <span className="text-[11px] text-gray-500">Executive Haircut • In Progress</span>
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#0D0D0D]">৳650</span>
+                  <span className="text-xs font-bold text-[#0D0D0D]">৳650</span>
                 </div>
                 <div className="p-3.5 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-[#0D0D0D] block">Station #2 • Jewel Ahmed</span>
                     <span className="text-[11px] text-gray-500">Beard Sculpt & Spa • Next at 11:30</span>
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#0D0D0D]">৳450</span>
+                  <span className="text-xs font-bold text-[#0D0D0D]">৳450</span>
                 </div>
                 <div className="p-3.5 bg-emerald-50/80 border border-emerald-100 rounded-xl flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-emerald-950 block">Advance Deposit Secured</span>
                     <span className="text-[11px] text-emerald-700">bKash Merchant Instant Settlement</span>
                   </div>
-                  <span className="text-xs font-mono font-bold text-emerald-800">৳50 Secured</span>
+                  <span className="text-xs font-bold text-emerald-800">৳50 Secured</span>
                 </div>
               </div>
             </div>
@@ -946,7 +989,7 @@ export default function Home() {
         onClose={() => setBookingModalOpen(false)}
         venueName={bookingVenue}
         onBookingSuccess={(token, venue, srv, slot) => {
-          showToast(`✓ Chair reserved! Token ${token} issued for ${venue}.`);
+          showToast(`Chair reserved! Token ${token} issued for ${venue}.`);
         }}
       />
 
@@ -962,7 +1005,7 @@ export default function Home() {
         onClose={() => setRegisterModalOpen(false)}
         onSuccess={() => {
           setRegisterModalOpen(false);
-          showToast("🎉 Studio application submitted for Super Admin review!");
+          showToast("Studio application submitted for Super Admin review!");
         }}
       />
 

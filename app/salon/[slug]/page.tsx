@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { Sparkles, Star, MapPin, Phone, ArrowLeft, Copy, Check } from "lucide-react";
 import { Salon, Service, Barber, Booking } from "@/types";
 import { platformStore, getCanonicalSalonPhoto } from "@/lib/store";
 
@@ -47,7 +48,7 @@ export default function SalonStorefrontPage() {
   const copyBioLink = () => {
     if (typeof window !== "undefined") {
       navigator.clipboard.writeText(window.location.href);
-      showToast("✓ Storefront Bio Link copied! Ready for Instagram/Facebook bio.");
+      showToast("Storefront Bio Link copied! Ready for Instagram/Facebook bio.");
     }
   };
 
@@ -85,12 +86,12 @@ export default function SalonStorefrontPage() {
 
     platformStore.createBooking(newBooking);
     setConfirmedBooking(newBooking);
-    showToast(`✓ Chair reserved! ৳50 deposit secured via ${depositMfs}. Token ID: ${tokenId}`);
+    showToast(`Chair reserved! ৳50 deposit secured via ${depositMfs}. Token ID: ${tokenId}`);
   };
 
   if (!salon) {
     return (
-      <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center text-xs font-mono text-gray-500">
+      <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center text-xs text-gray-500 font-sans">
         Loading salon storefront...
       </div>
     );
@@ -102,12 +103,13 @@ export default function SalonStorefrontPage() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2 text-xs font-medium text-gray-600 hover:text-black transition-colors">
-            <span>←</span>
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>Hair and Care <strong className="text-[#E8220A] font-bold">bd</strong></span>
           </Link>
           <div className="hidden sm:block h-4 w-[1px] bg-gray-200"></div>
-          <span className="text-xs uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-            ⭐ Verified Studio Storefront
+          <span className="text-xs uppercase font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            <span>Verified Studio Storefront</span>
           </span>
         </div>
 
@@ -116,6 +118,7 @@ export default function SalonStorefrontPage() {
             onClick={copyBioLink}
             className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-xs font-semibold text-gray-800 transition-all shadow-sm"
           >
+            <Copy className="w-3.5 h-3.5" />
             <span>Copy Bio Link</span>
           </button>
 
@@ -123,7 +126,8 @@ export default function SalonStorefrontPage() {
             href={`tel:${salon.phone.replace(/[^0-9+]/g, "")}`}
             className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gray-200 hover:bg-gray-50 text-xs text-gray-700 transition-colors"
           >
-            <span>📞 {salon.phone}</span>
+            <Phone className="w-3.5 h-3.5 text-gray-500" />
+            <span>{salon.phone}</span>
           </a>
 
           <a
@@ -139,18 +143,22 @@ export default function SalonStorefrontPage() {
       <header className="relative border-b border-gray-200 bg-white overflow-hidden py-14 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl">
-            <div className="flex items-center space-x-2 text-xs font-mono text-amber-600">
-              <span>★ {salon.rating} Rated Studio</span>
+            <div className="flex items-center space-x-2 text-xs font-semibold text-amber-600">
+              <span className="flex items-center gap-1">
+                <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                <span>{salon.rating} Rated Studio</span>
+              </span>
               <span>•</span>
               <span className="text-gray-500">{salon.reviews_count} Verified Cuts</span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-[#0D0D0D] tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0D0D0D] tracking-tight leading-tight">
               {salon.name}
             </h1>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              📍 {salon.address} ({salon.area}, {salon.district}) • Master Grooming, Precision Fades & Classic Hot-Towel Shaves.
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-gray-500 shrink-0" />
+              <span>{salon.address} ({salon.area}, {salon.district}) • Master Grooming, Precision Fades & Classic Hot-Towel Shaves.</span>
             </p>
-            <div className="pt-2 flex items-center gap-3 text-xs font-mono">
+            <div className="pt-2 flex items-center gap-3 text-xs font-medium">
               <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
                 Open Daily BST {salon.opening_time} – {salon.closing_time}
               </span>
@@ -184,7 +192,7 @@ export default function SalonStorefrontPage() {
               <h2 className="text-xl font-bold text-[#0D0D0D] tracking-tight">Services & Transparent Rate Card</h2>
               <p className="text-xs text-gray-500 mt-0.5">Fixed prices, master hygiene standards, and zero hidden charges.</p>
             </div>
-            <span className="text-xs font-mono text-gray-500">{salon.services.length} Services Offered</span>
+            <span className="text-xs font-semibold text-gray-500">{salon.services.length} Services Offered</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -195,10 +203,10 @@ export default function SalonStorefrontPage() {
               >
                 <div>
                   <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="font-mono text-[10px] uppercase font-bold text-[#E8220A] px-2 py-0.5 rounded-full bg-red-50 border border-red-100">
+                    <span className="text-[10px] uppercase font-bold text-[#E8220A] px-2 py-0.5 rounded-full bg-red-50 border border-red-100">
                       {srv.category}
                     </span>
-                    <span className="font-mono text-gray-500">{srv.duration_minutes} mins</span>
+                    <span className="text-xs text-gray-500 font-medium">{srv.duration_minutes} mins</span>
                   </div>
                   <h3 className="text-base font-bold text-[#0D0D0D] mt-2">{srv.name}</h3>
                   <p className="text-xs text-gray-500 mt-1 leading-relaxed">
@@ -207,7 +215,7 @@ export default function SalonStorefrontPage() {
                 </div>
 
                 <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-                  <div className="text-base font-bold text-gray-900 font-mono">৳ {srv.price_bdt}</div>
+                  <div className="text-base font-bold text-gray-900">৳ {srv.price_bdt}</div>
                   <button
                     onClick={() => {
                       setSelectedService(srv);
@@ -240,8 +248,8 @@ export default function SalonStorefrontPage() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#0D0D0D]">{b.name}</h4>
-                  <div className="text-[11px] text-amber-700 font-mono mt-0.5">{b.title}</div>
-                  <div className="text-[10px] text-gray-500 font-mono mt-1">Station: Chair #{b.chair} • {b.exp}</div>
+                  <div className="text-[11px] text-amber-700 font-medium mt-0.5">{b.title}</div>
+                  <div className="text-[10px] text-gray-500 mt-1 font-medium">Station: Chair #{b.chair} • {b.exp}</div>
                 </div>
               </div>
             ))}
@@ -251,7 +259,7 @@ export default function SalonStorefrontPage() {
         {/* Dedicated Storefront Booking Terminal */}
         <section id="storefront-booking" className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm space-y-6">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-[#E8220A] tracking-wider">
+            <span className="text-[10px] uppercase font-bold text-[#E8220A] tracking-wider">
               Direct Instant Web Booking
             </span>
             <h2 className="text-2xl font-bold text-[#0D0D0D] mt-1">Reserve A Chair at {salon.name}</h2>
@@ -303,7 +311,7 @@ export default function SalonStorefrontPage() {
                 <select
                   value={selectedSlot}
                   onChange={(e) => setSelectedSlot(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 font-mono focus:outline-none focus:border-[#E8220A]"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 focus:outline-none focus:border-[#E8220A]"
                 >
                   {["10:00 AM", "11:00 AM", "12:00 PM", "02:30 PM", "03:30 PM", "05:00 PM", "06:30 PM", "08:00 PM", "09:00 PM"].map((t) => (
                     <option key={t} value={t}>{t}</option>
@@ -333,7 +341,7 @@ export default function SalonStorefrontPage() {
                   value={clientPhone}
                   onChange={(e) => setClientPhone(e.target.value)}
                   placeholder="01712-445566"
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-gray-900 font-mono focus:outline-none focus:border-[#E8220A]"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-gray-900 focus:outline-none focus:border-[#E8220A]"
                 />
               </div>
             </div>
@@ -341,7 +349,7 @@ export default function SalonStorefrontPage() {
             {/* Advance Deposit Section */}
             <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] uppercase font-mono font-bold text-amber-800">Advance Chair Deposit</span>
+                <span className="text-[10px] uppercase font-bold text-amber-800">Advance Chair Deposit</span>
                 <div className="text-gray-900 font-bold text-sm">৳ 50 Advance via bKash or Nagad</div>
                 <div className="flex gap-4 mt-1.5">
                   <label className="flex items-center gap-1.5 cursor-pointer text-gray-700 font-medium">
@@ -366,21 +374,21 @@ export default function SalonStorefrontPage() {
 
           {/* Confirmed Slip */}
           {confirmedBooking && (
-            <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs font-mono space-y-3">
+            <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs space-y-3">
               <div className="flex justify-between items-center border-b border-emerald-200/60 pb-2">
-                <span className="text-gray-600">Token ID:</span>
-                <strong className="text-emerald-800 text-sm">{confirmedBooking.id}</strong>
+                <span className="text-gray-600 font-medium">Token ID:</span>
+                <strong className="text-emerald-800 text-sm font-bold">{confirmedBooking.id}</strong>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Customer:</span>
+                <span className="text-gray-600 font-medium">Customer:</span>
                 <span className="text-gray-900 font-bold">{confirmedBooking.customer_name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Time:</span>
+                <span className="text-gray-600 font-medium">Time:</span>
                 <span className="text-amber-800 font-semibold">{confirmedBooking.time_slot} ({confirmedBooking.booking_date})</span>
               </div>
               <div className="flex justify-between border-t border-emerald-200/60 pt-2">
-                <span className="text-gray-600">Due at Salon:</span>
+                <span className="text-gray-600 font-medium">Due at Salon:</span>
                 <span className="text-gray-900 font-bold">৳ {confirmedBooking.due_at_salon}</span>
               </div>
             </div>

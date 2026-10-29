@@ -89,6 +89,942 @@
       "closing_time": "22:00",
       "submitted_at": "2026-10-20 14:00 BST",
       "notes": "Approved flagship partner."
+    },
+    {
+      "id": 201,
+      "salon_name": "The Jawed Habib Salon Gulshan-2",
+      "owner_name": "Management (The Jawed Habib Salo)",
+      "owner_phone": "01908-888444",
+      "owner_email": "partner.sln-dhk-01@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Eva Rose, Rd 44, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100001/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-01.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 426 reviews). Flagship verified partner."
+    },
+    {
+      "id": 202,
+      "salon_name": "Adonis Mens Grooming Salon | Best Salon in Gulshan, Dhaka",
+      "owner_name": "Management (Adonis Mens Grooming)",
+      "owner_phone": "01919-700800",
+      "owner_email": "partner.sln-dhk-02@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Holding - 99, Rupayan Golden Age, Road - 37 Gulshan Ave, Dhaka 1212",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100002/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-02.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.2★ with 331 reviews). Flagship verified partner."
+    },
+    {
+      "id": 203,
+      "salon_name": "Persona Adams, Gulshan Branch (পুরুষদের সেলুন)",
+      "owner_name": "Management (Persona Adams, Gulsh)",
+      "owner_phone": "01847-067939",
+      "owner_email": "partner.sln-dhk-03@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Shariatullah Bhaban, 121/C Gulshan Ave, Dhaka 1212",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100003/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-03.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.1★ with 775 reviews). Flagship verified partner."
+    },
+    {
+      "id": 204,
+      "salon_name": "Femina Flaunt By Sabina",
+      "owner_name": "Management (Femina Flaunt By Sab)",
+      "owner_phone": "01773-302183",
+      "owner_email": "partner.sln-dhk-04@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House-7/A, Basic builders, 3rd floor, Rd 45",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100004/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-04.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (5.0★ with 44 reviews). Flagship verified partner."
+    },
+    {
+      "id": 205,
+      "salon_name": "Glam By Asmita Signature Branch",
+      "owner_name": "Management (Glam By Asmita Signa)",
+      "owner_phone": "01610-698253",
+      "owner_email": "partner.sln-dhk-05@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "House: 52 Road- 18 A, Block-J, Banani Gulshan, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100005/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-05.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.4★ with 399 reviews). Flagship verified partner."
+    },
+    {
+      "id": 206,
+      "salon_name": "Menz Crown Premium Salon (Gulshan-2)",
+      "owner_name": "Management (Menz Crown Premium S)",
+      "owner_phone": "01799-335511",
+      "owner_email": "partner.sln-dhk-06@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Ground Floor, Rupayan Golden Age, 99 Gulshan Ave, Dhaka 1212",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100006/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-06.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 398 reviews). Flagship verified partner."
+    },
+    {
+      "id": 207,
+      "salon_name": "Persona Gulshan 1",
+      "owner_name": "Management (Persona Gulshan 1)",
+      "owner_phone": "01847-067919",
+      "owner_email": "partner.sln-dhk-07@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "1st Floor, S.A. Tower, Gulshan Badda Link Rd, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100007/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-07.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.2★ with 583 reviews). Flagship verified partner."
+    },
+    {
+      "id": 208,
+      "salon_name": "Menz Crown Premium Salon (Gulshan-1)",
+      "owner_name": "Management (Menz Crown Premium S)",
+      "owner_phone": "01301-102060",
+      "owner_email": "partner.sln-dhk-08@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "House # 7 Ground Floor, Rd 137, Dhaka 1212",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100008/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-08.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.5★ with 76 reviews). Flagship verified partner."
+    },
+    {
+      "id": 209,
+      "salon_name": "Signature Look By Samia",
+      "owner_name": "Management (Signature Look By Sa)",
+      "owner_phone": "01328-227587",
+      "owner_email": "partner.sln-dhk-09@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "80 Gulshan avenue,Gulshan 1.,lift5 (beside Renaissance hotel), 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100009/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-09.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.5★ with 146 reviews). Flagship verified partner."
+    },
+    {
+      "id": 210,
+      "salon_name": "HairBar Gulshan",
+      "owner_name": "Management (HairBar Gulshan)",
+      "owner_phone": "01877-423972",
+      "owner_email": "partner.sln-dhk-10@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "House 12, Road No. 68, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100010/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-10.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.0★ with 234 reviews). Flagship verified partner."
+    },
+    {
+      "id": 211,
+      "salon_name": "Rejuvenate",
+      "owner_name": "Management (Rejuvenate)",
+      "owner_phone": "01406-699612",
+      "owner_email": "partner.sln-dhk-11@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Basement 1 (same floor, as Unimart, Gulshan Centre Point, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100011/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-11.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.0★ with 74 reviews). Flagship verified partner."
+    },
+    {
+      "id": 212,
+      "salon_name": "Elegant Makeover and Fashion",
+      "owner_name": "Management (Elegant Makeover and)",
+      "owner_phone": "01764-049039",
+      "owner_email": "partner.sln-dhk-12@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House: 50, Road: 15, Block: D, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100012/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-12.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.4★ with 150 reviews). Flagship verified partner."
+    },
+    {
+      "id": 213,
+      "salon_name": "Privé by Nahila Hedayet",
+      "owner_name": "Management (Privé by Nahila Heda)",
+      "owner_phone": "01926-649646",
+      "owner_email": "partner.sln-dhk-13@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House 23B Rd 102, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100013/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-13.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 360 reviews). Flagship verified partner."
+    },
+    {
+      "id": 214,
+      "salon_name": "GENT'S CARE: PREMIUM SALON",
+      "owner_name": "Management (GENT'S CARE: PREMIUM)",
+      "owner_phone": "01723-886611",
+      "owner_email": "partner.sln-dhk-14@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House- 6/A, Level, YN Center, 4 Rd 113, Dhaka 1212",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100014/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-14.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 734 reviews). Flagship verified partner."
+    },
+    {
+      "id": 215,
+      "salon_name": "Total Care Salon Bangladesh",
+      "owner_name": "Management (Total Care Salon Ban)",
+      "owner_phone": "01619-861581",
+      "owner_email": "partner.sln-dhk-15@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Block k, House # 16, Rd 28, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100015/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-15.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.4★ with 82 reviews). Flagship verified partner."
+    },
+    {
+      "id": 216,
+      "salon_name": "Studio Salon Gulshan-2",
+      "owner_name": "Management (Studio Salon Gulshan)",
+      "owner_phone": "01711-900092",
+      "owner_email": "partner.sln-dhk-16@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "House 9/D, Road 71, (2nd floor, Dhaka 1212",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100016/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-16.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.4★ with 23 reviews). Flagship verified partner."
+    },
+    {
+      "id": 217,
+      "salon_name": "Farzana Shakil's Makeover Salon Ltd. Gulshan Branch",
+      "owner_name": "Management (Farzana Shakil's Mak)",
+      "owner_phone": "01952-200058",
+      "owner_email": "partner.sln-dhk-17@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Level-2, ​SAM TOWER, House #4 Rd 22, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100017/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-17.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.1★ with 74 reviews). Flagship verified partner."
+    },
+    {
+      "id": 218,
+      "salon_name": "Eve Salon Gulshan 2",
+      "owner_name": "Management (Eve Salon Gulshan 2)",
+      "owner_phone": "+880 1700-000000",
+      "owner_email": "partner.sln-dhk-18@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "Concord L R Villa, house: 9 Rd 113, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100018/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-18.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.6★ with 23 reviews). Flagship verified partner."
+    },
+    {
+      "id": 219,
+      "salon_name": "Flawless Femina Aesthetic Centre",
+      "owner_name": "Management (Flawless Femina Aest)",
+      "owner_phone": "01342-621727",
+      "owner_email": "partner.sln-dhk-19@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "full_address": "2nd floor (Lift 2, RM Center, 101 Gulshan Ave, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100019/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-19.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.7★ with 117 reviews). Flagship verified partner."
+    },
+    {
+      "id": 220,
+      "salon_name": "Tisha's Beauty Hub TBH",
+      "owner_name": "Management (Tisha's Beauty Hub T)",
+      "owner_phone": "01686-902284",
+      "owner_email": "partner.sln-dhk-20@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "QCR5+4FQ, House 118,Road 11, Lift7, Banani 11, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100020/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-20.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.7★ with 231 reviews). Flagship verified partner."
+    },
+    {
+      "id": 221,
+      "salon_name": "Wellness By Moon Flagship Banani",
+      "owner_name": "Management (Wellness By Moon Fla)",
+      "owner_phone": "01316-318895",
+      "owner_email": "partner.sln-dhk-21@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "E Block, House 55 Rd No 13, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100021/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-21.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.5★ with 58 reviews). Flagship verified partner."
+    },
+    {
+      "id": 222,
+      "salon_name": "Persona Banani 11",
+      "owner_name": "Management (Persona Banani 11)",
+      "owner_phone": "01847-067969",
+      "owner_email": "partner.sln-dhk-22@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "Khawaja Palace, 76/B Rd No. 11, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100022/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-22.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.1★ with 489 reviews). Flagship verified partner."
+    },
+    {
+      "id": 223,
+      "salon_name": "Swing Salon Banani",
+      "owner_name": "Management (Swing Salon Banani)",
+      "owner_phone": "01949-998805",
+      "owner_email": "partner.sln-dhk-23@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "House-26, Rd No. 7, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100023/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-23.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 103 reviews). Flagship verified partner."
+    },
+    {
+      "id": 224,
+      "salon_name": "Divine Beauty Lounge",
+      "owner_name": "Management (Divine Beauty Lounge)",
+      "owner_phone": "01799-070096",
+      "owner_email": "partner.sln-dhk-24@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Block B, 70B Rd 21, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100024/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-24.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.5★ with 43 reviews). Flagship verified partner."
+    },
+    {
+      "id": 225,
+      "salon_name": "London Salon Banani",
+      "owner_name": "Management (London Salon Banani)",
+      "owner_phone": "01627-894007",
+      "owner_email": "partner.sln-dhk-25@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "Kacha Bazar, Shefali Vila, Road No: 17, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100025/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-25.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (5.0★ with 65 reviews). Flagship verified partner."
+    },
+    {
+      "id": 226,
+      "salon_name": "RED Beauty Studio & Salon ( Banani )",
+      "owner_name": "Management (RED Beauty Studio & )",
+      "owner_phone": "01327-414717",
+      "owner_email": "partner.sln-dhk-26@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "House 11, Block-G, Floor-8, Concord Modhumoti Plaza, Banani 11, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100026/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-26.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 416 reviews). Flagship verified partner."
+    },
+    {
+      "id": 227,
+      "salon_name": "Sajai Parlour",
+      "owner_name": "Management (Sajai Parlour)",
+      "owner_phone": "01945-039814",
+      "owner_email": "partner.sln-dhk-27@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House 146, Road 13/B, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100027/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-27.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.4★ with 38 reviews). Flagship verified partner."
+    },
+    {
+      "id": 228,
+      "salon_name": "Lia's Beauty Box - Banani",
+      "owner_name": "Management (Lia's Beauty Box - B)",
+      "owner_phone": "01317-808880",
+      "owner_email": "partner.sln-dhk-28@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "Same building as Mother’s Care, House 54 Road No. 11, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100028/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-28.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 100 reviews). Flagship verified partner."
+    },
+    {
+      "id": 229,
+      "salon_name": "Rosé Studio Salon",
+      "owner_name": "Management (Rosé Studio Salon)",
+      "owner_phone": "+880 1700-000000",
+      "owner_email": "partner.sln-dhk-29@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Block k, Ground Floor, House 10 Rd No.28, Dhaka",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100029/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-29.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.5★ with 60 reviews). Flagship verified partner."
+    },
+    {
+      "id": 230,
+      "salon_name": "The Runway by Prithon",
+      "owner_name": "Management (The Runway by Pritho)",
+      "owner_phone": "01327-414102",
+      "owner_email": "partner.sln-dhk-30@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Block F, House 62 Paramount, Rd No-9, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100030/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-30.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.6★ with 65 reviews). Flagship verified partner."
+    },
+    {
+      "id": 231,
+      "salon_name": "Celene Spa & Salon",
+      "owner_name": "Management (Celene Spa & Salon)",
+      "owner_phone": "01878-111111",
+      "owner_email": "partner.sln-dhk-31@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Suite 4C, Road 1, Block F, Tri Space Ophelia, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100031/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-31.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.4★ with 45 reviews). Flagship verified partner."
+    },
+    {
+      "id": 232,
+      "salon_name": "Korean Spa Shop",
+      "owner_name": "Management (Korean Spa Shop)",
+      "owner_phone": "01710-164569",
+      "owner_email": "partner.sln-dhk-32@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Level 12, ANZ Huq Eleven Square, Road No. 11, Dhaka 1213",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100032/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-32.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.6★ with 58 reviews). Flagship verified partner."
+    },
+    {
+      "id": 233,
+      "salon_name": "Heaven Salon Banani",
+      "owner_name": "Management (Heaven Salon Banani)",
+      "owner_phone": "01794-507488",
+      "owner_email": "partner.sln-dhk-33@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "House #77 Rd 12, Dhaka 1217",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100033/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-33.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.0★ with 172 reviews). Flagship verified partner."
+    },
+    {
+      "id": 234,
+      "salon_name": "Luxe Medispa & Salon",
+      "owner_name": "Management (Luxe Medispa & Salon)",
+      "owner_phone": "01884-000361",
+      "owner_email": "partner.sln-dhk-34@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Banani",
+      "full_address": "House 57 Road No. 11, banani 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100034/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-34.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.3★ with 46 reviews). Flagship verified partner."
+    },
+    {
+      "id": 235,
+      "salon_name": "Confia",
+      "owner_name": "Management (Confia)",
+      "owner_phone": "01816-727272",
+      "owner_email": "partner.sln-dhk-35@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Block H, House 27 Road 12A, Dhaka 1212",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100035/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-35.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.9★ with 9 reviews). Flagship verified partner."
+    },
+    {
+      "id": 236,
+      "salon_name": "House of Elegance",
+      "owner_name": "Management (House of Elegance)",
+      "owner_phone": "01973-473881",
+      "owner_email": "partner.sln-dhk-36@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House: 50, Road: 15, Block: D, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100036/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-36.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.9★ with 68 reviews). Flagship verified partner."
+    },
+    {
+      "id": 237,
+      "salon_name": "Persona Adams (Mens) , Dhanmondi (old 27) (পুরুষদের সেলুন)",
+      "owner_name": "Management (Persona Adams (Mens))",
+      "owner_phone": "01847-067929",
+      "owner_email": "partner.sln-dhk-37@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "House 37, Top floor of The City Bank Limited Building, Suvastu Zemin Plaza, Road 27, Dhaka 1209",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100037/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-37.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.1★ with 1557 reviews). Flagship verified partner."
+    },
+    {
+      "id": 238,
+      "salon_name": "Menz Crown Premium Salon (Dhanmondi)",
+      "owner_name": "Management (Menz Crown Premium S)",
+      "owner_phone": "01746-336455",
+      "owner_email": "partner.sln-dhk-38@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "House 39A 4th Floor, Rd No. 8, Dhaka 1209",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100038/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-38.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.6★ with 224 reviews). Flagship verified partner."
+    },
+    {
+      "id": 239,
+      "salon_name": "FACE WASH",
+      "owner_name": "Management (FACE WASH)",
+      "owner_phone": "01612-530000",
+      "owner_email": "partner.sln-dhk-39@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Momtaz Plaza (Ground Floor), House#7, Road#4 Opposite of Labaid Hospital Dhaka, 1205",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100039/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-39.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.2★ with 520 reviews). Flagship verified partner."
+    },
+    {
+      "id": 240,
+      "salon_name": "Men's Look",
+      "owner_name": "Management (Men's Look)",
+      "owner_phone": "01716-583723",
+      "owner_email": "partner.sln-dhk-40@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Satmasjid Road, Dhaka 1209",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100040/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-40.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.0★ with 398 reviews). Flagship verified partner."
+    },
+    {
+      "id": 241,
+      "salon_name": "Londons Cut ( Aesthetic Salon )",
+      "owner_name": "Management (Londons Cut ( Aesthe)",
+      "owner_phone": "01762-129387",
+      "owner_email": "partner.sln-dhk-41@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Dhaka 1205",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100041/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-41.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.1★ with 25 reviews). Flagship verified partner."
+    },
+    {
+      "id": 242,
+      "salon_name": "Cut N Cool Salon",
+      "owner_name": "Management (Cut N Cool Salon)",
+      "owner_phone": "01304-717173",
+      "owner_email": "partner.sln-dhk-42@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "33 Rd No 4, Dhaka 1205",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100042/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-42.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.2★ with 361 reviews). Flagship verified partner."
+    },
+    {
+      "id": 243,
+      "salon_name": "Adonis Makeover Saloon",
+      "owner_name": "Management (Adonis Makeover Salo)",
+      "owner_phone": "01711-312728",
+      "owner_email": "partner.sln-dhk-43@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Inside Sima Blossom Building House No. 3, Level : 4, Lift : 4 Road No. 27, R/A, Dhaka 1209",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100043/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-43.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.2★ with 417 reviews). Flagship verified partner."
+    },
+    {
+      "id": 244,
+      "salon_name": "GENT'S CARE: PREMIUM SALON DHANMONDI",
+      "owner_name": "Management (GENT'S CARE: PREMIUM)",
+      "owner_phone": "01328-554433",
+      "owner_email": "partner.sln-dhk-44@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "House- 35, Level- 5, Road -16 Road No. 16, Dhaka 1209",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100044/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-44.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.9★ with 53 reviews). Flagship verified partner."
+    },
+    {
+      "id": 245,
+      "salon_name": "New Look Men's Saloon",
+      "owner_name": "Management (New Look Men's Saloo)",
+      "owner_phone": "01922-387471",
+      "owner_email": "partner.sln-dhk-45@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "Metro Shopping Mall, Dhanmondi Lake Rd, Dhaka 1205",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100045/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-45.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.5★ with 10 reviews). Flagship verified partner."
+    },
+    {
+      "id": 246,
+      "salon_name": "Blade Men's Makeover Lounge",
+      "owner_name": "Management (Blade Men's Makeover)",
+      "owner_phone": "01312-031133",
+      "owner_email": "partner.sln-dhk-46@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "Navana Mashira (Ground Floor House #275K, Road#16( New 27(Old), Dhanmondi,Dhaka-1209, 1209",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100046/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-46.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (3.5★ with 48 reviews). Flagship verified partner."
+    },
+    {
+      "id": 247,
+      "salon_name": "HEADSHOT Lifestyle Saloon Dhanmondi Premium",
+      "owner_name": "Management (HEADSHOT Lifestyle S)",
+      "owner_phone": "01605-127254",
+      "owner_email": "partner.sln-dhk-47@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "Jigatala Bus Stand, ANZ Square, Satmasjid Road, Dhaka 1205, Dhaka 1213",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100047/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-47.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.2★ with 37 reviews). Flagship verified partner."
+    },
+    {
+      "id": 248,
+      "salon_name": "Men's Parlor",
+      "owner_name": "Management (Men's Parlor)",
+      "owner_phone": "+880 1700-000000",
+      "owner_email": "partner.sln-dhk-48@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "365 Satmasjid Road, Dhaka 1205",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100048/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-48.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (3.7★ with 74 reviews). Flagship verified partner."
+    },
+    {
+      "id": 249,
+      "salon_name": "Akter Ali Hair Studio",
+      "owner_name": "Management (Akter Ali Hair Studi)",
+      "owner_phone": "01766-338401",
+      "owner_email": "partner.sln-dhk-49@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "Eastern Elite Centre, 2/2, 9/A Satmasjid Road, Dhaka",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100049/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-49.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.0★ with 368 reviews). Flagship verified partner."
+    },
+    {
+      "id": 250,
+      "salon_name": "Salon D-5",
+      "owner_name": "Management (Salon D-5)",
+      "owner_phone": "01759-292157",
+      "owner_email": "partner.sln-dhk-50@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "full_address": "Meher Plaza, Road-5, Dhanmondi, Mirpur Road, Dhaka 1205",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100050/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-50.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (3.9★ with 15 reviews). Flagship verified partner."
+    },
+    {
+      "id": 251,
+      "salon_name": "BEST HAIRCUT SALOON & KIDS CORNER",
+      "owner_name": "Management (BEST HAIRCUT SALOON )",
+      "owner_phone": "01710-702793",
+      "owner_email": "partner.sln-dhk-51@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House No. C7, Block F Zakir Hussain Rd, Dhaka 1205",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100051/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-51.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (4.1★ with 215 reviews). Flagship verified partner."
+    },
+    {
+      "id": 252,
+      "salon_name": "Executive Professional Cuts & spa",
+      "owner_name": "Management (Executive Profession)",
+      "owner_phone": "01850-030788",
+      "owner_email": "partner.sln-dhk-52@selon.com.bd",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "full_address": "House # 36 Road No. 16, Dhaka 1209",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100052/2024",
+      "status": "approved",
+      "cover_photo_url": "/assets/salons/sln-dhk-52.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "submitted_at": "2026-10-28 12:00 BST",
+      "notes": "Verified Google Maps listing (3.5★ with 6 reviews). Flagship verified partner."
     }
   ],
   "salons": [
@@ -117,14 +1053,62 @@
       "reviews_count": 340,
       "starting_price": 350,
       "services": [
-        { "id": 1, "name": "Executive Haircut", "duration_minutes": 35, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Precision scissor cut with refreshing wash and blow-dry style." },
-        { "id": 2, "name": "Beard Art & Sculpt", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Razor edge lining, volume trimming, and organic argan oil finish." },
-        { "id": 3, "name": "Hot Towel Shave", "duration_minutes": 30, "price_bdt": 300, "category": "Shave", "is_active": true, "description": "Double steam hot towel compress with luxury cedarwood lather." },
-        { "id": 4, "name": "Charcoal Deep Facial", "duration_minutes": 45, "price_bdt": 750, "category": "Facial", "is_active": true, "description": "Deep pore extraction, organic clay mask, and hydrating ice mist." }
+        {
+          "id": 1,
+          "name": "Executive Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 350,
+          "category": "Haircut",
+          "is_active": true,
+          "description": "Precision scissor cut with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Art & Sculpt",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "category": "Beard",
+          "is_active": true,
+          "description": "Razor edge lining, volume trimming, and organic argan oil finish."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Shave",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "category": "Shave",
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial",
+          "duration_minutes": 45,
+          "price_bdt": 750,
+          "category": "Facial",
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and hydrating ice mist."
+        }
       ],
       "barbers": [
-        { "id": 1, "name": "Kabir Hossain", "title": "Founder & Master Barber", "chair": 1, "exp": "14 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true },
-        { "id": 2, "name": "Jewel Ahmed", "title": "Senior Fade Stylist", "chair": 2, "exp": "8 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true }
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Founder & Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Jewel Ahmed",
+          "title": "Senior Fade Stylist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
       ]
     },
     {
@@ -152,13 +1136,53 @@
       "reviews_count": 520,
       "starting_price": 400,
       "services": [
-        { "id": 11, "name": "Barbarian Skin Taper", "duration_minutes": 40, "price_bdt": 600, "category": "Haircut", "is_active": true, "description": "Signature skin fade with razor edging and matte styling clay." },
-        { "id": 12, "name": "Traditional Straight-Razor Shave", "duration_minutes": 30, "price_bdt": 400, "category": "Beard", "is_active": true, "description": "Double hot towel steam and classic badger brush lather." },
-        { "id": 13, "name": "Scalp Spa & Hot Oil Massage", "duration_minutes": 35, "price_bdt": 500, "category": "Spa", "is_active": true, "description": "Nourishing coconut and rosemary oil blend with acupressure massage." }
+        {
+          "id": 11,
+          "name": "Barbarian Skin Taper",
+          "duration_minutes": 40,
+          "price_bdt": 600,
+          "category": "Haircut",
+          "is_active": true,
+          "description": "Signature skin fade with razor edging and matte styling clay."
+        },
+        {
+          "id": 12,
+          "name": "Traditional Straight-Razor Shave",
+          "duration_minutes": 30,
+          "price_bdt": 400,
+          "category": "Beard",
+          "is_active": true,
+          "description": "Double hot towel steam and classic badger brush lather."
+        },
+        {
+          "id": 13,
+          "name": "Scalp Spa & Hot Oil Massage",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "category": "Spa",
+          "is_active": true,
+          "description": "Nourishing coconut and rosemary oil blend with acupressure massage."
+        }
       ],
       "barbers": [
-        { "id": 10, "name": "James Kingston", "title": "Master Barber", "chair": 1, "exp": "20 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true },
-        { "id": 11, "name": "Marcus Webb", "title": "Senior Stylist", "chair": 2, "exp": "12 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true }
+        {
+          "id": 10,
+          "name": "James Kingston",
+          "title": "Master Barber",
+          "chair": 1,
+          "exp": "20 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 11,
+          "name": "Marcus Webb",
+          "title": "Senior Stylist",
+          "chair": 2,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
       ]
     },
     {
@@ -186,16 +1210,80 @@
       "reviews_count": 420,
       "starting_price": 500,
       "services": [
-        { "id": 21, "name": "Signature Scissor Fade", "duration_minutes": 35, "price_bdt": 500, "category": "Haircut", "is_active": true, "description": "Precision scissor taper, foil razor finish, and hot-towel neck shave." },
-        { "id": 22, "name": "English Hot-Towel Beard Sculpt", "duration_minutes": 30, "price_bdt": 350, "category": "Beard", "is_active": true, "description": "Sandalwood pre-shave oil, straight razor contouring, and cold compress." },
-        { "id": 23, "name": "Deep Charcoal Detox Facial", "duration_minutes": 45, "price_bdt": 800, "category": "Facial", "is_active": true, "description": "Blackhead extraction, charcoal clay mask, and tea tree soothing serum." },
-        { "id": 24, "name": "Executive Crown Combo (Cut + Beard)", "duration_minutes": 60, "price_bdt": 850, "category": "VIP", "is_active": true, "description": "Complete haircut, beard detailing, eyebrow shaping, and scalp massage." }
+        {
+          "id": 21,
+          "name": "Signature Scissor Fade",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "category": "Haircut",
+          "is_active": true,
+          "description": "Precision scissor taper, foil razor finish, and hot-towel neck shave."
+        },
+        {
+          "id": 22,
+          "name": "English Hot-Towel Beard Sculpt",
+          "duration_minutes": 30,
+          "price_bdt": 350,
+          "category": "Beard",
+          "is_active": true,
+          "description": "Sandalwood pre-shave oil, straight razor contouring, and cold compress."
+        },
+        {
+          "id": 23,
+          "name": "Deep Charcoal Detox Facial",
+          "duration_minutes": 45,
+          "price_bdt": 800,
+          "category": "Facial",
+          "is_active": true,
+          "description": "Blackhead extraction, charcoal clay mask, and tea tree soothing serum."
+        },
+        {
+          "id": 24,
+          "name": "Executive Crown Combo (Cut + Beard)",
+          "duration_minutes": 60,
+          "price_bdt": 850,
+          "category": "VIP",
+          "is_active": true,
+          "description": "Complete haircut, beard detailing, eyebrow shaping, and scalp massage."
+        }
       ],
       "barbers": [
-        { "id": 20, "name": "Kabir Hossain", "title": "Founder & Master Barber", "chair": 1, "exp": "14 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true },
-        { "id": 21, "name": "Jewel Ahmed", "title": "Senior Fade Stylist", "chair": 2, "exp": "8 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true },
-        { "id": 22, "name": "Tanvir Mia", "title": "Hot-Towel Specialist", "chair": 3, "exp": "9 Years Exp", "avatar": "/assets/barber-3.jpg", "is_active": true },
-        { "id": 23, "name": "Nayeem Islam", "title": "Beard Sculptor", "chair": 4, "exp": "6 Years Exp", "avatar": "/assets/barber-4.jpg", "is_active": true }
+        {
+          "id": 20,
+          "name": "Kabir Hossain",
+          "title": "Founder & Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 21,
+          "name": "Jewel Ahmed",
+          "title": "Senior Fade Stylist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        },
+        {
+          "id": 22,
+          "name": "Tanvir Mia",
+          "title": "Hot-Towel Specialist",
+          "chair": 3,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/barber-3.jpg",
+          "is_active": true
+        },
+        {
+          "id": 23,
+          "name": "Nayeem Islam",
+          "title": "Beard Sculptor",
+          "chair": 4,
+          "exp": "6 Years Exp",
+          "avatar": "/assets/barber-4.jpg",
+          "is_active": true
+        }
       ]
     },
     {
@@ -222,11 +1310,35 @@
       "reviews_count": 410,
       "starting_price": 450,
       "services": [
-        { "id": 31, "name": "Royal Shave", "duration_minutes": 35, "price_bdt": 450, "category": "Shave", "is_active": true, "description": "Traditional hot towel ritual with premium balm and straight blade." },
-        { "id": 32, "name": "VIP Styling Cabin", "duration_minutes": 60, "price_bdt": 1100, "category": "VIP", "is_active": true, "description": "Private groom room session with full hair and beard treatment." }
+        {
+          "id": 31,
+          "name": "Royal Shave",
+          "duration_minutes": 35,
+          "price_bdt": 450,
+          "category": "Shave",
+          "is_active": true,
+          "description": "Traditional hot towel ritual with premium balm and straight blade."
+        },
+        {
+          "id": 32,
+          "name": "VIP Styling Cabin",
+          "duration_minutes": 60,
+          "price_bdt": 1100,
+          "category": "VIP",
+          "is_active": true,
+          "description": "Private groom room session with full hair and beard treatment."
+        }
       ],
       "barbers": [
-        { "id": 30, "name": "Sajid Khan", "title": "VIP Stylist", "chair": 1, "exp": "11 Years Exp", "avatar": "/assets/barber-3.jpg", "is_active": true }
+        {
+          "id": 30,
+          "name": "Sajid Khan",
+          "title": "VIP Stylist",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-3.jpg",
+          "is_active": true
+        }
       ]
     },
     {
@@ -254,11 +1366,35 @@
       "reviews_count": 290,
       "starting_price": 350,
       "services": [
-        { "id": 41, "name": "Signature Haircut", "duration_minutes": 30, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Classic cut and razor neck taper." },
-        { "id": 42, "name": "Beard Sculpt & Shave", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Hot-towel contour and clean line." }
+        {
+          "id": 41,
+          "name": "Signature Haircut",
+          "duration_minutes": 30,
+          "price_bdt": 350,
+          "category": "Haircut",
+          "is_active": true,
+          "description": "Classic cut and razor neck taper."
+        },
+        {
+          "id": 42,
+          "name": "Beard Sculpt & Shave",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "category": "Beard",
+          "is_active": true,
+          "description": "Hot-towel contour and clean line."
+        }
       ],
       "barbers": [
-        { "id": 40, "name": "Imran Ali", "title": "Senior Stylist", "chair": 1, "exp": "7 Years Exp", "avatar": "/assets/barber-4.jpg", "is_active": true }
+        {
+          "id": 40,
+          "name": "Imran Ali",
+          "title": "Senior Stylist",
+          "chair": 1,
+          "exp": "7 Years Exp",
+          "avatar": "/assets/barber-4.jpg",
+          "is_active": true
+        }
       ]
     },
     {
@@ -286,11 +1422,35 @@
       "reviews_count": 310,
       "starting_price": 350,
       "services": [
-        { "id": 51, "name": "Signature Haircut", "duration_minutes": 35, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Classic cut and styling." },
-        { "id": 52, "name": "Beard Sculpt & Shave", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Hot towel beard shaping." }
+        {
+          "id": 51,
+          "name": "Signature Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 350,
+          "category": "Haircut",
+          "is_active": true,
+          "description": "Classic cut and styling."
+        },
+        {
+          "id": 52,
+          "name": "Beard Sculpt & Shave",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "category": "Beard",
+          "is_active": true,
+          "description": "Hot towel beard shaping."
+        }
       ],
       "barbers": [
-        { "id": 50, "name": "Babar Azam", "title": "Artisan Stylist", "chair": 1, "exp": "6 Years Exp", "avatar": "/assets/barber-2.jpg", "is_active": true }
+        {
+          "id": 50,
+          "name": "Babar Azam",
+          "title": "Artisan Stylist",
+          "chair": 1,
+          "exp": "6 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
       ]
     },
     {
@@ -318,12 +1478,4404 @@
       "reviews_count": 460,
       "starting_price": 350,
       "services": [
-        { "id": 61, "name": "Signature Haircut", "duration_minutes": 30, "price_bdt": 350, "category": "Haircut", "is_active": true, "description": "Haircut, beard sculpt, and mini facial." },
-        { "id": 62, "name": "Beard Sculpt & Shave", "duration_minutes": 25, "price_bdt": 250, "category": "Beard", "is_active": true, "description": "Straight blade precision shave." }
+        {
+          "id": 61,
+          "name": "Signature Haircut",
+          "duration_minutes": 30,
+          "price_bdt": 350,
+          "category": "Haircut",
+          "is_active": true,
+          "description": "Haircut, beard sculpt, and mini facial."
+        },
+        {
+          "id": 62,
+          "name": "Beard Sculpt & Shave",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "category": "Beard",
+          "is_active": true,
+          "description": "Straight blade precision shave."
+        }
       ],
       "barbers": [
-        { "id": 60, "name": "Farhad Reza", "title": "Master Barber", "chair": 1, "exp": "10 Years Exp", "avatar": "/assets/barber-1.jpg", "is_active": true }
+        {
+          "id": 60,
+          "name": "Farhad Reza",
+          "title": "Master Barber",
+          "chair": 1,
+          "exp": "10 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        }
       ]
+    },
+    {
+      "id": "sln-dhk-01",
+      "application_id": 201,
+      "name": "The Jawed Habib Salon Gulshan-2",
+      "slug": "the-jawed-habib-salon-gulshan-2-gulshan-01",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01908-888444",
+      "phone": "01908-888444",
+      "email": "partner.sln-dhk-01@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Eva Rose, Rd 44, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-01.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100001/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.30",
+      "reviews_count": 426,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-02",
+      "application_id": 202,
+      "name": "Adonis Mens Grooming Salon | Best Salon in Gulshan, Dhaka",
+      "slug": "adonis-mens-grooming-salon-best-salon-in-guls-gulshan-02",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01919-700800",
+      "phone": "01919-700800",
+      "email": "partner.sln-dhk-02@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Holding - 99, Rupayan Golden Age, Road - 37 Gulshan Ave, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-02.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100002/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.20",
+      "reviews_count": 331,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-03",
+      "application_id": 203,
+      "name": "Persona Adams, Gulshan Branch (পুরুষদের সেলুন)",
+      "slug": "persona-adams-gulshan-branch-gulshan-03",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01847-067939",
+      "phone": "01847-067939",
+      "email": "partner.sln-dhk-03@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Shariatullah Bhaban, 121/C Gulshan Ave, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-03.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100003/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.10",
+      "reviews_count": 775,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-04",
+      "application_id": 204,
+      "name": "Femina Flaunt By Sabina",
+      "slug": "femina-flaunt-by-sabina-dhaka-04",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01773-302183",
+      "phone": "01773-302183",
+      "email": "partner.sln-dhk-04@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House-7/A, Basic builders, 3rd floor, Rd 45",
+      "cover_photo_url": "/assets/salons/sln-dhk-04.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100004/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "5.00",
+      "reviews_count": 44,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-05",
+      "application_id": 205,
+      "name": "Glam By Asmita Signature Branch",
+      "slug": "glam-by-asmita-signature-branch-gulshan-05",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01610-698253",
+      "phone": "01610-698253",
+      "email": "partner.sln-dhk-05@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "House: 52 Road- 18 A, Block-J, Banani Gulshan, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-05.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100005/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.40",
+      "reviews_count": 399,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-06",
+      "application_id": 206,
+      "name": "Menz Crown Premium Salon (Gulshan-2)",
+      "slug": "menz-crown-premium-salon-gulshan-2-gulshan-06",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01799-335511",
+      "phone": "01799-335511",
+      "email": "partner.sln-dhk-06@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Ground Floor, Rupayan Golden Age, 99 Gulshan Ave, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-06.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100006/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": true,
+      "rating": "4.30",
+      "reviews_count": 398,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-07",
+      "application_id": 207,
+      "name": "Persona Gulshan 1",
+      "slug": "persona-gulshan-1-gulshan-07",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01847-067919",
+      "phone": "01847-067919",
+      "email": "partner.sln-dhk-07@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "1st Floor, S.A. Tower, Gulshan Badda Link Rd, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-07.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100007/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": false,
+      "rating": "4.20",
+      "reviews_count": 583,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-08",
+      "application_id": 208,
+      "name": "Menz Crown Premium Salon (Gulshan-1)",
+      "slug": "menz-crown-premium-salon-gulshan-1-gulshan-08",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01301-102060",
+      "phone": "01301-102060",
+      "email": "partner.sln-dhk-08@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "House # 7 Ground Floor, Rd 137, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-08.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100008/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": false,
+      "rating": "4.50",
+      "reviews_count": 76,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-09",
+      "application_id": 209,
+      "name": "Signature Look By Samia",
+      "slug": "signature-look-by-samia-gulshan-09",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01328-227587",
+      "phone": "01328-227587",
+      "email": "partner.sln-dhk-09@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "80 Gulshan avenue,Gulshan 1.,lift5 (beside Renaissance hotel), 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-09.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100009/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": false,
+      "rating": "4.50",
+      "reviews_count": 146,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-10",
+      "application_id": 210,
+      "name": "HairBar Gulshan",
+      "slug": "hairbar-gulshan-gulshan-10",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01877-423972",
+      "phone": "01877-423972",
+      "email": "partner.sln-dhk-10@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "House 12, Road No. 68, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-10.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100010/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": false,
+      "rating": "4.00",
+      "reviews_count": 234,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-11",
+      "application_id": 211,
+      "name": "Rejuvenate",
+      "slug": "rejuvenate-gulshan-11",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01406-699612",
+      "phone": "01406-699612",
+      "email": "partner.sln-dhk-11@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Basement 1 (same floor, as Unimart, Gulshan Centre Point, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-11.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100011/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": false,
+      "rating": "4.00",
+      "reviews_count": 74,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-12",
+      "application_id": 212,
+      "name": "Elegant Makeover and Fashion",
+      "slug": "elegant-makeover-and-fashion-dhaka-12",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01764-049039",
+      "phone": "01764-049039",
+      "email": "partner.sln-dhk-12@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House: 50, Road: 15, Block: D, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-12.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100012/2024",
+      "is_active": true,
+      "is_featured": true,
+      "is_boosted": false,
+      "rating": "4.40",
+      "reviews_count": 150,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-13",
+      "application_id": 213,
+      "name": "Privé by Nahila Hedayet",
+      "slug": "priv-by-nahila-hedayet-dhaka-13",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01926-649646",
+      "phone": "01926-649646",
+      "email": "partner.sln-dhk-13@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House 23B Rd 102, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-13.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100013/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.30",
+      "reviews_count": 360,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-14",
+      "application_id": 214,
+      "name": "GENT'S CARE: PREMIUM SALON",
+      "slug": "gents-care-premium-salon-dhaka-14",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01723-886611",
+      "phone": "01723-886611",
+      "email": "partner.sln-dhk-14@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House- 6/A, Level, YN Center, 4 Rd 113, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-14.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100014/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.30",
+      "reviews_count": 734,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-15",
+      "application_id": 215,
+      "name": "Total Care Salon Bangladesh",
+      "slug": "total-care-salon-bangladesh-dhaka-15",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01619-861581",
+      "phone": "01619-861581",
+      "email": "partner.sln-dhk-15@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Block k, House # 16, Rd 28, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-15.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100015/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.40",
+      "reviews_count": 82,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-16",
+      "application_id": 216,
+      "name": "Studio Salon Gulshan-2",
+      "slug": "studio-salon-gulshan-2-gulshan-16",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01711-900092",
+      "phone": "01711-900092",
+      "email": "partner.sln-dhk-16@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "House 9/D, Road 71, (2nd floor, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-16.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100016/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.40",
+      "reviews_count": 23,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-17",
+      "application_id": 217,
+      "name": "Farzana Shakil's Makeover Salon Ltd. Gulshan Branch",
+      "slug": "farzana-shakils-makeover-salon-ltd-gulshan-br-gulshan-17",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01952-200058",
+      "phone": "01952-200058",
+      "email": "partner.sln-dhk-17@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Level-2, ​SAM TOWER, House #4 Rd 22, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-17.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100017/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.10",
+      "reviews_count": 74,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-18",
+      "application_id": 218,
+      "name": "Eve Salon Gulshan 2",
+      "slug": "eve-salon-gulshan-2-gulshan-18",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "+880 1700-000000",
+      "phone": "+880 1700-000000",
+      "email": "partner.sln-dhk-18@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "Concord L R Villa, house: 9 Rd 113, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-18.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100018/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.60",
+      "reviews_count": 23,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-19",
+      "application_id": 219,
+      "name": "Flawless Femina Aesthetic Centre",
+      "slug": "flawless-femina-aesthetic-centre-gulshan-19",
+      "owner_name": "Partner Management (Gulshan)",
+      "owner_phone": "01342-621727",
+      "phone": "01342-621727",
+      "email": "partner.sln-dhk-19@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Gulshan",
+      "address": "2nd floor (Lift 2, RM Center, 101 Gulshan Ave, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-19.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100019/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.70",
+      "reviews_count": 117,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-20",
+      "application_id": 220,
+      "name": "Tisha's Beauty Hub TBH",
+      "slug": "tishas-beauty-hub-tbh-banani-20",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01686-902284",
+      "phone": "01686-902284",
+      "email": "partner.sln-dhk-20@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "QCR5+4FQ, House 118,Road 11, Lift7, Banani 11, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-20.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100020/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.70",
+      "reviews_count": 231,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-21",
+      "application_id": 221,
+      "name": "Wellness By Moon Flagship Banani",
+      "slug": "wellness-by-moon-flagship-banani-banani-21",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01316-318895",
+      "phone": "01316-318895",
+      "email": "partner.sln-dhk-21@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "E Block, House 55 Rd No 13, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-21.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100021/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.50",
+      "reviews_count": 58,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-22",
+      "application_id": 222,
+      "name": "Persona Banani 11",
+      "slug": "persona-banani-11-banani-22",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01847-067969",
+      "phone": "01847-067969",
+      "email": "partner.sln-dhk-22@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "Khawaja Palace, 76/B Rd No. 11, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-22.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100022/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.10",
+      "reviews_count": 489,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-23",
+      "application_id": 223,
+      "name": "Swing Salon Banani",
+      "slug": "swing-salon-banani-banani-23",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01949-998805",
+      "phone": "01949-998805",
+      "email": "partner.sln-dhk-23@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "House-26, Rd No. 7, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-23.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100023/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.30",
+      "reviews_count": 103,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-24",
+      "application_id": 224,
+      "name": "Divine Beauty Lounge",
+      "slug": "divine-beauty-lounge-dhaka-24",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01799-070096",
+      "phone": "01799-070096",
+      "email": "partner.sln-dhk-24@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Block B, 70B Rd 21, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-24.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100024/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.50",
+      "reviews_count": 43,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-25",
+      "application_id": 225,
+      "name": "London Salon Banani",
+      "slug": "london-salon-banani-banani-25",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01627-894007",
+      "phone": "01627-894007",
+      "email": "partner.sln-dhk-25@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "Kacha Bazar, Shefali Vila, Road No: 17, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-25.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100025/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "5.00",
+      "reviews_count": 65,
+      "starting_price": 250,
+      "services": [
+        {
+          "id": 1,
+          "name": "Executive Fade & Haircut",
+          "category": "Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Precision scissor cut and skin fade with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Sculpt & Razor Edge",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 200,
+          "is_active": true,
+          "description": "Straight-razor contouring, organic argan oil finish, and volume trimming."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Royal Shave",
+          "category": "Barber",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial & Scalp Detox",
+          "category": "Facial",
+          "duration_minutes": 45,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and relaxing acupressure scalp massage."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Senior Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Tanvir Ahmed",
+          "title": "Fade & Beard Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-26",
+      "application_id": 226,
+      "name": "RED Beauty Studio & Salon ( Banani )",
+      "slug": "red-beauty-studio-salon-banani-banani-26",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01327-414717",
+      "phone": "01327-414717",
+      "email": "partner.sln-dhk-26@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "House 11, Block-G, Floor-8, Concord Modhumoti Plaza, Banani 11, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-26.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100026/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.30",
+      "reviews_count": 416,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-27",
+      "application_id": 227,
+      "name": "Sajai Parlour",
+      "slug": "sajai-parlour-dhaka-27",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01945-039814",
+      "phone": "01945-039814",
+      "email": "partner.sln-dhk-27@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House 146, Road 13/B, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-27.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100027/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.40",
+      "reviews_count": 38,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-28",
+      "application_id": 228,
+      "name": "Lia's Beauty Box - Banani",
+      "slug": "lias-beauty-box-banani-banani-28",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01317-808880",
+      "phone": "01317-808880",
+      "email": "partner.sln-dhk-28@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "Same building as Mother’s Care, House 54 Road No. 11, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-28.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100028/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.30",
+      "reviews_count": 100,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-29",
+      "application_id": 229,
+      "name": "Rosé Studio Salon",
+      "slug": "ros-studio-salon-dhaka-29",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "+880 1700-000000",
+      "phone": "+880 1700-000000",
+      "email": "partner.sln-dhk-29@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Block k, Ground Floor, House 10 Rd No.28, Dhaka",
+      "cover_photo_url": "/assets/salons/sln-dhk-29.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100029/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.50",
+      "reviews_count": 60,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-30",
+      "application_id": 230,
+      "name": "The Runway by Prithon",
+      "slug": "the-runway-by-prithon-dhaka-30",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01327-414102",
+      "phone": "01327-414102",
+      "email": "partner.sln-dhk-30@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Block F, House 62 Paramount, Rd No-9, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-30.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100030/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.60",
+      "reviews_count": 65,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-31",
+      "application_id": 231,
+      "name": "Celene Spa & Salon",
+      "slug": "celene-spa-salon-dhaka-31",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01878-111111",
+      "phone": "01878-111111",
+      "email": "partner.sln-dhk-31@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Suite 4C, Road 1, Block F, Tri Space Ophelia, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-31.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100031/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.40",
+      "reviews_count": 45,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-32",
+      "application_id": 232,
+      "name": "Korean Spa Shop",
+      "slug": "korean-spa-shop-dhaka-32",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01710-164569",
+      "phone": "01710-164569",
+      "email": "partner.sln-dhk-32@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Level 12, ANZ Huq Eleven Square, Road No. 11, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-32.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100032/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.60",
+      "reviews_count": 58,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-33",
+      "application_id": 233,
+      "name": "Heaven Salon Banani",
+      "slug": "heaven-salon-banani-banani-33",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01794-507488",
+      "phone": "01794-507488",
+      "email": "partner.sln-dhk-33@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "House #77 Rd 12, Dhaka 1217",
+      "cover_photo_url": "/assets/salons/sln-dhk-33.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100033/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.00",
+      "reviews_count": 172,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-34",
+      "application_id": 234,
+      "name": "Luxe Medispa & Salon",
+      "slug": "luxe-medispa-salon-banani-34",
+      "owner_name": "Partner Management (Banani)",
+      "owner_phone": "01884-000361",
+      "phone": "01884-000361",
+      "email": "partner.sln-dhk-34@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Banani",
+      "address": "House 57 Road No. 11, banani 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-34.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100034/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.30",
+      "reviews_count": 46,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-35",
+      "application_id": 235,
+      "name": "Confia",
+      "slug": "confia-dhaka-35",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01816-727272",
+      "phone": "01816-727272",
+      "email": "partner.sln-dhk-35@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Block H, House 27 Road 12A, Dhaka 1212",
+      "cover_photo_url": "/assets/salons/sln-dhk-35.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100035/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.90",
+      "reviews_count": 9,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-36",
+      "application_id": 236,
+      "name": "House of Elegance",
+      "slug": "house-of-elegance-dhaka-36",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01973-473881",
+      "phone": "01973-473881",
+      "email": "partner.sln-dhk-36@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House: 50, Road: 15, Block: D, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-36.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100036/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.90",
+      "reviews_count": 68,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-37",
+      "application_id": 237,
+      "name": "Persona Adams (Mens) , Dhanmondi (old 27) (পুরুষদের সেলুন)",
+      "slug": "persona-adams-mens-dhanmondi-old-27-dhanmondi-37",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01847-067929",
+      "phone": "01847-067929",
+      "email": "partner.sln-dhk-37@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "House 37, Top floor of The City Bank Limited Building, Suvastu Zemin Plaza, Road 27, Dhaka 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-37.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100037/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.10",
+      "reviews_count": 1557,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-38",
+      "application_id": 238,
+      "name": "Menz Crown Premium Salon (Dhanmondi)",
+      "slug": "menz-crown-premium-salon-dhanmondi-dhanmondi-38",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01746-336455",
+      "phone": "01746-336455",
+      "email": "partner.sln-dhk-38@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "House 39A 4th Floor, Rd No. 8, Dhaka 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-38.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100038/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.60",
+      "reviews_count": 224,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-39",
+      "application_id": 239,
+      "name": "FACE WASH",
+      "slug": "face-wash-dhaka-39",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01612-530000",
+      "phone": "01612-530000",
+      "email": "partner.sln-dhk-39@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Momtaz Plaza (Ground Floor), House#7, Road#4 Opposite of Labaid Hospital Dhaka, 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-39.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100039/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.20",
+      "reviews_count": 520,
+      "starting_price": 250,
+      "services": [
+        {
+          "id": 1,
+          "name": "Executive Fade & Haircut",
+          "category": "Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Precision scissor cut and skin fade with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Sculpt & Razor Edge",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 200,
+          "is_active": true,
+          "description": "Straight-razor contouring, organic argan oil finish, and volume trimming."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Royal Shave",
+          "category": "Barber",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial & Scalp Detox",
+          "category": "Facial",
+          "duration_minutes": 45,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and relaxing acupressure scalp massage."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Senior Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Tanvir Ahmed",
+          "title": "Fade & Beard Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-40",
+      "application_id": 240,
+      "name": "Men's Look",
+      "slug": "mens-look-dhaka-40",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01716-583723",
+      "phone": "01716-583723",
+      "email": "partner.sln-dhk-40@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Satmasjid Road, Dhaka 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-40.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100040/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.00",
+      "reviews_count": 398,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-41",
+      "application_id": 241,
+      "name": "Londons Cut ( Aesthetic Salon )",
+      "slug": "londons-cut-aesthetic-salon-dhaka-41",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01762-129387",
+      "phone": "01762-129387",
+      "email": "partner.sln-dhk-41@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Dhaka 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-41.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100041/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.10",
+      "reviews_count": 25,
+      "starting_price": 250,
+      "services": [
+        {
+          "id": 1,
+          "name": "Executive Fade & Haircut",
+          "category": "Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Precision scissor cut and skin fade with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Sculpt & Razor Edge",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 200,
+          "is_active": true,
+          "description": "Straight-razor contouring, organic argan oil finish, and volume trimming."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Royal Shave",
+          "category": "Barber",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial & Scalp Detox",
+          "category": "Facial",
+          "duration_minutes": 45,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and relaxing acupressure scalp massage."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Senior Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Tanvir Ahmed",
+          "title": "Fade & Beard Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-42",
+      "application_id": 242,
+      "name": "Cut N Cool Salon",
+      "slug": "cut-n-cool-salon-dhaka-42",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01304-717173",
+      "phone": "01304-717173",
+      "email": "partner.sln-dhk-42@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "33 Rd No 4, Dhaka 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-42.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100042/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.20",
+      "reviews_count": 361,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-43",
+      "application_id": 243,
+      "name": "Adonis Makeover Saloon",
+      "slug": "adonis-makeover-saloon-dhaka-43",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01711-312728",
+      "phone": "01711-312728",
+      "email": "partner.sln-dhk-43@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Inside Sima Blossom Building House No. 3, Level : 4, Lift : 4 Road No. 27, R/A, Dhaka 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-43.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100043/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.20",
+      "reviews_count": 417,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-44",
+      "application_id": 244,
+      "name": "GENT'S CARE: PREMIUM SALON DHANMONDI",
+      "slug": "gents-care-premium-salon-dhanmondi-dhanmondi-44",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01328-554433",
+      "phone": "01328-554433",
+      "email": "partner.sln-dhk-44@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "House- 35, Level- 5, Road -16 Road No. 16, Dhaka 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-44.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100044/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.90",
+      "reviews_count": 53,
+      "starting_price": 350,
+      "services": [
+        {
+          "id": 1,
+          "name": "Signature Layer Cut & Hair Spa",
+          "category": "Hair",
+          "duration_minutes": 45,
+          "price_bdt": 450,
+          "is_active": true,
+          "description": "Custom precision layer cut with deep conditioning steam hair spa."
+        },
+        {
+          "id": 2,
+          "name": "Hydra Glow Facial & Polishing",
+          "category": "Facial",
+          "duration_minutes": 50,
+          "price_bdt": 950,
+          "is_active": true,
+          "description": "Intensive hydration, ultrasonic pore cleansing, and collagen glow mask."
+        },
+        {
+          "id": 3,
+          "name": "Aroma Spa Manicure & Pedicure",
+          "category": "Nails",
+          "duration_minutes": 40,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Herbal foot soak, cuticle restoration, sea-salt scrub, and nourishing massage."
+        },
+        {
+          "id": 4,
+          "name": "Bio-Keratin Hair Smoothing",
+          "category": "Hair",
+          "duration_minutes": 60,
+          "price_bdt": 2200,
+          "is_active": true,
+          "description": "Frizz-free smoothing therapy with protein sealant and blowout."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Nusrat Jahan",
+          "title": "Lead Aesthetician & Stylist",
+          "chair": 1,
+          "exp": "12 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Shabnam Akter",
+          "title": "Skin & Hair Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/service-facial.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-45",
+      "application_id": 245,
+      "name": "New Look Men's Saloon",
+      "slug": "new-look-mens-saloon-dhanmondi-45",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01922-387471",
+      "phone": "01922-387471",
+      "email": "partner.sln-dhk-45@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "Metro Shopping Mall, Dhanmondi Lake Rd, Dhaka 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-45.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100045/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.50",
+      "reviews_count": 10,
+      "starting_price": 250,
+      "services": [
+        {
+          "id": 1,
+          "name": "Executive Fade & Haircut",
+          "category": "Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Precision scissor cut and skin fade with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Sculpt & Razor Edge",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 200,
+          "is_active": true,
+          "description": "Straight-razor contouring, organic argan oil finish, and volume trimming."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Royal Shave",
+          "category": "Barber",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial & Scalp Detox",
+          "category": "Facial",
+          "duration_minutes": 45,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and relaxing acupressure scalp massage."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Senior Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Tanvir Ahmed",
+          "title": "Fade & Beard Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-46",
+      "application_id": 246,
+      "name": "Blade Men's Makeover Lounge",
+      "slug": "blade-mens-makeover-lounge-dhanmondi-46",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01312-031133",
+      "phone": "01312-031133",
+      "email": "partner.sln-dhk-46@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "Navana Mashira (Ground Floor House #275K, Road#16( New 27(Old), Dhanmondi,Dhaka-1209, 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-46.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100046/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "3.50",
+      "reviews_count": 48,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-47",
+      "application_id": 247,
+      "name": "HEADSHOT Lifestyle Saloon Dhanmondi Premium",
+      "slug": "headshot-lifestyle-saloon-dhanmondi-premium-dhanmondi-47",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01605-127254",
+      "phone": "01605-127254",
+      "email": "partner.sln-dhk-47@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "Jigatala Bus Stand, ANZ Square, Satmasjid Road, Dhaka 1205, Dhaka 1213",
+      "cover_photo_url": "/assets/salons/sln-dhk-47.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100047/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.20",
+      "reviews_count": 37,
+      "starting_price": 250,
+      "services": [
+        {
+          "id": 1,
+          "name": "Executive Fade & Haircut",
+          "category": "Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Precision scissor cut and skin fade with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Sculpt & Razor Edge",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 200,
+          "is_active": true,
+          "description": "Straight-razor contouring, organic argan oil finish, and volume trimming."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Royal Shave",
+          "category": "Barber",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial & Scalp Detox",
+          "category": "Facial",
+          "duration_minutes": 45,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and relaxing acupressure scalp massage."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Senior Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Tanvir Ahmed",
+          "title": "Fade & Beard Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-48",
+      "application_id": 248,
+      "name": "Men's Parlor",
+      "slug": "mens-parlor-dhaka-48",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "+880 1700-000000",
+      "phone": "+880 1700-000000",
+      "email": "partner.sln-dhk-48@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "365 Satmasjid Road, Dhaka 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-48.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100048/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "3.70",
+      "reviews_count": 74,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-49",
+      "application_id": 249,
+      "name": "Akter Ali Hair Studio",
+      "slug": "akter-ali-hair-studio-dhaka-49",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01766-338401",
+      "phone": "01766-338401",
+      "email": "partner.sln-dhk-49@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "Eastern Elite Centre, 2/2, 9/A Satmasjid Road, Dhaka",
+      "cover_photo_url": "/assets/salons/sln-dhk-49.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 4,
+      "trade_license_number": "TRAD/DNCC/100049/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.00",
+      "reviews_count": 368,
+      "starting_price": 250,
+      "services": [
+        {
+          "id": 1,
+          "name": "Executive Fade & Haircut",
+          "category": "Haircut",
+          "duration_minutes": 35,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Precision scissor cut and skin fade with refreshing wash and blow-dry style."
+        },
+        {
+          "id": 2,
+          "name": "Beard Sculpt & Razor Edge",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 200,
+          "is_active": true,
+          "description": "Straight-razor contouring, organic argan oil finish, and volume trimming."
+        },
+        {
+          "id": 3,
+          "name": "Hot Towel Royal Shave",
+          "category": "Barber",
+          "duration_minutes": 30,
+          "price_bdt": 300,
+          "is_active": true,
+          "description": "Double steam hot towel compress with luxury cedarwood lather."
+        },
+        {
+          "id": 4,
+          "name": "Charcoal Deep Facial & Scalp Detox",
+          "category": "Facial",
+          "duration_minutes": 45,
+          "price_bdt": 650,
+          "is_active": true,
+          "description": "Deep pore extraction, organic clay mask, and relaxing acupressure scalp massage."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Kabir Hossain",
+          "title": "Senior Master Barber",
+          "chair": 1,
+          "exp": "14 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Tanvir Ahmed",
+          "title": "Fade & Beard Specialist",
+          "chair": 2,
+          "exp": "8 Years Exp",
+          "avatar": "/assets/barber-2.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-50",
+      "application_id": 250,
+      "name": "Salon D-5",
+      "slug": "salon-d-5-dhanmondi-50",
+      "owner_name": "Partner Management (Dhanmondi)",
+      "owner_phone": "01759-292157",
+      "phone": "01759-292157",
+      "email": "partner.sln-dhk-50@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhanmondi",
+      "address": "Meher Plaza, Road-5, Dhanmondi, Mirpur Road, Dhaka 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-50.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100050/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "3.90",
+      "reviews_count": 15,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-51",
+      "application_id": 251,
+      "name": "BEST HAIRCUT SALOON & KIDS CORNER",
+      "slug": "best-haircut-saloon-kids-corner-dhaka-51",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01710-702793",
+      "phone": "01710-702793",
+      "email": "partner.sln-dhk-51@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House No. C7, Block F Zakir Hussain Rd, Dhaka 1205",
+      "cover_photo_url": "/assets/salons/sln-dhk-51.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100051/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "4.10",
+      "reviews_count": 215,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
+    },
+    {
+      "id": "sln-dhk-52",
+      "application_id": 252,
+      "name": "Executive Professional Cuts & spa",
+      "slug": "executive-professional-cuts-spa-dhaka-52",
+      "owner_name": "Partner Management (Dhaka)",
+      "owner_phone": "01850-030788",
+      "phone": "01850-030788",
+      "email": "partner.sln-dhk-52@selon.com.bd",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Dhaka",
+      "address": "House # 36 Road No. 16, Dhaka 1209",
+      "cover_photo_url": "/assets/salons/sln-dhk-52.jpg",
+      "opening_time": "10:00",
+      "closing_time": "22:00",
+      "chairs_count": 6,
+      "trade_license_number": "TRAD/DNCC/100052/2024",
+      "is_active": true,
+      "is_featured": false,
+      "is_boosted": false,
+      "rating": "3.50",
+      "reviews_count": 6,
+      "starting_price": 300,
+      "services": [
+        {
+          "id": 1,
+          "name": "Master Precision Haircut & Blowout",
+          "category": "Hair",
+          "duration_minutes": 40,
+          "price_bdt": 400,
+          "is_active": true,
+          "description": "Tailored scissor cut, hair texture profiling, and premium blowout."
+        },
+        {
+          "id": 2,
+          "name": "Detox Scalp Spa & Head Massage",
+          "category": "Spa",
+          "duration_minutes": 35,
+          "price_bdt": 500,
+          "is_active": true,
+          "description": "Rosemary & tea-tree essential oil acupressure therapy for hair roots."
+        },
+        {
+          "id": 3,
+          "name": "Express Glow Facial & Cleansing",
+          "category": "Facial",
+          "duration_minutes": 30,
+          "price_bdt": 750,
+          "is_active": true,
+          "description": "Gentle AHA/BHA exfoliation, vitamin C serum infusion, and cooling mask."
+        },
+        {
+          "id": 4,
+          "name": "Classic Styling / Beard Sculpting",
+          "category": "Barber",
+          "duration_minutes": 25,
+          "price_bdt": 250,
+          "is_active": true,
+          "description": "Precision line detailing, hot towel refresh, and styling finish."
+        }
+      ],
+      "barbers": [
+        {
+          "id": 1,
+          "name": "Rayhan Ahmed",
+          "title": "Creative Art Director",
+          "chair": 1,
+          "exp": "11 Years Exp",
+          "avatar": "/assets/barber-1.jpg",
+          "is_active": true
+        },
+        {
+          "id": 2,
+          "name": "Farhana Islam",
+          "title": "Senior Hair & Spa Specialist",
+          "chair": 2,
+          "exp": "9 Years Exp",
+          "avatar": "/assets/service-style.jpg",
+          "is_active": true
+        }
+      ],
+      "created_at": "2026-10-29 10:00 BST"
     }
   ],
   "admins": [
@@ -382,4 +5934,3 @@
     "boost_duration": 30
   }
 }
-

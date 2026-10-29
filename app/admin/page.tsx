@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { Sparkles, Star, MapPin, Check, X, AlertTriangle } from "lucide-react";
 import { Salon, SalonApplication, AdminMember, AuditLog, MonetizationSettings } from "@/types";
 import { platformStore, getCanonicalSalonPhoto } from "@/lib/store";
 
@@ -172,7 +173,7 @@ export default function SuperAdminPage() {
   const handleToggleBoost = (salonId: string) => {
     const isNowBoosted = platformStore.toggleSalonBoost(salonId);
     loadData();
-    showToast(isNowBoosted ? "⭐ Sponsored Boost Activated (#1 Placement)" : "Sponsored Boost Revoked", "success");
+    showToast(isNowBoosted ? "Sponsored Boost Activated (#1 Placement)" : "Sponsored Boost Revoked", "success");
   };
 
   const handleInviteSubmit = (e: React.FormEvent) => {
@@ -183,7 +184,7 @@ export default function SuperAdminPage() {
     setInviteContact("");
     setInviteModalOpen(false);
     loadData();
-    showToast(`✓ Invited ${inviteName} as ${inviteRole}!`);
+    showToast(`Invited ${inviteName} as ${inviteRole}!`);
   };
 
   const handleRevokeAdmin = (id: string, name: string) => {
@@ -241,28 +242,20 @@ export default function SuperAdminPage() {
     <div className="h-screen flex flex-col bg-[#F8F9FA] text-[#0D0D0D] font-sans overflow-hidden selection:bg-[#0D0D0D] selection:text-white">
       {/* Top Super Luxury White Header */}
       <header className="h-16 border-b border-[#EAEAEA] bg-white/95 backdrop-blur-md sticky top-0 z-40 px-4 sm:px-6 flex items-center justify-between shrink-0 shadow-sm">
-        <div className="flex items-center space-x-4">
-          <Link href="/" className="flex items-center space-x-3 group" title="Return to public directory">
-            <div className="w-9 h-9 rounded-xl bg-[#E8220A] flex items-center justify-center text-white font-serif font-bold text-lg shadow-md shadow-[#E8220A]/20 group-hover:scale-105 transition-transform">
+        <div className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-2.5 group" title="Return to public directory">
+            <div className="w-8 h-8 rounded-lg bg-[#E8220A] flex items-center justify-center text-white font-bold text-base shadow-sm group-hover:scale-105 transition-transform">
               H
             </div>
-            <div>
-              <div className="flex items-center space-x-2">
-                <span className="text-sm font-extrabold tracking-tight text-[#0D0D0D]">
-                  Hair and Care <span className="text-[#E8220A]">bd</span>
-                </span>
-                <span className="text-[10px] uppercase font-mono font-bold px-2 py-0.5 rounded-full bg-red-50 text-[#E8220A] border border-red-200">
-                  Super Admin
-                </span>
-              </div>
-              <p className="text-[11px] text-[#5E5E5E] font-sans font-medium">Platform Control Center (The Super Page)</p>
+            <div className="flex items-center space-x-2">
+              <span className="text-sm font-bold tracking-tight text-[#0D0D0D]">
+                Hair and Care <span className="text-[#E8220A]">bd</span>
+              </span>
+              <span className="text-[10px] uppercase font-sans font-bold px-1.5 py-0.5 rounded bg-[#F4F4F6] text-[#5E5E5E] border border-[#EAEAEA]">
+                Admin
+              </span>
             </div>
           </Link>
-
-          <div className="hidden md:flex items-center space-x-2 pl-4 border-l border-[#EAEAEA] text-xs text-[#5E5E5E] font-mono">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>BST LIVE: Asia/Dhaka</span>
-          </div>
         </div>
 
         <div className="flex items-center space-x-3">
@@ -280,43 +273,35 @@ export default function SuperAdminPage() {
           >
             <span>+ Invite Admin</span>
           </button>
-
-          {/* Admin Avatar */}
-          <div className="flex items-center space-x-2 pl-2 border-l border-[#EAEAEA]">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-300 p-[1.5px] shadow-sm">
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-bold text-xs text-amber-900 font-mono">
-                SA
-              </div>
-            </div>
-            <div className="hidden lg:block text-left">
-              <div className="text-xs font-bold text-[#0D0D0D]">Owner (God Mode)</div>
-              <div className="text-[10px] text-emerald-700 font-mono font-semibold">Primary Super Admin</div>
-            </div>
-          </div>
         </div>
       </header>
 
       {/* Main Workspace */}
       <div className="flex-1 flex overflow-hidden">
         {/* Sidebar */}
-        <aside className="w-64 border-r border-[#EAEAEA] bg-white flex flex-col justify-between shrink-0 shadow-sm">
-          <div className="p-4 space-y-6">
+        <aside className="w-56 border-r border-[#EAEAEA] bg-white flex flex-col justify-between shrink-0 shadow-xs">
+          <div className="p-3 space-y-5">
             <div className="space-y-1">
-              <div className="px-3 text-[10px] uppercase font-mono font-bold tracking-wider text-[#8A8A8E] mb-2">
-                Triage & Verification
+              <div className="px-3 text-[10px] uppercase font-sans font-bold tracking-wider text-[#8A8A8E] mb-1.5">
+                Manage
               </div>
 
               <button
                 onClick={() => setActiveTab("applications")}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === "applications"
                     ? "bg-[#0D0D0D] text-white shadow-sm"
                     : "text-[#5E5E5E] hover:text-[#0D0D0D] hover:bg-[#F4F4F6]"
                 }`}
               >
-                <span>Salon Applications</span>
+                <div className="flex items-center space-x-2.5">
+                  <svg className="w-4 h-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Applications</span>
+                </div>
                 <span
-                  className={`px-2 py-0.5 text-[10px] font-mono font-bold rounded-full ${
+                  className={`px-1.5 py-0.5 text-[10px] font-sans font-bold rounded-full ${
                     activeTab === "applications"
                       ? "bg-[#E8220A] text-white"
                       : "bg-[#F0F0F2] text-[#0D0D0D]"
@@ -328,15 +313,20 @@ export default function SuperAdminPage() {
 
               <button
                 onClick={() => setActiveTab("salons")}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === "salons"
                     ? "bg-[#0D0D0D] text-white shadow-sm"
                     : "text-[#5E5E5E] hover:text-[#0D0D0D] hover:bg-[#F4F4F6]"
                 }`}
               >
-                <span>Active Salons (Tenants)</span>
+                <div className="flex items-center space-x-2.5">
+                  <svg className="w-4 h-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  <span>Salons</span>
+                </div>
                 <span
-                  className={`px-2 py-0.5 text-[10px] font-mono font-bold rounded-full ${
+                  className={`px-1.5 py-0.5 text-[10px] font-sans font-bold rounded-full ${
                     activeTab === "salons"
                       ? "bg-white/20 text-white"
                       : "bg-[#F0F0F2] text-[#5E5E5E]"
@@ -348,21 +338,26 @@ export default function SuperAdminPage() {
             </div>
 
             <div className="space-y-1">
-              <div className="px-3 text-[10px] uppercase font-mono font-bold tracking-wider text-[#8A8A8E] mb-2">
-                Platform Administration
+              <div className="px-3 text-[10px] uppercase font-sans font-bold tracking-wider text-[#8A8A8E] mb-1.5">
+                System
               </div>
 
               <button
                 onClick={() => setActiveTab("team")}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === "team"
                     ? "bg-[#0D0D0D] text-white shadow-sm"
                     : "text-[#5E5E5E] hover:text-[#0D0D0D] hover:bg-[#F4F4F6]"
                 }`}
               >
-                <span>Super Admin Team</span>
+                <div className="flex items-center space-x-2.5">
+                  <svg className="w-4 h-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <span>Team</span>
+                </div>
                 <span
-                  className={`px-2 py-0.5 text-[10px] font-mono font-bold rounded-full ${
+                  className={`px-1.5 py-0.5 text-[10px] font-sans font-bold rounded-full ${
                     activeTab === "team"
                       ? "bg-white/20 text-white"
                       : "bg-[#F0F0F2] text-[#5E5E5E]"
@@ -374,51 +369,56 @@ export default function SuperAdminPage() {
 
               <button
                 onClick={() => setActiveTab("analytics")}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === "analytics"
                     ? "bg-[#0D0D0D] text-white shadow-sm"
                     : "text-[#5E5E5E] hover:text-[#0D0D0D] hover:bg-[#F4F4F6]"
                 }`}
               >
-                <span>64 Districts Pulse</span>
+                <div className="flex items-center space-x-2.5">
+                  <svg className="w-4 h-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>Districts</span>
+                </div>
               </button>
 
               <button
                 onClick={() => setActiveTab("monetization")}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === "monetization"
                     ? "bg-[#0D0D0D] text-white shadow-sm"
                     : "text-[#5E5E5E] hover:text-[#0D0D0D] hover:bg-[#F4F4F6]"
                 }`}
               >
-                <span>Monetization & Revenue</span>
-                <span className="px-2 py-0.5 text-[10px] font-mono font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  {monetization.commission_rate}% PayG
+                <div className="flex items-center space-x-2.5">
+                  <svg className="w-4 h-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Revenue</span>
+                </div>
+                <span className="px-1.5 py-0.5 text-[10px] font-sans font-semibold rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  {monetization.commission_rate}%
                 </span>
               </button>
 
               <button
                 onClick={() => setActiveTab("audit")}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === "audit"
                     ? "bg-[#0D0D0D] text-white shadow-sm"
                     : "text-[#5E5E5E] hover:text-[#0D0D0D] hover:bg-[#F4F4F6]"
                 }`}
               >
-                <span>Security Audit Trail</span>
+                <div className="flex items-center space-x-2.5">
+                  <svg className="w-4 h-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <span>Audit Logs</span>
+                </div>
               </button>
             </div>
-          </div>
-
-          <div className="p-4 border-t border-[#EAEAEA] bg-[#FAFAFC]">
-            <div className="flex items-center justify-between text-[11px] text-[#5E5E5E] mb-1 font-medium">
-              <span className="flex items-center space-x-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                <span>Seeded Schema</span>
-              </span>
-              <span className="font-mono text-emerald-700 font-semibold">Strictly Enforced</span>
-            </div>
-            <p className="text-[10px] text-[#8A8A8E] font-mono">Zero Hard-Coded Remnants</p>
           </div>
         </aside>
 
@@ -502,7 +502,7 @@ export default function SuperAdminPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse text-xs">
                     <thead>
-                      <tr className="border-b border-[#EAEAEA] text-[11px] font-mono text-[#71717A] uppercase bg-[#F8F9FA]">
+                      <tr className="border-b border-[#EAEAEA] text-[11px] font-sans text-[#71717A] uppercase bg-[#F8F9FA]">
                         <th className="py-3.5 px-4 font-semibold">Salon & Area</th>
                         <th className="py-3.5 px-4 font-semibold">Owner & Contact</th>
                         <th className="py-3.5 px-4 font-semibold">Chairs</th>
@@ -516,34 +516,35 @@ export default function SuperAdminPage() {
                         <tr key={app.id} className="hover:bg-[#FAFAFC] transition-colors">
                           <td className="py-3.5 px-4">
                             <div className="font-bold text-[#0D0D0D] text-sm">{app.salon_name}</div>
-                            <div className="text-[11px] text-[#5E5E5E] mt-0.5">
-                              📍 {app.district} • {app.area}
+                            <div className="text-[11px] text-[#5E5E5E] mt-0.5 flex items-center gap-1">
+                              <MapPin className="w-3 h-3 text-[#8A8A8E]" />
+                              <span>{app.district} • {app.area}</span>
                             </div>
                           </td>
                           <td className="py-3.5 px-4">
                             <div className="text-[#0D0D0D] font-semibold">{app.owner_name}</div>
-                            <div className="text-[11px] text-[#5E5E5E] font-mono">{app.owner_phone}</div>
+                            <div className="text-[11px] text-[#5E5E5E] font-sans">{app.owner_phone}</div>
                           </td>
-                          <td className="py-3.5 px-4 font-mono font-semibold text-[#0D0D0D]">
+                          <td className="py-3.5 px-4 font-sans font-semibold text-[#0D0D0D]">
                             {app.chairs_count} Chairs
                           </td>
-                          <td className="py-3.5 px-4 font-mono text-[11px] text-[#5E5E5E]">
+                          <td className="py-3.5 px-4 font-sans text-[11px] text-[#5E5E5E]">
                             <div className="text-[#0D0D0D] font-medium">{app.trade_license_number || "Under verification"}</div>
                             <div className="text-[10px] text-emerald-700 font-semibold">NID Verified</div>
                           </td>
                           <td className="py-3.5 px-4">
                             {app.status === "pending" && (
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-sans font-semibold bg-amber-50 text-amber-800 border border-amber-200">
                                 Pending Triage
                               </span>
                             )}
                             {app.status === "approved" && (
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-sans font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
                                 Approved Tenant
                               </span>
                             )}
                             {app.status === "rejected" && (
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-red-50 text-red-800 border border-red-200">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-sans font-semibold bg-red-50 text-red-800 border border-red-200">
                                 Rejected
                               </span>
                             )}
@@ -564,20 +565,21 @@ export default function SuperAdminPage() {
                               {app.status === "pending" && (
                                 <button
                                   onClick={() => handleApprovePending(app.id)}
-                                  className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition-all"
+                                  className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition-all flex items-center gap-1"
                                   title="Approve Pending Salon"
                                 >
-                                  ✓ Approve
+                                  <Check className="w-3.5 h-3.5" />
+                                  <span>Approve</span>
                                 </button>
                               )}
 
                               {/* Delete Application */}
                               <button
                                 onClick={() => handleDeleteApplication(app.id, app.salon_name)}
-                                className="px-2 py-1 rounded-lg bg-red-50 hover:bg-red-600 text-red-600 hover:text-white text-xs font-semibold border border-red-200 transition-all"
+                                className="px-2 py-1 rounded-lg bg-red-50 hover:bg-red-600 text-red-600 hover:text-white text-xs font-semibold border border-red-200 transition-all flex items-center justify-center"
                                 title="Delete Application"
                               >
-                                ✕
+                                <X className="w-3.5 h-3.5" />
                               </button>
                             </div>
                           </td>
@@ -605,7 +607,7 @@ export default function SuperAdminPage() {
                     Live verified studios with isolated merchant workspaces receiving online bookings.
                   </p>
                 </div>
-                <span className="text-xs font-mono font-semibold text-[#5E5E5E] bg-white px-3 py-1.5 rounded-xl border border-[#EAEAEA] shadow-sm">
+                <span className="text-xs font-sans font-semibold text-[#5E5E5E] bg-white px-3 py-1.5 rounded-xl border border-[#EAEAEA] shadow-sm">
                   Total Live: <strong className="text-[#0D0D0D]">{salons.length}</strong>
                 </span>
               </div>
@@ -632,19 +634,20 @@ export default function SuperAdminPage() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute top-3 left-3">
-                          <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/90 text-emerald-700 font-bold border border-emerald-200 backdrop-blur-md shadow-sm">
+                          <span className="text-[10px] font-sans px-2.5 py-0.5 rounded-full bg-white/90 text-emerald-700 font-bold border border-emerald-200 backdrop-blur-md shadow-sm">
                             Active Tenant
                           </span>
                         </div>
                         <div className="absolute top-3 right-3">
-                          <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-black/75 text-white border border-white/20 backdrop-blur-md font-medium">
+                          <span className="text-[10px] font-sans px-2.5 py-0.5 rounded-full bg-black/75 text-white border border-white/20 backdrop-blur-md font-medium">
                             BST {salon.opening_time} – {salon.closing_time}
                           </span>
                         </div>
                         {salon.is_boosted && (
                           <div className="absolute bottom-3 left-3">
-                            <span className="text-[9px] font-mono uppercase font-extrabold px-2.5 py-0.5 rounded-md bg-amber-400 text-black shadow-sm">
-                              ⭐ FEATURED STUDIO
+                            <span className="text-[9px] font-sans uppercase font-extrabold px-2.5 py-0.5 rounded-md bg-amber-400 text-black shadow-sm flex items-center gap-1">
+                              <Sparkles className="w-3 h-3 text-black" />
+                              <span>FEATURED STUDIO</span>
                             </span>
                           </div>
                         )}
@@ -655,11 +658,18 @@ export default function SuperAdminPage() {
                           <h3 className="text-base font-bold text-[#0D0D0D] group-hover:text-[#E8220A] transition-colors leading-snug">
                             {salon.name}
                           </h3>
-                          <p className="text-xs text-[#5E5E5E] mt-1 line-clamp-1 leading-relaxed">📍 {salon.address}</p>
-                          <div className="flex items-center gap-2 mt-3 p-2.5 rounded-xl bg-[#F8F9FA] border border-[#EAEAEA] text-[11px] font-mono text-[#5E5E5E]">
+                          <p className="text-xs text-[#5E5E5E] mt-1 line-clamp-1 leading-relaxed flex items-center gap-1">
+                            <MapPin className="w-3 h-3 text-[#8A8A8E] shrink-0" />
+                            <span>{salon.address}</span>
+                          </p>
+                          <div className="flex items-center gap-2 mt-3 p-2.5 rounded-xl bg-[#F8F9FA] border border-[#EAEAEA] text-[11px] font-sans text-[#5E5E5E]">
                             <span>Chairs: <strong className="text-[#0D0D0D]">{salon.chairs_count || 4}</strong></span>
                             <span>•</span>
-                            <span>Rating: <strong className="text-amber-500 font-bold">★ {salon.rating}</strong> ({salon.reviews_count})</span>
+                            <span className="flex items-center gap-1">
+                              <span>Rating:</span>
+                              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                              <strong className="text-amber-500 font-bold">{salon.rating}</strong> ({salon.reviews_count})
+                            </span>
                             <span>•</span>
                             <span className="text-[#E8220A] font-bold">From ৳{salon.starting_price}</span>
                           </div>
@@ -667,7 +677,7 @@ export default function SuperAdminPage() {
 
                         <div className="pt-3 border-t border-[#EAEAEA] flex items-center justify-between">
                           <div>
-                            <div className="text-[9px] uppercase font-mono font-bold text-[#8A8A8E]">Owner</div>
+                            <div className="text-[9px] uppercase font-sans font-bold text-[#8A8A8E]">Owner</div>
                             <div className="text-xs font-bold text-[#0D0D0D]">{salon.owner_name}</div>
                           </div>
 
@@ -684,23 +694,23 @@ export default function SuperAdminPage() {
 
                             <button
                               onClick={() => handleToggleBoost(salon.id)}
-                              className={`px-2.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all border ${
+                              className={`px-2.5 py-1.5 rounded-xl text-xs font-sans font-semibold transition-all border flex items-center gap-1 ${
                                 salon.is_boosted
                                   ? "bg-amber-100 text-amber-900 border-amber-300 font-bold"
                                   : "bg-[#F4F4F6] text-[#5E5E5E] hover:text-[#0D0D0D] border-[#E0E0E6]"
                               }`}
                               title="Toggle Sponsored Boost"
                             >
-                              {salon.is_boosted ? "⭐" : "Boost"}
+                              {salon.is_boosted ? <Sparkles className="w-3.5 h-3.5 text-amber-700" /> : "Boost"}
                             </button>
 
                             {/* Task 4: Delete a saloon */}
                             <button
                               onClick={() => handleDeleteSalon(salon.id, salon.name)}
-                              className="px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-600 text-red-600 hover:text-white text-xs font-semibold border border-red-200 transition-all"
+                              className="px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-600 text-red-600 hover:text-white text-xs font-semibold border border-red-200 transition-all flex items-center justify-center"
                               title="Permanently Delete Salon"
                             >
-                              Delete
+                              <X className="w-3.5 h-3.5" />
                             </button>
                           </div>
                         </div>
@@ -739,7 +749,7 @@ export default function SuperAdminPage() {
                           adm.is_root
                             ? "bg-amber-100 text-amber-900 border border-amber-300 font-extrabold"
                             : "bg-[#F0F0F2] text-[#0D0D0D] border border-[#E0E0E6] font-bold"
-                        } flex items-center justify-center text-xs font-mono`}
+                        } flex items-center justify-center text-xs font-sans`}
                       >
                         {adm.name.substring(0, 2).toUpperCase()}
                       </div>
@@ -747,12 +757,12 @@ export default function SuperAdminPage() {
                         <div className="flex items-center space-x-2">
                           <span className="text-sm font-bold text-[#0D0D0D]">{adm.name}</span>
                           {adm.is_root && (
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-bold">
+                            <span className="text-[10px] font-sans px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-bold">
                               Immutable Root
                             </span>
                           )}
                         </div>
-                        <div className="text-xs text-[#5E5E5E] font-mono mt-0.5">
+                        <div className="text-xs text-[#5E5E5E] font-sans mt-0.5">
                           {adm.contact} • Role: <strong className="text-[#0D0D0D]">{adm.role}</strong>
                         </div>
                       </div>
@@ -760,7 +770,7 @@ export default function SuperAdminPage() {
 
                     <div>
                       {adm.is_root ? (
-                        <span className="text-xs text-[#8A8A8E] font-mono italic">Primary Founder</span>
+                        <span className="text-xs text-[#8A8A8E] font-sans italic">Primary Founder</span>
                       ) : (
                         <button
                           onClick={() => handleRevokeAdmin(adm.id, adm.name)}
@@ -786,7 +796,7 @@ export default function SuperAdminPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div className="p-5 rounded-2xl bg-white border border-[#EAEAEA] shadow-sm">
-                  <div className="text-[11px] font-mono uppercase font-bold text-[#8A8A8E]">Total Active Tenants</div>
+                  <div className="text-[11px] font-sans uppercase font-bold text-[#8A8A8E]">Total Active Tenants</div>
                   <div className="text-3xl font-extrabold text-[#0D0D0D] mt-2">
                     {salons.length} <span className="text-xs text-emerald-700 font-semibold">Salons</span>
                   </div>
@@ -794,7 +804,7 @@ export default function SuperAdminPage() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-white border border-[#EAEAEA] shadow-sm">
-                  <div className="text-[11px] font-mono uppercase font-bold text-[#8A8A8E]">Pending Triage Queue</div>
+                  <div className="text-[11px] font-sans uppercase font-bold text-[#8A8A8E]">Pending Triage Queue</div>
                   <div className="text-3xl font-extrabold text-amber-600 mt-2">
                     {pendingCount} <span className="text-xs text-[#5E5E5E] font-semibold">Applications</span>
                   </div>
@@ -802,13 +812,13 @@ export default function SuperAdminPage() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-white border border-[#EAEAEA] shadow-sm">
-                  <div className="text-[11px] font-mono uppercase font-bold text-[#8A8A8E]">Total Bookings</div>
+                  <div className="text-[11px] font-sans uppercase font-bold text-[#8A8A8E]">Total Bookings</div>
                   <div className="text-3xl font-extrabold text-[#0D0D0D] mt-2">1,489</div>
                   <div className="text-[11px] text-emerald-700 font-semibold mt-2">↑ 24% this week (BST)</div>
                 </div>
 
                 <div className="p-5 rounded-2xl bg-white border border-[#EAEAEA] shadow-sm">
-                  <div className="text-[11px] font-mono uppercase font-bold text-[#8A8A8E]">Platform GMV</div>
+                  <div className="text-[11px] font-sans uppercase font-bold text-[#8A8A8E]">Platform GMV</div>
                   <div className="text-3xl font-extrabold text-[#0D0D0D] mt-2">৳ 7,44,500</div>
                   <div className="text-[11px] text-[#5E5E5E] mt-2">10% PayG Commission</div>
                 </div>
@@ -835,7 +845,7 @@ export default function SuperAdminPage() {
                   <button
                     onClick={() => {
                       platformStore.updateMonetization(monetization);
-                      showToast("✓ Monetization rules updated successfully!", "success");
+                      showToast("Monetization rules updated successfully!", "success");
                     }}
                     className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-sm transition-all"
                   >
@@ -852,7 +862,7 @@ export default function SuperAdminPage() {
                       onChange={(e) =>
                         setMonetization({ ...monetization, commission_rate: parseFloat(e.target.value) || 10 })
                       }
-                      className="w-full bg-[#F8F9FA] border border-[#E0E0E6] rounded-xl px-3.5 py-2.5 text-[#0D0D0D] font-mono font-bold focus:outline-none focus:border-[#E8220A] focus:ring-1 focus:ring-[#E8220A]"
+                      className="w-full bg-[#F8F9FA] border border-[#E0E0E6] rounded-xl px-3.5 py-2.5 text-[#0D0D0D] font-sans font-bold focus:outline-none focus:border-[#E8220A] focus:ring-1 focus:ring-[#E8220A]"
                     />
                   </div>
                   <div>
@@ -863,7 +873,7 @@ export default function SuperAdminPage() {
                       onChange={(e) =>
                         setMonetization({ ...monetization, deposit_fee: parseFloat(e.target.value) || 50 })
                       }
-                      className="w-full bg-[#F8F9FA] border border-[#E0E0E6] rounded-xl px-3.5 py-2.5 text-[#0D0D0D] font-mono font-bold focus:outline-none focus:border-[#E8220A] focus:ring-1 focus:ring-[#E8220A]"
+                      className="w-full bg-[#F8F9FA] border border-[#E0E0E6] rounded-xl px-3.5 py-2.5 text-[#0D0D0D] font-sans font-bold focus:outline-none focus:border-[#E8220A] focus:ring-1 focus:ring-[#E8220A]"
                     />
                   </div>
                   <div>
@@ -874,7 +884,7 @@ export default function SuperAdminPage() {
                       onChange={(e) =>
                         setMonetization({ ...monetization, boost_fee: parseFloat(e.target.value) || 200 })
                       }
-                      className="w-full bg-[#F8F9FA] border border-[#E0E0E6] rounded-xl px-3.5 py-2.5 text-[#0D0D0D] font-mono font-bold focus:outline-none focus:border-[#E8220A] focus:ring-1 focus:ring-[#E8220A]"
+                      className="w-full bg-[#F8F9FA] border border-[#E0E0E6] rounded-xl px-3.5 py-2.5 text-[#0D0D0D] font-sans font-bold focus:outline-none focus:border-[#E8220A] focus:ring-1 focus:ring-[#E8220A]"
                     />
                   </div>
                 </div>
@@ -892,7 +902,7 @@ export default function SuperAdminPage() {
                 </p>
               </div>
 
-              <div className="border border-[#EAEAEA] rounded-2xl bg-white divide-y divide-[#EAEAEA] shadow-sm overflow-hidden font-mono text-xs">
+              <div className="border border-[#EAEAEA] rounded-2xl bg-white divide-y divide-[#EAEAEA] shadow-sm overflow-hidden font-sans text-xs">
                 {auditTrail.map((log, idx) => (
                   <div key={log.id || idx} className="p-4 flex items-center justify-between hover:bg-[#FAFAFC] transition-colors">
                     <div>
@@ -916,26 +926,32 @@ export default function SuperAdminPage() {
           <div className="bg-white border border-[#EAEAEA] rounded-3xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden text-xs">
             <div className="p-5 border-b border-[#EAEAEA] flex items-center justify-between bg-[#F8F9FA]">
               <div>
-                <span className="text-[10px] uppercase font-mono font-bold text-[#E8220A] tracking-wider">Application Triage</span>
+                <span className="text-[10px] uppercase font-sans font-bold text-[#E8220A] tracking-wider">Application Triage</span>
                 <h3 className="text-lg font-bold text-[#0D0D0D] mt-0.5">{selectedApp.salon_name}</h3>
               </div>
-              <button onClick={() => setReviewModalOpen(false)} className="w-8 h-8 rounded-full bg-[#EAEAEA] hover:bg-slate-300 flex items-center justify-center text-[#0D0D0D] font-bold">✕</button>
+              <button
+                onClick={() => setReviewModalOpen(false)}
+                aria-label="Close modal"
+                className="w-8 h-8 rounded-full bg-[#EAEAEA] hover:bg-slate-300 flex items-center justify-center text-[#0D0D0D] transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
 
             <div className="p-6 overflow-y-auto space-y-4 text-[#0D0D0D]">
               <div className="grid grid-cols-2 gap-4 bg-[#F8F9FA] p-4 rounded-2xl border border-[#EAEAEA]">
                 <div>
-                  <div className="text-[#8A8A8E] font-mono text-[10px] uppercase font-bold">Applicant / Owner</div>
+                  <div className="text-[#8A8A8E] font-sans text-[10px] uppercase font-bold">Applicant / Owner</div>
                   <div className="text-[#0D0D0D] font-bold text-sm mt-0.5">{selectedApp.owner_name}</div>
-                  <div className="text-[#5E5E5E] font-mono text-[11px] mt-0.5">{selectedApp.owner_phone}</div>
+                  <div className="text-[#5E5E5E] font-sans text-[11px] mt-0.5">{selectedApp.owner_phone}</div>
                   <div className="text-[#5E5E5E] text-[11px]">{selectedApp.owner_email}</div>
                 </div>
                 <div>
-                  <div className="text-[#8A8A8E] font-mono text-[10px] uppercase font-bold">Trade License</div>
-                  <div className="text-emerald-700 font-mono font-bold text-xs mt-0.5">
+                  <div className="text-[#8A8A8E] font-sans text-[10px] uppercase font-bold">Trade License</div>
+                  <div className="text-emerald-700 font-sans font-bold text-xs mt-0.5">
                     {selectedApp.trade_license_number}
                   </div>
-                  <div className="text-[#8A8A8E] font-mono text-[10px] uppercase font-bold mt-2">Chairs & Timing</div>
+                  <div className="text-[#8A8A8E] font-sans text-[10px] uppercase font-bold mt-2">Chairs & Timing</div>
                   <div className="text-[#5E5E5E] text-xs font-medium">
                     {selectedApp.chairs_count} Chairs • {selectedApp.opening_time} to {selectedApp.closing_time} BST
                   </div>
@@ -944,7 +960,7 @@ export default function SuperAdminPage() {
 
               <div>
                 <div className="text-[#0D0D0D] font-bold mb-1">Physical Address:</div>
-                <p className="text-[#5E5E5E] bg-[#F8F9FA] p-3 rounded-xl border border-[#EAEAEA] font-mono text-[11px]">
+                <p className="text-[#5E5E5E] bg-[#F8F9FA] p-3 rounded-xl border border-[#EAEAEA] font-sans text-[11px]">
                   {selectedApp.full_address}
                 </p>
               </div>
@@ -969,9 +985,10 @@ export default function SuperAdminPage() {
                 {/* Task 4: Approve a saloon */}
                 <button
                   onClick={() => handleApprove(selectedApp.id)}
-                  className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition-all"
+                  className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition-all flex items-center gap-1.5"
                 >
-                  ✓ Approve & Create Tenant
+                  <Check className="w-3.5 h-3.5" />
+                  <span>Approve & Create Tenant</span>
                 </button>
               </div>
             </div>
@@ -985,7 +1002,13 @@ export default function SuperAdminPage() {
           <div className="bg-white border border-[#EAEAEA] rounded-3xl w-full max-w-md shadow-2xl overflow-hidden text-xs">
             <div className="p-5 border-b border-[#EAEAEA] flex items-center justify-between bg-[#F8F9FA]">
               <h3 className="text-base font-bold text-[#0D0D0D]">Invite Platform Administrator</h3>
-              <button onClick={() => setInviteModalOpen(false)} className="w-8 h-8 rounded-full bg-[#EAEAEA] hover:bg-slate-300 flex items-center justify-center text-[#0D0D0D] font-bold">✕</button>
+              <button
+                onClick={() => setInviteModalOpen(false)}
+                aria-label="Close modal"
+                className="w-8 h-8 rounded-full bg-[#EAEAEA] hover:bg-slate-300 flex items-center justify-center text-[#0D0D0D] transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
 
             <form onSubmit={handleInviteSubmit} className="p-6 space-y-4">
@@ -1057,8 +1080,8 @@ export default function SuperAdminPage() {
                   </svg>
                 </div>
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-100/70 text-[#E8220A] font-mono text-[10px] font-bold tracking-wider mb-1">
-                    <span>⚠</span>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-100/70 text-[#E8220A] font-sans text-[10px] font-bold tracking-wider mb-1">
+                    <AlertTriangle className="w-3 h-3 text-[#E8220A]" />
                     <span>{confirmModal.badge}</span>
                   </div>
                   <h3 className="text-lg font-bold text-[#0D0D0D] tracking-tight">{confirmModal.title}</h3>
@@ -1066,10 +1089,11 @@ export default function SuperAdminPage() {
               </div>
               <button
                 onClick={() => setConfirmModal((prev) => ({ ...prev, isOpen: false }))}
-                className="w-8 h-8 rounded-full bg-[#EAEAEA] hover:bg-slate-300 flex items-center justify-center text-[#0D0D0D] font-bold transition-colors"
+                className="w-8 h-8 rounded-full bg-[#EAEAEA] hover:bg-slate-300 flex items-center justify-center text-[#0D0D0D] transition-colors"
                 title="Cancel & Close"
+                aria-label="Close dialog"
               >
-                ✕
+                <X className="w-4 h-4" />
               </button>
             </div>
 
@@ -1079,7 +1103,7 @@ export default function SuperAdminPage() {
               <div className="bg-[#F8F9FA] p-4 rounded-2xl border border-[#EAEAEA] space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] uppercase font-mono font-bold text-[#8A8A8E] tracking-wider">
+                    <span className="text-[10px] uppercase font-sans font-bold text-[#8A8A8E] tracking-wider">
                       Selected {confirmModal.type}
                     </span>
                     <h4 className="text-base font-extrabold text-[#0D0D0D] mt-0.5">
@@ -1098,7 +1122,7 @@ export default function SuperAdminPage() {
                   <div className="grid grid-cols-2 gap-2 pt-2 border-t border-[#EAEAEA]">
                     {confirmModal.details.map((d, i) => (
                       <div key={i} className="bg-white px-3 py-2 rounded-xl border border-[#EAEAEA]">
-                        <div className="text-[10px] font-mono text-[#8A8A8E] uppercase font-semibold">{d.label}</div>
+                        <div className="text-[10px] font-sans text-[#8A8A8E] uppercase font-semibold">{d.label}</div>
                         <div className="text-xs font-semibold text-[#0D0D0D] truncate mt-0.5">{d.value}</div>
                       </div>
                     ))}
@@ -1150,7 +1174,11 @@ export default function SuperAdminPage() {
               : "border-red-200 bg-white text-red-800 shadow-red-500/10"
           }`}
         >
-          <span>{toast.type === "success" ? "✓" : "⚠"}</span>
+          {toast.type === "success" ? (
+            <Check className="w-4 h-4 text-emerald-600" />
+          ) : (
+            <AlertTriangle className="w-4 h-4 text-red-600" />
+          )}
           <span>{toast.message}</span>
         </div>
       )}

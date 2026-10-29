@@ -3,6 +3,7 @@
 import React, { useState, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { ShieldCheck, Star, Check, ArrowLeft } from "lucide-react";
 
 function ReviewContent() {
   const searchParams = useSearchParams();
@@ -41,10 +42,12 @@ function ReviewContent() {
       {/* Navbar */}
       <nav className="max-w-2xl mx-auto w-full flex items-center justify-between pb-8">
         <Link href="/" className="flex items-center space-x-2 text-xs font-medium text-gray-600 hover:text-black transition-colors">
-          <span>← Return to Hair and Care bd</span>
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Return to Hair and Care bd</span>
         </Link>
-        <span className="text-[10px] uppercase font-mono px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
-          ✓ Verified Cut Protection
+        <span className="text-[10px] uppercase px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold flex items-center gap-1.5">
+          <ShieldCheck className="w-3.5 h-3.5" />
+          <span>Verified Cut Protection</span>
         </span>
       </nav>
 
@@ -53,12 +56,12 @@ function ReviewContent() {
         {!submitted ? (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <span className="text-[10px] font-mono uppercase font-bold text-amber-700">
+              <span className="text-[10px] uppercase font-bold text-amber-700">
                 Token Verified Appointment
               </span>
               <h1 className="text-2xl font-bold text-[#0D0D0D] mt-1">Review Your Haircut Experience</h1>
               <p className="text-xs text-gray-500 mt-1">
-                Token ID: <strong className="text-emerald-700 font-mono">{tokenParam}</strong>.
+                Token ID: <strong className="text-emerald-700 font-bold">{tokenParam}</strong>.
                 Zero fake reviews. Only in-person completed cuts can publish feedback.
               </p>
             </div>
@@ -72,9 +75,14 @@ function ReviewContent() {
                     key={star}
                     type="button"
                     onClick={() => setRating(star)}
-                    className="text-3xl transition-transform hover:scale-125 focus:outline-none"
+                    className="p-1 transition-transform hover:scale-110 focus:outline-none"
+                    aria-label={`Rate ${star} star`}
                   >
-                    <span className={star <= rating ? "text-amber-500" : "text-gray-300"}>★</span>
+                    <Star
+                      className={`w-7 h-7 ${
+                        star <= rating ? "fill-amber-400 text-amber-400" : "text-gray-300"
+                      }`}
+                    />
                   </button>
                 ))}
               </div>
@@ -91,14 +99,14 @@ function ReviewContent() {
                       key={tag}
                       type="button"
                       onClick={() => toggleTag(tag)}
-                      className={`text-xs px-3.5 py-1.5 rounded-full border transition-all ${
+                      className={`text-xs px-3.5 py-1.5 rounded-full border transition-all flex items-center gap-1.5 ${
                         active
                           ? "bg-amber-50 text-amber-900 border-amber-300 font-semibold"
                           : "bg-gray-50 text-gray-600 border-gray-200 hover:border-gray-400"
                       }`}
                     >
-                      {active ? "✓ " : "+ "}
-                      {tag}
+                      {active ? <Check className="w-3 h-3" /> : "+ "}
+                      <span>{tag}</span>
                     </button>
                   );
                 })}
@@ -127,8 +135,8 @@ function ReviewContent() {
           </form>
         ) : (
           <div className="text-center py-8 space-y-4">
-            <div className="w-14 h-14 mx-auto rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-2xl font-bold border border-emerald-200">
-              ✓
+            <div className="w-14 h-14 mx-auto rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200">
+              <Check className="w-7 h-7 text-emerald-600" />
             </div>
             <h3 className="text-xl font-bold text-[#0D0D0D]">Review Verified & Published!</h3>
             <p className="text-xs text-gray-500 max-w-sm mx-auto">
@@ -144,7 +152,7 @@ function ReviewContent() {
       </main>
 
       {/* Footer */}
-      <footer className="text-center text-xs text-gray-400 py-4 font-mono">
+      <footer className="text-center text-xs text-gray-400 py-4 font-sans">
         Anti-Fake Review Engine • Token-Gated Cryptographic Verification
       </footer>
     </div>
@@ -153,7 +161,7 @@ function ReviewContent() {
 
 export default function VerifiedReviewPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center text-xs text-gray-400 font-mono">Loading review terminal...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center text-xs text-gray-400 font-sans">Loading review terminal...</div>}>
       <ReviewContent />
     </Suspense>
   );

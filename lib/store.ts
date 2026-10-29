@@ -72,12 +72,25 @@ export const platformStore = {
     let salons = getStoredItem<Salon[]>(STORAGE_KEYS.SALONS, SEED_DATA.salons);
     let updated = false;
 
+    // Synchronize any new seed salons into storage seamlessly
+    const storedIds = new Set(salons.map((s) => s.id));
+    const missingSeedSalons = SEED_DATA.salons.filter((s) => !storedIds.has(s.id));
+    if (missingSeedSalons.length > 0) {
+      salons = [...salons, ...missingSeedSalons];
+      updated = true;
+    }
+
     // Auto-heal photos so that each salon tenant carries its own distinct photo
-    // and eliminates any duplicate /assets/studio-haven.jpg assignments on non-Haven salons
+    // and eliminates any duplicate /assets/studio-haven.jpg assignments or stale google CDN URLs
     salons = salons.map((salon, index) => {
       const canonical = getCanonicalSalonPhoto(salon.name, salon.slug, index);
       const isHaven = salon.name.toLowerCase().includes("haven");
-      if (!salon.cover_photo_url || (salon.cover_photo_url === "/assets/studio-haven.jpg" && !isHaven)) {
+      const isStaleGoogleUrl = salon.cover_photo_url && salon.cover_photo_url.includes("googleusercontent.com");
+
+      if (salon.id && salon.id.startsWith("sln-dhk-") && (isStaleGoogleUrl || !salon.cover_photo_url)) {
+        salon.cover_photo_url = `/assets/salons/${salon.id}.jpg`;
+        updated = true;
+      } else if (!salon.cover_photo_url || (salon.cover_photo_url === "/assets/studio-haven.jpg" && !isHaven)) {
         salon.cover_photo_url = canonical;
         updated = true;
       }
@@ -138,7 +151,13 @@ export const platformStore = {
 
   // --- APPLICATIONS ---
   getApplications(filter: "all" | "pending" | "approved" | "rejected" = "all"): SalonApplication[] {
-    const apps = getStoredItem<SalonApplication[]>(STORAGE_KEYS.APPLICATIONS, SEED_DATA.applications);
+    let apps = getStoredItem<SalonApplication[]>(STORAGE_KEYS.APPLICATIONS, SEED_DATA.applications);
+    const storedAppIds = new Set(apps.map((a) => a.id));
+    const missingApps = SEED_DATA.applications.filter((a) => !storedAppIds.has(a.id));
+    if (missingApps.length > 0) {
+      apps = [...apps, ...missingApps];
+      setStoredItem(STORAGE_KEYS.APPLICATIONS, apps);
+    }
     if (filter === "all") return apps;
     return apps.filter((a) => a.status === filter);
   },
@@ -407,6 +426,22 @@ export const platformStore = {
       "ADVANCE_BOOKING_CREATED",
       `Token ${booking.id} issued for ${booking.salon_name} (Service: ${booking.service}, Chair #${booking.chair}, ৳${booking.deposit_paid} deposit via ${booking.deposit_method}).`
     );
+  },
+
+  updateBookingStatus(bookingId: string, status: Booking["status"]): boolean {
+    const bookings = this.getBookings();
+    const target = bookings.find((b) => b.id.toUpperCase() === bookingId.toUpperCase());
+    if (!target) return false;
+
+    target.status = status;
+    setStoredItem(STORAGE_KEYS.BOOKINGS, [...bookings]);
+
+    this.addAuditLog(
+      "Desk Receptionist",
+      "BOOKING_STATUS_UPDATED",
+      `Token ${bookingId} transitioned to status "${status}".`
+    );
+    return true;
   },
 };
 

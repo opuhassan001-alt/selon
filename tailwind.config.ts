@@ -12,9 +12,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['"General Sans"', '"Plus Jakarta Sans"', '"Inter"', "sans-serif"],
-        mono: ['"JetBrains Mono"', "monospace"],
-        serif: ['"Boska"', '"Playfair Display"', "serif"],
-        display: ['"Boska"', '"Playfair Display"', "serif"],
+        mono: ['"General Sans"', '"Plus Jakarta Sans"', '"Inter"', "sans-serif"],
+        serif: ['"General Sans"', '"Plus Jakarta Sans"', '"Inter"', "sans-serif"],
+        display: ['"General Sans"', '"Plus Jakarta Sans"', '"Inter"', "sans-serif"],
       },
       colors: {
         brand: {

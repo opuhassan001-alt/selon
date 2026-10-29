@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo, useCallback, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Star, Heart, MapPin, Sparkles, X } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BookingModal } from "@/components/BookingModal";
@@ -69,7 +70,7 @@ function BrowseContent() {
     e.stopPropagation();
     const nextState = !favorites[id];
     setFavorites((prev) => ({ ...prev, [id]: nextState }));
-    showToast(nextState ? `Saved "${name}" to your favourites! ❤️` : `Removed "${name}" from favourites.`);
+    showToast(nextState ? `Saved "${name}" to your favourites!` : `Removed "${name}" from favourites.`);
   };
 
   // Load latest data directly from the platform store / database
@@ -261,7 +262,9 @@ function BrowseContent() {
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#0D0D0D] text-white px-5 py-3 rounded-full text-sm font-medium shadow-2xl flex items-center gap-3 border border-gray-700 animate-slideUp">
           <span>{toastMessage}</span>
-          <button onClick={() => setToastMessage(null)} className="text-gray-400 hover:text-white text-xs">✕</button>
+          <button onClick={() => setToastMessage(null)} className="text-gray-400 hover:text-white p-0.5">
+            <X className="w-3.5 h-3.5" />
+          </button>
         </div>
       )}
 
@@ -349,9 +352,9 @@ function BrowseContent() {
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-2.5 text-gray-400 hover:text-black text-xs"
+                    className="absolute right-3 top-2.5 text-gray-400 hover:text-black p-0.5"
                   >
-                    ✕
+                    <X className="w-3.5 h-3.5" />
                   </button>
                 )}
               </div>
@@ -390,7 +393,7 @@ function BrowseContent() {
                 className="w-full bg-[#F9F9FB] border border-[#EAEAEA] rounded-xl px-3 py-2.5 text-xs text-[#0D0D0D] focus:bg-white focus:border-[#0D0D0D] focus:outline-none transition-all font-medium cursor-pointer"
               >
                 <option value="featured">Featured & Recommended</option>
-                <option value="rating">Highest Rated ★</option>
+                <option value="rating">Highest Rated</option>
                 <option value="reviews">Most Verified Reviews</option>
                 <option value="price_asc">Price: Low to High</option>
                 <option value="price_desc">Price: High to Low</option>
@@ -403,7 +406,7 @@ function BrowseContent() {
                 <label className="text-[11px] font-bold text-[#8A8A8E] uppercase tracking-wider">
                   Max Starting Budget
                 </label>
-                <span className="text-xs font-bold text-[#0D0D0D] font-mono">
+                <span className="text-xs font-bold text-[#0D0D0D] font-sans">
                   ৳{maxPrice.toLocaleString()}
                 </span>
               </div>
@@ -462,7 +465,10 @@ function BrowseContent() {
                   onChange={(e) => setOnlyFeatured(e.target.checked)}
                   className="accent-[#E8220A] rounded"
                 />
-                <span>⭐ Featured only</span>
+                <span className="flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  Featured only
+                </span>
               </label>
             </div>
           </div>
@@ -470,7 +476,7 @@ function BrowseContent() {
 
         {/* Results Grid */}
         {loading ? (
-          <div className="py-24 text-center font-mono text-xs text-[#5E5E5E] space-y-3">
+          <div className="py-24 text-center font-sans text-xs text-[#5E5E5E] space-y-3">
             <div className="w-8 h-8 border-2 border-[#0D0D0D] border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p>Loading verified venues from database...</p>
           </div>
@@ -515,14 +521,20 @@ function BrowseContent() {
                     <img
                       src={coverPhoto}
                       alt={salon.name}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.includes("/assets/hero-barber.jpg")) {
+                          target.src = "/assets/hero-barber.jpg";
+                        }
+                      }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
 
                     {/* Top Left Tag */}
                     <div className="absolute top-3 left-3">
                       {isBoosted ? (
-                        <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#0D0D0D] text-white shadow flex items-center gap-1">
-                          <span className="text-amber-400">★</span>
+                        <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#0D0D0D] text-white shadow flex items-center gap-1.5">
+                          <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                           <span>FEATURED</span>
                         </span>
                       ) : (
@@ -538,19 +550,16 @@ function BrowseContent() {
                       aria-label="Save to favourites"
                       className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#0D0D0D] flex items-center justify-center shadow-md backdrop-blur-sm transition-transform active:scale-90"
                     >
-                      <svg
-                        className={`w-4 h-4 transition-colors ${isFav ? "text-[#E8220A] fill-[#E8220A]" : "text-[#5E5E5E]"}`}
-                        fill={isFav ? "currentColor" : "none"}
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
+                      <Heart
+                        className={`w-4 h-4 transition-colors ${
+                          isFav ? "text-[#E8220A] fill-[#E8220A]" : "text-[#5E5E5E]"
+                        }`}
+                      />
                     </button>
 
                     {/* Rating Pill overlay at bottom-right */}
-                    <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-white/95 text-xs font-bold text-[#0D0D0D] shadow-sm backdrop-blur-sm flex items-center gap-1 border border-[#EAEAEA]">
-                      <span className="text-amber-500">★</span>
+                    <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-white/95 text-xs font-bold text-[#0D0D0D] shadow-sm backdrop-blur-sm flex items-center gap-1.5 border border-[#EAEAEA]">
+                      <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
                       <span>{salon.rating}</span>
                       <span className="text-[#8A8A8E] text-[11px] font-medium">({salon.reviews_count})</span>
                     </div>
@@ -565,8 +574,9 @@ function BrowseContent() {
                         </h3>
                       </Link>
                       
-                      <p className="text-xs text-[#5E5E5E] mt-1 line-clamp-1 font-normal">
-                        📍 {salon.area}, {salon.district} • {salon.address}
+                      <p className="text-xs text-[#5E5E5E] mt-1.5 line-clamp-1 font-normal flex items-center gap-1.5">
+                        <MapPin className="w-3.5 h-3.5 text-[#8A8A8E] shrink-0" />
+                        <span>{salon.area}, {salon.district} • {salon.address}</span>
                       </p>
 
                       {/* Status indicator */}
@@ -607,7 +617,7 @@ function BrowseContent() {
                         <span className="text-[10px] text-[#8A8A8E] font-semibold uppercase block tracking-wider">
                           From
                         </span>
-                        <span className="text-base font-extrabold text-[#0D0D0D] font-mono">
+                        <span className="text-base font-extrabold text-[#0D0D0D] font-sans">
                           ৳{salon.starting_price.toLocaleString()}
                         </span>
                       </div>
@@ -645,7 +655,7 @@ function BrowseContent() {
         venueName={selectedBookingSalon?.name || "Trendy Trim"}
         defaultVenue={selectedBookingSalon}
         onBookingSuccess={(token, venue) => {
-          showToast(`✓ Chair reserved at ${venue}! Token ID: ${token}`);
+          showToast(`Chair reserved at ${venue}! Token ID: ${token}`);
           loadSalons();
         }}
       />
@@ -671,7 +681,7 @@ function BrowseContent() {
 export default function BrowsePage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center font-mono text-xs text-[#5E5E5E]">
+      <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center font-sans text-xs text-[#5E5E5E]">
         Loading browse directory...
       </div>
     }>

@@ -1,6 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { X, Check } from "lucide-react";
+import { platformStore } from "@/lib/store";
+import { Booking } from "@/types";
 
 export interface BookingModalProps {
   isOpen: boolean;
@@ -80,9 +83,30 @@ export function BookingModal({
   const [generatedToken, setGeneratedToken] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
+  // Resolve matching salon and dynamic services directly from platform store (BEFORE conditional return)
+  const matchedSalon = useMemo(() => {
+    if (!isOpen) return undefined;
+    return platformStore.getSalons().find(
+      (s) =>
+        s.name.toLowerCase() === effectiveVenue.toLowerCase() ||
+        (defaultVenue?.id && s.id === defaultVenue.id)
+    );
+  }, [isOpen, effectiveVenue, defaultVenue]);
+
+  const services = useMemo(() => {
+    if (!isOpen) return DEFAULT_SERVICES;
+    if (matchedSalon?.services && matchedSalon.services.length > 0) {
+      return matchedSalon.services.map((srv) => ({
+        name: srv.name,
+        duration: `${srv.duration_minutes || 30} mins`,
+        price: srv.price_bdt,
+      }));
+    }
+    return VENUE_SERVICES[effectiveVenue] || DEFAULT_SERVICES;
+  }, [isOpen, matchedSalon, effectiveVenue]);
+
   if (!isOpen) return null;
 
-  const services = VENUE_SERVICES[effectiveVenue] || DEFAULT_SERVICES;
   const currentService = selectedService || services[0].name;
   const currentPrice = selectedPrice || services[0].price;
 
@@ -111,22 +135,33 @@ export function BookingModal({
       const token = "TK-" + Math.floor(1000 + Math.random() * 9000);
       setGeneratedToken(token);
 
-      // Save to localStorage for radar lookup
+      const newBookingRecord: Booking = {
+        id: token,
+        salon_id: matchedSalon?.id || defaultVenue?.id || "",
+        salon_name: effectiveVenue,
+        customer_name: clientName.trim(),
+        customer_phone: clientPhone.trim(),
+        barber: selectedStaff || "Master Stylist",
+        chair: 1,
+        service: currentService,
+        time_slot: selectedSlot,
+        booking_date: new Date().toISOString().split("T")[0],
+        total: currentPrice,
+        deposit_paid: 50,
+        deposit_method: paymentMethod === "Nagad" ? "Nagad" : "bKash",
+        trx_id: `TRX-${paymentMethod === "Nagad" ? "NG" : "BK"}-${Math.floor(100000 + Math.random() * 900000)}`,
+        due_at_salon: Math.max(0, currentPrice - 50),
+        status: "confirmed",
+        payment_status: "pay_at_salon",
+        created_at: new Date().toISOString(),
+      };
+
+      // Persist to unified central platformStore so TrackTokenModal & Portal find it instantly
       try {
-        const bookings = JSON.parse(localStorage.getItem("haircare_bookings") || "[]");
-        bookings.push({
-          token,
-          venue: effectiveVenue,
-          service: currentService,
-          day: selectedDay,
-          time: selectedSlot,
-          clientName: clientName.trim(),
-          clientPhone: clientPhone.trim(),
-          chair: "Chair #2",
-          status: "Ready",
-        });
-        localStorage.setItem("haircare_bookings", JSON.stringify(bookings));
-      } catch (e) {}
+        platformStore.createBooking(newBookingRecord);
+      } catch (e) {
+        console.error("Failed to persist booking into platformStore:", e);
+      }
 
       if (onBookingSuccess) {
         onBookingSuccess(token, effectiveVenue, currentService, `${selectedDay} • ${selectedSlot}`);
@@ -158,9 +193,10 @@ export function BookingModal({
           </div>
           <button
             onClick={onClose}
+            aria-label="Close modal"
             className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-500 hover:text-black transition-colors"
           >
-            ✕
+            <X className="w-4 h-4" />
           </button>
         </div>
 
@@ -340,13 +376,13 @@ export function BookingModal({
           {/* Step 5: Instant Booking Slip */}
           {step === 5 && (
             <div className="text-center space-y-4 py-3">
-              <div className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
-                ✓
+              <div className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto">
+                <Check className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold text-[#0D0D0D]">Chair Reserved!</h3>
               <p className="text-xs text-gray-500">Your reservation is confirmed on Hair and Care bd.</p>
 
-              <div className="p-5 rounded-2xl bg-[#F9F9FB] border border-gray-200 text-left max-w-sm mx-auto space-y-2 font-mono text-xs">
+              <div className="p-5 rounded-2xl bg-[#F9F9FB] border border-gray-200 text-left max-w-sm mx-auto space-y-2 text-xs">
                 <div className="flex justify-between border-b pb-2">
                   <span className="text-gray-400">Token ID:</span>
                   <span className="font-bold text-[#0D0D0D]">{generatedToken}</span>

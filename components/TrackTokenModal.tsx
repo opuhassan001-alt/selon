@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { X } from "lucide-react";
 import { Booking } from "@/types";
 import { platformStore } from "@/lib/store";
 
@@ -60,16 +61,17 @@ export function TrackTokenModal({ isOpen, onClose }: TrackTokenModalProps) {
         {/* Header */}
         <div className="p-5 border-b border-[#1f2639] bg-[#0c1220] flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-amber-400 tracking-wider">
+            <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">
               Live Queue Tracker
             </span>
             <h3 className="text-base font-bold text-white mt-0.5">Track My Token Slip</h3>
           </div>
           <button
             onClick={onClose}
+            aria-label="Close modal"
             className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5"
           >
-            ✕
+            <X className="w-4 h-4" />
           </button>
         </div>
 
@@ -81,7 +83,7 @@ export function TrackTokenModal({ isOpen, onClose }: TrackTokenModalProps) {
               value={tokenInput}
               onChange={(e) => setTokenInput(e.target.value)}
               placeholder="Enter your Token ID (e.g. SLN-DHN-8940)..."
-              className="flex-1 bg-[#0c1220] border border-[#243050] rounded-lg px-4 py-2.5 text-xs text-white font-mono uppercase focus:outline-none focus:border-[#e8220a]"
+              className="flex-1 bg-[#0c1220] border border-[#243050] rounded-lg px-4 py-2.5 text-xs text-white uppercase focus:outline-none focus:border-[#e8220a]"
             />
             <button type="submit" className="btn-barber-primary px-4 py-2 text-xs font-bold shrink-0">
               Check Status
@@ -89,7 +91,7 @@ export function TrackTokenModal({ isOpen, onClose }: TrackTokenModalProps) {
           </form>
 
           {searched && foundBooking && (
-            <div className="p-5 rounded-xl bg-[#0c1220] border border-emerald-500/30 space-y-4 text-xs font-mono">
+            <div className="p-5 rounded-xl bg-[#0c1220] border border-emerald-500/30 space-y-4 text-xs">
               <div className="flex items-center justify-between border-b border-[#1f2639] pb-3">
                 <div>
                   <span className="text-slate-400 text-[10px] block">Verified Token:</span>
